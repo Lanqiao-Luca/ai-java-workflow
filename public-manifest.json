@@ -262,6 +262,51 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/review-scope-and-evidence/README.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-scope-and-evidence/artifact-manifest.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-scope-and-evidence/case.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-scope-and-evidence/corrected-proposal.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-scope-and-evidence/follow-up.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-scope-and-evidence/principle-report.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-scope-and-evidence/proposal.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-scope-and-evidence/result.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-scope-and-evidence/trace.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/verify-bookmark-title/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -364,6 +409,11 @@
     {
       "path": "skills/principle-review/SKILL.md",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/principle-review/example.md",
+      "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
     },
     {

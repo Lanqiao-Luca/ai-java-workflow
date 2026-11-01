@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "allowed_write_set": [
+    "demo-service.java"
+  ],
+  "proposed_writes": [
+    "demo-service.java"
+  ],
+  "verification_evidence": {
+    "java": "NOT_RUN"
+  },
+  "proposed_summary": "实现候选已形成，Java运行待验",
+  "review_context": "author self-check"
+}

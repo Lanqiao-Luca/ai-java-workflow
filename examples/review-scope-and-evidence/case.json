@@ -1,0 +1,32 @@
+{
+  "case_id": "review-scope-and-evidence",
+  "agent": "agents/principle-reviewer.md",
+  "skill": "skills/principle-review/SKILL.md",
+  "synthetic": true,
+  "mode": "document_walkthrough",
+  "inputs": [
+    "proposal.json"
+  ],
+  "outputs": [
+    "principle-report.md",
+    "corrected-proposal.json",
+    "follow-up.md"
+  ],
+  "acceptance": [
+    {
+      "id": "P1",
+      "expected": "范围矛盾有可定位输入",
+      "evidence": "proposal.json"
+    },
+    {
+      "id": "P2",
+      "expected": "文本整改与实际业务动作分开",
+      "evidence": "follow-up.md"
+    }
+  ],
+  "verification": {
+    "java": "not_applicable",
+    "database": "not_connected",
+    "native_agent": "not_run"
+  }
+}

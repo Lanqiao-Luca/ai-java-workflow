@@ -1,0 +1,37 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "854f10e68e290d1d2113dca23670180f3177184cb32a7e4200210daf91d52915"
+    },
+    {
+      "path": "case.json",
+      "sha256": "822a8931e9c41f966f40efc25f40a3041769970e9975ee0b9c19ec8d28cea223"
+    },
+    {
+      "path": "corrected-proposal.json",
+      "sha256": "f28c328e5da7e5b2141d848af0a593175bad6a3109ac3effd4422b2f4553b393"
+    },
+    {
+      "path": "follow-up.md",
+      "sha256": "a5edc69db7c7b65af22eb3079108a594b2a03a6d1af48b1d7473297a94b0d852"
+    },
+    {
+      "path": "principle-report.md",
+      "sha256": "5be5c5e0162e13bd1f46b0ef21a137f4fb281477d987a094668eab1980d22948"
+    },
+    {
+      "path": "proposal.json",
+      "sha256": "6878003e0bdf1d7a3d4bdde04c93e5b44ff6488f23da23d6bf6244b4e6721211"
+    },
+    {
+      "path": "result.md",
+      "sha256": "343b5d5a400ca5043b5c6f3445fbe68ba57e21b825ad820cdadb033688841ac9"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "71e81c724b92f8cd061f17021bfa1b8a979147f93dae037fe5db6499ec827c03"
+    }
+  ]
+}

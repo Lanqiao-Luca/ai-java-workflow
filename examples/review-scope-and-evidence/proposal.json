@@ -1,0 +1,15 @@
+{
+  "synthetic": true,
+  "allowed_write_set": [
+    "demo-service.java"
+  ],
+  "proposed_writes": [
+    "demo-service.java",
+    "project-policy.md"
+  ],
+  "verification_evidence": {
+    "java": "NOT_RUN"
+  },
+  "proposed_summary": "全部Java用例通过",
+  "review_context": "author self-check"
+}

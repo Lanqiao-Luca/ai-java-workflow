@@ -172,6 +172,51 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/review-bookmark-rename/README.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-bookmark-rename/artifact-manifest.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-bookmark-rename/author-handoff.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-bookmark-rename/case.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-bookmark-rename/contract.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-bookmark-rename/faulty/BookmarkService.java",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-bookmark-rename/findings.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-bookmark-rename/result.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-bookmark-rename/trace.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/verify-bookmark-title/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -244,6 +289,11 @@
     {
       "path": "skills/code-review/SKILL.md",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/code-review/example.md",
+      "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
     },
     {

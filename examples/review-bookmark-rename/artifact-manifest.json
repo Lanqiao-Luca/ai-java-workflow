@@ -1,0 +1,37 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "50dbc97cb54e249c7abb0d84c69dad15f2edc3f77b6c431289393721ef9eaa6b"
+    },
+    {
+      "path": "author-handoff.md",
+      "sha256": "ed9124d7f7e1c94575ab8d6461692dd4a37da98b890f0898e813c6344ab27186"
+    },
+    {
+      "path": "case.json",
+      "sha256": "e7cd1e074fb784f74bcef2a18c352e9438ccb8611e20e1e70bfda890a9202e63"
+    },
+    {
+      "path": "contract.md",
+      "sha256": "659752365f2091931e7739988bd08c2b94f3b48f817e0b04323991e1b79c3800"
+    },
+    {
+      "path": "faulty/BookmarkService.java",
+      "sha256": "c123cfa7d931aa05f245238ac127da2e3614a9726de9d9ed96c06772b582b637"
+    },
+    {
+      "path": "findings.md",
+      "sha256": "7496eb4ebc049bcb708b4bc1fba2815a6bef02a63237a25a1f32447199551819"
+    },
+    {
+      "path": "result.md",
+      "sha256": "c5054f38503b973fdb1845336d10eb2ec8cdd28f675a9647354ffc30520595fb"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "86417677e00f690a3e4f85dfef9895874e38b2b797baea0a7f2d6166a7c81228"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "review-bookmark-rename",
+  "agent": "agents/code-reviewer.md",
+  "skill": "skills/code-review/SKILL.md",
+  "synthetic": true,
+  "mode": "static_code_review",
+  "inputs": [
+    "contract.md",
+    "faulty/BookmarkService.java"
+  ],
+  "outputs": [
+    "findings.md",
+    "author-handoff.md"
+  ],
+  "acceptance": [
+    {
+      "id": "C1",
+      "expected": "失败不增加审计有具体反例",
+      "evidence": "findings.md"
+    },
+    {
+      "id": "C2",
+      "expected": "规范化值与真实写入字段对照",
+      "evidence": "findings.md"
+    }
+  ],
+  "verification": {
+    "java": "NOT_RUN",
+    "database": "not_connected",
+    "native_agent": "not_run"
+  }
+}

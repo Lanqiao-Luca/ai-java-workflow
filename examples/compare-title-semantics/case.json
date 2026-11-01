@@ -1,0 +1,32 @@
+{
+  "case_id": "compare-title-semantics",
+  "agent": "agents/semantic-reviewer.md",
+  "skill": "skills/semantic-review/SKILL.md",
+  "synthetic": true,
+  "mode": "static_code_review",
+  "inputs": [
+    "contract.md",
+    "faulty/BookmarkService.java"
+  ],
+  "outputs": [
+    "counterexamples.json",
+    "semantic-report.md"
+  ],
+  "acceptance": [
+    {
+      "id": "S1",
+      "expected": "额外行为与遗漏都给可区分反例",
+      "evidence": "counterexamples.json"
+    },
+    {
+      "id": "S2",
+      "expected": "契约到代码双向映射不以同名字段作证",
+      "evidence": "semantic-report.md"
+    }
+  ],
+  "verification": {
+    "java": "NOT_RUN",
+    "database": "not_connected",
+    "native_agent": "not_run"
+  }
+}

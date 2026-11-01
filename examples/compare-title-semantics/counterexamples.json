@@ -1,0 +1,14 @@
+[
+  {
+    "input": "  Read later  ",
+    "required": "Read later",
+    "code_inferred": "Readlater",
+    "kind": "internal spaces lost"
+  },
+  {
+    "input": "\tRead\t",
+    "required": "Read",
+    "code_inferred": "\tRead\t",
+    "kind": "trim whitespace differs"
+  }
+]

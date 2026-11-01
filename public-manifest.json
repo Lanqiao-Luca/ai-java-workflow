@@ -172,6 +172,51 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/compare-title-semantics/README.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/compare-title-semantics/artifact-manifest.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/compare-title-semantics/case.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/compare-title-semantics/contract.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/compare-title-semantics/counterexamples.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/compare-title-semantics/faulty/BookmarkService.java",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/compare-title-semantics/result.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/compare-title-semantics/semantic-report.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/compare-title-semantics/trace.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/review-bookmark-rename/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -349,6 +394,11 @@
     {
       "path": "skills/semantic-review/SKILL.md",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/semantic-review/example.md",
+      "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
     },
     {

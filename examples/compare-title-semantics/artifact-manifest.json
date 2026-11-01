@@ -1,0 +1,37 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "326b061513869e49a1405cd8cd319040f6b89124493a461415115c20d52c78e6"
+    },
+    {
+      "path": "case.json",
+      "sha256": "9d614a838f38b059c1585f6dcb21fe9bbe2403002196d295c26d206d6ff8fabc"
+    },
+    {
+      "path": "contract.md",
+      "sha256": "49eeb7156ee56ce68c1d80016c1c9e9e4cbd0703ed62ae81c06d9a4ead6f8a88"
+    },
+    {
+      "path": "counterexamples.json",
+      "sha256": "c6f9435bd9ff97e6f8cc513aa163350c2c1e82bada911c7f6d7630bf4a077ad6"
+    },
+    {
+      "path": "faulty/BookmarkService.java",
+      "sha256": "d0d077fa41de9bf2dee300d1af5dc42dfabbf51113b72d87bc298e1fd123bc05"
+    },
+    {
+      "path": "result.md",
+      "sha256": "4ff6adc8ff1f1e9b7e65d0ec215e132602acd433957bc9bde88e527f7e5aeec0"
+    },
+    {
+      "path": "semantic-report.md",
+      "sha256": "76888c7784bd1d976a5b2dc031fce0c20306c1b5243974694a8878f325cb381d"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "197fdb6a4327b703bcdf5231cb3db5e38d1cea855c0bf3f21b51fdf4c217f381"
+    }
+  ]
+}

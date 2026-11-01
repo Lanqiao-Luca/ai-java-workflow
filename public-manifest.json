@@ -82,6 +82,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/agent-publication-results.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/bookmark-title/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"

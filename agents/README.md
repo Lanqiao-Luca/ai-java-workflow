@@ -1,14 +1,20 @@
 # Agents
 
-角色定义结果责任，操作方法通过 Skill 取得。是否真实独立执行须以当前宿主回执为准；本目录没有平台注册配置。
+角色定义结果责任，经Skill消费Standards。下面是角色与案例的导航，不代表平台安装或自动调度；十条案例均独立虚构。
 
-- [需求负责人](requirement-analyst.md)
-- [实现者](implementer.md)：已补齐输入、逐步决策、交付与停止合同；配套一条完整案例。
-- [验证者](verifier.md)
-- [代码审查者](code-reviewer.md)
-- [语义审查者](semantic-reviewer.md)
-- [原则审查者](principle-reviewer.md)
-- [诊断者](diagnostician.md)
-- [查询审查者](query-reviewer.md)
-- [交付规划者](delivery-planner.md)
-- [文档审查者](document-reviewer.md)
+| 角色 | 完整案例 |
+| --- | --- |
+| [实现者](implementer.md) | [书签标题规范化](../skills/code-implementation/example.md) |
+| [需求负责人](requirement-analyst.md) | [标签需求：已决/未决、验收与可实施范围](../examples/clarify-bookmark-tags/README.md) |
+| [验证者](verifier.md) | [标题验证：覆盖矩阵、失败复现与未运行状态](../examples/verify-bookmark-title/README.md) |
+| [代码审查者](code-reviewer.md) | [改名审查：可复核发现与作者交接](../examples/review-bookmark-rename/README.md) |
+| [语义审查者](semantic-reviewer.md) | [标题语义：需求映射与具体反例](../examples/compare-title-semantics/README.md) |
+| [原则审查者](principle-reviewer.md) | [范围与证据：四态判断和整改条件](../examples/review-scope-and-evidence/README.md) |
+| [诊断者](diagnostician.md) | [版本冲突：竞争解释与证据排除](../examples/diagnose-version-conflict/README.md) |
+| [查询审查者](query-reviewer.md) | [游标分页：稳定排序与SQLite局部语义回放](../examples/review-cursor-pagination/README.md) |
+| [交付规划者](delivery-planner.md) | [证据门禁：依赖、未决和恢复计划](../examples/plan-evidence-gated-delivery/README.md) |
+| [文档审查者](document-reviewer.md) | [运行手册：逐要求审验与修订复核](../examples/review-draft-runbook/README.md) |
+
+Java用例未实跑；查询案例仅有进程内SQLite语义回放，其他案例为文档/静态分析。作者自查、独立文档复核和业务验收分别说明。
+
+[全部案例](../examples/README.md) · [执行文档](../docs/agent-publication-plan.md) · [发布结果](../docs/agent-publication-results.md)

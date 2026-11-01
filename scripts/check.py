@@ -36,6 +36,8 @@ def main():
         targets = []
         for m in re.finditer(r"\]\(([^)]+)\)", text):
             dest = unquote(m.group(1).strip("<>"))
+            if re.fullmatch(r"https://github\.com/Lanqiao-Luca/ai-java-workflow/commit/[0-9a-f]{40}", dest):
+                continue  # Remote commits are separately verified during publication.
             if ":" in dest or dest.startswith("/") or "#" in dest:
                 raise ValueError("nonportable or unsupported link")
             q = (p.parent / dest).resolve()

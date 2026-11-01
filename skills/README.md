@@ -14,4 +14,4 @@
 - [状态与交付规划](delivery-planning/SKILL.md)
 - [文档审验](document-review/SKILL.md)
 
-配套空表：[任务与验收](resources/task.md)、[行为保留](resources/behavior.md)、[审查记录](resources/review.md)。独立虚构演练：[书签标题修改](code-implementation/example.md)。
+配套空表：[任务与验收](resources/task.md)、[行为保留](resources/behavior.md)、[审查记录](resources/review.md)。独立虚构演练：[书签标题修改](code-implementation/example.md)。完整角色案例见[十条案例目录](../examples/README.md)。

@@ -397,6 +397,56 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/review-draft-runbook/README.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/artifact-manifest.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/case.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/corrected.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/draft.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/findings.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/follow-up.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/input.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/result.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/review-draft-runbook/trace.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/review-scope-and-evidence/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -534,6 +584,11 @@
     {
       "path": "skills/document-review/SKILL.md",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/document-review/example.md",
+      "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
     },
     {

@@ -1,0 +1,41 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "5fc9021b6b1cc5f1081837a0c0ac6409e8a100273d4d17fc0de2d182eab76b93"
+    },
+    {
+      "path": "case.json",
+      "sha256": "4e2ffea1351c0dd33ba9d2e72ffe66f9b2334414a610aa5c01bfb105b21ebb53"
+    },
+    {
+      "path": "corrected.md",
+      "sha256": "d055d4f54d55cf8439e8ae8151f03695a59407f894328962f3bf051680fd8526"
+    },
+    {
+      "path": "draft.md",
+      "sha256": "4bab0bb0e8ce9ccf3669650df80ad585fa8175406ad03f9da41c4b1db4d8e309"
+    },
+    {
+      "path": "findings.md",
+      "sha256": "5ba7b684c3c80cac2514fbaed8e5fdb6b8deb0218d8b27f781a382b63e6ae0e3"
+    },
+    {
+      "path": "follow-up.md",
+      "sha256": "2efc88001b76fdc05b47ff128c09400c1032e9b88515d6a3860fdb3eb27899ff"
+    },
+    {
+      "path": "input.md",
+      "sha256": "69cb4be4a44bb740d99cde2130e7b2a3b94f64e9cb661ad1717a9800ba6fc399"
+    },
+    {
+      "path": "result.md",
+      "sha256": "5db077f8c86b93d9e48eb57e1f5852f7a85129ca4a21dea4ff02c0bb5d8f7212"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "0e07524024e27d72fce4c63df00057654539c4a76bc40c7a6eb9cfed4efd5566"
+    }
+  ]
+}

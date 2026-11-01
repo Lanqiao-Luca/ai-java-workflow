@@ -1,0 +1,33 @@
+{
+  "case_id": "review-draft-runbook",
+  "agent": "agents/document-reviewer.md",
+  "skill": "skills/document-review/SKILL.md",
+  "synthetic": true,
+  "mode": "document_walkthrough",
+  "inputs": [
+    "input.md"
+  ],
+  "outputs": [
+    "draft.md",
+    "findings.md",
+    "corrected.md",
+    "follow-up.md"
+  ],
+  "acceptance": [
+    {
+      "id": "W1",
+      "expected": "对照目的和可消费合同而非只看格式",
+      "evidence": "findings.md"
+    },
+    {
+      "id": "W2",
+      "expected": "修订后的接受范围没有偷换原可运行目标",
+      "evidence": "follow-up.md"
+    }
+  ],
+  "verification": {
+    "java": "not_applicable",
+    "database": "not_connected",
+    "native_agent": "not_run"
+  }
+}

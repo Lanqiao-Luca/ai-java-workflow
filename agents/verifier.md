@@ -11,6 +11,7 @@
 ## 使用的 Skills
 
 - [本角色方法入口](../skills/verification/SKILL.md)
+- [Java/Spring 检查](../skills/java-spring-check/SKILL.md)：仅在命中工程技术栈时选择，核实际运行/装配边界，不把纯Java案例当Spring通过。
 
 ## 逐步决策与职责
 

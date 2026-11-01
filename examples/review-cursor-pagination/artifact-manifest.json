@@ -1,0 +1,45 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "febc5fe313417df6eaff82daec1ef32f47485e493e581c8b8215ae47750b6347"
+    },
+    {
+      "path": "after.sql",
+      "sha256": "50e4830b5036bdb409679250db22b4cb6542cb92a0b31cbc8e4506f46b88b683"
+    },
+    {
+      "path": "before.sql",
+      "sha256": "1ddf309854b1dc08a3c71a5d446183e2c27123cf78d3a46be40148fb8858cd24"
+    },
+    {
+      "path": "case.json",
+      "sha256": "515d81693e7886a00b1db6e61febbe4d1fbddbd286b371f3bcbd6452faa03b3a"
+    },
+    {
+      "path": "contract.md",
+      "sha256": "a031305562ff2be4ddf01910dd7a5fb98990821d3543392f69eae51ef646282b"
+    },
+    {
+      "path": "fixture.json",
+      "sha256": "e87beeaebffa96cb8e3bee889dcfd24d130c3161fabe57c36e50aa9ec02a4ad2"
+    },
+    {
+      "path": "query-report.md",
+      "sha256": "a22063df07a82e5e3930a53471e5361bb878ef311952fc34d68908db469aad63"
+    },
+    {
+      "path": "replay.py",
+      "sha256": "834da676bb14bdc6ffcc1b584e94e8019603a85226ed3c78fa74950826f97997"
+    },
+    {
+      "path": "result.md",
+      "sha256": "bbdc2420ad221fd54d03a298ac03f84975bad98abcc6cff761a6bb1648404edf"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "5102142f6920191c1183679d419409b7d8d745184392fa875ad50a45e1a90690"
+    }
+  ]
+}

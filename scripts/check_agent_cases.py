@@ -54,9 +54,12 @@ def check_case(folder):
         raise ValueError("duplicate acceptance ids")
     verification = case["verification"]
     if (verification["java"] not in {"NOT_RUN", "not_applicable"}
-            or verification["database"] != "not_connected"
+            or verification["database"] not in {"not_connected", "local_sqlite_memory_only"}
             or verification["native_agent"] != "not_run"):
         raise ValueError("unsupported runtime declaration")
+    if verification["database"] == "local_sqlite_memory_only":
+        local_file(folder, "replay.py")
+        local_file(folder, "fixture.json")
     rows = json.loads((folder / "artifact-manifest.json").read_text())["files"]
     declared = {row["path"] for row in rows}
     if declared != actual - {"artifact-manifest.json"} or len(rows) != len(declared):

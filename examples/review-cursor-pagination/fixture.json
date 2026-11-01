@@ -1,0 +1,39 @@
+{
+  "rows": [
+    [
+      1,
+      "reader-demo",
+      10
+    ],
+    [
+      2,
+      "reader-demo",
+      10
+    ],
+    [
+      3,
+      "reader-demo",
+      10
+    ],
+    [
+      4,
+      "reader-demo",
+      9
+    ],
+    [
+      5,
+      "other-demo",
+      10
+    ]
+  ],
+  "params": {
+    "owner": "reader-demo",
+    "seq": 10,
+    "id": 2,
+    "size": 2
+  },
+  "expected_next": [
+    1,
+    4
+  ]
+}

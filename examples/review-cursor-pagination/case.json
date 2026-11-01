@@ -1,0 +1,34 @@
+{
+  "case_id": "review-cursor-pagination",
+  "agent": "agents/query-reviewer.md",
+  "skill": "skills/sql-review/SKILL.md",
+  "synthetic": true,
+  "mode": "document_walkthrough",
+  "inputs": [
+    "contract.md",
+    "fixture.json"
+  ],
+  "outputs": [
+    "before.sql",
+    "after.sql",
+    "replay.py",
+    "query-report.md"
+  ],
+  "acceptance": [
+    {
+      "id": "Q1",
+      "expected": "稳定排序与游标元组一致",
+      "evidence": "query-report.md"
+    },
+    {
+      "id": "Q2",
+      "expected": "虚构语义对照不代生产性能",
+      "evidence": "query-report.md"
+    }
+  ],
+  "verification": {
+    "java": "not_applicable",
+    "database": "local_sqlite_memory_only",
+    "native_agent": "not_run"
+  }
+}

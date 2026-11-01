@@ -1,0 +1,18 @@
+{
+  "synthetic": true,
+  "candidate": "demo-candidate-b",
+  "implementation": "formed",
+  "unit_tests": {
+    "candidate": "demo-candidate-a",
+    "status": "passed_in_fixture_record"
+  },
+  "review": {
+    "candidate": "demo-candidate-b",
+    "status": "needs_changes",
+    "open_findings": [
+      "C1"
+    ]
+  },
+  "deploy_permission": false,
+  "build_artifact": null
+}

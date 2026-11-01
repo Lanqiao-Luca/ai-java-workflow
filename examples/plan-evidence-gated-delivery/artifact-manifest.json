@@ -1,0 +1,33 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "173297f6b55ebb5d99244efb96939e668da304615dc052797b49e348bb97359a"
+    },
+    {
+      "path": "case.json",
+      "sha256": "d8d1c11663e17de6e279b60b8e9a3e55b1001518166740465dc9f5b6471f1b28"
+    },
+    {
+      "path": "inputs.json",
+      "sha256": "8626acbf1921da388f2295cb7249a7153f59409ecfca80593cc035d9db20fcb0"
+    },
+    {
+      "path": "plan.md",
+      "sha256": "66022dd824a745e2fa1eb8649c0f67d7c4702341ed2cc3bbec5847a7da4d8db9"
+    },
+    {
+      "path": "result.md",
+      "sha256": "cec1e8abd87995e4baa8e253164c9614cd71a3145412afc5d2b4525c4e089d91"
+    },
+    {
+      "path": "status.md",
+      "sha256": "7a8e6b81e5b9ac6b5c7f178b98113ec477e5b39e146073650d8d8ed0a1b753bc"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "9c36f319853e8a355f0dec0349ffab5dc2ec03dbf886b7b519d16c80443e4212"
+    }
+  ]
+}

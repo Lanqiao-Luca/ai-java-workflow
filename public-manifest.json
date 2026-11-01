@@ -257,6 +257,46 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/plan-evidence-gated-delivery/README.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/plan-evidence-gated-delivery/artifact-manifest.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/plan-evidence-gated-delivery/case.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/plan-evidence-gated-delivery/inputs.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/plan-evidence-gated-delivery/plan.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/plan-evidence-gated-delivery/result.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/plan-evidence-gated-delivery/status.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/plan-evidence-gated-delivery/trace.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/review-bookmark-rename/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -484,6 +524,11 @@
     {
       "path": "skills/delivery-planning/SKILL.md",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/delivery-planning/example.md",
+      "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
     },
     {

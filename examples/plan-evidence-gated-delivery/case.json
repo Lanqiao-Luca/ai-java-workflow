@@ -1,0 +1,31 @@
+{
+  "case_id": "plan-evidence-gated-delivery",
+  "agent": "agents/delivery-planner.md",
+  "skill": "skills/delivery-planning/SKILL.md",
+  "synthetic": true,
+  "mode": "document_walkthrough",
+  "inputs": [
+    "inputs.json"
+  ],
+  "outputs": [
+    "status.md",
+    "plan.md"
+  ],
+  "acceptance": [
+    {
+      "id": "L1",
+      "expected": "不同候选证据没有混用",
+      "evidence": "status.md"
+    },
+    {
+      "id": "L2",
+      "expected": "依赖计划有明确责任和授权停止点",
+      "evidence": "plan.md"
+    }
+  ],
+  "verification": {
+    "java": "not_applicable",
+    "database": "not_connected",
+    "native_agent": "not_run"
+  }
+}

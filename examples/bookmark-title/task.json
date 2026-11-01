@@ -1,0 +1,55 @@
+{
+  "synthetic": true,
+  "id": "bookmark-title-normalization",
+  "goal": "Trim surrounding whitespace and reject blank bookmark titles while preserving ownership, optimistic version checks and unchanged fields.",
+  "runtime": "pure Java 17; no Spring container or external dependencies",
+  "allowed_write_set": [
+    "after/BookmarkService.java",
+    "tests/BookmarkServiceTest.java"
+  ],
+  "read_only_inputs": [
+    "before/BookmarkService.java",
+    "task.json"
+  ],
+  "forbidden_actions": [
+    "external services",
+    "database access",
+    "global configuration",
+    "publishing"
+  ],
+  "acceptance": [
+    {
+      "id": "A1",
+      "expect": "Surrounding spaces are removed before persistence."
+    },
+    {
+      "id": "A2",
+      "expect": "Null and blank titles reject without state or audit changes."
+    },
+    {
+      "id": "A3",
+      "expect": "Only the owner can rename; ownership checks precede title validation."
+    },
+    {
+      "id": "A4",
+      "expect": "Stale versions reject without changes."
+    },
+    {
+      "id": "A5",
+      "expect": "Tags and saved sequence are unchanged; a successful change increments version and audit once."
+    },
+    {
+      "id": "A6",
+      "expect": "A normalized no-op changes neither version nor audit."
+    },
+    {
+      "id": "A7",
+      "expect": "Missing references reject without changes."
+    }
+  ],
+  "assumptions": [
+    "Titles use String.trim semantics; non-ASCII whitespace normalization is outside this example contract.",
+    "Authentication is upstream; this local model receives a synthetic caller reference.",
+    "Single-process in-memory synchronization only; no database or distributed concurrency claim."
+  ]
+}

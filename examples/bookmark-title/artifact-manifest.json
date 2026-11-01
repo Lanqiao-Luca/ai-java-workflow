@@ -1,0 +1,29 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "task.json",
+      "sha256": "51dd96275a2b6bc2973335fa115d1b6ace12a41bc51c8b4a59056463953b49fb"
+    },
+    {
+      "path": "before/BookmarkService.java",
+      "sha256": "ffe0c5bd2fcb97710f43d14f57e5232a11490fe275f92f82ff42d5a92330b6ea"
+    },
+    {
+      "path": "after/BookmarkService.java",
+      "sha256": "642d65bc0d1a09edd152d88349a4817713b0e436cc51aa2a2388060aff268d62"
+    },
+    {
+      "path": "tests/BookmarkServiceTest.java",
+      "sha256": "020e9f045f13f09d134312357e740694774d7748cce57c9692a22948c8008304"
+    },
+    {
+      "path": "run.py",
+      "sha256": "1d0dc3dea897bbd3e06d24622e02ccfc861020feee72391ba8df2b75b7fcb51c"
+    },
+    {
+      "path": "change.diff",
+      "sha256": "458a1efb32f7d5bcf485dab3412532732aa066d0670bd862119a2b67cf92902e"
+    }
+  ]
+}

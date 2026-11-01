@@ -1,0 +1,15 @@
+--- before/BookmarkService.java
++++ after/BookmarkService.java
+@@ -28,8 +28,10 @@
+         if (!current.owner().equals(caller)) throw new SecurityException("not owner");
+         if (current.version() != expectedVersion) throw new IllegalStateException("stale version");
+         if (title == null) throw new IllegalArgumentException("missing title");
+-        if (current.title().equals(title)) return current;
+-        Bookmark updated = new Bookmark(current.owner(), title, current.tags(),
++        String normalized = title.trim();
++        if (normalized.isEmpty()) throw new IllegalArgumentException("blank title");
++        if (current.title().equals(normalized)) return current;
++        Bookmark updated = new Bookmark(current.owner(), normalized, current.tags(),
+                                         current.savedSequence(), current.version() + 1);
+         entries.put(reference, updated);
+         events.add("title changed");

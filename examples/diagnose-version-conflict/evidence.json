@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "failure": "stale version",
+  "caller": "reader-demo",
+  "snapshot": {
+    "owner": "reader-demo",
+    "title": "Later",
+    "version": 3
+  },
+  "request": {
+    "expected_version": 2,
+    "title": "Read"
+  },
+  "observation_after_rejection": {
+    "title": "Later",
+    "version": 3,
+    "audit_count_before": 1,
+    "audit_count_after": 1
+  },
+  "known_branch_order": [
+    "owner",
+    "version",
+    "title",
+    "write",
+    "audit"
+  ],
+  "coverage": "single synthetic request; not production logs"
+}

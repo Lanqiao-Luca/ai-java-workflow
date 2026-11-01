@@ -1,0 +1,31 @@
+{
+  "case_id": "diagnose-version-conflict",
+  "agent": "agents/diagnostician.md",
+  "skill": "skills/evidence-diagnosis/SKILL.md",
+  "synthetic": true,
+  "mode": "document_walkthrough",
+  "inputs": [
+    "evidence.json"
+  ],
+  "outputs": [
+    "diagnosis.md",
+    "recovery.md"
+  ],
+  "acceptance": [
+    {
+      "id": "D1",
+      "expected": "竞争假设逐项有区分证据",
+      "evidence": "diagnosis.md"
+    },
+    {
+      "id": "D2",
+      "expected": "未把静态合成根因当现场结论或重放许可",
+      "evidence": "recovery.md"
+    }
+  ],
+  "verification": {
+    "java": "not_applicable",
+    "database": "not_connected",
+    "native_agent": "not_run"
+  }
+}

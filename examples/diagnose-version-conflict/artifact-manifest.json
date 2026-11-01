@@ -1,0 +1,33 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "7f247c0b255a199f0ca9414e0a4afb6399b8dd89be5cdb3740b641402d4618c3"
+    },
+    {
+      "path": "case.json",
+      "sha256": "b033666ece8e97c2b54cd8b5aed64975d56d7822614b846fad618f27490ea6c4"
+    },
+    {
+      "path": "diagnosis.md",
+      "sha256": "448cc3b21953b0b4d2dad4a4abf90b51ef50970c4727862759e6ed581f8b14f3"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "ff0605d2f9f9ac58b8318f8185d784a67248e8bec2f20ad2ba12c7e7eacb60b9"
+    },
+    {
+      "path": "recovery.md",
+      "sha256": "db4ae543143212f2374a581694e39ca6779e0c9459a0cfcc7285e19dfb1a98f3"
+    },
+    {
+      "path": "result.md",
+      "sha256": "0b81b99ae2a9ef9dfef718d8a60967aebeef95783b79e47363e15f5732001891"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "ffbdb3844f130ce0c241bdebe697eaea6e4e727a44ee0396f4f0c3f0706ad47d"
+    }
+  ]
+}

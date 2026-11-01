@@ -1,0 +1,31 @@
+{
+  "case_id": "verify-bookmark-title",
+  "agent": "agents/verifier.md",
+  "skill": "skills/verification/SKILL.md",
+  "synthetic": true,
+  "mode": "document_walkthrough",
+  "inputs": [
+    "input.md"
+  ],
+  "outputs": [
+    "coverage.md",
+    "verification-report.md"
+  ],
+  "acceptance": [
+    {
+      "id": "V1",
+      "expected": "验收对应到具体用例和实际观察点",
+      "evidence": "coverage.md"
+    },
+    {
+      "id": "V2",
+      "expected": "缺环境没有当成通过或代码失败",
+      "evidence": "verification-report.md"
+    }
+  ],
+  "verification": {
+    "java": "NOT_RUN",
+    "database": "not_connected",
+    "native_agent": "not_run"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "case_id": "clarify-bookmark-tags",
+  "agent": "agents/requirement-analyst.md",
+  "skill": "skills/requirement-clarification/SKILL.md",
+  "synthetic": true,
+  "mode": "document_walkthrough",
+  "inputs": [
+    "input.md",
+    "decisions.md"
+  ],
+  "outputs": [
+    "requirements.md"
+  ],
+  "acceptance": [
+    {
+      "id": "R1",
+      "expected": "规范化和去重有明确输入输出",
+      "evidence": "requirements.md"
+    },
+    {
+      "id": "R2",
+      "expected": "清空与缺失不同，保持项清楚",
+      "evidence": "requirements.md"
+    },
+    {
+      "id": "R3",
+      "expected": "未决没有当成已确认",
+      "evidence": "decisions.md"
+    }
+  ],
+  "verification": {
+    "java": "not_applicable",
+    "database": "not_connected",
+    "native_agent": "not_run"
+  }
+}

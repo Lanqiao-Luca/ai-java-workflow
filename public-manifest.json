@@ -132,6 +132,46 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/clarify-bookmark-tags/README.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/clarify-bookmark-tags/artifact-manifest.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/clarify-bookmark-tags/case.json",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/clarify-bookmark-tags/decisions.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/clarify-bookmark-tags/input.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/clarify-bookmark-tags/requirements.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/clarify-bookmark-tags/result.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/clarify-bookmark-tags/trace.md",
+      "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "public-manifest.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -194,6 +234,11 @@
     {
       "path": "skills/requirement-clarification/SKILL.md",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/requirement-clarification/example.md",
+      "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
     },
     {

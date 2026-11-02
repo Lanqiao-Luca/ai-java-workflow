@@ -36,7 +36,7 @@ python3 -B examples/concurrent-java-graph/run.py --java-home <JDK目录>
 
 宿主单写状态与Git管理；共享同一runtime_root的Graph使用持久额度池。脏/UNKNOWN资源不force清理，被强杀宿主留下未知active租约时隔离池，不自动复用或向旧PID发信号。只提供审计恢复，不自动续跑。允许必要系统metadata/根目录枚举及明确工具根只读，没有总RAM/总磁盘、全机器外部进程配额或恶意多租户完全防护保证。
 
-[先行执行文档](docs/concurrent-execution-plan.md) · [隔离Skill](skills/workspace-isolation/SKILL.md) · [Graph目录](graphs/README.md)
+[先行执行文档](docs/concurrent-execution-plan.md) · [发布与验证结果](docs/concurrent-execution-results.md) · [隔离Skill](skills/workspace-isolation/SKILL.md) · [Graph目录](graphs/README.md)
 
 ## 从需求到交付：一条完整Java/Spring研发Workflow
 

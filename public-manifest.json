@@ -92,6 +92,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/concurrent-execution-results.md",
+      "origin": "newly_written_publication_result",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/java-spring-workflow-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"

@@ -6,4 +6,6 @@ Graph组织多个已声明Workflow实例的依赖、并发额度和汇合；不�
 - [可执行Graph定义](concurrent-java.json)
 - [真实完整案例](../examples/concurrent-java-graph/README.md)
 
+[执行文档](../docs/concurrent-execution-plan.md) · [交付结果](../docs/concurrent-execution-results.md)
+
 返回：[项目入口](../README.md)。

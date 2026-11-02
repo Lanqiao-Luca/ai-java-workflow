@@ -22,6 +22,8 @@
 
 仓库区分**方法文档、辅助脚本和代码示例**。Skill/Agent文档没有自动注册到平台，也不提供模型、数据库或外部服务客户端；不要求为简单任务启用所有角色。
 
+原生Agent接入正在按[小步执行计划](docs/native-agent-workflow-plan.md)交付：[最小派工适配器](docs/native-agent-adapter.md)已完成真实原生探测与离线反例检查，运行时只在新实例注册探测角色。完整研发阶段尚未接通，不把这个探测当Spring全流程验收。
+
 ## 按执行实例分配资源：Graph调度多个Workflow
 
 [完整并发案例](examples/concurrent-java-graph/README.md)由真实[Graph JSON](graphs/concurrent-java.json)引用3份Workflow JSON，宿主读取合同、角色与Skill身份，再执行已声明的本地argv；不是把10个原生LLM Agent自动派工。共享[执行机制](tools/execution/README.md)是Python标准库实现，不是新的方法层或私有企业Tools。

@@ -127,6 +127,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/native-agent-adapter-results.json",
+      "origin": "newly_written_verified_result",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-agent-adapter.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/native-agent-workflow-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1062,6 +1072,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/probe_native_agent.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "scripts/run_build_graph.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1337,6 +1352,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_native_agents.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tools/docker/Dockerfile",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1399,6 +1419,11 @@
     {
       "path": "tools/execution/runtime.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/native_agents.py",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {

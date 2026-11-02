@@ -1,0 +1,36 @@
+{
+  "status": "SUCCEEDED",
+  "role": "workflow_probe",
+  "protocol": "codex-collaboration-rollout-v1",
+  "child_id_sha256": "7fe5e094d2086c1d8ac104fe8e8a1fff2988ece97ed2afa2e4f91a5b6deba1b6",
+  "spawn_calls": 1,
+  "native_completed": true,
+  "result": {
+    "status": "passed",
+    "summary": "SYNTHETIC_bf50c11ced974674b974f170b5c1528b",
+    "outputs": []
+  },
+  "parent_id_sha256": "7df39d67e6f5399a5ea4b5be511aaf99926e682a3be0a2b10d963009f79e7dfc",
+  "scope": "real native spawn and completion; not a Java/Spring workflow test",
+  "source_sha256": {
+    "tools/native_agents.py": "d47b2f1c58d5ba2569f7da5f0393bc24d42216d44f4b26c28e93982994634a22",
+    "scripts/probe_native_agent.py": "7d8e717e5b38cebf750eb86ffba2a93b299fd0330c6da944acfad82826cb1b63"
+  },
+  "environment": {
+    "controller": "macOS arm64",
+    "codex": "codex-cli 0.166.0-alpha.5.1",
+    "python": "3.9",
+    "linux_runtime": "NOT_RUN"
+  },
+  "offline_protocol_tests": {
+    "passed": 14,
+    "scope": "synthetic protocol and boundary tests, not model executions"
+  },
+  "review": {
+    "independent_context": true,
+    "findings_fixed": [
+      "reject additional parent tool calls",
+      "resolve private path aliases before creating directories"
+    ]
+  }
+}

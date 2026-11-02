@@ -1,0 +1,39 @@
+# 验证与运行指南
+
+目的：按实际使用方式找到检查命令、运行前提与证据，不把静态通过等同于业务执行成功。
+
+## 离线静态检查
+
+从仓库根运行，需要 Python 3.9+，不下载依赖、不调用模型或连接业务服务：
+
+```sh
+python3 -B scripts/check.py
+python3 -B scripts/check_agent_cases.py
+python3 -B scripts/check_workflow_cases.py
+python3 -B scripts/check_graph_cases.py
+python3 -B scripts/check_spring_build_cases.py
+python3 -B scripts/check_docker_cases.py
+python3 -B scripts/check_native_cases.py
+```
+
+第一项核公开清单、隐藏文件/软链接、相对引用、方法字段、层级及早期案例身份。其余检查器校验各类案例的文件集合、声明和简化运行记录是否一致；它们不会重新构建 Spring、启动容器或调用真实模型。原始敏感性及公开权利仍需人工审阅。
+
+## 按模式运行与核证
+
+| 模式 | 运行说明 | 已交付证据与限制 |
+| --- | --- | --- |
+| 纯 Java 角色案例 | [案例](../examples/bookmark-title/README.md)中的 `run.py`，需要 JDK 17+ | [结果](../examples/bookmark-title/result.md)保留原 NOT_RUN；不以其他案例覆盖 |
+| SQL 局部回放 | `python3 -B examples/review-cursor-pagination/replay.py` | 虚构 SQLite 内存语义，不代表 MySQL 性能 |
+| Spring 完整研发链 | [案例运行入口](../examples/workflow-bookmark-tags/README.md) | [发布记录](java-spring-workflow-results.md)：真实红绿测试、同候选审查 |
+| 纯 Java 并发 Graph | [入口与参数](../examples/concurrent-java-graph/README.md) | [结果](../examples/concurrent-java-graph/result.md)：macOS 实验后端、并发及失败约束 |
+| Maven / Gradle Graph | [入口与前提](../examples/spring-build-graph/README.md) | [结果](spring-build-sandbox-results.md)：公开依赖、显式工具及缓存、并发构建 |
+| Docker Graph | [入口与前提](../examples/docker-spring-graph/README.md) | [结果](docker-sandbox-results.md)：双宿主运行、内核限制和未验范围 |
+| 原生 Agent Graph | [入口与前提](../examples/native-spring-workflow/README.md) | [结果](native-agent-workflow-results.md)：真实原生上下文与 Spring 验证 |
+
+需要实际运行时，按所选案例确认公开工程、JDK/构建工具、模型网络或 Docker Engine 条件。构建阶段只使用明确的公开或模拟配置，不继承公司私服、数据库或凭证。原生派工的模型网络及项目信任副作用见[派工接口](native-agent-adapter.md)，不与 Docker 离线构建边界混用。
+
+## 如何报告结果
+
+记录当前源码/候选身份、命令、环境、退出码和实际断言；明确 PASS、预期失败、mock、跳过及 NOT_RUN。输入或实现变化后重验受影响内容，旧回执不能直接覆盖新版本。构建打包不等于应用启动；静态检查通过不等于真实 Agent 完成；一个宿主通过不等于所有平台可用。
+
+[项目入口](../README.md) · [案例目录](../examples/README.md)

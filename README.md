@@ -49,7 +49,7 @@ python3 -B examples/concurrent-java-graph/run.py --java-home <JDK目录>
 
 新增18项回归、原严格26项真实通过且0跳过；错误基线与缺依赖两项实际失败均阻断后代及候选提升。仅macOS已弃用Seatbelt实验后端、可信源码/插件与受限ASCII非隐藏路径；没有跨平台回退或任意Spring工程一键兼容。
 
-[先行执行计划](docs/spring-build-sandbox-plan.md) · [Graph定义](graphs/spring-build.json) · [真实结果与重跑边界](examples/spring-build-graph/result.md)
+[先行执行计划](docs/spring-build-sandbox-plan.md) · [交付与验证结果](docs/spring-build-sandbox-results.md) · [Graph定义](graphs/spring-build.json) · [真实结果与重跑边界](examples/spring-build-graph/result.md)
 
 ## 从需求到交付：一条完整Java/Spring研发Workflow
 

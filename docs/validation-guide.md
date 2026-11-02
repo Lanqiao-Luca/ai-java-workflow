@@ -14,9 +14,10 @@ python3 -B scripts/check_graph_cases.py
 python3 -B scripts/check_spring_build_cases.py
 python3 -B scripts/check_docker_cases.py
 python3 -B scripts/check_native_cases.py
+python3 -B scripts/check_loop_cases.py
 ```
 
-第一项核公开清单、隐藏文件/软链接、相对引用、方法字段、层级及早期案例身份。其余检查器校验各类案例的文件集合、声明和简化运行记录是否一致；它们不会重新构建 Spring、启动容器或调用真实模型。原始敏感性及公开权利仍需人工审阅。
+第一项核公开清单、隐藏文件/软链接、相对引用、方法字段、层级及早期案例身份。其余检查器校验各类案例的文件集合、声明和简化运行记录是否一致；它们不会重新构建 Spring、启动容器或调用真实模型。Loops 检查器另实际执行纯离线判定测试，覆盖模拟控制边界，不启动 Workflow 或业务操作。原始敏感性及公开权利仍需人工审阅。
 
 ## 按模式运行与核证
 

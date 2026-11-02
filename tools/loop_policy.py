@@ -60,3 +60,38 @@ def retry(budget, *, outcome, authorized, identity_current, replay_safe,
     if outcome == "TRANSIENT_FAILURE" and not replay_safe:
         return "HOLD"
     return "ATTEMPT"
+
+
+def convergence(budget, *, candidate, evidence_candidate, required, passed,
+                open_findings, next_action, authorized, side_effect_unknown,
+                evidence_elapsed, evidence_at):
+    """Decide from explicit simulated workflow facts; no automatic remediation.
+
+    The caller must provide actual candidate-bound review and verification facts.
+    A boolean or this decision cannot prove findings were independently closed.
+    """
+    budget.validate()
+    flags(authorized, side_effect_unknown)
+    for value in (candidate, evidence_candidate):
+        if not isinstance(value, str) or not value:
+            raise ValueError("candidate identities required")
+    for values in (required, passed, open_findings):
+        if not isinstance(values, (list, tuple)) or any(not isinstance(v, str) or not v for v in values) or len(set(values)) != len(values):
+            raise ValueError("unique named evidence required")
+    if not required or not set(passed) <= set(required):
+        raise ValueError("invalid acceptance scope")
+    if next_action not in {"none", "fix", "verify", "diagnose"}:
+        raise ValueError("unknown next action")
+    for value in (evidence_elapsed, evidence_at):
+        if type(value) not in (int, float) or not math.isfinite(value) or value < 0:
+            raise ValueError("finite evidence times required")
+    if budget.used == 0 or evidence_elapsed > budget.elapsed or evidence_at > budget.now:
+        raise ValueError("evidence inconsistent with consumed round/time")
+    if side_effect_unknown or candidate != evidence_candidate:
+        return "HOLD"
+    in_time = evidence_elapsed <= budget.seconds and evidence_at <= budget.deadline
+    if set(passed) == set(required) and not open_findings and in_time:
+        return "DONE"
+    if not authorized or budget.exhausted() or budget.used == budget.limit:
+        return "STOP"
+    return "NEXT_ROUND" if next_action != "none" else "STOP"

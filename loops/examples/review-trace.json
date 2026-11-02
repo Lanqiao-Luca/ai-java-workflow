@@ -1,0 +1,103 @@
+{
+  "kind": "synthetic_control_trace",
+  "steps": [
+    {
+      "name": "round-one",
+      "budget": {
+        "limit": 2,
+        "used": 1,
+        "elapsed": 5,
+        "seconds": 60,
+        "now": 1005,
+        "deadline": 1060
+      },
+      "facts": {
+        "candidate": "candidate-a",
+        "evidence_candidate": "candidate-a",
+        "required": [
+          "name_saved",
+          "blank_rejected",
+          "unauthorized_unchanged"
+        ],
+        "passed": [
+          "name_saved",
+          "unauthorized_unchanged"
+        ],
+        "open_findings": [
+          "F-1"
+        ],
+        "next_action": "fix",
+        "authorized": true,
+        "side_effect_unknown": false,
+        "evidence_elapsed": 5,
+        "evidence_at": 1005
+      },
+      "expected": "NEXT_ROUND"
+    },
+    {
+      "name": "new-candidate-old-evidence",
+      "budget": {
+        "limit": 2,
+        "used": 2,
+        "elapsed": 10,
+        "seconds": 60,
+        "now": 1010,
+        "deadline": 1060
+      },
+      "facts": {
+        "candidate": "candidate-b",
+        "evidence_candidate": "candidate-a",
+        "required": [
+          "name_saved",
+          "blank_rejected",
+          "unauthorized_unchanged"
+        ],
+        "passed": [
+          "name_saved",
+          "unauthorized_unchanged"
+        ],
+        "open_findings": [
+          "F-1"
+        ],
+        "next_action": "verify",
+        "authorized": true,
+        "side_effect_unknown": false,
+        "evidence_elapsed": 5,
+        "evidence_at": 1005
+      },
+      "expected": "HOLD"
+    },
+    {
+      "name": "same-round-valid-receipt",
+      "budget": {
+        "limit": 2,
+        "used": 2,
+        "elapsed": 20,
+        "seconds": 60,
+        "now": 1020,
+        "deadline": 1060
+      },
+      "facts": {
+        "candidate": "candidate-b",
+        "evidence_candidate": "candidate-b",
+        "required": [
+          "name_saved",
+          "blank_rejected",
+          "unauthorized_unchanged"
+        ],
+        "passed": [
+          "name_saved",
+          "blank_rejected",
+          "unauthorized_unchanged"
+        ],
+        "open_findings": [],
+        "next_action": "none",
+        "authorized": true,
+        "side_effect_unknown": false,
+        "evidence_elapsed": 19,
+        "evidence_at": 1019
+      },
+      "expected": "DONE"
+    }
+  ]
+}

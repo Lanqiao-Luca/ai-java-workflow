@@ -1212,7 +1212,27 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "loops/examples/review-convergence.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/review-trace.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/review-convergence.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "loops/technical-retry.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/templates/review-convergence.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

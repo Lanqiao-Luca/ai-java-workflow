@@ -7,3 +7,7 @@ Loop 为同一任务提供有限重复与停止策略。具体单轮仍由 Workf
 [研发 Workflow](../workflows/java-spring-development.md) · [原生 Workflow](../workflows/native-java-spring.md) · [项目入口](../README.md)
 
 - [技术失败的有界重试](technical-retry.md)：明确总尝试计数、未知结果查询与停止；附空表和可执行离线判定参考。
+
+- [审查整改的有界收敛](review-convergence.md)：同候选验收、发现复核、有限轮次及停止接续；附[完整虚构案例](examples/review-convergence.md)。
+
+运行 `python3 -B scripts/check_loop_cases.py` 验证离线控制参考。正文与空表是方法，Python 是纯判定参考；当前未接入原生 Graph 的自动整改或恢复。

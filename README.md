@@ -51,6 +51,8 @@ python3 -B examples/concurrent-java-graph/run.py --java-home <JDK目录>
 
 [先行执行计划](docs/spring-build-sandbox-plan.md) · [交付与验证结果](docs/spring-build-sandbox-results.md) · [Graph定义](graphs/spring-build.json) · [真实结果与重跑边界](examples/spring-build-graph/result.md)
 
+Docker容器后端见[先行执行计划](docs/docker-sandbox-plan.md)：当前仅计划，Linux/macOS真实支持以后续验证回执为准；不会用旧macOS后端结果代替Docker实跑。
+
 ## 从需求到交付：一条完整Java/Spring研发Workflow
 
 [Workflow合同](workflows/java-spring-development.md)组织现有Agent，贯通需求确认、设计实现、验证、冻结审查、整改复验和交付。诊断、SQL和文档审验按真实条件选择；方法仍由各Agent经Skill消费Standards，不把角色说明顺序排列当自动执行。

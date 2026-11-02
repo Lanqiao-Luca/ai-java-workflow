@@ -1,0 +1,65 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "4e9f469e404341361b2d709a965b7294f226825d8a2b59875461cea8e98ac31d"
+    },
+    {
+      "path": "build.py",
+      "sha256": "94a63d7629746ba3c401c9bc3a77e48f89303333a785f83471cb44a71292398b"
+    },
+    {
+      "path": "case.json",
+      "sha256": "9a9cdd6a7b388a62c04e1d398498d9f4688b04ec2d54bf6948d73cf19883d1ba"
+    },
+    {
+      "path": "evidence/environment.json",
+      "sha256": "73f5ceef89738c1821aba146b8976c8b2c5872fdb7c3afacb44a2c08ff8e4e90"
+    },
+    {
+      "path": "evidence/image.json",
+      "sha256": "98f1f57d8a47a0b11b3f0f87c24cc9e86df88cc6005dae25621c7f508f83f451"
+    },
+    {
+      "path": "evidence/negative-darwin.json",
+      "sha256": "33d5ef0ff9179678833454e2af8af69605059c18d0be3d21536bbe02b851f98d"
+    },
+    {
+      "path": "evidence/negative-linux.json",
+      "sha256": "c109f9a5f32bd2ab7a50ca52ba5dd6ff8b2d0c37001a2ec5570621bd1aea021a"
+    },
+    {
+      "path": "evidence/resource-closeout.json",
+      "sha256": "fb76959e8637156ce691018419b573de81c6cfc6870321a3bac455049f14cf17"
+    },
+    {
+      "path": "evidence/runtime-darwin.json",
+      "sha256": "511398646677a04591a965baa68149a6e1a3c3702a32a3deae866905f68f0233"
+    },
+    {
+      "path": "evidence/runtime-linux.json",
+      "sha256": "06de222779d183a9767b09093130c2a7b3e43ab21184f41006a59e3c48a9e447"
+    },
+    {
+      "path": "evidence/tests.json",
+      "sha256": "0f17765d9c112a249e7cb4ce86ff6590b9bbeb87b705b87bcbc56d3e307f7d36"
+    },
+    {
+      "path": "negative.py",
+      "sha256": "5c65de4df4478c9e6e9af909ffbbe2a53f15279390975e93de1f55a4e4d8f5d5"
+    },
+    {
+      "path": "overlay/src/test/resources/mockito-extensions/org.mockito.plugins.MemberAccessor",
+      "sha256": "f03c834f2bf5d58702453b8e2441aed4d1dd30afa523d28ad978f79aab56e0c7"
+    },
+    {
+      "path": "result.md",
+      "sha256": "59dd2da2b87ffabfc2278bd6bf439a9eaea26bd8f3d6093adee57619c328d74e"
+    },
+    {
+      "path": "run.py",
+      "sha256": "2486b4fa4fe34b53731b9f65da2416c59321ac6163e3cecb4718f8ea2a21fb47"
+    }
+  ]
+}

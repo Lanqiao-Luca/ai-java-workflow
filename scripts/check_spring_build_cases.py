@@ -207,6 +207,7 @@ def main():
     role = runpy.run_path(str(ROOT / "scripts/check_agent_cases.py"))
     workflow = runpy.run_path(str(ROOT / "scripts/check_workflow_cases.py"))
     graph = runpy.run_path(str(ROOT / "scripts/check_graph_cases.py"))
+    docker = runpy.run_path(str(ROOT / "scripts/check_docker_cases.py"))
     for folder in sorted((ROOT / "examples").iterdir()):
         if not folder.is_dir(): continue
         if folder.name == "bookmark-title":
@@ -218,6 +219,7 @@ def main():
         elif kind == "graph_case": graph["check_graph_case"](folder)
         elif kind == "workflow_case": workflow["check_workflow_case"](folder)
         elif kind == "role_case": role["check_case"](folder)
+        elif kind == "docker_spring_graph_case": docker["check_docker_case"](folder)
         else: raise ValueError("unknown example kind")
     print(f"PASS: {count} Spring build Graph cases; source/catalog, declared results, failure controls and identities only; no builds executed")
 

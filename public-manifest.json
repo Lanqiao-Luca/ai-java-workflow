@@ -367,6 +367,86 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/docker-spring-graph/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/artifact-manifest.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/build.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/case.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/evidence/environment.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/evidence/image.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/evidence/negative-darwin.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/evidence/negative-linux.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/evidence/resource-closeout.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/evidence/runtime-darwin.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/evidence/runtime-linux.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/evidence/tests.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/negative.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/overlay/src/test/resources/mockito-extensions/org.mockito.plugins.MemberAccessor",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/result.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/docker-spring-graph/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/plan-evidence-gated-delivery/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -917,6 +997,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "graphs/docker-spring.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/docker-spring.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "graphs/spring-build.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -938,6 +1028,11 @@
     },
     {
       "path": "scripts/check_agent_cases.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "scripts/check_docker_cases.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1319,6 +1414,26 @@
     {
       "path": "workflows/concurrent-java-title.json",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/docker-spring-integration.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/docker-spring-tags.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/docker-spring-title.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/docker-spring.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {

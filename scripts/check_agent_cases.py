@@ -76,6 +76,7 @@ def main():
     workflow = runpy.run_path(str(ROOT / "scripts/check_workflow_cases.py"))
     graph = runpy.run_path(str(ROOT / "scripts/check_graph_cases.py"))
     build = runpy.run_path(str(ROOT / "scripts/check_spring_build_cases.py"))
+    docker = runpy.run_path(str(ROOT / "scripts/check_docker_cases.py"))
     for folder in sorted((ROOT / "examples").iterdir()):
         if not folder.is_dir():
             continue
@@ -96,6 +97,8 @@ def main():
             graphs += 1
         elif kind == "spring_build_graph_case":
             build["check_spring_build_case"](folder)
+        elif kind == "docker_spring_graph_case":
+            docker["check_docker_case"](folder)
         else:
             raise ValueError("unknown example kind")
     print(f"PASS: {count} role cases, {workflows} workflow cases, {graphs} Graph cases; structure, identities and receipt consistency only")

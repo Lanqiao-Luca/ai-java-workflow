@@ -1,0 +1,25 @@
+{
+  "kind": "graph_definition",
+  "graph_id": "docker-spring",
+  "max_parallel": 2,
+  "nodes": [
+    {
+      "id": "title",
+      "depends_on": [],
+      "workflow": "workflows/docker-spring-title.json"
+    },
+    {
+      "id": "tags",
+      "depends_on": [],
+      "workflow": "workflows/docker-spring-tags.json"
+    },
+    {
+      "id": "integration",
+      "depends_on": [
+        "title",
+        "tags"
+      ],
+      "workflow": "workflows/docker-spring-integration.json"
+    }
+  ]
+}

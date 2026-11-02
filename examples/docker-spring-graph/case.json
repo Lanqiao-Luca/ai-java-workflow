@@ -1,0 +1,66 @@
+{
+  "kind": "docker_spring_graph_case",
+  "case_id": "docker-spring-graph",
+  "synthetic": true,
+  "graph": "graphs/docker-spring.json",
+  "base_case": "examples/spring-build-graph",
+  "runtime_evidence": {
+    "Darwin": "evidence/runtime-darwin.json",
+    "Linux": "evidence/runtime-linux.json"
+  },
+  "tests_evidence": "evidence/tests.json",
+  "negative_evidence": {
+    "Darwin": "evidence/negative-darwin.json",
+    "Linux": "evidence/negative-linux.json"
+  },
+  "image_evidence": "evidence/image.json",
+  "environment_evidence": "evidence/environment.json",
+  "resource_evidence": "evidence/resource-closeout.json",
+  "verification": {
+    "host_os": [
+      "Darwin",
+      "Linux"
+    ],
+    "container_os": "linux",
+    "engine": "explicit_local_unix_cgroup_v2",
+    "linux_host": "owned_vm_guest",
+    "architectures_tested": [
+      "arm64"
+    ],
+    "native_agent": "not_run",
+    "application_start": "not_run",
+    "deployment": "not_run"
+  },
+  "acceptance": [
+    {
+      "id": "reuse",
+      "expected": "Existing public Spring Java/POM/Gradle unchanged; explicit reflection SPI overlay",
+      "evidence": "README.md"
+    },
+    {
+      "id": "parallel",
+      "expected": "Both Workflow and actual build-command windows overlap on both controller OSes",
+      "evidence": "evidence/runtime-darwin.json"
+    },
+    {
+      "id": "integration",
+      "expected": "Exact commits merged then each tool 8 Spring tests and Boot JAR",
+      "evidence": "evidence/runtime-linux.json"
+    },
+    {
+      "id": "kernel",
+      "expected": "18 real probes per instance, cgroup quotas and isolated host loopback",
+      "evidence": "evidence/tests.json"
+    },
+    {
+      "id": "negative",
+      "expected": "Red baseline and offline missing dependency reject promotion and block dependent",
+      "evidence": "evidence/negative-linux.json"
+    },
+    {
+      "id": "lifecycle",
+      "expected": "13 Engine regressions per host, owned resources removed, unknown/dirty state retained",
+      "evidence": "evidence/resource-closeout.json"
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "kind": "docker_spring_graph_receipt",
+  "synthetic": true,
+  "status": "PASSED",
+  "host_os": "Darwin",
+  "host_description": "macos-vm-engine",
+  "container_os": "linux",
+  "image_id": "sha256:8e436d87df9128673fdafa7cef53c33e76848f0f25cb15adb4d28c8d85988ce6",
+  "image_arch": "arm64",
+  "source_id": "beb41333066ab26e2aee320b7effbcb9c8e82449f0a45907c5cc551bf92804c5",
+  "source_sha256": {
+    "agents/container-build-executor.md": "3809699e97b06f2eb931cb1f9bb8f29e63e751795425c1718fe7ee6119a779f3",
+    "examples/docker-spring-graph/build.py": "94a63d7629746ba3c401c9bc3a77e48f89303333a785f83471cb44a71292398b",
+    "examples/docker-spring-graph/negative.py": "5c65de4df4478c9e6e9af909ffbbe2a53f15279390975e93de1f55a4e4d8f5d5",
+    "examples/docker-spring-graph/overlay/src/test/resources/mockito-extensions/org.mockito.plugins.MemberAccessor": "f03c834f2bf5d58702453b8e2441aed4d1dd30afa523d28ad978f79aab56e0c7",
+    "examples/docker-spring-graph/run.py": "2486b4fa4fe34b53731b9f65da2416c59321ac6163e3cecb4718f8ea2a21fb47",
+    "examples/spring-build-graph/seed/build.gradle": "5d3f2f87e518a7b5d2c9d024c03479c9e258f444c62badd6152fa186051cd3c5",
+    "examples/spring-build-graph/seed/build_task.py": "909846b8d776aa753b437c2d7f738dbd91b91f6103959b35406e5fd30deb1e3e",
+    "examples/spring-build-graph/seed/pom.xml": "ea4476f85cdc2c15f209fec30080e04b004a5069513039c7883498ccc57e9d28",
+    "examples/spring-build-graph/seed/settings.gradle": "f6f70dc5d7ebd7e511708bd261fcf75c2f5b85cbb9525493710eb77507fc4bc7",
+    "examples/spring-build-graph/seed/settings.xml": "d307c252a14322027a8d92bcd63d39c68a8335ff8bcd2c7c8d7c4af17a32e1d5",
+    "examples/spring-build-graph/seed/src/main/java/example/graph/App.java": "09105eb8f61725b8a97f140a1c06ef74d03a83188a40cd4a30bbbc2ad84d0fcc",
+    "examples/spring-build-graph/seed/src/main/java/example/graph/TagsApi.java": "7f6bbf4be9f203eb69efbbe0885a3d37ba609f2315717871aae4bc94d1d8e397",
+    "examples/spring-build-graph/seed/src/main/java/example/graph/TitleApi.java": "0fdd39e47fbcd80b58ce4749498c14a61a59509f12cc726bb754928f670d1e41",
+    "examples/spring-build-graph/seed/src/test/java/example/graph/IntegrationTest.java": "0319885f276253460403cdeeb60cd42fc8a383a93e2988adf85f8706a8307fff",
+    "examples/spring-build-graph/seed/src/test/java/example/graph/TagsApiTest.java": "35fda8afde52f47a9ccdf2889cddb91e266b5962f219c557c7ffe52bc2173dff",
+    "examples/spring-build-graph/seed/src/test/java/example/graph/TitleApiTest.java": "f5d7bffd014d1700cdb757a68c7d40fcf9a3643e6960221c959531610a9ac5a4",
+    "examples/spring-build-graph/seed/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker": "8eca853a5a457f17e0479b71dfbe95f2a13aff9eeff250261ecdc8ca9b847a6a",
+    "graphs/docker-spring.json": "56c72d4a16d2401420c57f43606f85d440c49eda02f51eb9e3ff6f09769ccf44",
+    "scripts/run_docker_graph.py": "c6c1ca69818f8326063385702aede4501887c31f3c409195be3c0b9ebad4ec8e",
+    "skills/code-implementation/SKILL.md": "5d658cb11076a82de1917b381d746e82015874936daf0cffb99bfe561d834b4d",
+    "skills/docker-build-isolation/SKILL.md": "98d6dcdbcef2f8312fd43c082075fcb6e7b2a619d31db2410a622348afc59010",
+    "tests/test_docker_backend.py": "9c3dea96a1e601f26e2a3156de9dd5193320ffe9e98dcba3629125358d0eff73",
+    "tests/test_docker_io.py": "549a2676e5cc4a82ebdb5393718d90aad3a4ae6c303c4f22360527a9e965b20f",
+    "tools/docker/Dockerfile": "69a0093a6022dd55c91d1727df1c5f241bb16dbcd2a05c8c8ff8cd2ddb8d520a",
+    "tools/docker/prewarm.py": "31833feeb26978db1af5f15faa80ac83f2d8ca3c4def0dc2eac5309d2a6edff7",
+    "tools/docker/worker.py": "65c957cebdc0bc158f5b246ee6813878994dfdc867a3f4d266c6f7a0f71d9979",
+    "tools/execution/build_cache.py": "a004d59a20332b42ce833cf43660fbb7f78a6ea71deb4a69c18f7cf96292c23e",
+    "tools/execution/build_fixture.py": "d34603a143d6a13299ecd188f5e99acd9fca89d0d145badafeec71d98c5c3806",
+    "tools/execution/build_runtime.py": "430e3da64283039cfb6e6c95f8b202ec0a87395250bdf15de9de592d108b28cc",
+    "tools/execution/catalog.py": "63ad9fea9fc090ab31360194a3a6726ebc776eaf408bed72cef31821fed083b1",
+    "tools/execution/docker_io.py": "994d8a8290004799011f484fe28a5e7df994ca7b0fbd46b4fb017b123d8b1b11",
+    "tools/execution/docker_runtime.py": "7b9eeb081acac76fed112a51f14542eba46238f03f4caefd3e3800b57de05645",
+    "tools/execution/runtime.py": "f674748ca9c371480082a53e9bfc735853b3396d51c9c8c8489418684925e505",
+    "workflows/docker-spring-integration.json": "c5abb1ed851eb26b9e1ea9d5e4434f914c20f830e546d40a165278f3bcabfb67",
+    "workflows/docker-spring-tags.json": "024d68db10f8f6c49859dab7eb001ae0a0a936f2ea0a89c7c4b5680fbcaab3bf",
+    "workflows/docker-spring-title.json": "f23ea7f068febe7bd802107ffa7cc2ec7ea49103fe7f107feae1d645baa82528"
+  },
+  "catalog": {
+    "catalog_id": "2db3382b79376aedff05e1609e62dd6dc814bedc81ae160dea5a4fa79c788e90",
+    "source_sha256": {
+      "graphs/docker-spring.json": "56c72d4a16d2401420c57f43606f85d440c49eda02f51eb9e3ff6f09769ccf44",
+      "workflows/docker-spring-title.json": "f23ea7f068febe7bd802107ffa7cc2ec7ea49103fe7f107feae1d645baa82528",
+      "agents/container-build-executor.md": "3809699e97b06f2eb931cb1f9bb8f29e63e751795425c1718fe7ee6119a779f3",
+      "skills/code-implementation/SKILL.md": "5d658cb11076a82de1917b381d746e82015874936daf0cffb99bfe561d834b4d",
+      "skills/docker-build-isolation/SKILL.md": "98d6dcdbcef2f8312fd43c082075fcb6e7b2a619d31db2410a622348afc59010",
+      "workflows/docker-spring-tags.json": "024d68db10f8f6c49859dab7eb001ae0a0a936f2ea0a89c7c4b5680fbcaab3bf",
+      "workflows/docker-spring-integration.json": "c5abb1ed851eb26b9e1ea9d5e4434f914c20f830e546d40a165278f3bcabfb67"
+    }
+  },
+  "instance_count": 4,
+  "max_parallel": 2,
+  "host_capacity": 2,
+  "peak_parallel": 2,
+  "build_commands_overlap": true,
+  "independent_workflows_overlap": true,
+  "integration_waited": true,
+  "merged_both_commits": true,
+  "source_head_unchanged": true,
+  "resources_removed": true,
+  "all_owned_containers_and_volumes_removed": true,
+  "graph_probe": {
+    "capabilities_dropped": true,
+    "cpu_cgroup_limit": true,
+    "docker_socket_absent": true,
+    "external_network_denied": true,
+    "fork_and_setsid_succeeded": true,
+    "git_pointer_absent": true,
+    "host_file_absent": true,
+    "host_loopback_isolated": true,
+    "memory_cgroup_limit": true,
+    "namespace_drained": true,
+    "no_new_privileges": true,
+    "non_root": true,
+    "only_loopback_interface": true,
+    "own_loopback_ipc": true,
+    "pids_cgroup_limit": true,
+    "readonly_root": true,
+    "seccomp_filter": true,
+    "workspace_write": true
+  },
+  "builds": {
+    "title": {
+      "maven": {
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "tool": "maven",
+        "suites": [
+          "example.graph.TitleApiTest"
+        ],
+        "artifacts": [
+          {
+            "name": "synthetic-spring-graph-1.0.0.jar",
+            "sha256": "231a38724652dd14e701439f41895b8ac4823751a9d56e8c92150dd60b007600",
+            "bytes": 21108214,
+            "boot_jar": true
+          }
+        ],
+        "distinct_test_jvm": true
+      }
+    },
+    "tags": {
+      "gradle": {
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "tool": "gradle",
+        "suites": [
+          "example.graph.TagsApiTest"
+        ],
+        "artifacts": [
+          {
+            "name": "synthetic-spring-graph.jar",
+            "sha256": "7302366671071adb36ea3f56a124223cc486af3290eb391f330d9d6d74f21b41",
+            "bytes": 21106532,
+            "boot_jar": true
+          }
+        ],
+        "distinct_test_jvm": true
+      }
+    },
+    "integration": {
+      "maven": {
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "tool": "maven",
+        "suites": [
+          "example.graph.IntegrationTest",
+          "example.graph.TagsApiTest",
+          "example.graph.TitleApiTest"
+        ],
+        "artifacts": [
+          {
+            "name": "synthetic-spring-graph-1.0.0.jar",
+            "sha256": "81c31f65a70c7073a515ed9016b867edfcfb3916088d5f937e81a22a41b21f1c",
+            "bytes": 21108653,
+            "boot_jar": true
+          }
+        ],
+        "distinct_test_jvm": true
+      },
+      "gradle": {
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "tool": "gradle",
+        "suites": [
+          "example.graph.IntegrationTest",
+          "example.graph.TagsApiTest",
+          "example.graph.TitleApiTest"
+        ],
+        "artifacts": [
+          {
+            "name": "synthetic-spring-graph.jar",
+            "sha256": "8e9b172148df6d67c03865831d1d1a01fc68d2045fb6469edfaae29fdcc3cb09",
+            "bytes": 21106699,
+            "boot_jar": true
+          }
+        ],
+        "distinct_test_jvm": true
+      }
+    }
+  },
+  "nodes": {
+    "title": {
+      "status": "SUCCEEDED",
+      "run_id": "docker-spring/title",
+      "parent_run_id": "docker-spring",
+      "branch": "execution/docker-spring/title",
+      "probe": {
+        "capabilities_dropped": true,
+        "cpu_cgroup_limit": true,
+        "docker_socket_absent": true,
+        "external_network_denied": true,
+        "fork_and_setsid_succeeded": true,
+        "git_pointer_absent": true,
+        "host_file_absent": true,
+        "host_loopback_isolated": true,
+        "memory_cgroup_limit": true,
+        "namespace_drained": true,
+        "no_new_privileges": true,
+        "non_root": true,
+        "only_loopback_interface": true,
+        "own_loopback_ipc": true,
+        "pids_cgroup_limit": true,
+        "readonly_root": true,
+        "seccomp_filter": true,
+        "workspace_write": true
+      },
+      "input_commit": "1fe3ffb06660984cc9a8f9e1430f39ffedabd8c3",
+      "exit": 0,
+      "reason": null,
+      "log_sha256": "1a3ebe3899073f7a6ca8a2ace8eedc41df92417f2a8e45ddfc4c3f567515563a",
+      "tree_stopped": true,
+      "memory_limit": 2147483648,
+      "cpu_limit": 2,
+      "pids_limit": 256,
+      "success": true,
+      "workspace_id": "be8f7792dd63ce5fed9a91f1dc16da77633e95fb53ce82cda3221e2ec20ead0d",
+      "commit": "c34288c0dd9ff51e6b2d643760d7e9e57c7f8e2c"
+    },
+    "tags": {
+      "status": "SUCCEEDED",
+      "run_id": "docker-spring/tags",
+      "parent_run_id": "docker-spring",
+      "branch": "execution/docker-spring/tags",
+      "probe": {
+        "capabilities_dropped": true,
+        "cpu_cgroup_limit": true,
+        "docker_socket_absent": true,
+        "external_network_denied": true,
+        "fork_and_setsid_succeeded": true,
+        "git_pointer_absent": true,
+        "host_file_absent": true,
+        "host_loopback_isolated": true,
+        "memory_cgroup_limit": true,
+        "namespace_drained": true,
+        "no_new_privileges": true,
+        "non_root": true,
+        "only_loopback_interface": true,
+        "own_loopback_ipc": true,
+        "pids_cgroup_limit": true,
+        "readonly_root": true,
+        "seccomp_filter": true,
+        "workspace_write": true
+      },
+      "input_commit": "1fe3ffb06660984cc9a8f9e1430f39ffedabd8c3",
+      "exit": 0,
+      "reason": null,
+      "log_sha256": "931ac265a080eb9ef02929be28f813b688bcd95adcc779e08c9923b0f8bb8910",
+      "tree_stopped": true,
+      "memory_limit": 2147483648,
+      "cpu_limit": 2,
+      "pids_limit": 256,
+      "success": true,
+      "workspace_id": "26849efac225cb87189618cd77065cae676532bcccd631f939249935a2313baa",
+      "commit": "05348f819849b97124ae3287cac76adc806676f7"
+    },
+    "integration": {
+      "status": "SUCCEEDED",
+      "run_id": "docker-spring/integration",
+      "parent_run_id": "docker-spring",
+      "branch": "execution/docker-spring/integration",
+      "probe": {
+        "capabilities_dropped": true,
+        "cpu_cgroup_limit": true,
+        "docker_socket_absent": true,
+        "external_network_denied": true,
+        "fork_and_setsid_succeeded": true,
+        "git_pointer_absent": true,
+        "host_file_absent": true,
+        "host_loopback_isolated": true,
+        "memory_cgroup_limit": true,
+        "namespace_drained": true,
+        "no_new_privileges": true,
+        "non_root": true,
+        "only_loopback_interface": true,
+        "own_loopback_ipc": true,
+        "pids_cgroup_limit": true,
+        "readonly_root": true,
+        "seccomp_filter": true,
+        "workspace_write": true
+      },
+      "input_commit": "d9c21e878fe69dd2f38fd163d6e70b1055f78eb9",
+      "exit": 0,
+      "reason": null,
+      "log_sha256": "5de8dfe02e98a44229b9e35401935b98abe7b04f56580592fc516224549ae5eb",
+      "tree_stopped": true,
+      "memory_limit": 2147483648,
+      "cpu_limit": 2,
+      "pids_limit": 256,
+      "success": true,
+      "workspace_id": "098661dfa9b4826d53b0a378d81d5261488559c161b1773b344fb19c6331db62",
+      "commit": "d9c21e878fe69dd2f38fd163d6e70b1055f78eb9"
+    }
+  }
+}

@@ -127,6 +127,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/native-agent-workflow-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/spring-build-sandbox-plan.md",
       "origin": "newly_written_execution_plan",
       "status": "reviewed_candidate"

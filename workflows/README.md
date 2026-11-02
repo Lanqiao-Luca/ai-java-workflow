@@ -5,4 +5,6 @@ Workflow负责阶段顺序、输入输出交接和失败返回；各Agent自行�
 - [Java/Spring研发全流程](java-spring-development.md)：同一需求与候选，从澄清到实现、验证、审查、整改及交付。
 - [完整虚构案例](../examples/workflow-bookmark-tags/README.md)：书签标签替换，真实Spring装配/MockMvc红绿测试与阶段证据。
 
+[执行文档](../docs/java-spring-workflow-plan.md) · [发布与验证结果](../docs/java-spring-workflow-results.md)
+
 返回：[项目入口](../README.md)。

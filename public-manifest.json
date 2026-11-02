@@ -92,6 +92,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/java-spring-workflow-results.md",
+      "origin": "newly_written_publication_result",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"

@@ -35,7 +35,7 @@
 
 业务角色由作者分阶段手动采用，一名真实分离上下文审阅者覆盖代码、语义、原则和文档范围；没有10个原生Agent自动调度。测试用MOCK环境，不启动监听、不连接数据库或外部服务；合成身份头不是生产认证，不代表部署、压力或多实例验收。
 
-[先行执行文档](docs/java-spring-workflow-plan.md)记录本轮范围与步骤。具备POSIX、Python3.9+、JDK17+、Maven3.6.3+及公开Central网络条件时，可从项目根重跑：
+[先行执行文档](docs/java-spring-workflow-plan.md)记录本轮范围与步骤，[发布与验证结果](docs/java-spring-workflow-results.md)列实际主提交、真实运行和未验边界。具备POSIX、Python3.9+、JDK17+、Maven3.6.3+及公开Central网络条件时，可从项目根重跑：
 
 ```sh
 python3 examples/workflow-bookmark-tags/run.py

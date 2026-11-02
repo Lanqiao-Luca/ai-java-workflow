@@ -1027,6 +1027,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "graphs/native-java-spring.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/native-java-spring.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "graphs/spring-build.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1357,6 +1367,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_native_flow.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tools/docker/Dockerfile",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1427,6 +1442,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tools/native_flow.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "workflows/README.md",
       "origin": "newly_written_synthetic_workflow",
       "status": "reviewed_candidate"
@@ -1474,6 +1494,41 @@
     {
       "path": "workflows/java-spring-development.md",
       "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/native-code-review.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/native-delivery.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/native-implementation.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/native-java-spring.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/native-principle-review.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/native-requirements.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/native-verification.json",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {

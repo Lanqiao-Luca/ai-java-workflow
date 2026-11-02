@@ -1,0 +1,17 @@
+{
+  "kind": "native_workflow",
+  "role": "workflow_implementation",
+  "agents": [
+    "agents/implementer.md"
+  ],
+  "writes": [
+    "app/src/main/java/example/nativeflow/DemoApplication.java",
+    "app/src/main/java/example/nativeflow/LabelService.java",
+    "app/src/main/java/example/nativeflow/LabelController.java",
+    "app/src/test/java/example/nativeflow/ImplementationTest.java",
+    "implementation.md"
+  ],
+  "task": "Read task.md, requirements.md, app/pom.xml and the fixed LabelContractTest. Independently implement the three declared Spring classes, plus ImplementationTest.java with your own meaningful tests. LabelService must be a Spring bean with List<String> normalize(List<String>); LabelController POST /labels/normalize returns JSON labels or HTTP400 for invalid input; DemoApplication supplies Boot configuration. No database, auth, external service or listener. Do not change POM or fixed contract tests. Write implementation.md explaining actual choices, preservation, method consumption and untested boundaries. Do not claim tests ran unless you actually ran them; a verifier follows.",
+  "preserve_candidate": false,
+  "validate": false
+}

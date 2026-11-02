@@ -1,0 +1,15 @@
+{
+  "kind": "native_workflow",
+  "role": "workflow_code_review",
+  "agents": [
+    "agents/code-reviewer.md",
+    "agents/semantic-reviewer.md",
+    "agents/document-reviewer.md"
+  ],
+  "writes": [
+    "code-review.md"
+  ],
+  "task": "Read requirements, current Java and tests, verification.md and host validation.json. Review code, API semantics, counterexamples, preservation and documentation against this exact frozen candidate. Write code-review.md with candidate_id, actual method decisions, concrete findings or bounded no-findings, and untested limits. Do not edit any code/test/other document or run external calls. Return status failed if a necessary finding remains; do not declare an unresolved issue passed. The first line of every Markdown output must be candidate_id: <exact current app/POM+src digest>. For verification read the freshly executed .build/validation.json; for review/delivery read host validation.json. Never reuse an earlier candidate identity.",
+  "preserve_candidate": true,
+  "validate": false
+}

@@ -6,7 +6,7 @@
 
 ## 仓库里有什么
 
-**3条并发Graph · 1条完整研发Workflow · 9份可执行Workflow定义 · 19份规范 · 14项技能 · 12项角色职责 · 10条角色案例 · 4条集成案例**。
+**3条命令型并发Graph＋1条原生Agent Graph · 1条完整研发Workflow · 9份命令型和6份原生Workflow定义 · 19份规范 · 14项技能 · 12项角色职责 · 10条角色案例 · 4条集成案例**。
 
 | 你想做什么 | 从这里进入 | 能拿到什么 |
 | --- | --- | --- |
@@ -22,7 +22,7 @@
 
 仓库区分**方法文档、辅助脚本和代码示例**。Skill/Agent文档没有自动注册到平台，也不提供模型、数据库或外部服务客户端；不要求为简单任务启用所有角色。
 
-原生Agent接入正在按[小步执行计划](docs/native-agent-workflow-plan.md)交付：[最小派工适配器](docs/native-agent-adapter.md)已完成真实原生探测与离线反例检查，运行时只在新实例注册探测角色。完整研发阶段尚未接通，不把这个探测当Spring全流程验收。
+原生Agent接入正在按[小步执行计划](docs/native-agent-workflow-plan.md)交付：[最小派工适配器](docs/native-agent-adapter.md)已完成真实探测，[六阶段Graph引擎](graphs/native-java-spring.md)已接通需求、实现、验证、双审查和交付的原生声明与门禁。完整Spring实跑案例尚待下一步，不把探测或mock门禁测试当全流程业务验收。
 
 ## 按执行实例分配资源：Graph调度多个Workflow
 

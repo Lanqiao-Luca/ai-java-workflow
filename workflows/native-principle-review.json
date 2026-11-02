@@ -1,0 +1,13 @@
+{
+  "kind": "native_workflow",
+  "role": "workflow_principle_review",
+  "agents": [
+    "agents/principle-reviewer.md"
+  ],
+  "writes": [
+    "principle-review.md"
+  ],
+  "task": "Read task, requirements, implementation, verification and host validation.json. Independently review scope, synthetic/public provenance, evidence consistency, role boundaries and completion claims against the exact frozen candidate. Write principle-review.md with candidate_id, applied methods, pass/fail/unknown distinctions, concrete issues and limits. Do not change code/tests or other documents. Return failed for a blocking violation or missing necessary evidence. The first line of every Markdown output must be candidate_id: <exact current app/POM+src digest>. For verification read the freshly executed .build/validation.json; for review/delivery read host validation.json. Never reuse an earlier candidate identity.",
+  "preserve_candidate": true,
+  "validate": false
+}

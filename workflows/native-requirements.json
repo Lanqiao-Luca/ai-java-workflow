@@ -1,0 +1,13 @@
+{
+  "kind": "native_workflow",
+  "role": "workflow_requirements",
+  "agents": [
+    "agents/requirement-analyst.md"
+  ],
+  "writes": [
+    "requirements.md"
+  ],
+  "task": "Read task.md and the fixed contract tests. Write requirements.md with confirmed API/semantics, scope, unchanged behavior, independently synthetic provenance, observable acceptance, and actual method/Skill decisions. All essential decisions are already in task.md; do not invent business rules. Do not implement Java or edit fixed tests.",
+  "preserve_candidate": false,
+  "validate": false
+}

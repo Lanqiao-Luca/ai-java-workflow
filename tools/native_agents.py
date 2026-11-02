@@ -15,6 +15,15 @@ class NativeRejected(RuntimeError):
     pass
 
 
+def native_environment(environ=None):
+    """Use normal local login and explicit transport, not unrelated service credentials."""
+    source = os.environ if environ is None else environ
+    allowed = {"PATH", "HOME", "USER", "LOGNAME", "TMPDIR", "TMP", "TEMP", "LANG", "LC_ALL", "TERM",
+               "CODEX_HOME", "HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY",
+               "http_proxy", "https_proxy", "all_proxy", "no_proxy"}
+    return {key: value for key, value in source.items() if key in allowed}
+
+
 def rows(path, limit=16 * 1024 * 1024):
     path = Path(path)
     if path.is_symlink() or not path.is_file() or path.stat().st_size > limit:
@@ -138,7 +147,7 @@ def dispatch(cwd, role, task, run_dir, codex="codex", session_root=None, timeout
     try:
         with (run_dir / "events.jsonl").open("wb") as stdout, (run_dir / "stderr.log").open("wb") as stderr:
             process = subprocess.Popen(command, stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr,
-                                       start_new_session=True)
+                                       start_new_session=True, env=native_environment())
             deadline = time.monotonic() + timeout
             while process.poll() is None:
                 if time.monotonic() >= deadline or stdout.tell() + stderr.tell() > 16 * 1024 * 1024:

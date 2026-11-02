@@ -7,13 +7,13 @@
   "native_completed": true,
   "result": {
     "status": "passed",
-    "summary": "SYNTHETIC_bf50c11ced974674b974f170b5c1528b",
+    "summary": "SYNTHETIC_a6c6d73d69cd4b788ba8c79b00e72de5",
     "outputs": []
   },
-  "parent_id_sha256": "7df39d67e6f5399a5ea4b5be511aaf99926e682a3be0a2b10d963009f79e7dfc",
+  "parent_id_sha256": "a4f6cd6799df67c3349cccbbd054dab61970f0ad51d1824960efa4858bf03fda",
   "scope": "real native spawn and completion; not a Java/Spring workflow test",
   "source_sha256": {
-    "tools/native_agents.py": "d47b2f1c58d5ba2569f7da5f0393bc24d42216d44f4b26c28e93982994634a22",
+    "tools/native_agents.py": "e02e4a976ab6b18ecf215d8d6feaf5a70588ccbdc27a2c2413e564cc169e14bd",
     "scripts/probe_native_agent.py": "7d8e717e5b38cebf750eb86ffba2a93b299fd0330c6da944acfad82826cb1b63"
   },
   "environment": {
@@ -23,7 +23,7 @@
     "linux_runtime": "NOT_RUN"
   },
   "offline_protocol_tests": {
-    "passed": 14,
+    "passed": 15,
     "scope": "synthetic protocol and boundary tests, not model executions"
   },
   "review": {
@@ -32,5 +32,6 @@
       "reject additional parent tool calls",
       "resolve private path aliases before creating directories"
     ]
-  }
+  },
+  "minimal_environment_probe": true
 }

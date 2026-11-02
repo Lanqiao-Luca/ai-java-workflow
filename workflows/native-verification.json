@@ -1,0 +1,14 @@
+{
+  "kind": "native_workflow",
+  "role": "workflow_verification",
+  "agents": [
+    "agents/verifier.md"
+  ],
+  "writes": [
+    "app/src/test/java/example/nativeflow/IndependentVerificationTest.java",
+    "verification.md"
+  ],
+  "task": "Read confirmed requirements and current Java. Add IndependentVerificationTest.java with independent edge checks, without editing production Java or fixed/author tests. Run python3 -B verify.py --offline in this worktree and inspect .build/validation.json. This frozen runner uses explicit tools and public prewarmed cache only. Write verification.md with acceptance-to-assertion coverage, actual counts, exit, candidate identity, and NOT_RUN boundaries. On failure return status failed with a concrete diagnosis; do not weaken or delete tests. Do not run a server or access a database. The first line of every Markdown output must be candidate_id: <exact current app/POM+src digest>. For verification read the freshly executed .build/validation.json; for review/delivery read host validation.json. Never reuse an earlier candidate identity.",
+  "preserve_candidate": false,
+  "validate": true
+}

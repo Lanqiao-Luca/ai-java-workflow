@@ -1,0 +1,13 @@
+{
+  "kind": "native_workflow",
+  "role": "workflow_delivery",
+  "agents": [
+    "agents/delivery-planner.md"
+  ],
+  "writes": [
+    "delivery.md"
+  ],
+  "task": "Read requirements, validation.json, verification and both independent reviews. Write delivery.md for the same candidate: delivered behavior, artifact identity, actual build/test results, review status, remaining risks, commands to reproduce, and untested server/database/deployment boundaries. No Git write, push, release, deployment or network business call is authorized inside this synthetic Graph. Actual project publication is separately performed by its native github_committer under the current user authorization. Do not confuse a delivery report with a deployed service. The first line of every Markdown output must be candidate_id: <exact current app/POM+src digest>. For verification read the freshly executed .build/validation.json; for review/delivery read host validation.json. Never reuse an earlier candidate identity.",
+  "preserve_candidate": true,
+  "validate": false
+}

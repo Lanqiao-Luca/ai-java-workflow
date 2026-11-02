@@ -1,0 +1,48 @@
+{
+  "kind": "native_graph",
+  "graph_id": "native-java-spring",
+  "max_parallel": 2,
+  "nodes": [
+    {
+      "id": "requirements",
+      "depends_on": [],
+      "workflow": "workflows/native-requirements.json"
+    },
+    {
+      "id": "implementation",
+      "depends_on": [
+        "requirements"
+      ],
+      "workflow": "workflows/native-implementation.json"
+    },
+    {
+      "id": "verification",
+      "depends_on": [
+        "implementation"
+      ],
+      "workflow": "workflows/native-verification.json"
+    },
+    {
+      "id": "code_review",
+      "depends_on": [
+        "verification"
+      ],
+      "workflow": "workflows/native-code-review.json"
+    },
+    {
+      "id": "principle_review",
+      "depends_on": [
+        "verification"
+      ],
+      "workflow": "workflows/native-principle-review.json"
+    },
+    {
+      "id": "delivery",
+      "depends_on": [
+        "code_review",
+        "principle_review"
+      ],
+      "workflow": "workflows/native-delivery.json"
+    }
+  ]
+}

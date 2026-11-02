@@ -5,7 +5,7 @@ import json
 import tempfile
 import unittest
 
-from tools.native_agents import NativeRejected, dispatch, native_completion, own_rollout, rows
+from tools.native_agents import NativeRejected, dispatch, native_completion, native_environment, own_rollout, rows
 
 
 def fixture(role="workflow_probe"):
@@ -22,6 +22,13 @@ def fixture(role="workflow_probe"):
 
 
 class NativeProtocolTests(unittest.TestCase):
+    def test_unrelated_credentials_are_not_inherited_by_native_process(self):
+        environment = native_environment({"PATH": "/synthetic/bin", "HOME": "/synthetic/home",
+            "HTTPS_PROXY": "http://proxy.example.invalid:8080", "SPRING_DATASOURCE_PASSWORD": "synthetic",
+            "AWS_SECRET_ACCESS_KEY": "synthetic", "DB_PASSWORD": "synthetic",
+            "CUSTOM_SERVICE_CREDENTIAL": "synthetic", "OPENAI_API_KEY": "synthetic"})
+        self.assertEqual(set(environment), {"PATH", "HOME", "HTTPS_PROXY"})
+
     def test_native_call_and_completion_pair(self):
         receipt = native_completion(fixture(), "workflow_probe")
         self.assertTrue(receipt["native_completed"])

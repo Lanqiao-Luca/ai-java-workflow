@@ -7,7 +7,7 @@
 - [命令入口](../../scripts/run_graph.py)：显式执行/取消/审计检查，不推送、不注册平台。
 - [真实回归](../../tests/test_execution.py)：仅临时虚构Git与自造canary，不读真实凭证。
 
-平台：当前仅macOS sandbox-exec实验前台后端。目录/环境变量清理本身不作为沙箱证明。默认deny-by-default，允许必要系统/工具读、文件metadata及根目录枚举，拒相邻内容/写入、Git管理目录、网络、fork和脱离会话。不是恶意多租户安全产品。
+旧严格前台模式的平台：仅macOS sandbox-exec实验后端。目录/环境变量清理本身不作为沙箱证明。默认deny-by-default，允许必要系统/工具读、文件metadata及根目录枚举，拒相邻内容/写入、Git管理目录、网络、fork和脱离会话。不是恶意多租户安全产品。
 
 资源：每Graph额度+同运行根跨Graph租约；墙钟/CPU及单文件8MiB，日志超过64KiB拒收。没有总RAM、总磁盘或机器上所有外部进程的统一配额。池的active标记先持久化再派发；宿主退出留下未知占用时隔离，不能换ID清零。只支持审计恢复，不自动续跑。
 
@@ -24,3 +24,7 @@
 [完整Spring案例](../../examples/spring-build-graph/README.md)真实Maven/Gradle测试与Boot JAR打包通过，未启动应用或部署。依赖预热联网与Graph离线分开，工具/缓存/日志不进Git；不自动安装系统工具或启动后台服务。
 
 [build_fixture.py](build_fixture.py)保留异常/UNKNOWN的原运行目录；公开依赖预热同样监督已观察子树并等待停止，未确认停止不封存缓存。仅成功验证且确认停止后回收。
+
+## Docker容器模式
+
+[Docker机制](Docker.md)与[显式CLI](../../scripts/run_docker_graph.py)新增本地Linux Engine/cgroups v2后端，不初始化Seatbelt；Linux/macOS控制器分别实测，范围见[完整Docker案例](../../examples/docker-spring-graph/README.md)。network none隔宿主loopback，私有PID结束停止setsid后代；有界tar代替宿主目录/socket挂载。控制面未知保留原根/租约；Engine/镜像/内核/VM是可信边界，命名卷无总磁盘硬配额。在线镜像准备与离线Graph分开，无注册、自动模型调用或裸跑回退。

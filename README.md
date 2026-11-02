@@ -6,10 +6,11 @@
 
 ## 仓库里有什么
 
-**2条并发Graph · 1条完整研发Workflow · 6份可执行Workflow定义 · 18份规范 · 13项技能 · 11项角色职责 · 10条角色案例 · 3条集成案例**。
+**3条并发Graph · 1条完整研发Workflow · 9份可执行Workflow定义 · 19份规范 · 14项技能 · 12项角色职责 · 10条角色案例 · 4条集成案例**。
 
 | 你想做什么 | 从这里进入 | 能拿到什么 |
 | --- | --- | --- |
+| 在Docker中构建Spring Boot | [Docker Graph](graphs/docker-spring.md)、[双宿主完整案例](examples/docker-spring-graph/README.md) | macOS与Linux VM内控制器实跑；真实容器限制、并发构建及合并后验收 |
 | 并发构建Spring Boot | [可信构建Graph](graphs/spring-build.md)、[Maven/Gradle完整案例](examples/spring-build-graph/README.md) | 2作业实际并发、合并后每工具8项测试与Boot JAR；显式macOS可信模式 |
 | 并发运行隔离的Workflow | [Graph合同](graphs/concurrent-java.md)、[完整Java并发案例](examples/concurrent-java-graph/README.md) | 每run_id独立worktree与已探测前台sandbox，2功能并发后串行集成/8断言；仅macOS实验后端 |
 | 跑通一个完整研发案例 | [Java/Spring Workflow](workflows/java-spring-development.md)、[书签标签集成案例](examples/workflow-bookmark-tags/README.md) | 同一需求与候选、真实Spring/MockMvc红绿13测试、诊断修复及同候选审查 |
@@ -51,7 +52,17 @@ python3 -B examples/concurrent-java-graph/run.py --java-home <JDK目录>
 
 [先行执行计划](docs/spring-build-sandbox-plan.md) · [交付与验证结果](docs/spring-build-sandbox-results.md) · [Graph定义](graphs/spring-build.json) · [真实结果与重跑边界](examples/spring-build-graph/result.md)
 
-Docker容器后端见[先行执行计划](docs/docker-sandbox-plan.md)：当前仅计划，Linux/macOS真实支持以后续验证回执为准；不会用旧macOS后端结果代替Docker实跑。
+## Docker容器模式：双宿主Spring Boot Graph
+
+[完整Docker案例](examples/docker-spring-graph/README.md)沿用原公开Spring seed，原Java/POM/Gradle字节不改，仅增加明确的Mockito reflection SPI测试配置。显式Docker后端从macOS控制器与同一Linux VM内控制器分别真实运行，测试架构arm64；不是独立物理Linux或所有Docker发行版验证。旧macOS两模式的源码、案例与历史身份保持。
+
+两个功能分别Maven3测试与Gradle3测试，Workflow及实际构建命令窗口均重叠；精确合入后每工具8项相同Spring/MockMvc测试和Boot JAR打包通过。4实例使用7容器/12独立卷，每实例18项实际探测；每宿主13项Engine回归（含2项明确宿主故障注入）及8项IO单元通过。错误基线和缺依赖两失败均阻断后代/提升；专用测试Engine按SDK标签复核0容器/0卷，独立VM已停止。
+
+容器非root、只读root、cap-drop ALL、NNP/seccomp、私有PID/IPC/cgroup及network none；内核CPU/内存/PID限额和宿主loopback隔离均实测。宿主Git/socket/目录不挂入，白名单有界tar导入导出，仅声明源码提升。超时/取消停止整个容器，未知控制面保留active、原根与归属，不自动重放；无裸进程或Seatbelt回退。
+
+仅明确本地Unix socket的Linux Engine/cgroups v2与受审内容地址镜像；镜像准备可联网，Graph离线。镜像/工具/VM状态不上传。命名卷无总磁盘硬配额；Engine/内核/镜像/VM是可信计算基，非绝对防逃逸保证。未验证amd64/rootless/Docker Desktop/Windows容器，未启动应用、数据库或部署；输入仍限ASCII非隐藏与无链接/子模块/属性过滤器。
+
+[先行计划](docs/docker-sandbox-plan.md) · [发布与验证结果](docs/docker-sandbox-results.md) · [Docker机制](tools/execution/Docker.md)
 
 ## 从需求到交付：一条完整Java/Spring研发Workflow
 
@@ -125,9 +136,10 @@ python3 scripts/check_agent_cases.py
 python3 scripts/check_workflow_cases.py
 python3 scripts/check_graph_cases.py
 python3 scripts/check_spring_build_cases.py
+python3 scripts/check_docker_cases.py
 ```
 
-检查公开清单、相对引用、方法层交接、案例源码SHA与实际diff。新增Workflow检查器核阶段声明、源包/编译候选与运行回执一致性；它不重跑测试，也不代语义审查。Graph检查器还核源码/catalog身份、26回归和4实例回执一致性，不执行沙箱或Java。未知案例类型或目录报错，不静默跳过。构建Graph检查器核新旧回归身份、双工具JUnit/子JVM/打包摘要与失败阻断回执；四类显式分派，不实际构建。静态通过不代表公司敏感性、公开权利或业务运行全部得到证明。
+检查公开清单、相对引用、方法层交接、案例源码SHA与实际diff。新增Workflow检查器核阶段声明、源包/编译候选与运行回执一致性；它不重跑测试，也不代语义审查。Graph检查器还核源码/catalog身份、26回归和4实例回执一致性，不执行沙箱或Java。未知案例类型或目录报错，不静默跳过。构建Graph检查器核新旧回归身份、双工具JUnit/子JVM/打包摘要与失败阻断回执；五类显式分派，不实际构建。Docker检查器核双宿主、来源/catalog/image/context、18探测、13+8回归及故障注入披露、失败阻断和资源关闭，仅校回执一致性。静态通过不代表公司敏感性、公开权利或业务运行全部得到证明。
 
 本地有JDK 17+时，再运行：
 
@@ -150,7 +162,7 @@ Java运行器先核源码身份，再在临时目录分别编译基线与候选�
 | 早期纯Java角色案例 | 12项契约用例未重跑，保留原NOT_RUN；不被新Spring实例覆盖 |
 | 新增Spring集成案例 | 真实上下文/MockMvc红绿各13测试；同候选审查完成，范围见案例记录 |
 | 生产Spring工程、数据库和模型接入 | 新案例仅本地MOCK上下文；生产系统、真实认证和数据库等由使用者另行验证 |
-| Graph与实例资源 | 旧严格前台和新可信Maven/Gradle模式显式区分；真实worktree/继承沙箱/失败阻断，非原生LLM调度、跨平台或容器级任意后代隔离 |
+| Graph与实例资源 | 旧macOS严格前台/可信构建与新Docker模式显式选择；Docker在macOS与Linux VM内控制器实跑，真实容器限制及失败阻断；无原生LLM调度或任意平台兼容保证 |
 
 方法不固定所有项目的JDK、Spring或数据库版本，按真实工程事实核适用性。源码身份变化后应刷新受影响证据；作者自查、独立审阅、真实运行和最终采用分别声明。
 

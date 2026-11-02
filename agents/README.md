@@ -20,3 +20,5 @@ Java用例未实跑；查询案例仅有进程内SQLite语义回放，其他案�
 [全部案例](../examples/README.md) · [执行文档](../docs/agent-publication-plan.md) · [发布结果](../docs/agent-publication-results.md)
 
 [Java构建执行者](java-build-executor.md)为新增第11项职责，服务于[Spring构建Graph](../examples/spring-build-graph/README.md)。旧十个角色教材运行状态保持；新案例运行确定性夹具，不声称原生AI自动编码。
+
+[容器构建执行者](container-build-executor.md)为第12项职责，通过Skill核显式本地Docker/镜像、容器限制和真实验收；[完整案例](../examples/docker-spring-graph/README.md)使用确定性命令，非平台注册或LLM派工。

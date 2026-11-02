@@ -32,3 +32,7 @@
 ## 真实Maven/Gradle构建Graph
 
 [Spring Boot并发构建](spring-build-graph/README.md)：Maven3项与Gradle3项功能测试真实并发，合入后每工具8项；4次Boot JAR结构打包，未启动应用/部署。4实例各9探测、新18旧26回归通过，两真实失败阻断提升。可信模式允许fork/loopback，容量2是作业槽；非任意恶意后代容器。
+
+## Docker双宿主Spring Graph
+
+[Docker Spring Boot完整案例](docker-spring-graph/README.md)：同一公开seed与内容地址镜像，在macOS与同一Linux VM内控制器分别实跑；并发3+3→集成每工具8、Boot JAR、4实例各18探测及每宿主13 Engine+8 IO回归。Engine测试含2项明确host故障注入，IO不计内核实跑。未启动应用或部署，VM已停止，旧历史保持。

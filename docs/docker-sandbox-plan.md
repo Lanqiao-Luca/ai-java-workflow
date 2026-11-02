@@ -35,3 +35,9 @@
 ## 交付顺序
 
 本计划先行本地提交；当前不修改实现、历史案例或About，也不将计划当成Docker支持已可用。实际验证完成后再提交实现、完整案例与结果，统一普通push并读回核验。
+
+## 实际完成范围
+
+本计划先行提交后，分别交付后端/安全I/O与契约测试、双宿主Spring Graph案例及显式类型检查、结果展示，按业务目的拆分提交。macOS静态CLI通过独立Lima Linux Engine，另在同一Linux VM内真实执行Linux控制器；非独立物理Linux验证。实测arm64/Engine29.5.2/cgroups v2，固定本地image ID；镜像未push，验证后SDK标签资源0容器/0卷且VM停止。
+
+每宿主真实13 Engine回归含2项明确host故障注入，8 IO为单元检查；并发两功能3+3，精确集成后每工具8项相同业务测试与JAR结构打包。未启动应用或部署；原seed和旧后端身份不改，仅新增公开Mockito reflection SPI覆盖文件。Docker Desktop/rootless/amd64/独立物理Linux未验证，命名卷无总磁盘硬配额。具体来源、回执和限制见[完整案例](../examples/docker-spring-graph/README.md)及[发布结果](docker-sandbox-results.md)。

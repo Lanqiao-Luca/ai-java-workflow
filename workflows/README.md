@@ -19,3 +19,7 @@ Workflow负责阶段顺序、输入输出交接和失败返回；各Agent自行�
 ## 可信Spring构建
 
 [执行合同](spring-build.md)消费专门构建职责与隔离Skill；[Maven标题](spring-build-title.json)、[Gradle标签](spring-build-tags.json)并行，[集成](spring-build-integration.json)在依赖成功后用两种工具验证同一合并候选。[完整案例](../examples/spring-build-graph/README.md)明确一次性Daemon opt-in与进程树边界。
+
+## Docker构建
+
+[容器Workflow合同](docker-spring.md)消费专门容器执行者职责；[Maven标题](docker-spring-title.json)、[Gradle标签](docker-spring-tags.json)并发，[集成](docker-spring-integration.json)精确合并后每工具8测试。对应[Docker案例](../examples/docker-spring-graph/README.md)分别标明实际宿主与Engine范围。

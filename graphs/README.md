@@ -12,3 +12,5 @@ Graph组织多个已声明Workflow实例的依赖、并发额度和汇合；不�
 
 - [Spring Boot可信构建Graph](spring-build.md)与[JSON定义](spring-build.json)：Maven/Gradle功能并发，合入后每工具8测试及Boot JAR。
 - [完整构建案例](../examples/spring-build-graph/README.md)：仅macOS实验可信模式，允许fork/loopback，非旧严格前台模式。
+
+- [Docker Spring Graph](docker-spring.md)与[JSON](docker-spring.json)：Linux/macOS显式本地Engine，双宿主真实Spring并发与容器探测；[完整案例](../examples/docker-spring-graph/README.md)。

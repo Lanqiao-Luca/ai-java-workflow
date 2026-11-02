@@ -1,0 +1,41 @@
+{
+  "kind": "native_spring_workflow_case",
+  "case_id": "native-spring-workflow",
+  "synthetic": true,
+  "graph": "graphs/native-java-spring.json",
+  "status": "PASSED",
+  "export": {
+    "kind": "reversible_method_rebase",
+    "from": "catalog/",
+    "to": "../../../"
+  },
+  "public_document_abstracts": {
+    "code-review.md": {
+      "kind": "independent_public_summary",
+      "native_sha256": "3f47f6544b767aee0311730bb90fc94ea89fdf3737e1e985df73f85b7059bb69",
+      "public_sha256": "44db706412c016370131b82fdc33e1b16de3aee42d1d7ab77ad6f606f019c5ce"
+    },
+    "implementation.md": {
+      "kind": "independent_public_summary",
+      "native_sha256": "7f249046380de09db22f6a1e189174ef13bdaddc11b33ec31a3cf8107f53b3e5",
+      "public_sha256": "77da07a52af72291656b529fac6793d66d27137c44656871ad9f1891df057db6"
+    }
+  },
+  "validation_link_rebase": [
+    "verification.md"
+  ],
+  "verification": {
+    "native_agent": "six_real_native_roles_completed",
+    "java": "real_spring_mockmvc",
+    "database": "not_connected",
+    "deployment": "NOT_RUN"
+  },
+  "prior_attempt": {
+    "native_verifier": "completed_with_failed_result",
+    "tests": 27,
+    "errors": 27,
+    "business_assertions": "not_reached",
+    "cause": "default Mockito inline self-attachment blocked by native shell sandbox",
+    "action": "public subclass MockMaker test SPI; new explicit instance, no assertions weakened or old green reused"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "kind": "native_spring_graph_receipt",
+  "status": "SUCCEEDED",
+  "synthetic": true,
+  "candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+  "seed_id": "be2fd577a943eaae1d4aa5e3ba0b7b02ad19a8cc2b4ffe16ec308fdc0dd39a77",
+  "historical_catalog_input_id": "abe3dc18d25706742451ad4e0cea3c135ec0f7e988d96f0261f7bc57e278bea3",
+  "source_sha256": {
+    "agents/README.md": "ab568b231c46fdd13c07272ae21391538c14dfc0ccdd377b3072fdebfa4ce450",
+    "agents/code-reviewer.md": "841d7f03d2c2def200f409c12e5cdd759fb52676104e1f8de8a5b2fc0e940b0f",
+    "agents/container-build-executor.md": "3809699e97b06f2eb931cb1f9bb8f29e63e751795425c1718fe7ee6119a779f3",
+    "agents/delivery-planner.md": "a416a564b924cd550166ac96b97d2a6037462f0e632dc3e359d2af2ba46ae6ca",
+    "agents/diagnostician.md": "2dea40c77995d21e856a83f4dfcae8913b2f885081a6b2315060d1692238d779",
+    "agents/document-reviewer.md": "71a106afbe702402b403d8f47b382eebf3632dc5a28639d0543ac260e57836b8",
+    "agents/implementer.md": "a46c1c2e6461d0a5a9d689c0dca053b4f952f0bcabc668a8ebc62c7e71280e9d",
+    "agents/java-build-executor.md": "faa93b5d215e7fca5632bb51d14d262e475a716b3122383cfcecfe099ecbee47",
+    "agents/principle-reviewer.md": "589a24614bf1ec2b8a6959b9a30fd84a9cae0c1519c4fc0f0be26ae0d4733db6",
+    "agents/query-reviewer.md": "2e2bf56f1e395ef3462812dd563fdcbc5d0aa4a6567868d7ebfbbf7850c741d3",
+    "agents/requirement-analyst.md": "09c87f070c7ecde7cf75b8db63601bb0d680dfd4948403de4c98c4ce16e780de",
+    "agents/semantic-reviewer.md": "75ee33b4aa633ed022d7f870bdbae663cecddb808b11087aac11dda32d029875",
+    "agents/verifier.md": "61deeebd54a8957346c79bb3da612fd6ec9d853d1d27cc39a09ca2e2e17816da",
+    "examples/native-spring-workflow/run.py": "1460a19744f600cee2bb7b9d418b9f24e744fe9dd048bc4c60196311c3ced0bd",
+    "graphs/native-java-spring.json": "a78f24a9c0235d1387d3ffb841b437fc9d338f075b0b0caa8c8cc21e5a9a75d6",
+    "skills/README.md": "23208b11ce94812e4bcba70be31415b84af820698201e728f5ee55d6bb0ca127",
+    "skills/code-implementation/SKILL.md": "5d658cb11076a82de1917b381d746e82015874936daf0cffb99bfe561d834b4d",
+    "skills/code-implementation/example.md": "870686b77c9e907eb6671625e559cb81701f0c0d08aa84e2aad91ffc2d96409e",
+    "skills/code-review/SKILL.md": "76b0d27028cf03179161c0791e0f39fe4aeb8d40490102cf432a7bdc6a34a6ce",
+    "skills/code-review/example.md": "33b520ef66b7fb5622d0b2b93cd7ddfcfa4485f7a07af7555fa8403c1f3021ac",
+    "skills/delivery-planning/SKILL.md": "f2d3a77e8566fd4d8f03d7e5146390faa725f50444a85a44b6aa09d4ab7dae5e",
+    "skills/delivery-planning/example.md": "c045f7cf857bf62d4baaae4d09d7eb37160544aac2e38ad3864cbb9913fda633",
+    "skills/docker-build-isolation/SKILL.md": "98d6dcdbcef2f8312fd43c082075fcb6e7b2a619d31db2410a622348afc59010",
+    "skills/document-review/SKILL.md": "94560180c91a2d256d0acd600e229540a0dbe493ce04f3c2226d33d14b9f3ae1",
+    "skills/document-review/example.md": "7aefc4429177f9a142d44bd901f2b60c9cca0392f557b493b948d9fa87b32786",
+    "skills/evidence-diagnosis/SKILL.md": "3974f064d3c882c6b3f443f7d8b1015149c121d8f99ecca6d119a29e27db2908",
+    "skills/evidence-diagnosis/example.md": "ed14f08a27c79ad6f0d98c920a77720f46969d011e0d3b313773451705522955",
+    "skills/java-build-isolation/SKILL.md": "883d03e21ac3a983a9173a7716b8f79ab10d8e58f5f710cbfd09c13bada7b6e0",
+    "skills/java-spring-check/SKILL.md": "549c535ba1295e8ae0d28e8be726e9eb2fdf0d419ade66e4e7c7f248768ee01f",
+    "skills/principle-review/SKILL.md": "755d62cb8a3968daabcae2ec81068a69a1406955104a7cfd979dc5fcf8db33c0",
+    "skills/principle-review/example.md": "2f65ece7b9f4bfe9e12f971534b2191dc1366216b8d7cbfb7e4c4939098db780",
+    "skills/requirement-clarification/SKILL.md": "6bde7250bf1f17a76d459a628746456588e776dc3e53327acac6824f5ea57978",
+    "skills/requirement-clarification/example.md": "cc8ea113b87c28bc51002b64c62603f39c6628ab7a8d4cd038957442bf74f98f",
+    "skills/resources/behavior.md": "d2bcdb5c71f5ce7ccafb319b4de59aa041d849c792744cad0a197846e31ed695",
+    "skills/resources/review.md": "104fccfcbc0460f933150925253b8be37e575c78b990a9549ded31e7f64a94bc",
+    "skills/resources/task.md": "652e7d47e6fb1b71885fba762e4aff1eb64de3c470ffdae015c9dc0fba7907e4",
+    "skills/semantic-review/SKILL.md": "74873e85e8fd763ba79b62e01147904e2ee7f505d13edc46261d4d02e36e6e82",
+    "skills/semantic-review/example.md": "67c3e42efc67d1b3c632cf5492519cff1531217b3b6faae189d10f8d8afd0bf2",
+    "skills/sql-review/SKILL.md": "bfd4ca196a359e43276ef7f9c7cad433726ad1b4a329d3c4751fe652f8c6a035",
+    "skills/sql-review/example.md": "05386345617d98788efae2295cdb1b7456c0c47194b134bbee636c1b1919ab6f",
+    "skills/verification/SKILL.md": "523f5a359aa7b10efca9e72ade18bc4008bf3d565c809f5629b14e3f7c0495ac",
+    "skills/verification/example.md": "5f873805f9583a4b3a36469c04313c59a93bb9a20f3170ca8cfd5ddbd5133edb",
+    "skills/workspace-isolation/SKILL.md": "fb5dfde6389a38a0a42480dbafe899294b25cf24e75499552d56e34e01af4364",
+    "standards/README.md": "1fdb24ea61c6ade47dc1a478fd589bebf5f443b04ac6dfb842dd562c0acc1448",
+    "standards/behavior-preservation.md": "f277a0c9e4c92879f91bf51918c0cbee94f609116c421c178433293119b4168d",
+    "standards/code-review.md": "1dd7bce006e9832a0a46616849742be141aafdbb1ec2f09c8bd609a95a52543e",
+    "standards/concurrent-execution.md": "4dfad5a4bf6ea2df79ec673b889013c6e3df9c94a9ff6f047e910783dd20e1fe",
+    "standards/delivery-planning.md": "b062bf9769e442d1b3e5ee25798948cd926a33f64f4c406be8993f0b741ca00b",
+    "standards/diagnosis.md": "a73f25df4695e4682f456a01afec838a956d0212bfbb3f6d33bdeb14df74151f",
+    "standards/docker-sandbox.md": "2773df1f65ad647733aa6a38c74d8689421e8eef7471f86c6de5aa0d376569b8",
+    "standards/document-review.md": "84344dc8f42ae15ca8dd162d896965f74ec0445bb53470644935db233eb4bc2f",
+    "standards/implementation-baseline.md": "d8ccdf1046fc9875040ea7fb33945050c6988c93813c15932b481f212314c66e",
+    "standards/java-build-sandbox.md": "648d8b5c40ab75ee8f78ee1469ae85e288da6e7b1b5f568693cc4245970ed936",
+    "standards/java-spring.md": "2650ba7d8e0f3ecbb16882e719a07ed7773a50ae357a5d55b199da7baf1aa385",
+    "standards/layering.md": "7e2d40c79d345dbca0e82c3212aeecd887df6c6407a38f8af4eba37c3cf3452f",
+    "standards/principles.md": "6c5a811f1b2b7e41b113f1869ba20fcc43f5fa66a96a47ff5dc11318fd7a14cb",
+    "standards/recovery.md": "83dd928e44213624d9d336c97c3a303748362d1afb2dc099742aec26d2c86255",
+    "standards/requirements.md": "4cb2ef80a42973b57ce191fee661da70f4c44a83232f7db1d3f0bfcc510733fa",
+    "standards/semantic-review.md": "cabf42f898a189515b7ea837c10a8dbcd035d98b02924ccc12582b2092aa2453",
+    "standards/shared-rules.md": "b5feb109704e13b935b175dd12326359cea55f7f90a378c7721c5763d2f9789b",
+    "standards/sql-review.md": "9e02bbe9992a0162cd5c53c3e9b04a38edfc370c87fb30d276275b02acc9abd2",
+    "standards/verification.md": "4f4be23e74244f51bfbffd287cbef73a6e7401df44c77a6b770dd481e5ef1bd0",
+    "standards/workspace-isolation.md": "cc40de66fd05bc2ee3984c885268fde3a348160e2c8358a9ad54366c9e111502",
+    "tools/native_agents.py": "e02e4a976ab6b18ecf215d8d6feaf5a70588ccbdc27a2c2413e564cc169e14bd",
+    "tools/native_build.py": "87c05a5cdfb11d3d91b41c42ba31862e98931f11c1f8649941ac87106358667b",
+    "tools/native_flow.py": "fe5dc865558fae2f616e0b4908b238e5aba48a025d249f4a583247a99cdc3292",
+    "workflows/native-code-review.json": "d53ccf6a7ae3fbea2825b93f595ce9b3b010c65e2ea6be9f9edfd96905483421",
+    "workflows/native-delivery.json": "f66692b57bd48099c717b56ae24f35547374b12e592bba668f3e4b0df7d284f7",
+    "workflows/native-implementation.json": "b7503b8be826b635ba8dcc10c0d2ecdcc157993c431fe747fb3654a32a0d20e2",
+    "workflows/native-principle-review.json": "3e65cf60805e5bee8f2b8b1b28e07052d4f2556f26c88ed471f222e0df28180e",
+    "workflows/native-requirements.json": "5b97587a8273f2d577b1e256283baf02fc495d599f04d118bdf3704b5ea1d6cc",
+    "workflows/native-verification.json": "49fbbe5c6b138e07d028e36d00b1d2cf6751c54ba5d62c28bef2d913442e5df8"
+  },
+  "stages": {
+    "requirements": {
+      "status": "SUCCEEDED",
+      "started": 1793628711.3329659,
+      "ended": 1793628835.553215,
+      "input_candidate_id": "eeb7121dd78a78954b082cd0b44d7ec02c944cd5627ecc3adfdd38cdcf3033b6",
+      "candidate_id": "eeb7121dd78a78954b082cd0b44d7ec02c944cd5627ecc3adfdd38cdcf3033b6",
+      "outputs_sha256": {
+        "requirements.md": "d4c91bbc9db47bd83097e8b25a282d5eb6c7d0fb6c190f2e7b5b5ce25bbc00f9"
+      },
+      "native": {
+        "role": "workflow_requirements",
+        "protocol": "codex-collaboration-rollout-v1",
+        "parent_id_sha256": "b3dd41f2aa2acc1ab55d667e5814a6549d3665320b09c626c46f35d1826feedd",
+        "child_id_sha256": "7fe5e094d2086c1d8ac104fe8e8a1fff2988ece97ed2afa2e4f91a5b6deba1b6",
+        "spawn_calls": 1,
+        "native_completed": true
+      }
+    },
+    "implementation": {
+      "status": "SUCCEEDED",
+      "started": 1793628835.696188,
+      "ended": 1793629023.100548,
+      "input_candidate_id": "eeb7121dd78a78954b082cd0b44d7ec02c944cd5627ecc3adfdd38cdcf3033b6",
+      "candidate_id": "e995a29d262690e3f602dc00c414c6bf1e5b86ac9e138e702870d904076001ea",
+      "outputs_sha256": {
+        "app/src/main/java/example/nativeflow/DemoApplication.java": "8a29bd525ec37243e5930b2351674229a1c11a6861d86677e882dcb22078d00d",
+        "app/src/main/java/example/nativeflow/LabelService.java": "e3307d17c8eb431e90586aa88cf2169831abcead9255de32c0bb2b58a0fcd1c5",
+        "app/src/main/java/example/nativeflow/LabelController.java": "2ab51bc0101edd6615905911a19981c7a83d0542fd7eb5a53d354d1bdc4491db",
+        "app/src/test/java/example/nativeflow/ImplementationTest.java": "d1f192e867bbfc9d8bfcb099c1c334076b4a0788c0babc4101d9f7cad96ddb54",
+        "implementation.md": "7f249046380de09db22f6a1e189174ef13bdaddc11b33ec31a3cf8107f53b3e5"
+      },
+      "native": {
+        "role": "workflow_implementation",
+        "protocol": "codex-collaboration-rollout-v1",
+        "parent_id_sha256": "ac8416ee27d8a095d428d2e77fe741515ca6979ff62e26ef06421acf15d8fcfd",
+        "child_id_sha256": "7fe5e094d2086c1d8ac104fe8e8a1fff2988ece97ed2afa2e4f91a5b6deba1b6",
+        "spawn_calls": 1,
+        "native_completed": true
+      }
+    },
+    "verification": {
+      "status": "SUCCEEDED",
+      "started": 1793629086.349558,
+      "ended": 1793629299.6280792,
+      "input_candidate_id": "e995a29d262690e3f602dc00c414c6bf1e5b86ac9e138e702870d904076001ea",
+      "candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+      "outputs_sha256": {
+        "app/src/test/java/example/nativeflow/IndependentVerificationTest.java": "86674297b9b0bc210c957b7804c3bbe1d2496d313dc0670d0ab7f0e745da00af",
+        "verification.md": "88af61650f10327f4f0cd9eb9c90c8b91a7e286f987638e0a6c2a92f69ec621e"
+      },
+      "native": {
+        "role": "workflow_verification",
+        "protocol": "codex-collaboration-rollout-v1",
+        "parent_id_sha256": "058eb4b30738e024ce86b0f5b2fda5fe4b2aba331f336efde0356a713f47098a",
+        "child_id_sha256": "7fe5e094d2086c1d8ac104fe8e8a1fff2988ece97ed2afa2e4f91a5b6deba1b6",
+        "spawn_calls": 1,
+        "native_completed": true
+      }
+    },
+    "code_review": {
+      "status": "SUCCEEDED",
+      "started": 1793629299.875005,
+      "ended": 1793629464.672846,
+      "input_candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+      "candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+      "outputs_sha256": {
+        "code-review.md": "3f47f6544b767aee0311730bb90fc94ea89fdf3737e1e985df73f85b7059bb69"
+      },
+      "native": {
+        "role": "workflow_code_review",
+        "protocol": "codex-collaboration-rollout-v1",
+        "parent_id_sha256": "8c978a0ef026ed0d0137f14a66c67e0499ef4e77d7071b5493c3dd4449601aa2",
+        "child_id_sha256": "7fe5e094d2086c1d8ac104fe8e8a1fff2988ece97ed2afa2e4f91a5b6deba1b6",
+        "spawn_calls": 1,
+        "native_completed": true
+      }
+    },
+    "principle_review": {
+      "status": "SUCCEEDED",
+      "started": 1793629299.874273,
+      "ended": 1793629426.115813,
+      "input_candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+      "candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+      "outputs_sha256": {
+        "principle-review.md": "a454bc4fb3212130bd1ba80719ceff5e330f037adf2eab0e6074e6ed258c695b"
+      },
+      "native": {
+        "role": "workflow_principle_review",
+        "protocol": "codex-collaboration-rollout-v1",
+        "parent_id_sha256": "5b9e475e305c0f803affc14f4c0c13b8f71a4003c46930d65f6b9eec9b3bbe9c",
+        "child_id_sha256": "7fe5e094d2086c1d8ac104fe8e8a1fff2988ece97ed2afa2e4f91a5b6deba1b6",
+        "spawn_calls": 1,
+        "native_completed": true
+      }
+    },
+    "delivery": {
+      "status": "SUCCEEDED",
+      "started": 1793629464.944623,
+      "ended": 1793629656.84892,
+      "input_candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+      "candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+      "outputs_sha256": {
+        "delivery.md": "012a169060a17ddeaf494da9571d90e117cbe61cc528d4259fcc351a5f33cd1b"
+      },
+      "native": {
+        "role": "workflow_delivery",
+        "protocol": "codex-collaboration-rollout-v1",
+        "parent_id_sha256": "bf2f19a76d6368fe6d7ef9eaa10fadaf2c79b4ba1e2fca9521f08bcfdbf42c89",
+        "child_id_sha256": "7fe5e094d2086c1d8ac104fe8e8a1fff2988ece97ed2afa2e4f91a5b6deba1b6",
+        "spawn_calls": 1,
+        "native_completed": true
+      }
+    }
+  },
+  "review_overlap": true,
+  "validation": {
+    "status": "PASSED",
+    "synthetic": true,
+    "offline": true,
+    "source_sha256": {
+      "app/pom.xml": "f4db92ab966cbbb5aed35c47ccf60314334d8c53632e1749216a51af0c0437ec",
+      "app/src/main/java/example/nativeflow/DemoApplication.java": "8a29bd525ec37243e5930b2351674229a1c11a6861d86677e882dcb22078d00d",
+      "app/src/main/java/example/nativeflow/LabelController.java": "2ab51bc0101edd6615905911a19981c7a83d0542fd7eb5a53d354d1bdc4491db",
+      "app/src/main/java/example/nativeflow/LabelService.java": "e3307d17c8eb431e90586aa88cf2169831abcead9255de32c0bb2b58a0fcd1c5",
+      "app/src/test/java/example/nativeflow/ImplementationTest.java": "d1f192e867bbfc9d8bfcb099c1c334076b4a0788c0babc4101d9f7cad96ddb54",
+      "app/src/test/java/example/nativeflow/IndependentVerificationTest.java": "86674297b9b0bc210c957b7804c3bbe1d2496d313dc0670d0ab7f0e745da00af",
+      "app/src/test/java/example/nativeflow/LabelContractTest.java": "e8d2cc79a6c817d46022ae6e7d03705b928ebad715b4b29411c4421db2bcca1d",
+      "app/src/test/resources/mockito-extensions/org.mockito.plugins.MemberAccessor": "f03c834f2bf5d58702453b8e2441aed4d1dd30afa523d28ad978f79aab56e0c7",
+      "app/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker": "8eca853a5a457f17e0479b71dfbe95f2a13aff9eeff250261ecdc8ca9b847a6a"
+    },
+    "candidate_id": "2986559d3612bcca8fa0d4c63bd6c1c70890856c1abe10f71d1773dc73dededf",
+    "tests": 25,
+    "test_names": [
+      "example.nativeflow.ImplementationTest#immutableInputAndRepeatedCallsRetainOrderWithoutSharedState",
+      "example.nativeflow.ImplementationTest#lowercaseExpansionIsAcceptedExactlyAtLimitAndRejectedAboveIt",
+      "example.nativeflow.ImplementationTest#rejectedHttpRequestDoesNotLeakPartialResultsIntoNextCall",
+      "example.nativeflow.ImplementationTest#rejectionAfterValidPrefixLeavesCallerInputUntouched",
+      "example.nativeflow.ImplementationTest#supplementaryCharactersAreCountedAsUtf16Units",
+      "example.nativeflow.ImplementationTest#trimUsesJavaControlCharacterBoundaryAndPreservesInternalSpace",
+      "example.nativeflow.ImplementationTest#whitespaceAboveTrimBoundaryIsPreservedThroughJson",
+      "example.nativeflow.IndependentVerificationTest#everyCharacterThroughU0020IsTrimmedAndAnEmptyResultIsRejected",
+      "example.nativeflow.IndependentVerificationTest#lateInvalidItemsAfterFourLabelsRejectWithoutChangingCallerOrNextRequest",
+      "example.nativeflow.IndependentVerificationTest#manyDuplicatesIncludingExpandedLowercaseDoNotUseDistinctSlots",
+      "example.nativeflow.IndependentVerificationTest#mixedSupplementaryCharactersAndLowercaseExpansionUseFinalUtf16Length",
+      "example.nativeflow.IndependentVerificationTest#unicodeContextAndCanonicalDifferencesRemainStringDifferences",
+      "example.nativeflow.LabelContractTest#blankItemRejectsWholeRequest",
+      "example.nativeflow.LabelContractTest#callerInputListIsNotMutated",
+      "example.nativeflow.LabelContractTest#duplicatesDoNotConsumeDistinctLimit",
+      "example.nativeflow.LabelContractTest#emptyListIsValid",
+      "example.nativeflow.LabelContractTest#exactlySixteenCharactersAreAccepted",
+      "example.nativeflow.LabelContractTest#fifthDistinctLabelIsRejected",
+      "example.nativeflow.LabelContractTest#lengthIsCheckedAfterRootLowercase",
+      "example.nativeflow.LabelContractTest#nullItemIsRejected",
+      "example.nativeflow.LabelContractTest#nullListIsRejected",
+      "example.nativeflow.LabelContractTest#rootLocaleSurvivesTurkishDefault",
+      "example.nativeflow.LabelContractTest#seventeenCharactersAreRejected",
+      "example.nativeflow.LabelContractTest#springBeanAndControllerAreWired",
+      "example.nativeflow.LabelContractTest#trimCaseAndStableDeduplication"
+    ],
+    "failures": [],
+    "errors": [],
+    "skipped": [],
+    "contract_complete": true,
+    "process_exit": 0,
+    "scope": "Spring context and MockMvc only; no HTTP listener, database or deployment",
+    "category": "passed"
+  },
+  "public_dependency_warmups": [
+    {
+      "stage": "verification",
+      "candidate_id": "e995a29d262690e3f602dc00c414c6bf1e5b86ac9e138e702870d904076001ea",
+      "tests": 20,
+      "status": "PASSED",
+      "scope": "online public dependency preparation before independent verifier changes"
+    }
+  ],
+  "environment": {
+    "controller": "darwin",
+    "codex": "codex-cli 0.166.0-alpha.5.1"
+  },
+  "scope": "six actual native roles; Spring context/MockMvc; no live HTTP, database, deployment or automatic GitHub publication"
+}

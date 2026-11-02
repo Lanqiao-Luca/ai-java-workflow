@@ -467,6 +467,151 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/native-spring-workflow/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/acceptance/LabelContractTest.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/artifact-manifest.json",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/case.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/evidence/runtime.json",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/pom.xml",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/src/main/java/example/nativeflow/DemoApplication.java",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/src/main/java/example/nativeflow/LabelController.java",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/src/main/java/example/nativeflow/LabelService.java",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/src/test/java/example/nativeflow/ImplementationTest.java",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/src/test/java/example/nativeflow/IndependentVerificationTest.java",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/src/test/java/example/nativeflow/LabelContractTest.java",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/src/test/resources/mockito-extensions/org.mockito.plugins.MemberAccessor",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/app/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/code-review.md",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/delivery.md",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/implementation.md",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/principle-review.md",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/requirements.md",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/task.md",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/validation.json",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/final/verification.md",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/result.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/seed/app/pom.xml",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/seed/app/src/test/resources/mockito-extensions/org.mockito.plugins.MemberAccessor",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/seed/app/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "origin": "newly_written_public_test_configuration",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/seed/task.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/native-spring-workflow/trace.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/plan-evidence-gated-delivery/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -1072,6 +1217,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/check_native_cases.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "scripts/check_spring_build_cases.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1367,6 +1517,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_native_build.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_native_cases.py",
+      "origin": "independent_synthetic_native_case_or_reviewed_public_summary",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_native_flow.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1438,6 +1598,11 @@
     },
     {
       "path": "tools/native_agents.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/native_build.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

@@ -8,6 +8,6 @@
 
 这是一组受限的可信虚构工程参考定义。原命令型Graph和Docker后端保持自己的运行边界，当前原生Graph不宣称把模型调用放进旧离线Docker环境。
 
-[原生Graph引擎](../tools/native_flow.py)直接消费这组定义，使用[门禁测试](../tests/test_native_flow.py)核依赖、白名单提升、候选冻结与失败阻断。引擎测试中的角色明确为mock，虽然实际创建了虚构Git worktree，也不能算模型或Spring执行。完整六阶段真实案例将在下一步交付，当前不要把这些门禁测试当业务通过。
+[原生Graph引擎](../tools/native_flow.py)直接消费这组定义，使用[门禁测试](../tests/test_native_flow.py)核依赖、白名单提升、候选冻结与失败阻断。引擎测试中的角色明确为mock，虽然实际创建了虚构Git worktree，也不能算模型或Spring执行。[完整真实案例](../examples/native-spring-workflow/README.md)另有六个原生上下文、双审查调用重叠和25项离线Spring测试证据；不把两类结果混算。
 
 [接入计划](../docs/native-agent-workflow-plan.md) · [最小原生适配器](../docs/native-agent-adapter.md) · [Graph目录](README.md)

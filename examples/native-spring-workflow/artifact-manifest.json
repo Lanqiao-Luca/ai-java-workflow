@@ -1,0 +1,116 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "9ca63f7124070b5ee23ae58f614ddf048d2c4bb4c3b73b4d5d2a863f12bae902"
+    },
+    {
+      "path": "acceptance/LabelContractTest.java",
+      "sha256": "e8d2cc79a6c817d46022ae6e7d03705b928ebad715b4b29411c4421db2bcca1d"
+    },
+    {
+      "path": "case.json",
+      "sha256": "9e19b8004c058ba1599225b34900b5bd6bb5ce638afd785e340836d884e9f84b"
+    },
+    {
+      "path": "evidence/runtime.json",
+      "sha256": "4faf449896f7d0a09b96e3e793b31987e3b501119c1aac1acbaea126bfa315ec"
+    },
+    {
+      "path": "final/app/pom.xml",
+      "sha256": "f4db92ab966cbbb5aed35c47ccf60314334d8c53632e1749216a51af0c0437ec"
+    },
+    {
+      "path": "final/app/src/main/java/example/nativeflow/DemoApplication.java",
+      "sha256": "8a29bd525ec37243e5930b2351674229a1c11a6861d86677e882dcb22078d00d"
+    },
+    {
+      "path": "final/app/src/main/java/example/nativeflow/LabelController.java",
+      "sha256": "2ab51bc0101edd6615905911a19981c7a83d0542fd7eb5a53d354d1bdc4491db"
+    },
+    {
+      "path": "final/app/src/main/java/example/nativeflow/LabelService.java",
+      "sha256": "e3307d17c8eb431e90586aa88cf2169831abcead9255de32c0bb2b58a0fcd1c5"
+    },
+    {
+      "path": "final/app/src/test/java/example/nativeflow/ImplementationTest.java",
+      "sha256": "d1f192e867bbfc9d8bfcb099c1c334076b4a0788c0babc4101d9f7cad96ddb54"
+    },
+    {
+      "path": "final/app/src/test/java/example/nativeflow/IndependentVerificationTest.java",
+      "sha256": "86674297b9b0bc210c957b7804c3bbe1d2496d313dc0670d0ab7f0e745da00af"
+    },
+    {
+      "path": "final/app/src/test/java/example/nativeflow/LabelContractTest.java",
+      "sha256": "e8d2cc79a6c817d46022ae6e7d03705b928ebad715b4b29411c4421db2bcca1d"
+    },
+    {
+      "path": "final/app/src/test/resources/mockito-extensions/org.mockito.plugins.MemberAccessor",
+      "sha256": "f03c834f2bf5d58702453b8e2441aed4d1dd30afa523d28ad978f79aab56e0c7"
+    },
+    {
+      "path": "final/app/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "sha256": "8eca853a5a457f17e0479b71dfbe95f2a13aff9eeff250261ecdc8ca9b847a6a"
+    },
+    {
+      "path": "final/code-review.md",
+      "sha256": "44db706412c016370131b82fdc33e1b16de3aee42d1d7ab77ad6f606f019c5ce"
+    },
+    {
+      "path": "final/delivery.md",
+      "sha256": "8014b5943a2e9ff9eacecc29bf139a6d0b6d5481ad4da5ac88fd6f8f5a7eba64"
+    },
+    {
+      "path": "final/implementation.md",
+      "sha256": "77da07a52af72291656b529fac6793d66d27137c44656871ad9f1891df057db6"
+    },
+    {
+      "path": "final/principle-review.md",
+      "sha256": "256d027a03db466d1c31232c6d5a6db9d0d229f24a968f0d04a765c2904491a4"
+    },
+    {
+      "path": "final/requirements.md",
+      "sha256": "3791e759a8b4513a07a609088dec133bad4414ce0129257b4819579c564f0616"
+    },
+    {
+      "path": "final/task.md",
+      "sha256": "5bd4303d6fc5056691226a5c58eaa7bd88706ff7a9b67720c58b5aea28f23762"
+    },
+    {
+      "path": "final/validation.json",
+      "sha256": "af7d19c917c6d74afc29dd41627c60af9b06cf582917fc5a65ae0736af42077d"
+    },
+    {
+      "path": "final/verification.md",
+      "sha256": "1d919ede43baa93c0c0ca3f56505c4c0bc8b9b0feafeb3d2ed1f94794bb98650"
+    },
+    {
+      "path": "result.md",
+      "sha256": "0f1dff97e6ef9e64a71f0bc2a558c6843fed1ee8823b39ee1654f2fde93b4515"
+    },
+    {
+      "path": "run.py",
+      "sha256": "1460a19744f600cee2bb7b9d418b9f24e744fe9dd048bc4c60196311c3ced0bd"
+    },
+    {
+      "path": "seed/app/pom.xml",
+      "sha256": "f4db92ab966cbbb5aed35c47ccf60314334d8c53632e1749216a51af0c0437ec"
+    },
+    {
+      "path": "seed/app/src/test/resources/mockito-extensions/org.mockito.plugins.MemberAccessor",
+      "sha256": "f03c834f2bf5d58702453b8e2441aed4d1dd30afa523d28ad978f79aab56e0c7"
+    },
+    {
+      "path": "seed/app/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "sha256": "8eca853a5a457f17e0479b71dfbe95f2a13aff9eeff250261ecdc8ca9b847a6a"
+    },
+    {
+      "path": "seed/task.md",
+      "sha256": "5bd4303d6fc5056691226a5c58eaa7bd88706ff7a9b67720c58b5aea28f23762"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "8fd17c4ff89866a8b2c793ecdac8f215c51c388daf07009b6331fc5ee42d6e5b"
+    }
+  ]
+}

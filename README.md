@@ -6,10 +6,11 @@
 
 ## 仓库里有什么
 
-**3条命令型并发Graph＋1条原生Agent Graph · 1条完整研发Workflow · 9份命令型和6份原生Workflow定义 · 19份规范 · 14项技能 · 12项角色职责 · 10条角色案例 · 4条集成案例**。
+**3条命令型并发Graph＋1条原生Agent Graph · 1条完整研发Workflow · 9份命令型和6份原生Workflow定义 · 19份规范 · 14项技能 · 12项角色职责 · 10条角色案例 · 5条集成案例**。
 
 | 你想做什么 | 从这里进入 | 能拿到什么 |
 | --- | --- | --- |
+| 原生Agent接完整研发链 | [原生Graph](graphs/native-java-spring.md)、[完整Spring案例](examples/native-spring-workflow/README.md) | 六个真实原生上下文、双审查Workflow并发、25项离线Spring测试与同候选交付；macOS/Maven参考实现 |
 | 在Docker中构建Spring Boot | [Docker Graph](graphs/docker-spring.md)、[双宿主完整案例](examples/docker-spring-graph/README.md) | macOS与Linux VM内控制器实跑；真实容器限制、并发构建及合并后验收 |
 | 并发构建Spring Boot | [可信构建Graph](graphs/spring-build.md)、[Maven/Gradle完整案例](examples/spring-build-graph/README.md) | 2作业实际并发、合并后每工具8项测试与Boot JAR；显式macOS可信模式 |
 | 并发运行隔离的Workflow | [Graph合同](graphs/concurrent-java.md)、[完整Java并发案例](examples/concurrent-java-graph/README.md) | 每run_id独立worktree与已探测前台sandbox，2功能并发后串行集成/8断言；仅macOS实验后端 |
@@ -22,7 +23,7 @@
 
 仓库区分**方法文档、辅助脚本和代码示例**。Skill/Agent文档没有自动注册到平台，也不提供模型、数据库或外部服务客户端；不要求为简单任务启用所有角色。
 
-原生Agent接入正在按[小步执行计划](docs/native-agent-workflow-plan.md)交付：[最小派工适配器](docs/native-agent-adapter.md)已完成真实探测，[六阶段Graph引擎](graphs/native-java-spring.md)已接通需求、实现、验证、双审查和交付的原生声明与门禁。完整Spring实跑案例尚待下一步，不把探测或mock门禁测试当全流程业务验收。
+[六阶段原生Graph](graphs/native-java-spring.md)已有[完整Spring实跑案例](examples/native-spring-workflow/README.md)：需求、实现、独立验证、代码/语义/文档审查、原则审查和交付均由真实原生子Agent完成，父会话只派工；两审查从同一冻结候选并发，最终25项Spring/MockMvc测试通过。角色仅在显式新实例注册，不改全局配置。原生CLI链只在macOS/Maven可信虚构工程验证，不挪用Docker案例的隔离证据，也不把mock门禁测试当模型执行。[小步执行计划](docs/native-agent-workflow-plan.md)与[派工接口](docs/native-agent-adapter.md)说明运行、隐私和失败边界。
 
 ## 按执行实例分配资源：Graph调度多个Workflow
 

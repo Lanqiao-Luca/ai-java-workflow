@@ -166,6 +166,8 @@ def main():
             build["check_spring_build_case"](folder)
         elif kind == "docker_spring_graph_case":
             docker["check_docker_case"](folder)
+        elif kind == "native_spring_workflow_case":
+            runpy.run_path(str(ROOT / "scripts/check_native_cases.py"))["check_native_case"](folder)
         else:
             raise ValueError("unknown example kind")
     print(f"PASS: {count} Graph cases; declarations, source/catalog identity and recorded result consistency only")

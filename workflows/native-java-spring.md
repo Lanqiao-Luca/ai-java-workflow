@@ -25,4 +25,6 @@
 
 完整研发方法仍见[原Workflow](java-spring-development.md)，执行顺序由[原生Graph](../graphs/native-java-spring.md)控制。提交/推送需当前明确授权及使用者项目专用原生提交角色，业务Agent不直接操作真实仓库Git。
 
+[完整Spring实跑案例](../examples/native-spring-workflow/README.md)保留固定验收、原生生成的Java/作者测试、独立验证与公开交付报告；发布摘要与原生原件的来源分别声明，不上传原始会话或本机坐标。
+
 返回：[Workflows](README.md)。

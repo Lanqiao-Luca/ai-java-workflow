@@ -235,6 +235,7 @@ class BuildGraphRun(GraphRun):
             verify_cache(seed, kind)
             destination = resource / "sandbox/home" / kind
             shutil.copytree(seed, destination)
+            verify_cache(destination, kind)  # Verify the actual copied snapshot before execution.
         return super()._execute(node, resource)
 
     def cleanup(self):

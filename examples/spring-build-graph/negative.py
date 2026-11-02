@@ -4,6 +4,7 @@ import argparse,json,shutil,sys,tempfile,xml.etree.ElementTree as ET
 sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[2];CASE=Path(__file__).resolve().parent;sys.path.insert(0,str(ROOT))
 from tools.execution.build_runtime import BuildGraphRun
+from tools.execution.build_fixture import BuildFixture
 from tools.execution.build_cache import seal
 from tools.execution.runtime import git
 
@@ -14,8 +15,8 @@ def main():
  if a.output.exists() or a.output.resolve().is_relative_to(CASE):p.error('output must be new and outside case')
  tools={'JAVA_HOME':a.java_home.resolve(strict=True),'MAVEN_HOME':a.maven_home.resolve(strict=True)}
  results={}
- with tempfile.TemporaryDirectory(prefix='synthetic-build-negative-') as directory:
-  root=Path(directory).resolve();repo=root/'repo';shutil.copytree(CASE/'seed',repo);git(repo,'init','-b','main');git(repo,'add','.');git(repo,'commit','-m','Independent red fixture');base=git(repo,'rev-parse','HEAD').stdout.strip()
+ with BuildFixture('synthetic-build-negative-') as fixture:
+  root=fixture.path;repo=root/'repo';shutil.copytree(CASE/'seed',repo);git(repo,'init','-b','main');git(repo,'add','.');git(repo,'commit','-m','Independent red fixture');base=git(repo,'rev-parse','HEAD').stdout.strip()
   empty=root/'empty-public-cache';empty.mkdir();seal(empty,'maven')
   for mode in ['red_baseline','missing_dependency']:
    command=['{python}','-I','-B','-c',"import runpy;n=runpy.run_path('build_task.py');n['build']('maven','title');print('OK')"] if mode=='red_baseline' else ['{python}','-I','-B','build_task.py','title','maven']
@@ -41,6 +42,7 @@ def main():
      row['offline_dependency_failure']=True
     results[mode]=row
    finally:g.close()
+  fixture.safe_to_remove()
  a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps({'synthetic':True,'status':'PASSED','controls':results},indent=2)+'\n')
  print('PASS: real red tests and missing offline dependency rejected; descendants blocked, no promotion')
 if __name__=='__main__':main()

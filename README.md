@@ -47,7 +47,7 @@ python3 -B examples/concurrent-java-graph/run.py --java-home <JDK目录>
 
 每实例独立worktree、分支、HOME/TMP和可写缓存；Graph及3Workflow共4实例，每实例9项继承限制探测。容量2计Workflow作业，实测节点树峰5进程，不是JVM总数2。默认拒绝脱离会话；案例显式允许已观察、持续跟踪的一次性Gradle Daemon，客户端结束后最多3秒等待停止，残留不得提升。未知占用隔离池；轮询不能保证恶意快速doublefork约束，非容器级或多租户强沙箱。
 
-新增12项回归、原严格26项真实通过且0跳过；错误基线与缺依赖两项实际失败均阻断后代及候选提升。仅macOS已弃用Seatbelt实验后端、可信源码/插件与受限ASCII非隐藏路径；没有跨平台回退或任意Spring工程一键兼容。
+新增18项回归、原严格26项真实通过且0跳过；错误基线与缺依赖两项实际失败均阻断后代及候选提升。仅macOS已弃用Seatbelt实验后端、可信源码/插件与受限ASCII非隐藏路径；没有跨平台回退或任意Spring工程一键兼容。
 
 [先行执行计划](docs/spring-build-sandbox-plan.md) · [Graph定义](graphs/spring-build.json) · [真实结果与重跑边界](examples/spring-build-graph/result.md)
 

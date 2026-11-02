@@ -84,7 +84,7 @@ def check_spring_build_case(folder):
                for key in ["runtime", "tests", "negative", "legacy", "toolchain"]}
     runtime = reports["runtime"]
     names = {"tools/execution/runtime.py", "tools/execution/catalog.py", "tools/execution/build_runtime.py",
-             "tools/execution/build_cache.py", "scripts/run_build_graph.py", "tests/test_build_execution.py",
+             "tools/execution/build_cache.py", "tools/execution/build_fixture.py", "scripts/run_build_graph.py", "tests/test_build_execution.py",
              "standards/java-build-sandbox.md", "examples/spring-build-graph/run.py",
              "examples/spring-build-graph/prepare.py", "examples/spring-build-graph/negative.py"} | catalog_names
     names.update(p.relative_to(ROOT).as_posix() for p in (folder / "seed").rglob("*") if p.is_file())
@@ -151,7 +151,7 @@ def check_spring_build_case(folder):
                     or "/" in artifact["name"] or artifact["bytes"] <= 0
                     or not re.fullmatch(r"[0-9a-f]{64}", artifact["sha256"])):
                 raise ValueError("packaging identity missing; not a deployment assertion")
-    check_regression(reports["tests"], test_names(local(ROOT, "tests/test_build_execution.py")), 12)
+    check_regression(reports["tests"], test_names(local(ROOT, "tests/test_build_execution.py")), 18)
     check_regression(reports["legacy"], test_names(local(ROOT, "tests/test_execution.py")), 26)
     for key, name in [("runtime_sha256", "tools/execution/runtime.py"), ("test_source_sha256", "tests/test_execution.py")]:
         if reports["legacy"][key] != hashlib.sha256(local(ROOT, name).read_bytes()).hexdigest():
@@ -176,6 +176,15 @@ def check_spring_build_case(folder):
             raise ValueError("tool distribution digest invalid")
         if urlsplit(item["source"]).hostname not in {"github.com", "repo.maven.apache.org", "downloads.gradle.org"}:
             raise ValueError("unreviewed distribution host")
+    preparation = toolchain["online_preparation"]
+    if set(preparation) != {"maven", "gradle"}:
+        raise ValueError("supervised online preparation tools incomplete")
+    for item in preparation.values():
+        if (item["status"] != "SUCCEEDED" or item["exit"] != 0 or item["reason"] is not None
+                or item["tree_stopped"] is not True or item["observed_process_peak"] < 2
+                or item["tests"] != 8 or item["failures"] or item["errors"] or item["skipped"]
+                or item["boot_jar"] is not True):
+            raise ValueError("supervised preparation result inconsistent")
     if case["verification"] != {"platform": "Darwin", "sandbox": "trusted_macos_build_tree",
                                 "single_use_daemon": "explicit_observed_opt_in", "external_network": "denied",
                                 "loopback": "allowed_broad", "native_agent": "not_run", "deployment": "not_run"}:

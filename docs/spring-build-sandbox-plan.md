@@ -36,7 +36,7 @@
 
 ## 最终落地约束
 
-实际新增独立build_runtime/build_cache，不改变旧严格runtime/catalog与历史案例身份。两个功能分别采用Maven/Gradle，集成按顺序用两种工具各执行同一套8测试并打包Boot JAR；包结构检查不是应用启动/部署。新12回归与旧26回归、两真实构建失败及4实例继承探测分别留回执。
+实际新增独立build_runtime/build_cache，不改变旧严格runtime/catalog与历史案例身份。两个功能分别采用Maven/Gradle，集成按顺序用两种工具各执行同一套8测试并打包Boot JAR；包结构检查不是应用启动/部署。新18回归与旧26回归、两真实构建失败及4实例继承探测分别留回执。
 
 Gradle no-daemon仍生成一次性Daemon，因此默认拒绝detach保持，案例显式allow_observed_daemon，仅容许已观察且持续跟踪的继承沙箱后代，客户端结束最多3秒drain，残留拒绝提升。夹具固定IPv4/HOME/TMP/禁attach，Mockito用subclass方式。loopback可接触同机其他服务，非自身IPC隔离；Graph容量2是作业槽，节点实测树峰5进程。
 

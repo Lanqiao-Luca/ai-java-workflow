@@ -6,6 +6,7 @@ sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from tools.execution.build_runtime import BuildGraphRun,BuildTree
 from tools.execution.build_cache import seal,verify
+from tools.execution.build_fixture import BuildFixture,run_preparation
 from tools.execution.runtime import git,Rejected
 
 def node(program,timeout=10):
@@ -83,5 +84,41 @@ class BuildExecutionTests(unittest.TestCase):
   seed=self.root/'unmarked-cache';seed.mkdir()
   with self.assertRaises(Rejected):self.graph('print("OK")',seeds={'maven':seed})
   self.assertFalse((self.root/'runs').exists())
+
+ def test_failed_fixture_retains_original_path_and_state(self):
+  with self.assertRaisesRegex(RuntimeError,'synthetic unknown'):
+   with BuildFixture('owned-',self.root) as fixture:
+    (fixture.path/'state.json').write_text('{"status":"UNKNOWN"}')
+    raise RuntimeError('synthetic unknown')
+  self.assertTrue(fixture.path.is_dir());self.assertEqual(json.loads((fixture.path/'state.json').read_text())['status'],'UNKNOWN')
+ def test_fixture_only_removes_verified_success(self):
+  with BuildFixture('unverified-',self.root) as retained:pass
+  self.assertTrue(retained.path.is_dir())
+  with BuildFixture('success-',self.root) as removed:removed.safe_to_remove()
+  self.assertFalse(removed.path.exists())
+ def preparation(self,program,timeout=5):
+  return run_preparation([sys.executable,'-I','-B','-c',program],self.root,
+    {'PATH':'/usr/bin:/bin','HOME':str(self.root),'LC_ALL':'C'},self.root/'prep.log',self.root/'prep-state.json',timeout)
+ def test_preparation_timeout_stops_helper_and_child(self):
+  r=self.preparation('import subprocess,sys;subprocess.run([sys.executable,"-c","import time;time.sleep(20)"])',.5)
+  self.assertEqual(r['reason'],'TIMEOUT');self.assertTrue(r['tree_stopped']);self.assertEqual(json.loads((self.root/'prep-state.json').read_text())['status'],'FAILED')
+ def test_preparation_waits_for_observed_single_use_daemon(self):
+  began=time.monotonic()
+  r=self.preparation('import subprocess,sys,time;subprocess.Popen([sys.executable,"-c","import time;time.sleep(.4)"],start_new_session=True);time.sleep(.1)')
+  self.assertEqual(r['exit'],0);self.assertIsNone(r['reason']);self.assertTrue(r['tree_stopped']);self.assertTrue(r['observed_detached']);self.assertGreater(time.monotonic()-began,.3)
+ def test_preparation_observer_failure_preserves_unknown_state(self):
+  with patch.object(BuildTree,'live',side_effect=Rejected('synthetic observer failure')):
+   with self.assertRaises(Rejected):self.preparation('import time;time.sleep(20)')
+  self.assertEqual(json.loads((self.root/'prep-state.json').read_text())['status'],'UNKNOWN')
+
+ def test_copied_cache_identity_is_checked_before_execution(self):
+  import shutil
+  seed=self.root/'cache';seed.mkdir();(seed/'artifact.jar').write_text('synthetic artifact');seal(seed,'maven')
+  g=self.graph('print("OK")',seeds={'maven':seed});copy=shutil.copytree
+  def corrupt(source,destination,*a,**kw):
+   result=copy(source,destination,*a,**kw);(Path(destination)/'artifact.jar').write_text('changed after admission');return result
+  with patch('tools.execution.build_runtime.shutil.copytree',side_effect=corrupt):state=g.run()
+  self.assertEqual(state['nodes']['work']['status'],'FAILED');self.assertNotIn('work',g.results)
+  self.assertFalse((g.resources['work']/'sandbox/command.log').exists())
 
 if __name__=='__main__':unittest.main()

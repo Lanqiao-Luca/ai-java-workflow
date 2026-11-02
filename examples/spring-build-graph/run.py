@@ -12,13 +12,14 @@ ROOT=Path(__file__).resolve().parents[2]
 CASE=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT))
 from tools.execution.build_runtime import BuildGraphRun
+from tools.execution.build_fixture import BuildFixture
 from tools.execution.build_cache import verify
 from tools.execution.catalog import load_definition
 from tools.execution.runtime import git,identity
 
 def sources(catalog):
     names=['tools/execution/runtime.py','tools/execution/catalog.py','tools/execution/build_runtime.py',
-           'tools/execution/build_cache.py','scripts/run_build_graph.py','examples/spring-build-graph/run.py',
+           'tools/execution/build_cache.py','tools/execution/build_fixture.py','scripts/run_build_graph.py','examples/spring-build-graph/run.py',
            'examples/spring-build-graph/prepare.py','examples/spring-build-graph/negative.py','tests/test_build_execution.py','standards/java-build-sandbox.md']+list(catalog['source_sha256'])
     names += [p.relative_to(ROOT).as_posix() for p in sorted((CASE/'seed').rglob('*')) if p.is_file()]
     return {n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in sorted(set(names))}
@@ -34,19 +35,15 @@ def main():
     cache_ids={t:verify(path,t) for t,path in seeds.items()}
     definition,catalog=load_definition(ROOT/'graphs/spring-build.json',ROOT)
     hashes=sources(catalog)
-    with tempfile.TemporaryDirectory(prefix='synthetic-spring-graph-') as directory:
-        root=Path(directory).resolve();repo=root/'repo';shutil.copytree(CASE/'seed',repo)
+    with BuildFixture('synthetic-spring-graph-') as fixture:
+        root=fixture.path;repo=root/'repo';shutil.copytree(CASE/'seed',repo)
         git(repo,'init','-b','main');git(repo,'add','.');git(repo,'commit','-m','Independent synthetic Spring seed')
         base=git(repo,'rev-parse','HEAD').stdout.strip()
         g=BuildGraphRun(repo,base,root/'runs',definition,tool_roots=list(toolchain.values()),java_home=toolchain['JAVA_HOME'],host_capacity=2,toolchain=toolchain,cache_seeds=seeds,allow_observed_daemon=True)
         try:
             state=g.run()
             if state['status']!='SUCCEEDED':
-                # Preserve failed fixture for local diagnosis, never publish raw logs.
-                failure=Path(tempfile.mkdtemp(prefix='failed-synthetic-spring-'))/'fixture'
-                shutil.copytree(root,failure)
-                print('Local synthetic failure fixture:',failure)
-                raise RuntimeError('Graph failed; synthetic fixture retained outside case if available')
+                raise RuntimeError('Graph failed; original synthetic runtime retained')
             n=state['nodes'];overlap=max(n['title']['started_at'],n['tags']['started_at'])<min(n['title']['ended_at'],n['tags']['ended_at'])
             waited=n['integration']['started_at']>=max(n['title']['ended_at'],n['tags']['ended_at'])
             merged=all(git(g.resources['integration']/'worktree','merge-base','--is-ancestor',n[x]['commit'],n['integration']['input_commit'],check=False).returncode==0 for x in ['title','tags'])
@@ -71,6 +68,7 @@ def main():
                 'graph_probe':state['graph_resource']['probe'],'builds':receipts,'nodes':{}}
             for name,v in n.items():report['nodes'][name]={k:x for k,x in v.items() if k not in {'process_pid','started_at','ended_at','seconds'}}
         finally:g.close()
+        fixture.safe_to_remove()
     text=json.dumps(report,indent=2)+'\n'
     if a.output:a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(text)
     else:print(text,end='')

@@ -36,7 +36,7 @@
     },
     {
       "id": "regression",
-      "expected": "12 new build regressions and 26 unchanged strict regressions pass without skip",
+      "expected": "18 new build regressions and 26 unchanged strict regressions pass without skip",
       "evidence": "evidence/tests.json"
     }
   ],

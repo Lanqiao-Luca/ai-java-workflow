@@ -11,7 +11,8 @@ import sys
 sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
-from tools.execution.build_cache import seal,verify
+from tools.execution.build_cache import seal,verify,MARKER
+from tools.execution.build_fixture import run_preparation
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -26,12 +27,13 @@ def main():
          'MAVEN_HOME':str(a.maven_home.resolve(strict=True)),'GRADLE_HOME':str(a.gradle_home.resolve(strict=True))}
     if a.reuse_public_home:
         for tool in ['maven','gradle']:
-            source=a.reuse_public_home.resolve(strict=True)/tool;verify(source,tool);shutil.copytree(source,home/tool)
+            source=a.reuse_public_home.resolve(strict=True)/tool;verify(source,tool);shutil.copytree(source,home/tool);(home/tool/MARKER).unlink()
     helper="import runpy,sys,json; n=runpy.run_path(sys.argv[1]); n['implement']('both'); print(json.dumps(n['build'](sys.argv[2],'integration',False)))"
     for tool in ['maven','gradle']:
-        with (out/(tool+'-prepare.log')).open('wb') as log:
-            run=subprocess.run([sys.executable,'-I','-B','-c',helper,str(app/'build_task.py'),tool],env=env,stdout=log,stderr=subprocess.STDOUT,timeout=600)
-        if run.returncode:raise SystemExit('public dependency preparation failed: '+tool+'; inspect local synthetic log')
+        result=run_preparation([sys.executable,'-I','-B','-c',helper,str(app/'build_task.py'),tool],app,env,
+                               out/(tool+'-prepare.log'),out/(tool+'-process.json'),timeout=600)
+        if result['exit'] or result['reason'] or not result['tree_stopped']:
+            raise SystemExit('public dependency preparation failed: '+tool+'; original output and process state retained, cache not sealed')
     # A running Gradle daemon must not be exported/reused as cache state.
     cache=home/'gradle'
     for name in ['daemon','workers','notifications']:

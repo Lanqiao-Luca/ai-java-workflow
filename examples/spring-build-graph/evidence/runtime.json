@@ -4,12 +4,12 @@
   "status": "PASSED",
   "platform": "Darwin",
   "mode": "trusted_macos_build_tree",
-  "source_id": "531090ff5e7935be2d4c582752682df90c5c7bc2b35a9aae06781d8176734d4c",
+  "source_id": "dd45a59d3b6295aa5dd8001b18186a79bae3d3eecb175b6a219d8a07c85769e9",
   "source_sha256": {
     "agents/java-build-executor.md": "faa93b5d215e7fca5632bb51d14d262e475a716b3122383cfcecfe099ecbee47",
-    "examples/spring-build-graph/negative.py": "588f3fbe38c604a9124e41351b2b8828df9d00bd9db921fc0bedfc3486ec2f73",
-    "examples/spring-build-graph/prepare.py": "9b398094eab09f9972139e7a795e428c97065ffa6ace4cdfb4f979fef549531b",
-    "examples/spring-build-graph/run.py": "c2cee2fda5248beaa4543a79da2af2c72b89bf87de47d8aba9298de2f4054561",
+    "examples/spring-build-graph/negative.py": "e4f038a687219a111ba18a4cb1e02efc4f0b9695b685649bf2f93479b3671e43",
+    "examples/spring-build-graph/prepare.py": "83ab4e6f3694a1d2a01838d5e46440ecebff758a23df021b80cd700fa9ff62af",
+    "examples/spring-build-graph/run.py": "aabf1ca4c4f650100175295343de71a686b8ee8744e94d3ea40de65d6820c42e",
     "examples/spring-build-graph/seed/build.gradle": "5d3f2f87e518a7b5d2c9d024c03479c9e258f444c62badd6152fa186051cd3c5",
     "examples/spring-build-graph/seed/build_task.py": "909846b8d776aa753b437c2d7f738dbd91b91f6103959b35406e5fd30deb1e3e",
     "examples/spring-build-graph/seed/pom.xml": "ea4476f85cdc2c15f209fec30080e04b004a5069513039c7883498ccc57e9d28",
@@ -26,10 +26,11 @@
     "scripts/run_build_graph.py": "4d46b75e34d32a33b79dad81684cee7b30d2a24d5824183f9a3bed343ea77f9b",
     "skills/code-implementation/SKILL.md": "5d658cb11076a82de1917b381d746e82015874936daf0cffb99bfe561d834b4d",
     "skills/java-build-isolation/SKILL.md": "883d03e21ac3a983a9173a7716b8f79ab10d8e58f5f710cbfd09c13bada7b6e0",
-    "standards/java-build-sandbox.md": "f0f0c0e544d8ff3b0d5522049689e687c4702b6f9240a4e2b1068eb2df2e6702",
-    "tests/test_build_execution.py": "9b4dcdcd65f1e9381defe2d9c4592deb307dac1da18cec016c81e7e81009ed01",
+    "standards/java-build-sandbox.md": "648d8b5c40ab75ee8f78ee1469ae85e288da6e7b1b5f568693cc4245970ed936",
+    "tests/test_build_execution.py": "78b7b2b285f396a46e04387472d1f4022b9632e4074862e5a686357ccad57653",
     "tools/execution/build_cache.py": "a004d59a20332b42ce833cf43660fbb7f78a6ea71deb4a69c18f7cf96292c23e",
-    "tools/execution/build_runtime.py": "6ac5d2f0f8b2b6da41e8846229a4a7b08f94bdf2567d8d36f8fc83fcdb374caf",
+    "tools/execution/build_fixture.py": "d34603a143d6a13299ecd188f5e99acd9fca89d0d145badafeec71d98c5c3806",
+    "tools/execution/build_runtime.py": "430e3da64283039cfb6e6c95f8b202ec0a87395250bdf15de9de592d108b28cc",
     "tools/execution/catalog.py": "63ad9fea9fc090ab31360194a3a6726ebc776eaf408bed72cef31821fed083b1",
     "tools/execution/runtime.py": "f674748ca9c371480082a53e9bfc735853b3396d51c9c8c8489418684925e505",
     "workflows/spring-build-integration.json": "f315c6e83ab0d9b0e81bd7bfad63e85712dce331e952fdb57fa937a57f202af7",
@@ -50,9 +51,9 @@
   },
   "cache_ids": {
     "maven": "cdd7adea4e4887087a34ee88984e39d986cfbbeb3d3aa2ed6d6ebea72a9f67db",
-    "gradle": "1ce7936c3398b40d85717dcb00091827c86dab8917c8f7ac953298837840203b"
+    "gradle": "00d01d0e28ac13b02b71a69043ba9c953324d1efaa4788d342a5477d80145e3c"
   },
-  "base_commit": "091653579f664979c98e8214b8527ebc59811340",
+  "base_commit": "bf256bc409497ae3201577d4574b17b99d830424",
   "instance_count": 4,
   "max_parallel": 2,
   "host_capacity": 2,
@@ -87,7 +88,7 @@
         "artifacts": [
           {
             "name": "synthetic-spring-graph-1.0.0.jar",
-            "sha256": "edd351d8908c51d0aefdedcb8abd1d604b541df10b5a0a0c766d6eadb014b634",
+            "sha256": "22de24df2a1f379d105182f3cbdf9dd4e35fa2e19415a165f8eee18f3ddb7258",
             "bytes": 21108214,
             "boot_jar": true
           }
@@ -108,7 +109,7 @@
         "artifacts": [
           {
             "name": "synthetic-spring-graph.jar",
-            "sha256": "deb16f6d5e2fb896a6ea79d28b90021d7db1ef419e2c53f730d7fb5fb81ab9ae",
+            "sha256": "c9d16044754b1c791d43547bd61953e9a0e2215697f63eb21e5713b9c61b2224",
             "bytes": 21106532,
             "boot_jar": true
           }
@@ -131,7 +132,7 @@
         "artifacts": [
           {
             "name": "synthetic-spring-graph-1.0.0.jar",
-            "sha256": "60a152b6c02bac2d0b5cc5e2b153f17855746871196f2bb1054ed09c6d42fb75",
+            "sha256": "c9f8aba90257db369645a5a82fc199e614f523f8da1437e2fea9cb89627cfff7",
             "bytes": 21108653,
             "boot_jar": true
           }
@@ -152,7 +153,7 @@
         "artifacts": [
           {
             "name": "synthetic-spring-graph.jar",
-            "sha256": "0f4bd2de4dced239b038aa2083c64acae768a45d6884883f319ad31ade81d63c",
+            "sha256": "37a473c5949f4eee6f88c0cb239df09e97b6494ca8730febb0c1b626dc35ffc4",
             "bytes": 21106699,
             "boot_jar": true
           }
@@ -178,10 +179,10 @@
         "own_loopback_ipc_succeeded": true,
         "observed_tree_stopped": true
       },
-      "input_commit": "091653579f664979c98e8214b8527ebc59811340",
+      "input_commit": "bf256bc409497ae3201577d4574b17b99d830424",
       "exit": 0,
       "reason": null,
-      "log_sha256": "1ab91ce8032d1690a61aebab00f8f5b35491f4a22c4aff5d1ff37f3cd78f0415",
+      "log_sha256": "5a80a1077f1d7cadeca37237df97d01a8c3a80bda2d3096e405eaf8485aaa171",
       "child_seen": true,
       "observed_process_peak": 5,
       "tree_stopped": true,
@@ -189,7 +190,7 @@
       "allow_observed_daemon": true,
       "workspace_id": "862ddcf173f7de107ce1f72d33fdaa0db8e5297c4780fcd632e3e77d86193057",
       "success": true,
-      "commit": "15d3016e1c3e25d17570564dab2b4010696a80a8"
+      "commit": "c60cbcb0540ae5defebc3e44d739fa8933702ce8"
     },
     "tags": {
       "status": "SUCCEEDED",
@@ -207,10 +208,10 @@
         "own_loopback_ipc_succeeded": true,
         "observed_tree_stopped": true
       },
-      "input_commit": "091653579f664979c98e8214b8527ebc59811340",
+      "input_commit": "bf256bc409497ae3201577d4574b17b99d830424",
       "exit": 0,
       "reason": null,
-      "log_sha256": "7b1df3fdfd016a4dbca9af752c9ba1cac308474cbb3b241e22e353acbadc54b3",
+      "log_sha256": "b166e9580f4d7e3d5aefc4696eb703f7649e3144a9b1f47521a7038baea49e89",
       "child_seen": true,
       "observed_process_peak": 5,
       "tree_stopped": true,
@@ -218,7 +219,7 @@
       "allow_observed_daemon": true,
       "workspace_id": "3657878e163e9456208322c3b2f1b87111377380a7db8bb6ee796e655ab8d3a2",
       "success": true,
-      "commit": "cec9e45e13771f5a2bf8a51967f558b7b3bbbb49"
+      "commit": "a34341f3ef47da6f1901e9d5459252e3c45c5603"
     },
     "integration": {
       "status": "SUCCEEDED",
@@ -236,10 +237,10 @@
         "own_loopback_ipc_succeeded": true,
         "observed_tree_stopped": true
       },
-      "input_commit": "a44a57b49c11e251b9980be8382673c8018d5446",
+      "input_commit": "c91fafd5cc0e7a71a2144cf7aba6fab590edca31",
       "exit": 0,
       "reason": null,
-      "log_sha256": "b398c69e6e6dbae5290d47a327ffeb55327a9becbef002e67c16a153dae5e06d",
+      "log_sha256": "bba8c6ccd86daaa92115dad8c2503438c74b87d1c5757d10602422bfe50b402b",
       "child_seen": true,
       "observed_process_peak": 5,
       "tree_stopped": true,
@@ -247,7 +248,7 @@
       "allow_observed_daemon": true,
       "workspace_id": "58d704c83e4d773adc983113a2ad1179b8ee64e7c7343660479f4614a56756e4",
       "success": true,
-      "commit": "a44a57b49c11e251b9980be8382673c8018d5446"
+      "commit": "c91fafd5cc0e7a71a2144cf7aba6fab590edca31"
     }
   }
 }

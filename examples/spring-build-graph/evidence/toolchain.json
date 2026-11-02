@@ -27,5 +27,33 @@
   ],
   "spring_boot": "3.5.16",
   "dependency_source": "https://repo.maven.apache.org/maven2",
-  "notes": "Official archives checked locally; archives/binaries/caches are excluded from publication. Application dependencies resolved in new HOME, sealed by byte manifest and executed offline."
+  "notes": "Official archives checked locally; archives/binaries/caches are excluded from publication. Application dependencies resolved in new HOME, sealed by byte manifest and executed offline.",
+  "online_preparation": {
+    "maven": {
+      "status": "SUCCEEDED",
+      "exit": 0,
+      "reason": null,
+      "tree_stopped": true,
+      "observed_detached": false,
+      "observed_process_peak": 5,
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "boot_jar": true
+    },
+    "gradle": {
+      "status": "SUCCEEDED",
+      "exit": 0,
+      "reason": null,
+      "tree_stopped": true,
+      "observed_detached": true,
+      "observed_process_peak": 5,
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "boot_jar": true
+    }
+  }
 }

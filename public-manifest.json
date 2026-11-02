@@ -1207,6 +1207,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tools/execution/build_fixture.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tools/execution/build_runtime.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"

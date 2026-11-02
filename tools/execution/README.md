@@ -22,3 +22,5 @@
 新模式允许fork和较宽loopback，外网拒绝；不隔离同机其他loopback服务。默认拒脱离，案例显式opt-in已观察一次性Daemon并最多3秒drain；未知占用隔离。作业槽位不等于所有JVM总数，轮询无法保证恶意快速doublefork、宿主强杀后的任意后代回收或容器级多租户边界。只适用可信源码/工具/插件与当前ASCII非隐藏源准入，不支持任意现有Spring仓库。
 
 [完整Spring案例](../../examples/spring-build-graph/README.md)真实Maven/Gradle测试与Boot JAR打包通过，未启动应用或部署。依赖预热联网与Graph离线分开，工具/缓存/日志不进Git；不自动安装系统工具或启动后台服务。
+
+[build_fixture.py](build_fixture.py)保留异常/UNKNOWN的原运行目录；公开依赖预热同样监督已观察子树并等待停止，未确认停止不封存缓存。仅成功验证且确认停止后回收。

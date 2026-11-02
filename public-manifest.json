@@ -1212,6 +1212,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "loops/technical-retry.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/templates/technical-retry.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "public-manifest.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1234,6 +1244,11 @@
     {
       "path": "scripts/check_graph_cases.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "scripts/check_loop_cases.py",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -1614,6 +1629,11 @@
     {
       "path": "tools/execution/runtime.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/loop_policy.py",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {

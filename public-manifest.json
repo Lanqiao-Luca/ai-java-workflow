@@ -87,6 +87,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/java-spring-workflow-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"

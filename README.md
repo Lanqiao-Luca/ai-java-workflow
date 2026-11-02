@@ -6,6 +6,34 @@
 
 你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 并发调度多个 Workflow。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
 
+## 框架架构
+
+框架从可复用的原子方法向上组装：**原子规则（Standards）→ Skill → Agent → Workflow → Graph**。下面的箭头表示上层组织或消费下层；实际执行由使用者或运行宿主落实。
+
+```mermaid
+flowchart TD
+    G["Graph：目标、依赖与并发"] -->|组织多个 Workflow| W["Workflow：阶段、输入输出与交接"]
+    L["Loops：预算、进展与停止"] -.->|按需控制重复| W
+    W -->|安排阶段职责| A["Agent：责任、决策与交付"]
+    A -->|选择并采用能力| S["Skill：任务适配与能力组合"]
+    S -->|复用方法合同| P["原子规则 Standards：方法与约束的单一来源"]
+```
+
+| 组成 | 解决什么问题 | 仓库中的例子 |
+| --- | --- | --- |
+| **原子规则 / Standards** | 一项方法在什么条件下适用，如何操作、验收，何时停止 | [复用与旧行为保留](standards/behavior-preservation.md) |
+| **Skill** | 当前任务需要哪些原子方法，怎样把输入适配为具体产物 | [代码实现 Skill](skills/code-implementation/SKILL.md) |
+| **Agent** | 谁承担任务、选择能力，对结果和交接负责 | [实现者 Agent](agents/implementer.md) |
+| **Workflow** | 一个任务分哪些阶段，各角色如何交接与处理失败 | [Java/Spring 研发 Workflow](workflows/java-spring-development.md) |
+| **Graph** | 多个 Workflow 怎样依赖、并行、汇合，失败时阻断哪些后续节点 | [原生研发 Graph](graphs/native-java-spring.md) |
+| **Loops** | 同一目标是否需要再做一轮，预算是否允许，何时收敛或停止 | [审查整改收敛](loops/review-convergence.md) |
+
+一个 Skill 可以组合多项原子方法，一个 Agent 可以按任务采用多个 Skill，一个 Workflow 可以组织多个 Agent，Graph 再组织多个 Workflow。原子方法保持单源，角色和流程引用它，不重复复制正文；原子规则本身不启动 Agent 或上层流程。
+
+例如，在[书签标签替换案例](examples/workflow-bookmark-tags/README.md)中，Workflow 把实现阶段交给实现者，Agent 采用代码实现 Skill，Skill 复用行为保留、最小改动和验证方法，形成候选与证据，再交验证、审查和交付阶段。需要多个 Workflow 并发时才使用 Graph；有具体发现且需要重复时才采用 Loop。
+
+执行支撑由[工具与隔离机制](tools/execution/README.md)、[原生派工适配器](docs/native-agent-adapter.md)提供：**worktree 隔离代码工作区，sandbox 约束执行环境**。Docker 是 sandbox 的一种可选后端，具体支持范围见下方运行说明。方法文档、原生角色注册与后端执行能力分别说明，不能据目录或角色文件存在认定已经自动运行。
+
 ## 可以用它做什么
 
 - **把需求变成可实施任务**：明确验收口径、已有行为和允许改动的范围。
@@ -65,7 +93,7 @@ python3 -B scripts/check.py
 | Docker 容器构建 | 在明确容器限制下执行 Spring Boot 构建 | [Docker Graph](graphs/docker-spring.md)、[双宿主案例](examples/docker-spring-graph/README.md) |
 | 有限重复与停止 | 技术失败重试、审查整改的控制方法 | [Loops 目录](loops/README.md)、[本批次交付计划](docs/loops-extraction-plan.md) |
 
-## 工作流怎样组成
+## 一条研发链怎样推进
 
 ```mermaid
 flowchart LR
@@ -76,7 +104,7 @@ flowchart LR
     C -->|有具体发现且预算允许| I
 ```
 
-Graph 选择目标、依赖与并发；Workflow 串联一次执行的阶段；Agent 对职责结果负责；Skill 适配任务；Standards 保存共用方法。Loops 为必要的重复提供预算、进展判断和停止条件。简单任务可以直接从所需角色开始。
+这张图描述研发任务的阶段推进。各阶段按上面的框架架构选择职责与方法；简单任务可以直接从所需 Agent 开始，不要求启用全部层级。
 
 | 目录 | 内容 |
 | --- | --- |

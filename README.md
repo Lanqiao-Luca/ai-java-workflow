@@ -23,7 +23,9 @@
 
 仓库区分**方法文档、辅助脚本和代码示例**。Skill/Agent文档没有自动注册到平台，也不提供模型、数据库或外部服务客户端；不要求为简单任务启用所有角色。
 
-[六阶段原生Graph](graphs/native-java-spring.md)已有[完整Spring实跑案例](examples/native-spring-workflow/README.md)：需求、实现、独立验证、代码/语义/文档审查、原则审查和交付均由真实原生子Agent完成，父会话只派工；两审查从同一冻结候选并发，最终25项Spring/MockMvc测试通过。角色仅在显式新实例注册，不改全局配置。原生CLI链只在macOS/Maven可信虚构工程验证，不挪用Docker案例的隔离证据，也不把mock门禁测试当模型执行。[小步执行计划](docs/native-agent-workflow-plan.md)与[派工接口](docs/native-agent-adapter.md)说明运行、隐私和失败边界。
+[六阶段原生Graph](graphs/native-java-spring.md)已有[完整Spring实跑案例](examples/native-spring-workflow/README.md)：需求、实现、独立验证、代码/语义/文档审查、原则审查和交付均由真实原生子Agent完成，父会话只派工；两审查从同一冻结候选并发，最终25项Spring/MockMvc测试通过。角色配置仅写显式新实例；Codex 0.166宿主另会自动保存新执行目录的项目信任登记，须事先获得该平台写入许可。要求全局配置零写入时不得启动本原生后端。原生CLI链只在macOS/Maven可信虚构工程验证，不挪用Docker案例的隔离证据，也不把mock门禁测试当模型执行。[小步执行计划](docs/native-agent-workflow-plan.md)与[派工接口](docs/native-agent-adapter.md)说明运行、隐私和失败边界。
+
+[逐步交付与验证结果](docs/native-agent-workflow-results.md)记录真实提交、首次环境失败、修复、源身份与公开内容复查。默认运行仅交付候选，不自动取得GitHub推送或部署许可。
 
 ## 按执行实例分配资源：Graph调度多个Workflow
 
@@ -140,6 +142,7 @@ python3 scripts/check_workflow_cases.py
 python3 scripts/check_graph_cases.py
 python3 scripts/check_spring_build_cases.py
 python3 scripts/check_docker_cases.py
+python3 scripts/check_native_cases.py
 ```
 
 检查公开清单、相对引用、方法层交接、案例源码SHA与实际diff。新增Workflow检查器核阶段声明、源包/编译候选与运行回执一致性；它不重跑测试，也不代语义审查。Graph检查器还核源码/catalog身份、26回归和4实例回执一致性，不执行沙箱或Java。未知案例类型或目录报错，不静默跳过。构建Graph检查器核新旧回归身份、双工具JUnit/子JVM/打包摘要与失败阻断回执；五类显式分派，不实际构建。Docker检查器核双宿主、来源/catalog/image/context、18探测、13+8回归及故障注入披露、失败阻断和资源关闭，仅校回执一致性。静态通过不代表公司敏感性、公开权利或业务运行全部得到证明。

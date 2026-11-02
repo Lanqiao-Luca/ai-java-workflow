@@ -1,8 +1,8 @@
 # Graphs
 
-- [原生Java/Spring Graph](native-java-spring.md)：六阶段原生上下文，依赖门禁和双审查并发；与下方固定命令型Graph分开。
+- [原生Java/Spring Graph](native-java-spring.md)：六阶段原生上下文、依赖门禁和双审查并发；[完整Spring案例](../examples/native-spring-workflow/README.md)与[结果](../docs/native-agent-workflow-results.md)另列真实调用和测试。
 
-Graph组织多个已声明Workflow实例的依赖、并发额度和汇合；不代表平台原生LLM Agent自动调度。
+Graph组织多个已声明Workflow实例的依赖、并发额度和汇合。下方三条命令型Graph执行已声明argv；只有上方显式原生支路调用模型角色，不能从目录或JSON存在推定其他定义也支持原生调度。
 
 - [并发Java Graph合同](concurrent-java.md)
 - [可执行Graph定义](concurrent-java.json)

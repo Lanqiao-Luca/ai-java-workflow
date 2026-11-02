@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "README.md",
-      "sha256": "9ca63f7124070b5ee23ae58f614ddf048d2c4bb4c3b73b4d5d2a863f12bae902"
+      "sha256": "3125ef1f1214d37443cf4c367f3886ddcda780d8561f9d1d8b2dba5a2293f8df"
     },
     {
       "path": "acceptance/LabelContractTest.java",

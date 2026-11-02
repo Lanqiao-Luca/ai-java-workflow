@@ -1,5 +1,11 @@
 # 案例目录
 
+## 原生Agent完整研发链
+
+[原生Spring标签案例](native-spring-workflow/README.md)：真实原生上下文完成需求、生成Java及作者测试、独立验证、双审查和交付。13项固定验收、7项作者测试、5项独立验证共25项真实离线Spring/MockMvc测试通过；两审查Workflow调用区间重叠。运行时Agent/Skill注册仅在新实例，不改全局Agent/Skill；宿主项目信任登记须另获明确许可，要求全局配置零写入的任务不能运行当前后端。原生原件与公开摘要来源分别声明。仅macOS/Maven参考链，未部署，不将下方命令型Graph或旧角色教材改称原生模型执行。
+
+[先行计划](../docs/native-agent-workflow-plan.md) · [真实交付结果](../docs/native-agent-workflow-results.md)
+
 ## Graph并发调度多个Workflow
 
 [并发Java Graph](concurrent-java-graph/README.md)：4实例独立worktree/分支与macOS实验前台sandbox，2功能实际重叠、依赖汇合后8项Java断言，每实例10项探测及26项回归通过。新机制只支持无fork前台命令，非原生LLM调度，不扩写旧Spring/角色教材的历史运行结论。

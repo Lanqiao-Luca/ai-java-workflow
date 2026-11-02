@@ -1,8 +1,8 @@
 # Workflows
 
-- [原生Agent研发链](native-java-spring.md)：六阶段声明，真实原生派工、独立worktree、冻结审查与失败阻断；完整Spring实跑结果另行记录。
+- [原生Agent研发链](native-java-spring.md)：六阶段真实原生派工、独立worktree、冻结审查与失败阻断；[完整Spring案例](../examples/native-spring-workflow/README.md)及[实跑结果](../docs/native-agent-workflow-results.md)区分模型、构建和被动检查。
 
-Workflow负责阶段顺序、输入输出交接和失败返回；各Agent自行选择Skill并消费Standards。研发流程合同可手动采用；新增JSON可由显式本地Graph执行器调度，不代表平台注册或原生LLM派工。
+Workflow负责阶段顺序、输入输出交接和失败返回；各Agent自行选择Skill并消费Standards。方法合同可手动采用，命令型JSON由原执行器运行；`native-*.json`通过显式原生执行器在新实例注册并派工，不改全局Agent/Skill注册，也不把全部方法文档自动安装成平台能力；Codex宿主项目信任登记需另外获得平台写入许可。
 
 - [Java/Spring研发全流程](java-spring-development.md)：同一需求与候选，从澄清到实现、验证、审查、整改及交付。
 - [完整虚构案例](../examples/workflow-bookmark-tags/README.md)：书签标签替换，真实Spring装配/MockMvc红绿测试与阶段证据。

@@ -72,8 +72,9 @@ def check_case(folder):
 
 
 def main():
-    count, workflows = 0, 0
+    count, workflows, graphs = 0, 0, 0
     workflow = runpy.run_path(str(ROOT / "scripts/check_workflow_cases.py"))
+    graph = runpy.run_path(str(ROOT / "scripts/check_graph_cases.py"))
     for folder in sorted((ROOT / "examples").iterdir()):
         if not folder.is_dir():
             continue
@@ -89,9 +90,12 @@ def main():
         elif kind == "workflow_case":
             workflow["check_workflow_case"](folder)
             workflows += 1
+        elif kind == "graph_case":
+            graph["check_graph_case"](folder)
+            graphs += 1
         else:
             raise ValueError("unknown example kind")
-    print(f"PASS: {count} role cases, {workflows} workflow cases; structure, identities and receipt consistency only")
+    print(f"PASS: {count} role cases, {workflows} workflow cases, {graphs} Graph cases; structure, identities and receipt consistency only")
 
 
 if __name__ == "__main__":

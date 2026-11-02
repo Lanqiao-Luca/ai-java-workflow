@@ -1,0 +1,20 @@
+{
+  "kind": "workflow_definition",
+  "agent": "agents/implementer.md",
+  "skills": [
+    "skills/code-implementation/SKILL.md",
+    "skills/workspace-isolation/SKILL.md"
+  ],
+  "timeout": 30,
+  "command": [
+    "{java}",
+    "-XX:-UsePerfData",
+    "{java-tmp-option}",
+    "FeatureWriter.java",
+    "title"
+  ],
+  "allowed_write": [
+    "TitlePolicy.java"
+  ],
+  "success_pattern": "^FEATURE_TITLE_OK$"
+}

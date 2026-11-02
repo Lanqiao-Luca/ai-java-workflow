@@ -2,14 +2,15 @@
 
 把一个 Java/Spring 需求交给 AI，按可复核的步骤形成代码候选与验证证据。
 
-面向 Java/Spring 业务开发的 AI 研发工作流。完整研发按 **Workflow → Agent → Skill → Standards** 组织：Workflow串阶段与交接，Agent对结果负责，Skill适配当前任务，Standards保存共用方法。提供可阅读的方法、空表和独立虚构代码案例，由使用者当前的 AI 助手与本地工具执行。
+面向 Java/Spring 业务开发的 AI 研发工作流。按需要使用 **Graph → Workflow → Agent → Skill → Standards**：Graph控制依赖与实例并发，Workflow串阶段与交接，Agent对结果负责，Skill适配当前任务，Standards保存共用方法。简单任务不要求启用Graph或全部角色。提供可阅读的方法、空表和独立虚构代码案例，由使用者当前的 AI 助手与本地工具执行。
 
 ## 仓库里有什么
 
-**1条完整研发Workflow · 15份规范 · 11项技能 · 10项角色职责 · 10条角色案例 · 1条Spring集成案例 · 3份空表**。
+**1条并发Graph · 1条完整研发Workflow · 3份可执行Workflow定义 · 17份规范 · 12项技能 · 10项角色职责 · 10条角色案例 · Spring与Graph各1条集成案例**。
 
 | 你想做什么 | 从这里进入 | 能拿到什么 |
 | --- | --- | --- |
+| 并发运行隔离的Workflow | [Graph合同](graphs/concurrent-java.md)、[完整Java并发案例](examples/concurrent-java-graph/README.md) | 每run_id独立worktree与已探测前台sandbox，2功能并发后串行集成/8断言；仅macOS实验后端 |
 | 跑通一个完整研发案例 | [Java/Spring Workflow](workflows/java-spring-development.md)、[书签标签集成案例](examples/workflow-bookmark-tags/README.md) | 同一需求与候选、真实Spring/MockMvc红绿13测试、诊断修复及同候选审查 |
 | 先看一个Agent怎样做事 | [实现者Agent](agents/implementer.md)、[完整案例](examples/bookmark-title/README.md) | 输入、决策、规范消费、Java前后差异、用例与交接 |
 | 把需求交给AI开发 | [需求澄清](skills/requirement-clarification/SKILL.md)、[代码实现](skills/code-implementation/SKILL.md) | 可实施范围、保持项、最小改点和真实验证要求 |
@@ -18,6 +19,24 @@
 | 直接记录本次任务 | [任务表](skills/resources/task.md)、[行为映射](skills/resources/behavior.md)、[验证与审查表](skills/resources/review.md) | 可复用的空表，不要求每次重建台账 |
 
 仓库区分**方法文档、辅助脚本和代码示例**。Skill/Agent文档没有自动注册到平台，也不提供模型、数据库或外部服务客户端；不要求为简单任务启用所有角色。
+
+## 按执行实例分配资源：Graph调度多个Workflow
+
+[完整并发案例](examples/concurrent-java-graph/README.md)由真实[Graph JSON](graphs/concurrent-java.json)引用3份Workflow JSON，宿主读取合同、角色与Skill身份，再执行已声明的本地argv；不是把10个原生LLM Agent自动派工。共享[执行机制](tools/execution/README.md)是Python标准库实现，不是新的方法层或私有企业Tools。
+
+Graph自身及title/tags/integration共4个实例，每个有独立branch/worktree、受限策略、HOME/TMP和证据。两个功能JVM实际重叠，峰值2；集成等待两项成功，在自己的worktree合入精确commit后重新编译并通过8项Java断言，源HEAD保持不变。每实例10项探测验证自身写、仓库外canary读写、Git管理canary读写、网络、硬链接创建、符号链接读、fork和脱离会话派生拒绝；另外26项真实回归通过、无跳过。
+
+当前**仅macOS已弃用sandbox-exec的实验前台后端**，deny fork、默认拒网络，无裸subprocess回退。Java用JavaCompiler API在同JVM编译，不能宣传Maven/Gradle等fork型任务可在此后端运行。旧Spring案例的临时Maven配置隔离与这里的内核权限限制是不同范围，不用旧13测试冒充并发Spring验证。
+
+```sh
+python3 -B examples/concurrent-java-graph/run.py --java-home <JDK目录>
+```
+
+需要macOS、可用sandbox-exec、Python3.9+、Git、显式JDK17+；不安装工具或下载依赖，运行根是临时虚构仓库。源路径限ASCII且拒所有隐藏路径（含.gitignore/.github）、链接、子模块和属性过滤器；此seed定义不能直接套任意工程。详情见[限制与真实结果](examples/concurrent-java-graph/result.md)。
+
+宿主单写状态与Git管理；共享同一runtime_root的Graph使用持久额度池。脏/UNKNOWN资源不force清理，被强杀宿主留下未知active租约时隔离池，不自动复用或向旧PID发信号。只提供审计恢复，不自动续跑。允许必要系统metadata/根目录枚举及明确工具根只读，没有总RAM/总磁盘、全机器外部进程配额或恶意多租户完全防护保证。
+
+[先行执行文档](docs/concurrent-execution-plan.md) · [隔离Skill](skills/workspace-isolation/SKILL.md) · [Graph目录](graphs/README.md)
 
 ## 从需求到交付：一条完整Java/Spring研发Workflow
 
@@ -89,9 +108,10 @@ python3 examples/workflow-bookmark-tags/run.py
 python3 scripts/check.py
 python3 scripts/check_agent_cases.py
 python3 scripts/check_workflow_cases.py
+python3 scripts/check_graph_cases.py
 ```
 
-检查公开清单、相对引用、方法层交接、案例源码SHA与实际diff。新增Workflow检查器核阶段声明、源包/编译候选与运行回执一致性；它不重跑测试，也不代语义审查。未知案例类型或目录报错，不静默跳过。静态通过不代表公司敏感性、公开权利或业务运行全部得到证明。
+检查公开清单、相对引用、方法层交接、案例源码SHA与实际diff。新增Workflow检查器核阶段声明、源包/编译候选与运行回执一致性；它不重跑测试，也不代语义审查。Graph检查器还核源码/catalog身份、26回归和4实例回执一致性，不执行沙箱或Java。未知案例类型或目录报错，不静默跳过。静态通过不代表公司敏感性、公开权利或业务运行全部得到证明。
 
 本地有JDK 17+时，再运行：
 
@@ -114,7 +134,7 @@ Java运行器先核源码身份，再在临时目录分别编译基线与候选�
 | 早期纯Java角色案例 | 12项契约用例未重跑，保留原NOT_RUN；不被新Spring实例覆盖 |
 | 新增Spring集成案例 | 真实上下文/MockMvc红绿各13测试；同候选审查完成，范围见案例记录 |
 | 生产Spring工程、数据库和模型接入 | 新案例仅本地MOCK上下文；生产系统、真实认证和数据库等由使用者另行验证 |
-| Workflow合同及平台接入 | 提供可手动采用的完整研发Workflow；没有自动调度、原生注册、Graph/Loop执行器或后台任务 |
+| Graph与实例资源 | 提供显式本地Graph调度、真实worktree与macOS实验前台sandbox；无原生LLM调度、跨平台回退、Loop执行器或后台服务 |
 
 方法不固定所有项目的JDK、Spring或数据库版本，按真实工程事实核适用性。源码身份变化后应刷新受影响证据；作者自查、独立审阅、真实运行和最终采用分别声明。
 

@@ -1,0 +1,51 @@
+{
+  "kind": "graph_case",
+  "case_id": "concurrent-java-graph",
+  "synthetic": true,
+  "graph": "graphs/concurrent-java.json",
+  "runtime_evidence": "evidence/runtime.json",
+  "tests_evidence": "evidence/tests.json",
+  "acceptance": [
+    {
+      "id": "instances",
+      "expected": "Graph与3个Workflow各有独立资源，子实例保留父ID",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "parallel",
+      "expected": "两个独立功能实际重叠且峰值2，共用容量不超限",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "dependency",
+      "expected": "集成等待两节点成功，合入两精确commit后重新运行8断言",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "isolation",
+      "expected": "4实例各通过10项自造canary/自身写/网络/fork探测",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "source",
+      "expected": "源HEAD未变；内容身份绑定源码与合同",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "cleanup",
+      "expected": "干净停止资源回收；失败脏资源保留另有回归",
+      "evidence": "evidence/tests.json"
+    },
+    {
+      "id": "failure",
+      "expected": "26项回归含失败阻断、冲突、漂移、超时、取消、未知容量隔离",
+      "evidence": "evidence/tests.json"
+    }
+  ],
+  "verification": {
+    "platform": "Darwin",
+    "sandbox": "experimental_macos_foreground_seatbelt",
+    "native_agent": "not_run",
+    "spring": "not_run"
+  }
+}

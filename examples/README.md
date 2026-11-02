@@ -1,5 +1,9 @@
 # 案例目录
 
+## Graph并发调度多个Workflow
+
+[并发Java Graph](concurrent-java-graph/README.md)：4实例独立worktree/分支与macOS实验前台sandbox，2功能实际重叠、依赖汇合后8项Java断言，每实例10项探测及26项回归通过。新机制只支持无fork前台命令，非原生LLM调度，不扩写旧Spring/角色教材的历史运行结论。
+
 ## 一条完整研发Workflow案例
 
 [书签标签替换](workflow-bookmark-tags/README.md)：同一需求、设计、候选、真实Spring装配和MockMvc红绿13测试、诊断修复、冻结审查及交付。[Workflow合同](../workflows/java-spring-development.md)组织现有角色；本例没有原生Agent自动调度、外部数据库或部署。

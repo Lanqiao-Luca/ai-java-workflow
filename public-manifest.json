@@ -242,6 +242,61 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/concurrent-java-graph/README.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/artifact-manifest.json",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/case.json",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/evidence/runtime.json",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/evidence/tests.json",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/result.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/run.py",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/seed/FeatureWriter.java",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/seed/GraphAssertions.java",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/seed/Integration.java",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/concurrent-java-graph/trace.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/diagnose-version-conflict/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -692,6 +747,21 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "graphs/README.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/concurrent-java.json",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/concurrent-java.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "public-manifest.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -707,8 +777,18 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/check_graph_cases.py",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "scripts/check_workflow_cases.py",
       "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "scripts/run_graph.py",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
       "status": "reviewed_candidate"
     },
     {
@@ -837,6 +917,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "skills/workspace-isolation/SKILL.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -849,6 +934,11 @@
     {
       "path": "standards/code-review.md",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "standards/concurrent-execution.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
       "status": "reviewed_candidate"
     },
     {
@@ -917,8 +1007,58 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/workspace-isolation.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_execution.py",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/README.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/__init__.py",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/catalog.py",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/runtime.py",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "workflows/README.md",
       "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/concurrent-execution.md",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/concurrent-java-integration.json",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/concurrent-java-tags.json",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/concurrent-java-title.json",
+      "origin": "newly_written_execution_mechanism_and_synthetic_case",
       "status": "reviewed_candidate"
     },
     {

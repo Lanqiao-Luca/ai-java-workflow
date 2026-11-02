@@ -21,6 +21,7 @@
 ## 使用的 Skills
 
 - [代码实现](../skills/code-implementation/SKILL.md)：负责基线、复用取舍、保持映射、最小修改与交付适配。
+- [工作区隔离](../skills/workspace-isolation/SKILL.md)：并发或隔离任务按当前宿主能力准备/核验资源，不能用目录冒充sandbox。
 - [Java/Spring 检查](../skills/java-spring-check/SKILL.md)：命中相应技术栈时核实际适用约束与必要测试；普通 Java 示例不能证明 Spring 装配。
 
 ## 一次任务怎样做

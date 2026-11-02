@@ -17,3 +17,6 @@
 - [异常恢复与有界尝试](recovery.md)
 - [交付状态与接续规划](delivery-planning.md)
 - [文档内容与引用验收](document-review.md)
+
+- [执行实例的工作区与沙箱](workspace-isolation.md)
+- [并发与候选合同](concurrent-execution.md)

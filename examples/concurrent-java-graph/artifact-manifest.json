@@ -1,0 +1,45 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "c89e26c31061d7fccd65ab7ed49d087bf235b7994ab68434c6228d7c13bdedb6"
+    },
+    {
+      "path": "case.json",
+      "sha256": "ab4af7fceeab11906180f81b7a91d34a4566234f73c3a9ffa74841b7c5680f2a"
+    },
+    {
+      "path": "evidence/runtime.json",
+      "sha256": "fb4551942c898ea047bc6616b995e6736b956bb68b173a3a2bef2c6c1b6a7bcd"
+    },
+    {
+      "path": "evidence/tests.json",
+      "sha256": "709f60e56fcc569837aad49d3a69600baa4229f2fcb84b6c433f8c3381c89dfa"
+    },
+    {
+      "path": "result.md",
+      "sha256": "de0222f51aa577280f8a188cca52e2784b966f9d03eb444e4fbaab6a383d7725"
+    },
+    {
+      "path": "run.py",
+      "sha256": "42a103efc8bb54c116b4ffafb23e85a57351321153957bf597220984605a66bc"
+    },
+    {
+      "path": "seed/FeatureWriter.java",
+      "sha256": "d810ad4f7ea25e9e7b213df6a0aa998ba03a9d5bd4de798ba18e0b6b6b6de507"
+    },
+    {
+      "path": "seed/GraphAssertions.java",
+      "sha256": "37b7f99524e199bdd1e0b25508095d99e73690287de63d8eac1e3c77498df7d5"
+    },
+    {
+      "path": "seed/Integration.java",
+      "sha256": "5ee3d0bae909ba57888de8dc5c184f956f4df2bb641e0d12629fa48d32a119bf"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "539a4d8b016a321816edadf6d7ee4f3bd3c2bac6dacb23534c39dff4ed903917"
+    }
+  ]
+}

@@ -67,6 +67,9 @@ def main():
                 raise ValueError("workflow lacks Agent handoff")
             if any(q.relative_to(ROOT).parts[0] in {"skills", "standards"} for q in targets):
                 raise ValueError("workflow bypasses Agent")
+        if rel.parts[0] == "graphs" and p.name != "README.md":
+            if not any(q.relative_to(ROOT).parts[0] == "workflows" for q in targets):
+                raise ValueError("Graph lacks Workflow contract reference")
     case = ROOT / "examples/bookmark-title"
     identity = json.loads((case / "artifact-manifest.json").read_text())["files"]
     expected = {"task.json", "before/BookmarkService.java", "after/BookmarkService.java",

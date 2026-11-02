@@ -4,6 +4,7 @@
 
 - [需求澄清](requirement-clarification/SKILL.md)
 - [代码实现](code-implementation/SKILL.md)
+- [工作区隔离](workspace-isolation/SKILL.md)：准备/核验/回收实例资源，后端缺失即拒绝。
 - [Java/Spring 检查](java-spring-check/SKILL.md)
 - [测试验证](verification/SKILL.md)
 - [代码审查与复核](code-review/SKILL.md)

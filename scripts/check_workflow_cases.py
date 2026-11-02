@@ -127,6 +127,7 @@ def check_workflow_case(folder):
 def main():
     count = 0
     role = runpy.run_path(str(ROOT / "scripts/check_agent_cases.py"))
+    graph = runpy.run_path(str(ROOT / "scripts/check_graph_cases.py"))
     for folder in sorted((ROOT / "examples").iterdir()):
         if not folder.is_dir():
             continue
@@ -139,6 +140,8 @@ def main():
             count += 1
         elif kind == "role_case":
             role["check_case"](folder)
+        elif kind == "graph_case":
+            graph["check_graph_case"](folder)
         else:
             raise ValueError("unknown example kind")
     print(f"PASS: {count} workflow cases; stage declarations, source identities and receipt consistency; no tests executed")

@@ -38,6 +38,8 @@ python3 -B examples/concurrent-java-graph/run.py --java-home <JDK目录>
 
 [先行执行文档](docs/concurrent-execution-plan.md) · [发布与验证结果](docs/concurrent-execution-results.md) · [隔离Skill](skills/workspace-isolation/SKILL.md) · [Graph目录](graphs/README.md)
 
+Maven/Gradle可信构建模式的扩展见[先行执行计划](docs/spring-build-sandbox-plan.md)：当前仅计划，真实支持情况以后续验证结果为准；不会把旧前台deny-fork后端改称支持fork型构建。
+
 ## 从需求到交付：一条完整Java/Spring研发Workflow
 
 [Workflow合同](workflows/java-spring-development.md)组织现有Agent，贯通需求确认、设计实现、验证、冻结审查、整改复验和交付。诊断、SQL和文档审验按真实条件选择；方法仍由各Agent经Skill消费Standards，不把角色说明顺序排列当自动执行。

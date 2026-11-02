@@ -127,6 +127,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/loops-extraction-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/native-agent-adapter-results.json",
       "origin": "newly_written_verified_result",
       "status": "reviewed_candidate"
@@ -1193,6 +1198,11 @@
     },
     {
       "path": "graphs/spring-build.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

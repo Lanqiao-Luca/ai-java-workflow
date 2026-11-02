@@ -4,6 +4,8 @@
 
 面向 Java/Spring 业务开发的 AI 研发工作流。按需要使用 **Graph → Workflow → Agent → Skill → Standards**：Graph控制依赖与实例并发，Workflow串阶段与交接，Agent对结果负责，Skill适配当前任务，Standards保存共用方法。简单任务不要求启用Graph或全部角色。提供可阅读的方法、空表和独立虚构代码案例，由使用者当前的 AI 助手与本地工具执行。
 
+[Loops 有限重复与停止策略](loops/README.md)：按需控制重试与整改，逐步交付范围见[执行文档](docs/loops-extraction-plan.md)。
+
 ## 仓库里有什么
 
 **3条命令型并发Graph＋1条原生Agent Graph · 1条完整研发Workflow · 9份命令型和6份原生Workflow定义 · 19份规范 · 14项技能 · 12项角色职责 · 10条角色案例 · 5条集成案例**。

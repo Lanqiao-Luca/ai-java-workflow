@@ -14,3 +14,11 @@
 调用者须信任并授权仓库与只读工具根，禁止把个人根目录或凭证目录当工具挂载。不同runtime_root的池独立，实际使用应由宿主统一选择运行根。Git钩子、全局配置/属性和终端认证禁用，源属性过滤器/子模块/符号链接不支持；本引擎不自动安装依赖、联网或发布。
 
 源快照准入目前仅接受ASCII相对路径，并拒绝所有隐藏路径（包括常见的`.gitignore`、`.github`）；不支持符号链接、子模块和属性过滤器。此受限参考实现验证的是独立虚构案例，不能宣称可直接运行任意干净Java工程。
+
+## 显式可信构建模式
+
+[build_runtime.py](build_runtime.py)在旧严格机制旁新增可信构建树后端，[build_cache.py](build_cache.py)封存/复制显式公开缓存，[构建入口](../../scripts/run_build_graph.py)解析[Spring Graph](../../graphs/spring-build.md)。旧runtime/catalog字节与历史ID保持。
+
+新模式允许fork和较宽loopback，外网拒绝；不隔离同机其他loopback服务。默认拒脱离，案例显式opt-in已观察一次性Daemon并最多3秒drain；未知占用隔离。作业槽位不等于所有JVM总数，轮询无法保证恶意快速doublefork、宿主强杀后的任意后代回收或容器级多租户边界。只适用可信源码/工具/插件与当前ASCII非隐藏源准入，不支持任意现有Spring仓库。
+
+[完整Spring案例](../../examples/spring-build-graph/README.md)真实Maven/Gradle测试与Boot JAR打包通过，未启动应用或部署。依赖预热联网与Graph离线分开，工具/缓存/日志不进Git；不自动安装系统工具或启动后台服务。

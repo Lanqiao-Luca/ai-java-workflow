@@ -1,0 +1,52 @@
+{
+  "kind": "spring_build_graph_case",
+  "case_id": "spring-build-graph",
+  "synthetic": true,
+  "graph": "graphs/spring-build.json",
+  "runtime_evidence": "evidence/runtime.json",
+  "tests_evidence": "evidence/tests.json",
+  "negative_evidence": "evidence/negative.json",
+  "legacy_evidence": "evidence/legacy-tests.json",
+  "toolchain_evidence": "evidence/toolchain.json",
+  "acceptance": [
+    {
+      "id": "parallel",
+      "expected": "Maven title and Gradle tags actual intervals overlap, peak 2 Workflow slots",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "build",
+      "expected": "Independent JVMs, 3 target tests per branch and executable Boot JAR structures verified",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "integration",
+      "expected": "Both exact commits merged, Maven and Gradle each pass all 8 tests and package Boot JAR",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "isolation",
+      "expected": "4 instances, inherited child sandbox probes, copied caches, observed trees stopped and clean resources removed",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "negative",
+      "expected": "Broken baseline and missing offline dependency fail without promotion and block dependent",
+      "evidence": "evidence/negative.json"
+    },
+    {
+      "id": "regression",
+      "expected": "12 new build regressions and 26 unchanged strict regressions pass without skip",
+      "evidence": "evidence/tests.json"
+    }
+  ],
+  "verification": {
+    "platform": "Darwin",
+    "sandbox": "trusted_macos_build_tree",
+    "single_use_daemon": "explicit_observed_opt_in",
+    "external_network": "denied",
+    "loopback": "allowed_broad",
+    "native_agent": "not_run",
+    "deployment": "not_run"
+  }
+}

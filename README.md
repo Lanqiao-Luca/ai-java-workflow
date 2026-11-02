@@ -6,10 +6,11 @@
 
 ## 仓库里有什么
 
-**1条并发Graph · 1条完整研发Workflow · 3份可执行Workflow定义 · 17份规范 · 12项技能 · 10项角色职责 · 10条角色案例 · Spring与Graph各1条集成案例**。
+**2条并发Graph · 1条完整研发Workflow · 6份可执行Workflow定义 · 18份规范 · 13项技能 · 11项角色职责 · 10条角色案例 · 3条集成案例**。
 
 | 你想做什么 | 从这里进入 | 能拿到什么 |
 | --- | --- | --- |
+| 并发构建Spring Boot | [可信构建Graph](graphs/spring-build.md)、[Maven/Gradle完整案例](examples/spring-build-graph/README.md) | 2作业实际并发、合并后每工具8项测试与Boot JAR；显式macOS可信模式 |
 | 并发运行隔离的Workflow | [Graph合同](graphs/concurrent-java.md)、[完整Java并发案例](examples/concurrent-java-graph/README.md) | 每run_id独立worktree与已探测前台sandbox，2功能并发后串行集成/8断言；仅macOS实验后端 |
 | 跑通一个完整研发案例 | [Java/Spring Workflow](workflows/java-spring-development.md)、[书签标签集成案例](examples/workflow-bookmark-tags/README.md) | 同一需求与候选、真实Spring/MockMvc红绿13测试、诊断修复及同候选审查 |
 | 先看一个Agent怎样做事 | [实现者Agent](agents/implementer.md)、[完整案例](examples/bookmark-title/README.md) | 输入、决策、规范消费、Java前后差异、用例与交接 |
@@ -38,7 +39,17 @@ python3 -B examples/concurrent-java-graph/run.py --java-home <JDK目录>
 
 [先行执行文档](docs/concurrent-execution-plan.md) · [发布与验证结果](docs/concurrent-execution-results.md) · [隔离Skill](skills/workspace-isolation/SKILL.md) · [Graph目录](graphs/README.md)
 
-Maven/Gradle可信构建模式的扩展见[先行执行计划](docs/spring-build-sandbox-plan.md)：当前仅计划，真实支持情况以后续验证结果为准；不会把旧前台deny-fork后端改称支持fork型构建。
+## 可信构建模式：Maven与Gradle并发Spring Boot Graph
+
+新增[完整Spring Boot构建案例](examples/spring-build-graph/README.md)使用独立虚构接口，显式选择[可信构建后端](tools/execution/build_runtime.py)。title用Maven运行3项测试，tags用Gradle运行3项测试，两个Workflow实际重叠；integration合入精确提交后，两种工具各通过同一套8项Spring/MockMvc测试并打包。4次Boot JAR结构、大小和SHA已核，二进制未上传，未启动应用或部署。
+
+此模式允许fork与较宽loopback，外网在离线Graph阶段拒绝；loopback可以接触同机其他服务，不是自身IPC隔离。预热单独联网下载公开Central依赖，空HOME/显式配置及封存缓存不继承个人私服。旧严格前台模式继续deny fork，与新模式分别选择，历史源码与证据不改写。
+
+每实例独立worktree、分支、HOME/TMP和可写缓存；Graph及3Workflow共4实例，每实例9项继承限制探测。容量2计Workflow作业，实测节点树峰5进程，不是JVM总数2。默认拒绝脱离会话；案例显式允许已观察、持续跟踪的一次性Gradle Daemon，客户端结束后最多3秒等待停止，残留不得提升。未知占用隔离池；轮询不能保证恶意快速doublefork约束，非容器级或多租户强沙箱。
+
+新增12项回归、原严格26项真实通过且0跳过；错误基线与缺依赖两项实际失败均阻断后代及候选提升。仅macOS已弃用Seatbelt实验后端、可信源码/插件与受限ASCII非隐藏路径；没有跨平台回退或任意Spring工程一键兼容。
+
+[先行执行计划](docs/spring-build-sandbox-plan.md) · [Graph定义](graphs/spring-build.json) · [真实结果与重跑边界](examples/spring-build-graph/result.md)
 
 ## 从需求到交付：一条完整Java/Spring研发Workflow
 
@@ -111,9 +122,10 @@ python3 scripts/check.py
 python3 scripts/check_agent_cases.py
 python3 scripts/check_workflow_cases.py
 python3 scripts/check_graph_cases.py
+python3 scripts/check_spring_build_cases.py
 ```
 
-检查公开清单、相对引用、方法层交接、案例源码SHA与实际diff。新增Workflow检查器核阶段声明、源包/编译候选与运行回执一致性；它不重跑测试，也不代语义审查。Graph检查器还核源码/catalog身份、26回归和4实例回执一致性，不执行沙箱或Java。未知案例类型或目录报错，不静默跳过。静态通过不代表公司敏感性、公开权利或业务运行全部得到证明。
+检查公开清单、相对引用、方法层交接、案例源码SHA与实际diff。新增Workflow检查器核阶段声明、源包/编译候选与运行回执一致性；它不重跑测试，也不代语义审查。Graph检查器还核源码/catalog身份、26回归和4实例回执一致性，不执行沙箱或Java。未知案例类型或目录报错，不静默跳过。构建Graph检查器核新旧回归身份、双工具JUnit/子JVM/打包摘要与失败阻断回执；四类显式分派，不实际构建。静态通过不代表公司敏感性、公开权利或业务运行全部得到证明。
 
 本地有JDK 17+时，再运行：
 
@@ -136,7 +148,7 @@ Java运行器先核源码身份，再在临时目录分别编译基线与候选�
 | 早期纯Java角色案例 | 12项契约用例未重跑，保留原NOT_RUN；不被新Spring实例覆盖 |
 | 新增Spring集成案例 | 真实上下文/MockMvc红绿各13测试；同候选审查完成，范围见案例记录 |
 | 生产Spring工程、数据库和模型接入 | 新案例仅本地MOCK上下文；生产系统、真实认证和数据库等由使用者另行验证 |
-| Graph与实例资源 | 提供显式本地Graph调度、真实worktree与macOS实验前台sandbox；无原生LLM调度、跨平台回退、Loop执行器或后台服务 |
+| Graph与实例资源 | 旧严格前台和新可信Maven/Gradle模式显式区分；真实worktree/继承沙箱/失败阻断，非原生LLM调度、跨平台或容器级任意后代隔离 |
 
 方法不固定所有项目的JDK、Spring或数据库版本，按真实工程事实核适用性。源码身份变化后应刷新受影响证据；作者自查、独立审阅、真实运行和最终采用分别声明。
 

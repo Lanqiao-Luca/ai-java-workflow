@@ -52,6 +52,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "agents/java-build-executor.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "agents/principle-reviewer.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -582,6 +587,131 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/spring-build-graph/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/artifact-manifest.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/case.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/evidence/legacy-tests.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/evidence/negative.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/evidence/runtime.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/evidence/tests.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/evidence/toolchain.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/negative.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/prepare.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/result.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/build.gradle",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/build_task.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/pom.xml",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/settings.gradle",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/settings.xml",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/src/main/java/example/graph/App.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/src/main/java/example/graph/TagsApi.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/src/main/java/example/graph/TitleApi.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/src/test/java/example/graph/IntegrationTest.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/src/test/java/example/graph/TagsApiTest.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/src/test/java/example/graph/TitleApiTest.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/seed/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/spring-build-graph/trace.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/verify-bookmark-title/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -772,6 +902,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "graphs/spring-build.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/spring-build.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "public-manifest.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -792,8 +932,18 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/check_spring_build_cases.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "scripts/check_workflow_cases.py",
       "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "scripts/run_build_graph.py",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -854,6 +1004,11 @@
     {
       "path": "skills/evidence-diagnosis/example.md",
       "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/java-build-isolation/SKILL.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -972,6 +1127,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/java-build-sandbox.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/java-spring.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1022,6 +1182,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_build_execution.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_execution.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
       "status": "reviewed_candidate"
@@ -1034,6 +1199,16 @@
     {
       "path": "tools/execution/__init__.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/build_cache.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/build_runtime.py",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -1074,6 +1249,26 @@
     {
       "path": "workflows/java-spring-development.md",
       "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/spring-build-integration.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/spring-build-tags.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/spring-build-title.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/spring-build.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     }
   ]

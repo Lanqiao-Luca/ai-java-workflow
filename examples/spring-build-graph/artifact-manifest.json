@@ -1,0 +1,101 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "3d0df05a437ce4a9e7813d2ec8c6272dda497d6be35fa19c7e916c2a2b5f12e3"
+    },
+    {
+      "path": "case.json",
+      "sha256": "0d38a3b0956db90878aef0e38017b779a809e25e21c2291deab596cd07f67054"
+    },
+    {
+      "path": "evidence/legacy-tests.json",
+      "sha256": "70af03472d2d60fce09b12bf814d6ce2fe5554191cb43174e37337bbebd8ed93"
+    },
+    {
+      "path": "evidence/negative.json",
+      "sha256": "99dd9292368bd6bb8ade2c29b1f5a0c7aac244efc8459d0df909b974745ce76e"
+    },
+    {
+      "path": "evidence/runtime.json",
+      "sha256": "7bae5f5ce2d93b3c4bca9122639da920ab9a327311e672c5e3c3efce3b66278f"
+    },
+    {
+      "path": "evidence/tests.json",
+      "sha256": "d27ed800df721ef2fe1a347cb61ce142889736c740fca400b8fdd9ff1a901493"
+    },
+    {
+      "path": "evidence/toolchain.json",
+      "sha256": "12b6d4fa79e7970fc3b398b7a78ae9a32bfa4bc71fd5242077d1c4909cdbe07a"
+    },
+    {
+      "path": "negative.py",
+      "sha256": "588f3fbe38c604a9124e41351b2b8828df9d00bd9db921fc0bedfc3486ec2f73"
+    },
+    {
+      "path": "prepare.py",
+      "sha256": "9b398094eab09f9972139e7a795e428c97065ffa6ace4cdfb4f979fef549531b"
+    },
+    {
+      "path": "result.md",
+      "sha256": "a85bf9bde3d8f95add4295f6f86da6338b94718fd9448756b4415925fa329e79"
+    },
+    {
+      "path": "run.py",
+      "sha256": "c2cee2fda5248beaa4543a79da2af2c72b89bf87de47d8aba9298de2f4054561"
+    },
+    {
+      "path": "seed/build.gradle",
+      "sha256": "5d3f2f87e518a7b5d2c9d024c03479c9e258f444c62badd6152fa186051cd3c5"
+    },
+    {
+      "path": "seed/build_task.py",
+      "sha256": "909846b8d776aa753b437c2d7f738dbd91b91f6103959b35406e5fd30deb1e3e"
+    },
+    {
+      "path": "seed/pom.xml",
+      "sha256": "ea4476f85cdc2c15f209fec30080e04b004a5069513039c7883498ccc57e9d28"
+    },
+    {
+      "path": "seed/settings.gradle",
+      "sha256": "f6f70dc5d7ebd7e511708bd261fcf75c2f5b85cbb9525493710eb77507fc4bc7"
+    },
+    {
+      "path": "seed/settings.xml",
+      "sha256": "d307c252a14322027a8d92bcd63d39c68a8335ff8bcd2c7c8d7c4af17a32e1d5"
+    },
+    {
+      "path": "seed/src/main/java/example/graph/App.java",
+      "sha256": "09105eb8f61725b8a97f140a1c06ef74d03a83188a40cd4a30bbbc2ad84d0fcc"
+    },
+    {
+      "path": "seed/src/main/java/example/graph/TagsApi.java",
+      "sha256": "7f6bbf4be9f203eb69efbbe0885a3d37ba609f2315717871aae4bc94d1d8e397"
+    },
+    {
+      "path": "seed/src/main/java/example/graph/TitleApi.java",
+      "sha256": "0fdd39e47fbcd80b58ce4749498c14a61a59509f12cc726bb754928f670d1e41"
+    },
+    {
+      "path": "seed/src/test/java/example/graph/IntegrationTest.java",
+      "sha256": "0319885f276253460403cdeeb60cd42fc8a383a93e2988adf85f8706a8307fff"
+    },
+    {
+      "path": "seed/src/test/java/example/graph/TagsApiTest.java",
+      "sha256": "35fda8afde52f47a9ccdf2889cddb91e266b5962f219c557c7ffe52bc2173dff"
+    },
+    {
+      "path": "seed/src/test/java/example/graph/TitleApiTest.java",
+      "sha256": "f5d7bffd014d1700cdb757a68c7d40fcf9a3643e6960221c959531610a9ac5a4"
+    },
+    {
+      "path": "seed/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+      "sha256": "8eca853a5a457f17e0479b71dfbe95f2a13aff9eeff250261ecdc8ca9b847a6a"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "e896f7932a088dc658f49248ae47584795711321795eb72e57d2dd55395be5e7"
+    }
+  ]
+}

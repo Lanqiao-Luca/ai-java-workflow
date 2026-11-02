@@ -1,0 +1,23 @@
+buildscript {
+ repositories { mavenCentral() }
+ dependencies { classpath 'org.springframework.boot:spring-boot-gradle-plugin:3.5.16' }
+}
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+repositories { mavenCentral() }
+dependencies {
+ implementation platform('org.springframework.boot:spring-boot-dependencies:3.5.16')
+ implementation 'org.springframework.boot:spring-boot-starter-web'
+ testImplementation 'org.springframework.boot:spring-boot-starter-test'
+ testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+java { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
+layout.buildDirectory.set(file(System.getenv('TMPDIR') + '/gradle-output'))
+tasks.withType(JavaCompile).configureEach { options.fork = false; options.compilerArgs += ["-parameters"] }
+test {
+ useJUnitPlatform(); maxParallelForks = 1
+ systemProperty 'java.io.tmpdir', System.getenv('TMPDIR')
+ systemProperty 'user.home', System.getenv('HOME')
+ systemProperty 'synthetic.build.tool', 'gradle'
+ jvmArgs '-XX:+DisableAttachMechanism'
+}

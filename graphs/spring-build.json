@@ -1,0 +1,25 @@
+{
+  "kind": "graph_definition",
+  "graph_id": "spring-build",
+  "max_parallel": 2,
+  "nodes": [
+    {
+      "id": "title",
+      "depends_on": [],
+      "workflow": "workflows/spring-build-title.json"
+    },
+    {
+      "id": "tags",
+      "depends_on": [],
+      "workflow": "workflows/spring-build-tags.json"
+    },
+    {
+      "id": "integration",
+      "depends_on": [
+        "title",
+        "tags"
+      ],
+      "workflow": "workflows/spring-build-integration.json"
+    }
+  ]
+}

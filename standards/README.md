@@ -20,3 +20,5 @@
 
 - [执行实例的工作区与沙箱](workspace-isolation.md)
 - [并发与候选合同](concurrent-execution.md)
+
+- [可信Java构建沙箱](java-build-sandbox.md)：fork/loopback、离线缓存、子进程及失败/UNKNOWN合同。

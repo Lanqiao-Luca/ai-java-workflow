@@ -1,0 +1,253 @@
+{
+  "kind": "spring_build_graph_receipt",
+  "synthetic": true,
+  "status": "PASSED",
+  "platform": "Darwin",
+  "mode": "trusted_macos_build_tree",
+  "source_id": "531090ff5e7935be2d4c582752682df90c5c7bc2b35a9aae06781d8176734d4c",
+  "source_sha256": {
+    "agents/java-build-executor.md": "faa93b5d215e7fca5632bb51d14d262e475a716b3122383cfcecfe099ecbee47",
+    "examples/spring-build-graph/negative.py": "588f3fbe38c604a9124e41351b2b8828df9d00bd9db921fc0bedfc3486ec2f73",
+    "examples/spring-build-graph/prepare.py": "9b398094eab09f9972139e7a795e428c97065ffa6ace4cdfb4f979fef549531b",
+    "examples/spring-build-graph/run.py": "c2cee2fda5248beaa4543a79da2af2c72b89bf87de47d8aba9298de2f4054561",
+    "examples/spring-build-graph/seed/build.gradle": "5d3f2f87e518a7b5d2c9d024c03479c9e258f444c62badd6152fa186051cd3c5",
+    "examples/spring-build-graph/seed/build_task.py": "909846b8d776aa753b437c2d7f738dbd91b91f6103959b35406e5fd30deb1e3e",
+    "examples/spring-build-graph/seed/pom.xml": "ea4476f85cdc2c15f209fec30080e04b004a5069513039c7883498ccc57e9d28",
+    "examples/spring-build-graph/seed/settings.gradle": "f6f70dc5d7ebd7e511708bd261fcf75c2f5b85cbb9525493710eb77507fc4bc7",
+    "examples/spring-build-graph/seed/settings.xml": "d307c252a14322027a8d92bcd63d39c68a8335ff8bcd2c7c8d7c4af17a32e1d5",
+    "examples/spring-build-graph/seed/src/main/java/example/graph/App.java": "09105eb8f61725b8a97f140a1c06ef74d03a83188a40cd4a30bbbc2ad84d0fcc",
+    "examples/spring-build-graph/seed/src/main/java/example/graph/TagsApi.java": "7f6bbf4be9f203eb69efbbe0885a3d37ba609f2315717871aae4bc94d1d8e397",
+    "examples/spring-build-graph/seed/src/main/java/example/graph/TitleApi.java": "0fdd39e47fbcd80b58ce4749498c14a61a59509f12cc726bb754928f670d1e41",
+    "examples/spring-build-graph/seed/src/test/java/example/graph/IntegrationTest.java": "0319885f276253460403cdeeb60cd42fc8a383a93e2988adf85f8706a8307fff",
+    "examples/spring-build-graph/seed/src/test/java/example/graph/TagsApiTest.java": "35fda8afde52f47a9ccdf2889cddb91e266b5962f219c557c7ffe52bc2173dff",
+    "examples/spring-build-graph/seed/src/test/java/example/graph/TitleApiTest.java": "f5d7bffd014d1700cdb757a68c7d40fcf9a3643e6960221c959531610a9ac5a4",
+    "examples/spring-build-graph/seed/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker": "8eca853a5a457f17e0479b71dfbe95f2a13aff9eeff250261ecdc8ca9b847a6a",
+    "graphs/spring-build.json": "507b478b3808658017fafac5161365d5cda6b7a6d875698d2ec92c34d12328db",
+    "scripts/run_build_graph.py": "4d46b75e34d32a33b79dad81684cee7b30d2a24d5824183f9a3bed343ea77f9b",
+    "skills/code-implementation/SKILL.md": "5d658cb11076a82de1917b381d746e82015874936daf0cffb99bfe561d834b4d",
+    "skills/java-build-isolation/SKILL.md": "883d03e21ac3a983a9173a7716b8f79ab10d8e58f5f710cbfd09c13bada7b6e0",
+    "standards/java-build-sandbox.md": "f0f0c0e544d8ff3b0d5522049689e687c4702b6f9240a4e2b1068eb2df2e6702",
+    "tests/test_build_execution.py": "9b4dcdcd65f1e9381defe2d9c4592deb307dac1da18cec016c81e7e81009ed01",
+    "tools/execution/build_cache.py": "a004d59a20332b42ce833cf43660fbb7f78a6ea71deb4a69c18f7cf96292c23e",
+    "tools/execution/build_runtime.py": "6ac5d2f0f8b2b6da41e8846229a4a7b08f94bdf2567d8d36f8fc83fcdb374caf",
+    "tools/execution/catalog.py": "63ad9fea9fc090ab31360194a3a6726ebc776eaf408bed72cef31821fed083b1",
+    "tools/execution/runtime.py": "f674748ca9c371480082a53e9bfc735853b3396d51c9c8c8489418684925e505",
+    "workflows/spring-build-integration.json": "f315c6e83ab0d9b0e81bd7bfad63e85712dce331e952fdb57fa937a57f202af7",
+    "workflows/spring-build-tags.json": "5eb47f9e70b2a5314d8d1119b763195499c3d128216f063304abec3a4d871c7a",
+    "workflows/spring-build-title.json": "aeb759f0a229ca0d8f9c7798804e6603f0b94bcc129da805d84d687a1203e5cd"
+  },
+  "catalog": {
+    "catalog_id": "ad01120e8ef4081e37b1b12e28f8d26869f91dc82143790ad70ff9ddba579969",
+    "source_sha256": {
+      "graphs/spring-build.json": "507b478b3808658017fafac5161365d5cda6b7a6d875698d2ec92c34d12328db",
+      "workflows/spring-build-title.json": "aeb759f0a229ca0d8f9c7798804e6603f0b94bcc129da805d84d687a1203e5cd",
+      "agents/java-build-executor.md": "faa93b5d215e7fca5632bb51d14d262e475a716b3122383cfcecfe099ecbee47",
+      "skills/code-implementation/SKILL.md": "5d658cb11076a82de1917b381d746e82015874936daf0cffb99bfe561d834b4d",
+      "skills/java-build-isolation/SKILL.md": "883d03e21ac3a983a9173a7716b8f79ab10d8e58f5f710cbfd09c13bada7b6e0",
+      "workflows/spring-build-tags.json": "5eb47f9e70b2a5314d8d1119b763195499c3d128216f063304abec3a4d871c7a",
+      "workflows/spring-build-integration.json": "f315c6e83ab0d9b0e81bd7bfad63e85712dce331e952fdb57fa937a57f202af7"
+    }
+  },
+  "cache_ids": {
+    "maven": "cdd7adea4e4887087a34ee88984e39d986cfbbeb3d3aa2ed6d6ebea72a9f67db",
+    "gradle": "1ce7936c3398b40d85717dcb00091827c86dab8917c8f7ac953298837840203b"
+  },
+  "base_commit": "091653579f664979c98e8214b8527ebc59811340",
+  "instance_count": 4,
+  "max_parallel": 2,
+  "host_capacity": 2,
+  "peak_parallel": 2,
+  "independent_workflows_overlap": true,
+  "integration_waited": true,
+  "merged_both_commits": true,
+  "source_head_unchanged": true,
+  "resources_removed": true,
+  "graph_probe": {
+    "positive_write": true,
+    "child_exec_succeeded": true,
+    "child_outside_read_denied": true,
+    "child_outside_write_denied": true,
+    "child_admin_read_denied": true,
+    "child_admin_write_denied": true,
+    "child_external_network_denied": true,
+    "own_loopback_ipc_succeeded": true,
+    "observed_tree_stopped": true
+  },
+  "builds": {
+    "title": {
+      "maven": {
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "tool": "maven",
+        "suites": [
+          "example.graph.TitleApiTest"
+        ],
+        "artifacts": [
+          {
+            "name": "synthetic-spring-graph-1.0.0.jar",
+            "sha256": "edd351d8908c51d0aefdedcb8abd1d604b541df10b5a0a0c766d6eadb014b634",
+            "bytes": 21108214,
+            "boot_jar": true
+          }
+        ],
+        "distinct_test_jvm": true
+      }
+    },
+    "tags": {
+      "gradle": {
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "tool": "gradle",
+        "suites": [
+          "example.graph.TagsApiTest"
+        ],
+        "artifacts": [
+          {
+            "name": "synthetic-spring-graph.jar",
+            "sha256": "deb16f6d5e2fb896a6ea79d28b90021d7db1ef419e2c53f730d7fb5fb81ab9ae",
+            "bytes": 21106532,
+            "boot_jar": true
+          }
+        ],
+        "distinct_test_jvm": true
+      }
+    },
+    "integration": {
+      "maven": {
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "tool": "maven",
+        "suites": [
+          "example.graph.IntegrationTest",
+          "example.graph.TagsApiTest",
+          "example.graph.TitleApiTest"
+        ],
+        "artifacts": [
+          {
+            "name": "synthetic-spring-graph-1.0.0.jar",
+            "sha256": "60a152b6c02bac2d0b5cc5e2b153f17855746871196f2bb1054ed09c6d42fb75",
+            "bytes": 21108653,
+            "boot_jar": true
+          }
+        ],
+        "distinct_test_jvm": true
+      },
+      "gradle": {
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "tool": "gradle",
+        "suites": [
+          "example.graph.IntegrationTest",
+          "example.graph.TagsApiTest",
+          "example.graph.TitleApiTest"
+        ],
+        "artifacts": [
+          {
+            "name": "synthetic-spring-graph.jar",
+            "sha256": "0f4bd2de4dced239b038aa2083c64acae768a45d6884883f319ad31ade81d63c",
+            "bytes": 21106699,
+            "boot_jar": true
+          }
+        ],
+        "distinct_test_jvm": true
+      }
+    }
+  },
+  "nodes": {
+    "title": {
+      "status": "SUCCEEDED",
+      "run_id": "spring-build/title",
+      "parent_run_id": "spring-build",
+      "branch": "execution/spring-build/title",
+      "probe": {
+        "positive_write": true,
+        "child_exec_succeeded": true,
+        "child_outside_read_denied": true,
+        "child_outside_write_denied": true,
+        "child_admin_read_denied": true,
+        "child_admin_write_denied": true,
+        "child_external_network_denied": true,
+        "own_loopback_ipc_succeeded": true,
+        "observed_tree_stopped": true
+      },
+      "input_commit": "091653579f664979c98e8214b8527ebc59811340",
+      "exit": 0,
+      "reason": null,
+      "log_sha256": "1ab91ce8032d1690a61aebab00f8f5b35491f4a22c4aff5d1ff37f3cd78f0415",
+      "child_seen": true,
+      "observed_process_peak": 5,
+      "tree_stopped": true,
+      "observed_detached": false,
+      "allow_observed_daemon": true,
+      "workspace_id": "862ddcf173f7de107ce1f72d33fdaa0db8e5297c4780fcd632e3e77d86193057",
+      "success": true,
+      "commit": "15d3016e1c3e25d17570564dab2b4010696a80a8"
+    },
+    "tags": {
+      "status": "SUCCEEDED",
+      "run_id": "spring-build/tags",
+      "parent_run_id": "spring-build",
+      "branch": "execution/spring-build/tags",
+      "probe": {
+        "positive_write": true,
+        "child_exec_succeeded": true,
+        "child_outside_read_denied": true,
+        "child_outside_write_denied": true,
+        "child_admin_read_denied": true,
+        "child_admin_write_denied": true,
+        "child_external_network_denied": true,
+        "own_loopback_ipc_succeeded": true,
+        "observed_tree_stopped": true
+      },
+      "input_commit": "091653579f664979c98e8214b8527ebc59811340",
+      "exit": 0,
+      "reason": null,
+      "log_sha256": "7b1df3fdfd016a4dbca9af752c9ba1cac308474cbb3b241e22e353acbadc54b3",
+      "child_seen": true,
+      "observed_process_peak": 5,
+      "tree_stopped": true,
+      "observed_detached": true,
+      "allow_observed_daemon": true,
+      "workspace_id": "3657878e163e9456208322c3b2f1b87111377380a7db8bb6ee796e655ab8d3a2",
+      "success": true,
+      "commit": "cec9e45e13771f5a2bf8a51967f558b7b3bbbb49"
+    },
+    "integration": {
+      "status": "SUCCEEDED",
+      "run_id": "spring-build/integration",
+      "parent_run_id": "spring-build",
+      "branch": "execution/spring-build/integration",
+      "probe": {
+        "positive_write": true,
+        "child_exec_succeeded": true,
+        "child_outside_read_denied": true,
+        "child_outside_write_denied": true,
+        "child_admin_read_denied": true,
+        "child_admin_write_denied": true,
+        "child_external_network_denied": true,
+        "own_loopback_ipc_succeeded": true,
+        "observed_tree_stopped": true
+      },
+      "input_commit": "a44a57b49c11e251b9980be8382673c8018d5446",
+      "exit": 0,
+      "reason": null,
+      "log_sha256": "b398c69e6e6dbae5290d47a327ffeb55327a9becbef002e67c16a153dae5e06d",
+      "child_seen": true,
+      "observed_process_peak": 5,
+      "tree_stopped": true,
+      "observed_detached": true,
+      "allow_observed_daemon": true,
+      "workspace_id": "58d704c83e4d773adc983113a2ad1179b8ee64e7c7343660479f4614a56756e4",
+      "success": true,
+      "commit": "a44a57b49c11e251b9980be8382673c8018d5446"
+    }
+  }
+}

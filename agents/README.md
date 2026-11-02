@@ -18,3 +18,5 @@
 Java用例未实跑；查询案例仅有进程内SQLite语义回放，其他案例为文档/静态分析。作者自查、独立文档复核和业务验收分别说明。
 
 [全部案例](../examples/README.md) · [执行文档](../docs/agent-publication-plan.md) · [发布结果](../docs/agent-publication-results.md)
+
+[Java构建执行者](java-build-executor.md)为新增第11项职责，服务于[Spring构建Graph](../examples/spring-build-graph/README.md)。旧十个角色教材运行状态保持；新案例运行确定性夹具，不声称原生AI自动编码。

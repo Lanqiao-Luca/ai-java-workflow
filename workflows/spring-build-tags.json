@@ -1,0 +1,21 @@
+{
+  "kind": "workflow_definition",
+  "agent": "agents/java-build-executor.md",
+  "skills": [
+    "skills/code-implementation/SKILL.md",
+    "skills/java-build-isolation/SKILL.md"
+  ],
+  "command": [
+    "{python}",
+    "-I",
+    "-B",
+    "build_task.py",
+    "tags",
+    "gradle"
+  ],
+  "allowed_write": [
+    "src/main/java/example/graph/TagsApi.java"
+  ],
+  "success_pattern": "^SPRING_TAGS_OK$",
+  "timeout": 180
+}

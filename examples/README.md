@@ -28,3 +28,7 @@
 运行结构与身份检查：`python3 scripts/check_agent_cases.py`（从项目根）。它不理解业务语义，不执行Java、SQL或Agent。SQL局部回放另运行`python3 examples/review-cursor-pagination/replay.py`。
 
 [执行文档](../docs/agent-publication-plan.md) · [逐项发布结果](../docs/agent-publication-results.md) · [项目入口](../README.md)
+
+## 真实Maven/Gradle构建Graph
+
+[Spring Boot并发构建](spring-build-graph/README.md)：Maven3项与Gradle3项功能测试真实并发，合入后每工具8项；4次Boot JAR结构打包，未启动应用/部署。4实例各9探测、新12旧26回归通过，两真实失败阻断提升。可信模式允许fork/loopback，容量2是作业槽；非任意恶意后代容器。

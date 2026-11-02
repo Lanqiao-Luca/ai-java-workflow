@@ -32,6 +32,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "agents/container-build-executor.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "agents/delivery-planner.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -957,6 +962,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/run_docker_graph.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "scripts/run_graph.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
       "status": "reviewed_candidate"
@@ -994,6 +1004,11 @@
     {
       "path": "skills/delivery-planning/example.md",
       "origin": "newly_written_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/docker-build-isolation/SKILL.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -1127,6 +1142,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/docker-sandbox.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/document-review.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1197,8 +1217,38 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_docker_backend.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_docker_io.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_execution.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/docker/Dockerfile",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/docker/prewarm.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/docker/worker.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/Docker.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -1229,6 +1279,16 @@
     {
       "path": "tools/execution/catalog.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/docker_io.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/execution/docker_runtime.py",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {

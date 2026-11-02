@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import runpy
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -71,12 +72,26 @@ def check_case(folder):
 
 
 def main():
-    count = 0
+    count, workflows = 0, 0
+    workflow = runpy.run_path(str(ROOT / "scripts/check_workflow_cases.py"))
     for folder in sorted((ROOT / "examples").iterdir()):
-        if folder.is_dir() and folder.name != "bookmark-title":
+        if not folder.is_dir():
+            continue
+        if folder.name == "bookmark-title":
+            if (folder / "case.json").exists():
+                raise ValueError("legacy Java example has an unexpected type declaration")
+            continue  # Explicit legacy Java case, checked by scripts/check.py.
+        declaration = json.loads(local_file(folder, "case.json").read_text())
+        kind = declaration.get("kind", "role_case" if "agent" in declaration and "skill" in declaration else None)
+        if kind == "role_case":
             check_case(folder)
             count += 1
-    print(f"PASS: {count} role cases; declarations, references and SHA identities only, not semantics or runtime")
+        elif kind == "workflow_case":
+            workflow["check_workflow_case"](folder)
+            workflows += 1
+        else:
+            raise ValueError("unknown example kind")
+    print(f"PASS: {count} role cases, {workflows} workflow cases; structure, identities and receipt consistency only")
 
 
 if __name__ == "__main__":

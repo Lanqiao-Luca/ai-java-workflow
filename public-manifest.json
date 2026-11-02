@@ -547,6 +547,141 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/workflow-bookmark-tags/README.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/app/pom.xml",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/app/src/main/java/example/workflow/DemoApplication.java",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/app/src/main/java/example/workflow/TagController.java",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/app/src/main/java/example/workflow/TagService.java",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/app/src/main/resources/application.properties",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/app/src/test/java/example/workflow/TagWorkflowTest.java",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/artifact-manifest.json",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/behavior-mapping.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/case.json",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/change.diff",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/delivery.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/design.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/diagnosis.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/evidence/runtime.json",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/fixtures/TagService-v1.java",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/request.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/requirements.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/result.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/reviews/code.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/reviews/document.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/reviews/independent.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/reviews/principles.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/reviews/semantic.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/run.py",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/sources.json",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/workflow-bookmark-tags/trace.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "public-manifest.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -559,6 +694,11 @@
     {
       "path": "scripts/check_agent_cases.py",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "scripts/check_workflow_cases.py",
+      "origin": "newly_written_synthetic_workflow",
       "status": "reviewed_candidate"
     },
     {
@@ -764,6 +904,16 @@
     {
       "path": "standards/verification.md",
       "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/README.md",
+      "origin": "newly_written_synthetic_workflow",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/java-spring-development.md",
+      "origin": "newly_written_synthetic_workflow",
       "status": "reviewed_candidate"
     }
   ]

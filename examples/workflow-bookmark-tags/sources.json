@@ -1,0 +1,24 @@
+{
+  "purpose": "Public dependency and tool references; no binaries bundled",
+  "references": [
+    {
+      "name": "Spring Boot 3.5 system requirements",
+      "url": "https://docs.spring.io/spring-boot/3.5/system-requirements.html",
+      "used_version": "3.5.16"
+    },
+    {
+      "name": "Spring Boot public parent metadata",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/maven-metadata.xml"
+    },
+    {
+      "name": "Temurin archive installation",
+      "url": "https://adoptium.net/installation/",
+      "used_version": "17.0.21+9"
+    },
+    {
+      "name": "Apache Maven public binary",
+      "url": "https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/",
+      "used_version": "3.9.11"
+    }
+  ]
+}

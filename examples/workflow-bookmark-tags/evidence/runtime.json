@@ -1,0 +1,89 @@
+{
+  "synthetic": true,
+  "source_bundle_id": "1d530e1f1dc472948abe1e87c462620a1121e6abe0455aab222b2351a7e6c468",
+  "source_sha256": {
+    "app/pom.xml": "989a86c36341a48803a3faff4379524c18fe8ec7885577d0df76abe0d1bd3d4c",
+    "app/src/main/java/example/workflow/DemoApplication.java": "6249d2d9fa1722b0c8b2027da908ff979f2536dec4f73807512360e159dda524",
+    "app/src/main/java/example/workflow/TagController.java": "4c1df8e0b504a285f9df768b9cc745c2eaafce8e5cfed9d914c707a81fd9407e",
+    "app/src/main/java/example/workflow/TagService.java": "eec54105294f19fd9c50315b5753c73c9fb33e1d25973672cb7330039a526be9",
+    "app/src/main/resources/application.properties": "eae35dfee500e5ec454c892e0fa97dde1904ed77157149303fd49a9d298b60cf",
+    "app/src/test/java/example/workflow/TagWorkflowTest.java": "c08e30daf36111b2e9f90a8e236c92340a2c1ff0645b560a8ebd4e95e9366a87",
+    "fixtures/TagService-v1.java": "6792c7509a15ea160adb26bf097682d3a8bf39c2cae208a0bc1c5019e6c82fa1",
+    "run.py": "f072b3d6279506b23aee9941f060b42546ea80b648cb45a5ebd5957344aec092"
+  },
+  "scope": "Real Spring Boot context and MockMvc request tests; no live server or production auth",
+  "java": "openjdk version \"17.0.21\" 2026-10-20",
+  "variants": [
+    {
+      "variant": "v1",
+      "candidate_id": "eec7b3b55850a9e4a0bc5c5478c6de0ef0174ba9a263352ff7f3fe4f43df0910",
+      "compiled_source_sha256": {
+        "pom.xml": "989a86c36341a48803a3faff4379524c18fe8ec7885577d0df76abe0d1bd3d4c",
+        "src/main/java/example/workflow/DemoApplication.java": "6249d2d9fa1722b0c8b2027da908ff979f2536dec4f73807512360e159dda524",
+        "src/main/java/example/workflow/TagController.java": "4c1df8e0b504a285f9df768b9cc745c2eaafce8e5cfed9d914c707a81fd9407e",
+        "src/main/java/example/workflow/TagService.java": "6792c7509a15ea160adb26bf097682d3a8bf39c2cae208a0bc1c5019e6c82fa1",
+        "src/main/resources/application.properties": "eae35dfee500e5ec454c892e0fa97dde1904ed77157149303fd49a9d298b60cf",
+        "src/test/java/example/workflow/TagWorkflowTest.java": "c08e30daf36111b2e9f90a8e236c92340a2c1ff0645b560a8ebd4e95e9366a87"
+      },
+      "process_exit": 1,
+      "tests": 13,
+      "failures": [
+        "blankItemRejectsWholeRequest",
+        "nullItemRejectsWholeRequest"
+      ],
+      "errors": [],
+      "skipped": [],
+      "test_names": [
+        "blankItemRejectsWholeRequest",
+        "contextWiresRealServiceAndController",
+        "emptyListClearsTags",
+        "missingReferenceRejects",
+        "missingVersionRejects",
+        "nonOwnerRejectsBeforeTagValidation",
+        "normalizeDeduplicateAndPersist",
+        "normalizedNoopPreservesVersionAndAudit",
+        "nullItemRejectsWholeRequest",
+        "nullListRejectsWithoutMutation",
+        "repeatAtCurrentVersionIsNoop",
+        "staleRetryAfterSuccessRejects",
+        "staleVersionRejectsWithoutMutation"
+      ],
+      "accepted": true
+    },
+    {
+      "variant": "v2",
+      "candidate_id": "1d29c762b9b091a2416d16855b410d78a6312b6a9f43fbfbd4038f4054f9de71",
+      "compiled_source_sha256": {
+        "pom.xml": "989a86c36341a48803a3faff4379524c18fe8ec7885577d0df76abe0d1bd3d4c",
+        "src/main/java/example/workflow/DemoApplication.java": "6249d2d9fa1722b0c8b2027da908ff979f2536dec4f73807512360e159dda524",
+        "src/main/java/example/workflow/TagController.java": "4c1df8e0b504a285f9df768b9cc745c2eaafce8e5cfed9d914c707a81fd9407e",
+        "src/main/java/example/workflow/TagService.java": "eec54105294f19fd9c50315b5753c73c9fb33e1d25973672cb7330039a526be9",
+        "src/main/resources/application.properties": "eae35dfee500e5ec454c892e0fa97dde1904ed77157149303fd49a9d298b60cf",
+        "src/test/java/example/workflow/TagWorkflowTest.java": "c08e30daf36111b2e9f90a8e236c92340a2c1ff0645b560a8ebd4e95e9366a87"
+      },
+      "process_exit": 0,
+      "tests": 13,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "test_names": [
+        "blankItemRejectsWholeRequest",
+        "contextWiresRealServiceAndController",
+        "emptyListClearsTags",
+        "missingReferenceRejects",
+        "missingVersionRejects",
+        "nonOwnerRejectsBeforeTagValidation",
+        "normalizeDeduplicateAndPersist",
+        "normalizedNoopPreservesVersionAndAudit",
+        "nullItemRejectsWholeRequest",
+        "nullListRejectsWithoutMutation",
+        "repeatAtCurrentVersionIsNoop",
+        "staleRetryAfterSuccessRejects",
+        "staleVersionRejectsWithoutMutation"
+      ],
+      "accepted": true
+    }
+  ],
+  "candidate_id": "1d29c762b9b091a2416d16855b410d78a6312b6a9f43fbfbd4038f4054f9de71",
+  "status": "PASSED"
+}

@@ -1,0 +1,219 @@
+{
+  "kind": "workflow_case",
+  "case_id": "workflow-bookmark-tags",
+  "workflow": "workflows/java-spring-development.md",
+  "synthetic": true,
+  "candidate_id": "1d29c762b9b091a2416d16855b410d78a6312b6a9f43fbfbd4038f4054f9de71",
+  "source_bundle_id": "1d530e1f1dc472948abe1e87c462620a1121e6abe0455aab222b2351a7e6c468",
+  "stages": [
+    {
+      "id": "W10",
+      "agent": "agents/requirement-analyst.md",
+      "inputs": [
+        "request.md"
+      ],
+      "outputs": [
+        "requirements.md"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "W20",
+      "agent": "agents/implementer.md",
+      "inputs": [
+        "requirements.md"
+      ],
+      "outputs": [
+        "design.md",
+        "fixtures/TagService-v1.java",
+        "behavior-mapping.md"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "W30-red",
+      "agent": "agents/verifier.md",
+      "inputs": [
+        "fixtures/TagService-v1.java",
+        "requirements.md"
+      ],
+      "outputs": [
+        "evidence/runtime.json"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "W35",
+      "agent": "agents/diagnostician.md",
+      "inputs": [
+        "evidence/runtime.json",
+        "fixtures/TagService-v1.java"
+      ],
+      "outputs": [
+        "diagnosis.md"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "W36",
+      "agent": "agents/implementer.md",
+      "inputs": [
+        "diagnosis.md"
+      ],
+      "outputs": [
+        "app/src/main/java/example/workflow/TagService.java",
+        "change.diff"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "W30-green",
+      "agent": "agents/verifier.md",
+      "inputs": [
+        "app/src/main/java/example/workflow/TagService.java",
+        "requirements.md"
+      ],
+      "outputs": [
+        "evidence/runtime.json"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "W41",
+      "agent": "agents/code-reviewer.md",
+      "inputs": [
+        "requirements.md",
+        "change.diff",
+        "evidence/runtime.json"
+      ],
+      "outputs": [
+        "reviews/code.md"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "W42",
+      "agent": "agents/semantic-reviewer.md",
+      "inputs": [
+        "requirements.md",
+        "evidence/runtime.json"
+      ],
+      "outputs": [
+        "reviews/semantic.md"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "W43",
+      "agent": "agents/principle-reviewer.md",
+      "inputs": [
+        "request.md",
+        "evidence/runtime.json"
+      ],
+      "outputs": [
+        "reviews/principles.md"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "W44-independent",
+      "agent": "agents/code-reviewer.md",
+      "inputs": [
+        "evidence/runtime.json",
+        "requirements.md"
+      ],
+      "outputs": [
+        "reviews/independent.md"
+      ],
+      "status": "reviewed",
+      "review_scopes": [
+        "code",
+        "semantics",
+        "principles",
+        "documentation"
+      ]
+    },
+    {
+      "id": "W45-query",
+      "agent": "agents/query-reviewer.md",
+      "inputs": [
+        "design.md"
+      ],
+      "outputs": [
+        "requirements.md"
+      ],
+      "status": "conditional_not_triggered"
+    },
+    {
+      "id": "W50",
+      "agent": "agents/document-reviewer.md",
+      "inputs": [
+        "README.md",
+        "evidence/runtime.json"
+      ],
+      "outputs": [
+        "reviews/document.md"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "W60",
+      "agent": "agents/delivery-planner.md",
+      "inputs": [
+        "evidence/runtime.json",
+        "reviews/independent.md"
+      ],
+      "outputs": [
+        "delivery.md",
+        "result.md"
+      ],
+      "status": "ready_for_source_publication"
+    }
+  ],
+  "runtime_evidence": "evidence/runtime.json",
+  "acceptance": [
+    {
+      "id": "A1",
+      "expected": "标签规范化、保序去重且实际存储",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "A2",
+      "expected": "空列表与null列表分开",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "A3",
+      "expected": "任一无效元素整次拒绝；v1红v2绿",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "A4",
+      "expected": "owner/版本/不存在保护保持",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "A5",
+      "expected": "无变更和过期重试语义",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "A6",
+      "expected": "其他字段与审计保持",
+      "evidence": "evidence/runtime.json"
+    },
+    {
+      "id": "A7",
+      "expected": "真实Spring上下文及MockMvc链路",
+      "evidence": "evidence/runtime.json"
+    }
+  ],
+  "verification": {
+    "java": "PASSED",
+    "spring": "REAL_CONTEXT_AND_MOCKMVC",
+    "database": "not_connected",
+    "native_agent": "not_run",
+    "deployment": "not_run"
+  },
+  "execution_mode": "manual_role_adoption_with_separate_readonly_review"
+}

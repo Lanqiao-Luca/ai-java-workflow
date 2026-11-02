@@ -1,0 +1,109 @@
+{
+  "synthetic": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "a4c0960042cc40c7c23b6fbdd0a719b69c3b456c00fe41ae5607ee6917cae1d4"
+    },
+    {
+      "path": "app/pom.xml",
+      "sha256": "989a86c36341a48803a3faff4379524c18fe8ec7885577d0df76abe0d1bd3d4c"
+    },
+    {
+      "path": "app/src/main/java/example/workflow/DemoApplication.java",
+      "sha256": "6249d2d9fa1722b0c8b2027da908ff979f2536dec4f73807512360e159dda524"
+    },
+    {
+      "path": "app/src/main/java/example/workflow/TagController.java",
+      "sha256": "4c1df8e0b504a285f9df768b9cc745c2eaafce8e5cfed9d914c707a81fd9407e"
+    },
+    {
+      "path": "app/src/main/java/example/workflow/TagService.java",
+      "sha256": "eec54105294f19fd9c50315b5753c73c9fb33e1d25973672cb7330039a526be9"
+    },
+    {
+      "path": "app/src/main/resources/application.properties",
+      "sha256": "eae35dfee500e5ec454c892e0fa97dde1904ed77157149303fd49a9d298b60cf"
+    },
+    {
+      "path": "app/src/test/java/example/workflow/TagWorkflowTest.java",
+      "sha256": "c08e30daf36111b2e9f90a8e236c92340a2c1ff0645b560a8ebd4e95e9366a87"
+    },
+    {
+      "path": "behavior-mapping.md",
+      "sha256": "c45efa9e1eb0a7770623debfbd639ca1b6f4dfb4e467905b85169f2b29547f5a"
+    },
+    {
+      "path": "case.json",
+      "sha256": "8d98097fa17b2a226947c099c6ef14a3497c195a8009792089f22abd5807d7d9"
+    },
+    {
+      "path": "change.diff",
+      "sha256": "3c5a4f5a7e79df5edcd30b6a015b0991dac46854f29d87791b0ec59ea80b4521"
+    },
+    {
+      "path": "delivery.md",
+      "sha256": "60cfedc99ad6c87875ad92312a711761aede1d9374e7cdeb5607680455efbaed"
+    },
+    {
+      "path": "design.md",
+      "sha256": "1d05592146b94e8cfe89f4e079aa041d27aac489254c02fda4141b25fb446e4f"
+    },
+    {
+      "path": "diagnosis.md",
+      "sha256": "bc3f8855c8a93620124dd1dc4db8d62fd42bd21ffe9b35c0eeef4c0c80379c8a"
+    },
+    {
+      "path": "evidence/runtime.json",
+      "sha256": "217de0aa4ac86c898234de798853ec754582cea5c5a63ef3125c22ac76c14644"
+    },
+    {
+      "path": "fixtures/TagService-v1.java",
+      "sha256": "6792c7509a15ea160adb26bf097682d3a8bf39c2cae208a0bc1c5019e6c82fa1"
+    },
+    {
+      "path": "request.md",
+      "sha256": "ed0636b6fcdf1e783aff37c797c6c7b008a9b1978c55ddbb20756aa434bb2a7f"
+    },
+    {
+      "path": "requirements.md",
+      "sha256": "46ffdcc5bb3ff7b8367241b199a795b0531b25f02fff6339115775bae2a97dba"
+    },
+    {
+      "path": "result.md",
+      "sha256": "a715fb3ff28672a6a8ac84f099d30d3b89be7c60a925a055c2a6d5e90ff82bf9"
+    },
+    {
+      "path": "reviews/code.md",
+      "sha256": "2990bd7b5eb341339fbbd0ab0375a9ea1f50ba2bcfba86891a1391671781aadd"
+    },
+    {
+      "path": "reviews/document.md",
+      "sha256": "88d6c3b41ddbfcb78bcc5824b3b3ff455878f157b344a0dc86ec0cfeccf74bdf"
+    },
+    {
+      "path": "reviews/independent.md",
+      "sha256": "8dcff1895fdd42906fd54fc9cb125f3d515b53cb2546164e8fc2f5a6cf9a8394"
+    },
+    {
+      "path": "reviews/principles.md",
+      "sha256": "f70ff6371b551eed5c6ebe76ac5dec19a22e47dc373b639b202e57063713b15b"
+    },
+    {
+      "path": "reviews/semantic.md",
+      "sha256": "fe5be09b44fcbd470a1148d0d2840fc31635d084778b7f12b43d88308ffb9c16"
+    },
+    {
+      "path": "run.py",
+      "sha256": "f072b3d6279506b23aee9941f060b42546ea80b648cb45a5ebd5957344aec092"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "7241c23caab6f5587e8baa48533133a95070d3685f9e967c168763b5af83302d"
+    },
+    {
+      "path": "trace.md",
+      "sha256": "e0ecc56e7e859b38d83e937ccc25e99df9e6b50d67f5b481a1e47f4f46742d94"
+    }
+  ]
+}

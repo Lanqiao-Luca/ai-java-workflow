@@ -1,0 +1,17 @@
+--- fixtures/TagService-v1.java
++++ app/src/main/java/example/workflow/TagService.java
+@@ -50,8 +50,11 @@
+ 
+     private List<String> normalize(List<String> tags) {
+         if (tags == null) throw new Rejected(400, "MISSING_TAGS");
+-        // Deliberately faulty teaching candidate: silently drops invalid elements.
+-        return tags.stream().filter(java.util.Objects::nonNull).map(String::trim)
+-            .filter(tag -> !tag.isEmpty()).distinct().toList();
++        LinkedHashSet<String> unique = new LinkedHashSet<>();
++        for (String tag : tags) {
++            if (tag == null || tag.trim().isEmpty()) throw new Rejected(400, "INVALID_TAG");
++            unique.add(tag.trim());
++        }
++        return List.copyOf(unique);
+     }
+ }

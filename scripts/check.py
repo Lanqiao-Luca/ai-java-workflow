@@ -1,4 +1,4 @@
-"""Offline consistency checks for the three documentation layers."""
+"""Offline consistency checks for workflow and documentation layers."""
 from pathlib import Path
 from urllib.parse import unquote
 import json
@@ -62,6 +62,11 @@ def main():
                 raise ValueError("role lacks skill dependency")
             if any(q.relative_to(ROOT).parts[0] == "standards" for q in targets):
                 raise ValueError("role bypasses skill")
+        if rel.parts[0] == "workflows" and p.name != "README.md":
+            if not any(q.relative_to(ROOT).parts[0] == "agents" for q in targets):
+                raise ValueError("workflow lacks Agent handoff")
+            if any(q.relative_to(ROOT).parts[0] in {"skills", "standards"} for q in targets):
+                raise ValueError("workflow bypasses Agent")
     case = ROOT / "examples/bookmark-title"
     identity = json.loads((case / "artifact-manifest.json").read_text())["files"]
     expected = {"task.json", "before/BookmarkService.java", "after/BookmarkService.java",

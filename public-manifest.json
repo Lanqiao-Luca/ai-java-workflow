@@ -1257,6 +1257,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/check_all.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "scripts/check_docker_cases.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1548,6 +1553,11 @@
     },
     {
       "path": "tests/test_build_execution.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_check_all.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

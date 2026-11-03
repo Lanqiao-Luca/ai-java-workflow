@@ -7,6 +7,16 @@
 从仓库根运行，需要 Python 3.9+，不下载依赖、不调用模型或连接业务服务：
 
 ```sh
+python3 -B scripts/check_all.py
+```
+
+[总检查入口](../scripts/check_all.py)按下面的固定顺序运行八项检查，也可从其他工作目录通过脚本的绝对路径启动。每项最多 60 秒；失败立即停止并返回该子进程的非零退出码，信号终止映射为 shell 惯例的 `128 + 信号编号`，超时返回 124、启动失败返回 2、中断返回 130。未运行的后续项不会记为通过；正常结束才输出总 PASS。入口不是执行沙箱，也不覆盖真实模型、构建或容器测试。
+
+修改总检查入口时，另运行 `python3 -B -m unittest discover -s tests -p test_check_all.py -v`，核失败不启动后续项、退出码、工作目录和超时等编排边界；这组测试不包含在默认八项检查中。
+
+需要定位某一项问题时，可单独运行：
+
+```sh
 python3 -B scripts/check.py
 python3 -B scripts/check_agent_cases.py
 python3 -B scripts/check_workflow_cases.py

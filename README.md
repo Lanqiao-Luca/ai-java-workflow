@@ -53,10 +53,10 @@ flowchart TD
 ```sh
 git clone https://github.com/Lanqiao-Luca/ai-java-workflow.git
 cd ai-java-workflow
-python3 -B scripts/check.py
+python3 -B scripts/check_all.py
 ```
 
-这一步离线检查公开文件清单、文档引用与案例身份，不调用模型、不构建 Java 工程。
+这一步运行八项离线仓库检查，核对公开文件清单、文档引用、案例身份与记录，并执行 Loops 控制判定测试。不调用模型、不构建 Java 工程；任一检查失败即停止并返回非零状态。
 
 ### 2. 让当前 AI 助手审阅案例
 

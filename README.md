@@ -127,7 +127,7 @@ flowchart LR
 
 原生链路现可通过[恢复入口](docs/native-recovery.md)对确认的测试/审查失败有界整改，并在安全检查点续跑；未知结果仍停止。GitHub CI 持续运行离线回归和公开 Spring 候选测试。构建沙箱的隔离验证也不覆盖原生模型后端。示例不连接公司服务或真实业务数据库；生产部署、真实认证、负载与任意工程兼容性由使用者另行验证。
 
-本地可运行 `python3 -B scripts/check_ci.py` 验证恢复与续跑边界；真实模型恢复链路与模拟控制测试分别核证。完整离线检查命令和各模式证据见[验证指南](docs/validation-guide.md)。每个案例保留自己的真实状态，历史 NOT_RUN 不会因为另一个案例通过而变成成功。
+本地可运行 `python3 -B scripts/check_ci.py` 验证恢复与续跑边界；真实模型恢复链路与模拟控制测试分别核证。[巡检收敛](loops/inspection-convergence.md)支持保留缺证的 PARTIAL 退出；[整体缺陷收敛](loops/defect-convergence.md)要求测试、行为、发现关闭及交接全部满足。两者各有可直接运行的虚构控制案例。完整离线检查命令和各模式证据见[验证指南](docs/validation-guide.md)。每个案例保留自己的真实状态，历史 NOT_RUN 不会因为另一个案例通过而变成成功。
 
 ## 参与改进
 

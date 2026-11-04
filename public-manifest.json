@@ -1247,6 +1247,36 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "loops/defect-convergence.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/defect/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/defect/before-candidate.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/defect/candidate.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/defect/evidence.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/defect/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "loops/examples/inspection/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1672,6 +1702,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_loop_defects.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_loop_findings.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1703,6 +1738,11 @@
     },
     {
       "path": "tests/test_native_recovery.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/defect_loop.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1829,6 +1869,11 @@
     {
       "path": "workflows/concurrent-java-title.json",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/defect-completion.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {

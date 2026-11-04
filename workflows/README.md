@@ -29,3 +29,7 @@ Workflow负责阶段顺序、输入输出交接和失败返回；各Agent自行�
 ## 只读观察
 
 [来源观察 Workflow](service-inspection.md)按已准入来源取得候选绑定证据，由巡检 Loop 控制补证和 PARTIAL 退出；不自动部署、轮询或连接真实服务。
+
+## 整体缺陷目标
+
+[缺陷整体验收 Workflow](defect-completion.md)把代码准入、业务行为、必要制品/操作结果和交接证据交回原目标；单项测试通过不代替完整任务验收。

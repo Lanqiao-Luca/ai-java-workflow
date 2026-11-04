@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "finding": {
+    "finding_id": null,
+    "key": "reject-null-input",
+    "summary": "Null input was accepted",
+    "location": "DemoLabels.normalize",
+    "criterion": "Reject null input"
+  },
+  "tests": {
+    "process_exit": 0,
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "behavior": {
+    "normalized": [
+      "alpha"
+    ],
+    "invalid_input_status": 400
+  },
+  "handoff": {
+    "recipient": "demo-recipient",
+    "remaining_obligations": []
+  }
+}

@@ -35,6 +35,15 @@ python3 -B scripts/check_loop_cases.py
 
 ## 按模式运行与核证
 
+新增两条虚构控制案例可直接运行，亦由便携 CI 实际调用：
+
+```sh
+python3 -B loops/examples/inspection/run.py
+python3 -B loops/examples/defect/run.py
+```
+
+前者实际读取虚构日志、接口与构建文件，验证补证/缺口；后者运行整体验收与发现账本状态转换。两者的接口、测试数字、审核上下文和时钟均为模拟，不连接服务、不构建 Java，也不作为真实模型整改或业务验收证据。
+
 | 模式 | 运行说明 | 已交付证据与限制 |
 | --- | --- | --- |
 | 纯 Java 角色案例 | [案例](../examples/bookmark-title/README.md)中的 `run.py`，需要 JDK 17+ | [结果](../examples/bookmark-title/result.md)保留原 NOT_RUN；不以其他案例覆盖 |

@@ -122,6 +122,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/finding-ledger.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/java-spring-workflow-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -129,6 +134,11 @@
     {
       "path": "docs/java-spring-workflow-results.md",
       "origin": "newly_written_publication_result",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/loop-delivery-plan.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -1617,6 +1627,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_loop_findings.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_native_agents.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1704,6 +1719,11 @@
     {
       "path": "tools/execution/runtime.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/finding_ledger.py",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {

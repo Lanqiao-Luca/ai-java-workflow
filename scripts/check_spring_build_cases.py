@@ -8,6 +8,9 @@ import runpy
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+import sys
+sys.path.insert(0, str(ROOT))
+from tools.public_history import source_bytes
 PROBES = {"positive_write", "child_exec_succeeded", "child_outside_read_denied",
           "child_outside_write_denied", "child_admin_read_denied", "child_admin_write_denied",
           "child_external_network_denied", "own_loopback_ipc_succeeded", "observed_tree_stopped"}
@@ -27,7 +30,7 @@ def identity(value):
 
 
 def hashes(names):
-    return {name: hashlib.sha256(local(ROOT, name).read_bytes()).hexdigest() for name in names}
+    return {name: hashlib.sha256(source_bytes(ROOT, name)).hexdigest() for name in names}
 
 
 def test_names(path):
@@ -154,7 +157,7 @@ def check_spring_build_case(folder):
     check_regression(reports["tests"], test_names(local(ROOT, "tests/test_build_execution.py")), 18)
     check_regression(reports["legacy"], test_names(local(ROOT, "tests/test_execution.py")), 26)
     for key, name in [("runtime_sha256", "tools/execution/runtime.py"), ("test_source_sha256", "tests/test_execution.py")]:
-        if reports["legacy"][key] != hashlib.sha256(local(ROOT, name).read_bytes()).hexdigest():
+        if reports["legacy"][key] != hashlib.sha256(source_bytes(ROOT, name)).hexdigest():
             raise ValueError("strict legacy source drift")
     controls = reports["negative"]["controls"]
     if set(controls) != {"red_baseline", "missing_dependency"}:

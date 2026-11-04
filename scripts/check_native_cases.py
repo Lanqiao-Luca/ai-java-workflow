@@ -22,7 +22,7 @@ HEX = re.compile(r'[0-9a-f]{64}')
 HISTORICAL_SOURCES = {name: 'docs/native-baseline/' + name.split('/')[-1] + '.txt'
                       for name in ('tools/native_agents.py', 'tools/native_flow.py')}
 
-HISTORICAL_CATALOG_SHA256 = '698c774e74f99e40e68a33bca08e58a01e8d0597f3bc60a05d497178097bb682'
+HISTORICAL_CATALOG_SHA256 = '4807c8030dfb5913eb5bae00c4a90b35df7793f3d2ebfd77d7783fd783613878'
 
 def demand(condition, message):
     if not condition:

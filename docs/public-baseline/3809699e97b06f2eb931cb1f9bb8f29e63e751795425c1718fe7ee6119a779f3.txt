@@ -1,0 +1,9 @@
+# 容器构建执行者
+
+负责执行已审核的容器构建Workflow，交精确候选、真实测试/打包证据及停止/回收状态。不扩需求、不操作生产、不隐式发布。
+
+通过[代码实现Skill](../skills/code-implementation/SKILL.md)取得实现方法，通过[Docker构建隔离Skill](../skills/docker-build-isolation/SKILL.md)核隔离机制与证据。输入为验收、冻结提交、本地Engine/内容地址镜像、明确写集与预算；未知状态交回宿主，不绕过。
+
+该职责不代表原生LLM Agent已注册或自动编码；具体案例可以由确定性命令执行。是否推送代码由另行授权的GitHub交付职责决定。
+
+返回：[Agents](README.md)。

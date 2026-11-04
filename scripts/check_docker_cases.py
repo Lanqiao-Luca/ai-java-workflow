@@ -7,6 +7,9 @@ import re
 import runpy
 
 ROOT = Path(__file__).resolve().parents[1]
+import sys
+sys.path.insert(0, str(ROOT))
+from tools.public_history import source_bytes
 PROBES = {"capabilities_dropped", "cpu_cgroup_limit", "docker_socket_absent", "external_network_denied",
           "fork_and_setsid_succeeded", "git_pointer_absent", "host_file_absent", "host_loopback_isolated",
           "memory_cgroup_limit", "namespace_drained", "no_new_privileges", "non_root", "only_loopback_interface",
@@ -27,7 +30,7 @@ def identity(value):
 
 
 def hashes(names):
-    return {n: hashlib.sha256(local(ROOT, n).read_bytes()).hexdigest() for n in names}
+    return {n: hashlib.sha256(source_bytes(ROOT, n)).hexdigest() for n in names}
 
 
 def test_names(name):

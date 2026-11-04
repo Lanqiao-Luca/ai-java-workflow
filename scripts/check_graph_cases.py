@@ -7,6 +7,9 @@ import re
 import runpy
 
 ROOT = Path(__file__).resolve().parents[1]
+import sys
+sys.path.insert(0, str(ROOT))
+from tools.public_history import source_bytes
 PROBES = {"positive_write", "outside_read_denied", "outside_write_denied",
           "git_admin_read_denied", "git_admin_write_denied", "network_denied", "outside_hardlink_denied",
           "outside_symlink_read_denied", "fork_denied", "detached_child_denied"}
@@ -26,7 +29,7 @@ def identity(value):
 
 
 def source_map(names):
-    return {name: hashlib.sha256(local_file(ROOT, name).read_bytes()).hexdigest() for name in names}
+    return {name: hashlib.sha256(source_bytes(ROOT, name)).hexdigest() for name in names}
 
 
 def probe(value):

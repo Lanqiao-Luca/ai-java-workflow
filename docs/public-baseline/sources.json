@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "sources": {
+    "agents/code-reviewer.md": {
+      "path": "docs/public-baseline/841d7f03d2c2def200f409c12e5cdd759fb52676104e1f8de8a5b2fc0e940b0f.txt",
+      "sha256": "841d7f03d2c2def200f409c12e5cdd759fb52676104e1f8de8a5b2fc0e940b0f"
+    },
+    "agents/container-build-executor.md": {
+      "path": "docs/public-baseline/3809699e97b06f2eb931cb1f9bb8f29e63e751795425c1718fe7ee6119a779f3.txt",
+      "sha256": "3809699e97b06f2eb931cb1f9bb8f29e63e751795425c1718fe7ee6119a779f3"
+    },
+    "agents/delivery-planner.md": {
+      "path": "docs/public-baseline/a416a564b924cd550166ac96b97d2a6037462f0e632dc3e359d2af2ba46ae6ca.txt",
+      "sha256": "a416a564b924cd550166ac96b97d2a6037462f0e632dc3e359d2af2ba46ae6ca"
+    },
+    "agents/diagnostician.md": {
+      "path": "docs/public-baseline/2dea40c77995d21e856a83f4dfcae8913b2f885081a6b2315060d1692238d779.txt",
+      "sha256": "2dea40c77995d21e856a83f4dfcae8913b2f885081a6b2315060d1692238d779"
+    },
+    "agents/document-reviewer.md": {
+      "path": "docs/public-baseline/71a106afbe702402b403d8f47b382eebf3632dc5a28639d0543ac260e57836b8.txt",
+      "sha256": "71a106afbe702402b403d8f47b382eebf3632dc5a28639d0543ac260e57836b8"
+    },
+    "agents/implementer.md": {
+      "path": "docs/public-baseline/a46c1c2e6461d0a5a9d689c0dca053b4f952f0bcabc668a8ebc62c7e71280e9d.txt",
+      "sha256": "a46c1c2e6461d0a5a9d689c0dca053b4f952f0bcabc668a8ebc62c7e71280e9d"
+    },
+    "agents/java-build-executor.md": {
+      "path": "docs/public-baseline/faa93b5d215e7fca5632bb51d14d262e475a716b3122383cfcecfe099ecbee47.txt",
+      "sha256": "faa93b5d215e7fca5632bb51d14d262e475a716b3122383cfcecfe099ecbee47"
+    },
+    "agents/principle-reviewer.md": {
+      "path": "docs/public-baseline/589a24614bf1ec2b8a6959b9a30fd84a9cae0c1519c4fc0f0be26ae0d4733db6.txt",
+      "sha256": "589a24614bf1ec2b8a6959b9a30fd84a9cae0c1519c4fc0f0be26ae0d4733db6"
+    },
+    "agents/query-reviewer.md": {
+      "path": "docs/public-baseline/2e2bf56f1e395ef3462812dd563fdcbc5d0aa4a6567868d7ebfbbf7850c741d3.txt",
+      "sha256": "2e2bf56f1e395ef3462812dd563fdcbc5d0aa4a6567868d7ebfbbf7850c741d3"
+    },
+    "agents/requirement-analyst.md": {
+      "path": "docs/public-baseline/09c87f070c7ecde7cf75b8db63601bb0d680dfd4948403de4c98c4ce16e780de.txt",
+      "sha256": "09c87f070c7ecde7cf75b8db63601bb0d680dfd4948403de4c98c4ce16e780de"
+    },
+    "agents/semantic-reviewer.md": {
+      "path": "docs/public-baseline/75ee33b4aa633ed022d7f870bdbae663cecddb808b11087aac11dda32d029875.txt",
+      "sha256": "75ee33b4aa633ed022d7f870bdbae663cecddb808b11087aac11dda32d029875"
+    },
+    "agents/verifier.md": {
+      "path": "docs/public-baseline/61deeebd54a8957346c79bb3da612fd6ec9d853d1d27cc39a09ca2e2e17816da.txt",
+      "sha256": "61deeebd54a8957346c79bb3da612fd6ec9d853d1d27cc39a09ca2e2e17816da"
+    },
+    "skills/code-implementation/SKILL.md": {
+      "path": "docs/public-baseline/5d658cb11076a82de1917b381d746e82015874936daf0cffb99bfe561d834b4d.txt",
+      "sha256": "5d658cb11076a82de1917b381d746e82015874936daf0cffb99bfe561d834b4d"
+    },
+    "skills/code-review/SKILL.md": {
+      "path": "docs/public-baseline/76b0d27028cf03179161c0791e0f39fe4aeb8d40490102cf432a7bdc6a34a6ce.txt",
+      "sha256": "76b0d27028cf03179161c0791e0f39fe4aeb8d40490102cf432a7bdc6a34a6ce"
+    },
+    "skills/delivery-planning/SKILL.md": {
+      "path": "docs/public-baseline/f2d3a77e8566fd4d8f03d7e5146390faa725f50444a85a44b6aa09d4ab7dae5e.txt",
+      "sha256": "f2d3a77e8566fd4d8f03d7e5146390faa725f50444a85a44b6aa09d4ab7dae5e"
+    },
+    "skills/docker-build-isolation/SKILL.md": {
+      "path": "docs/public-baseline/98d6dcdbcef2f8312fd43c082075fcb6e7b2a619d31db2410a622348afc59010.txt",
+      "sha256": "98d6dcdbcef2f8312fd43c082075fcb6e7b2a619d31db2410a622348afc59010"
+    },
+    "skills/document-review/SKILL.md": {
+      "path": "docs/public-baseline/94560180c91a2d256d0acd600e229540a0dbe493ce04f3c2226d33d14b9f3ae1.txt",
+      "sha256": "94560180c91a2d256d0acd600e229540a0dbe493ce04f3c2226d33d14b9f3ae1"
+    },
+    "skills/evidence-diagnosis/SKILL.md": {
+      "path": "docs/public-baseline/3974f064d3c882c6b3f443f7d8b1015149c121d8f99ecca6d119a29e27db2908.txt",
+      "sha256": "3974f064d3c882c6b3f443f7d8b1015149c121d8f99ecca6d119a29e27db2908"
+    },
+    "skills/java-build-isolation/SKILL.md": {
+      "path": "docs/public-baseline/883d03e21ac3a983a9173a7716b8f79ab10d8e58f5f710cbfd09c13bada7b6e0.txt",
+      "sha256": "883d03e21ac3a983a9173a7716b8f79ab10d8e58f5f710cbfd09c13bada7b6e0"
+    },
+    "skills/java-spring-check/SKILL.md": {
+      "path": "docs/public-baseline/549c535ba1295e8ae0d28e8be726e9eb2fdf0d419ade66e4e7c7f248768ee01f.txt",
+      "sha256": "549c535ba1295e8ae0d28e8be726e9eb2fdf0d419ade66e4e7c7f248768ee01f"
+    },
+    "skills/principle-review/SKILL.md": {
+      "path": "docs/public-baseline/755d62cb8a3968daabcae2ec81068a69a1406955104a7cfd979dc5fcf8db33c0.txt",
+      "sha256": "755d62cb8a3968daabcae2ec81068a69a1406955104a7cfd979dc5fcf8db33c0"
+    },
+    "skills/requirement-clarification/SKILL.md": {
+      "path": "docs/public-baseline/6bde7250bf1f17a76d459a628746456588e776dc3e53327acac6824f5ea57978.txt",
+      "sha256": "6bde7250bf1f17a76d459a628746456588e776dc3e53327acac6824f5ea57978"
+    },
+    "skills/resources/behavior.md": {
+      "path": "docs/public-baseline/d2bcdb5c71f5ce7ccafb319b4de59aa041d849c792744cad0a197846e31ed695.txt",
+      "sha256": "d2bcdb5c71f5ce7ccafb319b4de59aa041d849c792744cad0a197846e31ed695"
+    },
+    "skills/resources/review.md": {
+      "path": "docs/public-baseline/104fccfcbc0460f933150925253b8be37e575c78b990a9549ded31e7f64a94bc.txt",
+      "sha256": "104fccfcbc0460f933150925253b8be37e575c78b990a9549ded31e7f64a94bc"
+    },
+    "skills/resources/task.md": {
+      "path": "docs/public-baseline/652e7d47e6fb1b71885fba762e4aff1eb64de3c470ffdae015c9dc0fba7907e4.txt",
+      "sha256": "652e7d47e6fb1b71885fba762e4aff1eb64de3c470ffdae015c9dc0fba7907e4"
+    },
+    "skills/semantic-review/SKILL.md": {
+      "path": "docs/public-baseline/74873e85e8fd763ba79b62e01147904e2ee7f505d13edc46261d4d02e36e6e82.txt",
+      "sha256": "74873e85e8fd763ba79b62e01147904e2ee7f505d13edc46261d4d02e36e6e82"
+    },
+    "skills/sql-review/SKILL.md": {
+      "path": "docs/public-baseline/bfd4ca196a359e43276ef7f9c7cad433726ad1b4a329d3c4751fe652f8c6a035.txt",
+      "sha256": "bfd4ca196a359e43276ef7f9c7cad433726ad1b4a329d3c4751fe652f8c6a035"
+    },
+    "skills/verification/SKILL.md": {
+      "path": "docs/public-baseline/523f5a359aa7b10efca9e72ade18bc4008bf3d565c809f5629b14e3f7c0495ac.txt",
+      "sha256": "523f5a359aa7b10efca9e72ade18bc4008bf3d565c809f5629b14e3f7c0495ac"
+    },
+    "skills/workspace-isolation/SKILL.md": {
+      "path": "docs/public-baseline/fb5dfde6389a38a0a42480dbafe899294b25cf24e75499552d56e34e01af4364.txt",
+      "sha256": "fb5dfde6389a38a0a42480dbafe899294b25cf24e75499552d56e34e01af4364"
+    },
+    "standards/behavior-preservation.md": {
+      "path": "docs/public-baseline/f277a0c9e4c92879f91bf51918c0cbee94f609116c421c178433293119b4168d.txt",
+      "sha256": "f277a0c9e4c92879f91bf51918c0cbee94f609116c421c178433293119b4168d"
+    },
+    "standards/code-review.md": {
+      "path": "docs/public-baseline/1dd7bce006e9832a0a46616849742be141aafdbb1ec2f09c8bd609a95a52543e.txt",
+      "sha256": "1dd7bce006e9832a0a46616849742be141aafdbb1ec2f09c8bd609a95a52543e"
+    },
+    "standards/concurrent-execution.md": {
+      "path": "docs/public-baseline/4dfad5a4bf6ea2df79ec673b889013c6e3df9c94a9ff6f047e910783dd20e1fe.txt",
+      "sha256": "4dfad5a4bf6ea2df79ec673b889013c6e3df9c94a9ff6f047e910783dd20e1fe"
+    },
+    "standards/delivery-planning.md": {
+      "path": "docs/public-baseline/b062bf9769e442d1b3e5ee25798948cd926a33f64f4c406be8993f0b741ca00b.txt",
+      "sha256": "b062bf9769e442d1b3e5ee25798948cd926a33f64f4c406be8993f0b741ca00b"
+    },
+    "standards/diagnosis.md": {
+      "path": "docs/public-baseline/a73f25df4695e4682f456a01afec838a956d0212bfbb3f6d33bdeb14df74151f.txt",
+      "sha256": "a73f25df4695e4682f456a01afec838a956d0212bfbb3f6d33bdeb14df74151f"
+    },
+    "standards/docker-sandbox.md": {
+      "path": "docs/public-baseline/2773df1f65ad647733aa6a38c74d8689421e8eef7471f86c6de5aa0d376569b8.txt",
+      "sha256": "2773df1f65ad647733aa6a38c74d8689421e8eef7471f86c6de5aa0d376569b8"
+    },
+    "standards/document-review.md": {
+      "path": "docs/public-baseline/84344dc8f42ae15ca8dd162d896965f74ec0445bb53470644935db233eb4bc2f.txt",
+      "sha256": "84344dc8f42ae15ca8dd162d896965f74ec0445bb53470644935db233eb4bc2f"
+    },
+    "standards/implementation-baseline.md": {
+      "path": "docs/public-baseline/d8ccdf1046fc9875040ea7fb33945050c6988c93813c15932b481f212314c66e.txt",
+      "sha256": "d8ccdf1046fc9875040ea7fb33945050c6988c93813c15932b481f212314c66e"
+    },
+    "standards/java-build-sandbox.md": {
+      "path": "docs/public-baseline/648d8b5c40ab75ee8f78ee1469ae85e288da6e7b1b5f568693cc4245970ed936.txt",
+      "sha256": "648d8b5c40ab75ee8f78ee1469ae85e288da6e7b1b5f568693cc4245970ed936"
+    },
+    "standards/java-spring.md": {
+      "path": "docs/public-baseline/2650ba7d8e0f3ecbb16882e719a07ed7773a50ae357a5d55b199da7baf1aa385.txt",
+      "sha256": "2650ba7d8e0f3ecbb16882e719a07ed7773a50ae357a5d55b199da7baf1aa385"
+    },
+    "standards/principles.md": {
+      "path": "docs/public-baseline/6c5a811f1b2b7e41b113f1869ba20fcc43f5fa66a96a47ff5dc11318fd7a14cb.txt",
+      "sha256": "6c5a811f1b2b7e41b113f1869ba20fcc43f5fa66a96a47ff5dc11318fd7a14cb"
+    },
+    "standards/recovery.md": {
+      "path": "docs/public-baseline/83dd928e44213624d9d336c97c3a303748362d1afb2dc099742aec26d2c86255.txt",
+      "sha256": "83dd928e44213624d9d336c97c3a303748362d1afb2dc099742aec26d2c86255"
+    },
+    "standards/requirements.md": {
+      "path": "docs/public-baseline/4cb2ef80a42973b57ce191fee661da70f4c44a83232f7db1d3f0bfcc510733fa.txt",
+      "sha256": "4cb2ef80a42973b57ce191fee661da70f4c44a83232f7db1d3f0bfcc510733fa"
+    },
+    "standards/semantic-review.md": {
+      "path": "docs/public-baseline/cabf42f898a189515b7ea837c10a8dbcd035d98b02924ccc12582b2092aa2453.txt",
+      "sha256": "cabf42f898a189515b7ea837c10a8dbcd035d98b02924ccc12582b2092aa2453"
+    },
+    "standards/shared-rules.md": {
+      "path": "docs/public-baseline/b5feb109704e13b935b175dd12326359cea55f7f90a378c7721c5763d2f9789b.txt",
+      "sha256": "b5feb109704e13b935b175dd12326359cea55f7f90a378c7721c5763d2f9789b"
+    },
+    "standards/sql-review.md": {
+      "path": "docs/public-baseline/9e02bbe9992a0162cd5c53c3e9b04a38edfc370c87fb30d276275b02acc9abd2.txt",
+      "sha256": "9e02bbe9992a0162cd5c53c3e9b04a38edfc370c87fb30d276275b02acc9abd2"
+    },
+    "standards/verification.md": {
+      "path": "docs/public-baseline/4f4be23e74244f51bfbffd287cbef73a6e7401df44c77a6b770dd481e5ef1bd0.txt",
+      "sha256": "4f4be23e74244f51bfbffd287cbef73a6e7401df44c77a6b770dd481e5ef1bd0"
+    },
+    "standards/workspace-isolation.md": {
+      "path": "docs/public-baseline/cc40de66fd05bc2ee3984c885268fde3a348160e2c8358a9ad54366c9e111502.txt",
+      "sha256": "cc40de66fd05bc2ee3984c885268fde3a348160e2c8358a9ad54366c9e111502"
+    }
+  }
+}

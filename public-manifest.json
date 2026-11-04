@@ -92,6 +92,31 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "brain/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "brain/capabilities.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "brain/example.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "brain/handoff-template.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "brain/routing.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/agent-publication-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"

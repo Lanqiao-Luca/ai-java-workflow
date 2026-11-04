@@ -4,14 +4,17 @@
 
 让 AI 从理解需求开始，沿着实现、验证、审查与交付推进；每一步都有输入、产物和可核对的验收依据。
 
-你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 并发调度多个 Workflow。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
+通过 [Brain 任务入口](brain/README.md)，先判断当前请求应继续哪项工作、采用哪条流程、由谁负责，再由责任角色选择具体方法。你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 并发调度多个 Workflow。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
 
 ## 框架架构
 
-框架从可复用的原子方法向上组装：**原子规则（Standards）→ Skill → Agent → Workflow → Graph**。下面的箭头表示上层组织或消费下层；实际执行由使用者或运行宿主落实。
+Brain 负责逐轮路由与接续，依据任务选择已有组织入口；它不新增执行层或权限来源。框架从可复用的原子方法向上组装：**原子规则（Standards）→ Skill → Agent → Workflow → Graph**。下面的箭头表示上层组织或消费下层；实际执行由使用者或运行宿主落实。
 
 ```mermaid
 flowchart TD
+    B["Brain：任务变化、路由与结果核收"] -.->|按需选择组织入口| G
+    B -.->|单轮任务| W
+    B -.->|专项任务| A
     G["Graph：目标、依赖与并发"] -->|组织多个 Workflow| W["Workflow：阶段、输入输出与交接"]
     L["Loops：预算、进展与停止"] -.->|按需控制重复| W
     W -->|安排阶段职责| A["Agent：责任、决策与交付"]
@@ -21,6 +24,7 @@ flowchart TD
 
 | 组成 | 解决什么问题 | 仓库中的例子 |
 | --- | --- | --- |
+| **Brain** | 这一轮该继续什么、选哪条流程、交给谁，哪些证据仍有效 | [任务路由与接续](brain/README.md) |
 | **原子规则 / Standards** | 一项方法在什么条件下适用，如何操作、验收，何时停止 | [复用与旧行为保留](standards/behavior-preservation.md) |
 | **Skill** | 当前任务需要哪些原子方法，怎样把输入适配为具体产物 | [代码实现 Skill](skills/code-implementation/SKILL.md) |
 | **Agent** | 谁承担任务、选择能力，对结果和交接负责 | [实现者 Agent](agents/implementer.md) |
@@ -36,11 +40,25 @@ flowchart TD
 
 ## 可以用它做什么
 
+- **接续任务并选择职责**：识别继续、纠正、范围变化与停止，复用已有流程、责任人和有效证据。
 - **把需求变成可实施任务**：明确验收口径、已有行为和允许改动的范围。
 - **实现并验证 Java/Spring 变更**：复用既有能力，形成最小差异，用真实测试核对结果。
 - **在同一份候选上审查**：区分代码正确性、业务语义、原则和文档，整改后复验受影响部分。
 - **并行推进独立任务**：按执行实例分配 worktree 与 sandbox，依赖满足后再集成。
 - **交付可接续的结果**：保留候选身份、实际验证、未决项与恢复条件。
+
+## 从 Brain 开始处理自己的任务
+
+在能读取本地文件的助手中打开仓库，输入：
+
+```text
+请先读 brain/README.md，再按 brain/routing.md 处理我的需求：……
+恢复已有目标、阶段、候选和授权，选择适用流程与责任角色；
+由角色选择具体方法，复用有效证据，只补影响下一步的缺项。
+实际写入前确认工程、允许写集与验收；交付时列实际验证、未决和恢复点。
+```
+
+[逐轮书签示例](brain/example.md)展示解释、修改、继续、整改与停止的不同路由；[能力地图](brain/capabilities.md)连接现有执行入口与验证来源。Brain 当前是文档路由，由助手或使用者采用；现有运行器尚未自动消费它，不提供常驻监听或自动派工。
 
 ## 先从一个案例开始
 
@@ -85,6 +103,7 @@ python3 -B scripts/check_all.py
 
 | 使用方式 | 适合的任务 | 从这里开始 |
 | --- | --- | --- |
+| 任务路由与跨轮接续 | 判断任务变化、选择已有组织方式和责任人 | [Brain](brain/README.md)、[最小交接空表](brain/handoff-template.md) |
 | 单项方法与角色 | 澄清需求、实现一个改动、诊断或审查 | [Agent 目录](agents/README.md)、[十条角色案例](examples/README.md) |
 | 完整研发 Workflow | 从一个业务需求走到可审核交付 | [流程合同](workflows/java-spring-development.md)、[Spring 案例](examples/workflow-bookmark-tags/README.md) |
 | 原生 Agent 自动调度 | 六个真实子 Agent 上下文协作，双审查并发 | [原生 Graph](graphs/native-java-spring.md)、[完整运行案例](examples/native-spring-workflow/README.md) |
@@ -108,6 +127,7 @@ flowchart LR
 
 | 目录 | 内容 |
 | --- | --- |
+| [brain](brain/README.md) | 任务路由、能力地图与接续交接 |
 | [standards](standards/README.md) / [skills](skills/README.md) | 原子方法与任务适配 |
 | [agents](agents/README.md) / [workflows](workflows/README.md) | 角色职责与阶段交接 |
 | [graphs](graphs/README.md) / [loops](loops/README.md) | 依赖并发与有限重复控制 |

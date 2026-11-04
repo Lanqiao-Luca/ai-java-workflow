@@ -1232,6 +1232,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "graphs/goal-graph.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "graphs/native-java-spring.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1712,6 +1717,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_goal_graph_definition.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_loop_defects.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1823,6 +1833,11 @@
     },
     {
       "path": "tools/finding_ledger.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/goal_graph.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

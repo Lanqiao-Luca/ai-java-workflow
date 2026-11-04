@@ -1247,12 +1247,57 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "loops/examples/inspection/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/inspection/api-response.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/inspection/build-report.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/inspection/candidate.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/inspection/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/inspection/scenarios.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/inspection/service-head.log",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/inspection/service-tail.log",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "loops/examples/review-convergence.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
       "path": "loops/examples/review-trace.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/inspection-convergence.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1632,6 +1677,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_loop_inspection.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_native_agents.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1723,6 +1773,11 @@
     },
     {
       "path": "tools/finding_ledger.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/inspection_loop.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1833,6 +1888,11 @@
     },
     {
       "path": "workflows/native-verification.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/service-inspection.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

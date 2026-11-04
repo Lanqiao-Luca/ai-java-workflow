@@ -1,0 +1,62 @@
+{
+  "synthetic": true,
+  "cases": [
+    {
+      "name": "supplement",
+      "authorized_sources": [
+        "logs",
+        "api",
+        "build"
+      ],
+      "steps": {
+        "log-window": {
+          "initial": {
+            "file": "service-head.log",
+            "next_step": "tail"
+          },
+          "tail": {
+            "file": "service-tail.log",
+            "next_step": null
+          }
+        },
+        "api-response": {
+          "initial": {
+            "file": "api-response.json"
+          }
+        },
+        "build-report": {
+          "initial": {
+            "file": "build-report.json"
+          }
+        }
+      },
+      "expected_status": "CONVERGED",
+      "expected_missing": []
+    },
+    {
+      "name": "partial",
+      "authorized_sources": [
+        "logs",
+        "build"
+      ],
+      "steps": {
+        "log-window": {
+          "initial": {
+            "file": "service-tail.log",
+            "next_step": null
+          }
+        },
+        "build-report": {
+          "initial": {
+            "future": true
+          }
+        }
+      },
+      "expected_status": "PARTIAL",
+      "expected_missing": [
+        "api-response",
+        "build-report"
+      ]
+    }
+  ]
+}

@@ -25,3 +25,7 @@ Workflow负责阶段顺序、输入输出交接和失败返回；各Agent自行�
 ## Docker构建
 
 [容器Workflow合同](docker-spring.md)消费专门容器执行者职责；[Maven标题](docker-spring-title.json)、[Gradle标签](docker-spring-tags.json)并发，[集成](docker-spring-integration.json)精确合并后每工具8测试。对应[Docker案例](../examples/docker-spring-graph/README.md)分别标明实际宿主与Engine范围。
+
+## 只读观察
+
+[来源观察 Workflow](service-inspection.md)按已准入来源取得候选绑定证据，由巡检 Loop 控制补证和 PARTIAL 退出；不自动部署、轮询或连接真实服务。

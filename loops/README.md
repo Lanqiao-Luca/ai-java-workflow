@@ -12,4 +12,6 @@ Loop 为同一任务提供有限重复与停止策略。具体单轮仍由 Workf
 
 - [发现账本与证据失效](../docs/finding-ledger.md)：稳定发现 ID、作者修复与独立关闭分开，输入变化使旧证据失效；按[小步计划](../docs/loop-delivery-plan.md)验证与交付。
 
+- [只读巡检的证据收敛](inspection-convergence.md)：按完整必查范围补证、保留异常与局部缺口；含[虚构日志/接口/构建案例](examples/inspection/README.md)。
+
 运行 `python3 -B scripts/check_loop_cases.py` 验证离线控制参考。正文与空表是方法，Python 是纯判定参考；[原生恢复控制器](../docs/native-recovery.md)现消费收敛判定，接入确认失败的有界整改与检查点续跑；纯判定函数本身不执行任何外部动作。

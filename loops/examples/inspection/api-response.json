@@ -1,0 +1,8 @@
+{
+  "synthetic": true,
+  "candidate_id": "1a3c1e76c1ac211bc9a323493b1513c05fcfaca58f233f8b326248245b3a5d9a",
+  "http_status": 503,
+  "response": {
+    "error": "demo unavailable"
+  }
+}

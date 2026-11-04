@@ -1,6 +1,15 @@
-# 交付状态与接续规划
+---
+atom_nature: method
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：依据同候选证据安排交付依赖、未完成事项及最早恢复点。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；需要判断当前进度或安排后续交付时。
+
+# 交付状态与接续规划
 
 ## 适用条件
 

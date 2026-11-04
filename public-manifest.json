@@ -52,6 +52,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "agents/document-maintainer.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "agents/document-reviewer.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -132,6 +137,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/atomic-method-coverage.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/concurrent-execution-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -148,6 +158,11 @@
     },
     {
       "path": "docs/docker-sandbox-results.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/document-contract-index.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -419,6 +434,11 @@
     {
       "path": "docs/public-baseline/9e02bbe9992a0162cd5c53c3e9b04a38edfc370c87fb30d276275b02acc9abd2.txt",
       "origin": "existing_public_baseline",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/public-baseline/README.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -1892,6 +1912,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "skills/document-maintenance/SKILL.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "skills/document-review/SKILL.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2002,6 +2027,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/atom-properties.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/behavior-preservation.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2014,6 +2044,11 @@
     {
       "path": "standards/concurrent-execution.md",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "standards/context-budget.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -2032,7 +2067,22 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/document-purpose.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "standards/document-retention.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/document-review.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "standards/execution-records.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2058,6 +2108,11 @@
     },
     {
       "path": "standards/principles.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "standards/progressive-loading.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2113,6 +2168,11 @@
     },
     {
       "path": "tests/test_docker_io.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_document_contracts.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2208,6 +2268,11 @@
     },
     {
       "path": "tools/docker/worker.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/document_contracts.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2368,6 +2433,11 @@
     },
     {
       "path": "workflows/docker-spring.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/document-maintenance.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

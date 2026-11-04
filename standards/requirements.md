@@ -1,6 +1,15 @@
-# 需求澄清与可观察验收
+---
+atom_nature: method
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：将原始诉求澄清为已决与未决、保持项和可观察验收，防止猜测业务决定。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；请求存在歧义或即将进入实施时。
+
+# 需求澄清与可观察验收
 
 ## 适用条件
 

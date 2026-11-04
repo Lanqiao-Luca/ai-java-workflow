@@ -1,6 +1,15 @@
-# 证据驱动诊断
+---
+atom_nature: method
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：用竞争解释与区分证据定位未知技术失败，保留反证和结论边界。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；根因尚未明确的技术失败时。
+
+# 证据驱动诊断
 
 ## 适用条件
 

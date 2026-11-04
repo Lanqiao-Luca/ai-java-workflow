@@ -1,6 +1,15 @@
-# 共享规则与一致性
+---
+atom_nature: principle
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：让展示、预检和执行消费同一业务规则，避免共享语义分叉。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；同一业务语义用于展示、预检、执行或多个入口时。
+
+# 共享规则与一致性
 
 ## 适用条件
 

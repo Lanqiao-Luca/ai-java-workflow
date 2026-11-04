@@ -1,6 +1,16 @@
-# 可信Java构建树的沙箱合同
+---
+atom_nature: operation
+atom_secondary_natures: []
+atom_applicability: domain
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+atom_domain: macOS 可信 Java 构建隔离
+---
+**目的**：在独立可信构建实例内约束子进程与输入输出，核实际停止和隔离边界。
 
-目的：在独立实例内运行真实构建，区分默认禁止fork与显式可信构建模式，不用并发目录冒充隔离。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；已审阅、获授权的本机Java/Spring源码和构建插件需要子JVM；当前仅macOS实验Seatbelt。源码及工具须可信，不用于恶意插件或敌对多租户。
+
+# 可信Java构建树的沙箱合同
 
 ## 适用条件
 

@@ -1,6 +1,16 @@
-# Graph与Workflow并发合同
+---
+atom_nature: operation
+atom_secondary_natures: []
+atom_applicability: domain
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+atom_domain: 受控并发执行
+---
+**目的**：约束并发执行的来源、依赖、候选与资源身份，使结果可核对。
 
-目的：为真实资源隔离与并发执行提供单源合同，边界以实际后端和证据为准。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；一个Graph需要调度多个可独立执行的Workflow时。
+
+# Graph与Workflow并发合同
 
 ## 适用条件
 

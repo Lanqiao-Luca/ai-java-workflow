@@ -2,10 +2,11 @@
 name: java-spring-check
 description: Java/Spring 检查的方法入口；需在使用者自己的环境手动接入，不自动注册或执行。
 ---
+**目的**：把当前 Java/Spring 工程事实与实现检查方法适配成受影响项和验证输入。
+
+**适用于**：使用 Java 或 Spring 的当前改动；实际构建配置与依赖可以合法读取。
 
 # Java/Spring 检查
-
-目的：将通用规范适配为当前任务可消费的结果。
 
 ## 适用条件与输入
 

@@ -1,6 +1,15 @@
-# 三层职责与方法合同
+---
+atom_nature: method
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：区分规则、工具、能力适配与责任归属，保持单源方法及真实交接。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；希望将研发方法拆成能复用、可追责的组件时。
+
+# 三层职责与方法合同
 
 ## 适用条件
 

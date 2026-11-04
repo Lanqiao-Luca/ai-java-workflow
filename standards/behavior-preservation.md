@@ -1,6 +1,15 @@
-# 复用与旧行为保留
+---
+atom_nature: principle
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：核对旧行为的真实消费者与变化依据，保留需求未要求改变的行为。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；修复、重构、增加入口或改共享服务时。
+
+# 复用与旧行为保留
 
 ## 适用条件
 

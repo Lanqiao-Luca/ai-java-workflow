@@ -1,3 +1,7 @@
+**目的**：组织容器内功能变更、双工具构建与集成验收的单轮职责。
+
+**适用于**：本地 Linux Docker Engine、受审镜像和明确写集内的公开 Spring 虚构案例。
+
 # Docker Spring构建Workflow
 
 消费[容器构建执行者](../agents/container-build-executor.md)的职责，经职责入口取得实现与隔离方法。调度由[Graph](../graphs/docker-spring.md)负责，Workflow不直接启动另一个Graph或模型。

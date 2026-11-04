@@ -1,6 +1,15 @@
-# 原则与证据边界
+---
+atom_nature: principle
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：按目标、授权、复用、保持项与证据判断当前成果是否守住必要约束。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；实现、审核或整理研发成果时。
+
+# 原则与证据边界
 
 ## 适用条件
 

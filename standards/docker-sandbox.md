@@ -1,6 +1,16 @@
-# Docker构建沙箱合同
+---
+atom_nature: operation
+atom_secondary_natures: []
+atom_applicability: domain
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+atom_domain: 可信 Docker 构建隔离
+---
+**目的**：用明确容器限制隔离可信 Java 构建，交出真实资源与停止证据。
 
-目的：把可信Docker控制面与受限构建容器分开，用实际命名空间和cgroup限制承载Java子进程，不把目录或启动参数当作完成验收。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；Linux或macOS宿主已明确提供本地Unix socket的Linux Docker Engine、cgroups v2及已审阅内容地址镜像。macOS Engine运行在Linux VM中；容器OS不能代替宿主平台实测。
+
+# Docker构建沙箱合同
 
 ## 适用条件
 

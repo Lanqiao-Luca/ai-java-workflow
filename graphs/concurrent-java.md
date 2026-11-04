@@ -1,6 +1,8 @@
-# Graph调度多个Workflow
+**目的**：并发组织独立 Java 功能 Workflow，再合并同候选进行集成验收。
 
-目的：把两个独立Java功能Workflow并发运行，再在合并候选验证，使用真实worktree及受限内核sandbox。
+**适用于**：已测 macOS 严格前台沙箱及可信 Git 输入的公开纯 Java 案例。
+
+# Graph调度多个Workflow
 
 输入：可信Git仓库的明确提交、[Graph定义](concurrent-java.json)、宿主运行根、JDK只读路径及有限额度。
 

@@ -1,6 +1,15 @@
-# 风险驱动验证与完成声明
+---
+atom_nature: acceptance
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：将当前验收映射到有区分力的真实验证，准确报告通过、失败和未运行。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；准备声称实现满足目标时。
+
+# 风险驱动验证与完成声明
 
 ## 适用条件
 

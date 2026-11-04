@@ -1,3 +1,7 @@
+**目的**：并发组织容器构建 Workflow，并对合并候选执行双工具集成验收。
+
+**适用于**：满足本地 Engine、受审镜像、工具和配额前提的公开 Spring 案例。
+
 # Docker Spring Graph
 
 用[Graph定义](docker-spring.json)并发调度两个真实构建，再合入精确提交进行双工具集成验收。

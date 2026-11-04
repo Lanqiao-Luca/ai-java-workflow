@@ -1,3 +1,7 @@
+**目的**：将六个职责接成原生上下文研发链，冻结输入并在失败时阻断依赖。
+
+**适用于**：当前宿主支持原生派工且工具、模型访问与许可齐备的公开 Spring 案例。
+
 # 原生Agent研发Workflow
 
 本合同将[需求负责人](../agents/requirement-analyst.md)、[实现者](../agents/implementer.md)、[验证者](../agents/verifier.md)、[代码审查者](../agents/code-reviewer.md)、[原则审查者](../agents/principle-reviewer.md)和[交付规划者](../agents/delivery-planner.md)接成真实原生上下文；代码审查节点同时消费语义与文档审查职责。每个角色经自身Skill消费Standards，父调度器不代做业务任务。

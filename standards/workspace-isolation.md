@@ -1,6 +1,16 @@
-# 执行实例的工作区与沙箱
+---
+atom_nature: operation
+atom_secondary_natures: []
+atom_applicability: domain
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+atom_domain: 当前支持后端的执行实例隔离
+---
+**目的**：为独立执行实例分配并核验工作区、写集和沙箱资源，保护其他工作区。
 
-目的：为真实资源隔离与并发执行提供单源合同，边界以实际后端和证据为准。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；本地Workflow要修改/验证代码，且当前宿主提供已验证后端时。
+
+# 执行实例的工作区与沙箱
 
 ## 适用条件
 

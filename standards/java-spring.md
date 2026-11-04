@@ -1,6 +1,16 @@
-# Java/Spring 实现检查
+---
+atom_nature: acceptance
+atom_secondary_natures: []
+atom_applicability: domain
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+atom_domain: Java/Spring 实现检查
+---
+**目的**：核 Java/Spring 改动的装配、依赖和实际工程行为，定位需要验证的影响。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；目标工程使用 Java 或 Spring 时。
+
+# Java/Spring 实现检查
 
 ## 适用条件
 

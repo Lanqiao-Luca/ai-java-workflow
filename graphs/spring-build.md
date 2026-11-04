@@ -1,3 +1,7 @@
+**目的**：组织 Maven/Gradle 功能并发与合并后集成，保留依赖、资源与候选身份。
+
+**适用于**：macOS 可信构建后端、显式公开缓存和 JDK/构建工具齐备的虚构案例。
+
 # Spring Boot真实构建Graph
 
 输入：冻结的独立虚构seed、[Graph JSON](spring-build.json)、显式JDK/Maven/Gradle、公开缓存种子、运行根与作业容量2。

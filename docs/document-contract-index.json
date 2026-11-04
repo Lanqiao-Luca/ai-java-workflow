@@ -1,0 +1,1213 @@
+{
+  "version": 1,
+  "documents": {
+    "AGENTS.md": {
+      "mode": "current"
+    },
+    "README.md": {
+      "mode": "current"
+    },
+    "RIGHTS.md": {
+      "mode": "current"
+    },
+    "agents/README.md": {
+      "mode": "current"
+    },
+    "agents/code-reviewer.md": {
+      "mode": "current"
+    },
+    "agents/container-build-executor.md": {
+      "mode": "current"
+    },
+    "agents/delivery-planner.md": {
+      "mode": "current"
+    },
+    "agents/diagnostician.md": {
+      "mode": "current"
+    },
+    "agents/document-maintainer.md": {
+      "mode": "current"
+    },
+    "agents/document-reviewer.md": {
+      "mode": "current"
+    },
+    "agents/implementer.md": {
+      "mode": "current"
+    },
+    "agents/java-build-executor.md": {
+      "mode": "current"
+    },
+    "agents/principle-reviewer.md": {
+      "mode": "current"
+    },
+    "agents/query-reviewer.md": {
+      "mode": "current"
+    },
+    "agents/requirement-analyst.md": {
+      "mode": "current"
+    },
+    "agents/semantic-reviewer.md": {
+      "mode": "current"
+    },
+    "agents/task-coordinator.md": {
+      "mode": "current"
+    },
+    "agents/verifier.md": {
+      "mode": "current"
+    },
+    "brain/README.md": {
+      "mode": "current"
+    },
+    "brain/capabilities.md": {
+      "mode": "current"
+    },
+    "brain/example.md": {
+      "mode": "current"
+    },
+    "brain/handoff-template.md": {
+      "mode": "current"
+    },
+    "brain/routing.md": {
+      "mode": "current"
+    },
+    "docs/agent-publication-plan.md": {
+      "mode": "preserved",
+      "sha256": "9b1b903c84d6cd8491754d3708c02c57e6a7f5d62d8ade9182f329ce4a5efa82",
+      "purpose": "保全《Agent案例逐项发布执行文档》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/agent-publication-results.md": {
+      "mode": "preserved",
+      "sha256": "aed910ac1b298aa1abf60d78be9d49ad8b893df92f5f8bef69b55844d9b4504e",
+      "purpose": "保全《Agent逐项发布结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/atomic-method-coverage.md": {
+      "mode": "current"
+    },
+    "docs/concurrent-execution-plan.md": {
+      "mode": "preserved",
+      "sha256": "7512db11aa5473c41534389b391339b432bbca3571bc257ff5ee5dee20bd09fb",
+      "purpose": "保全《执行实例隔离与Graph并发执行文档》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/concurrent-execution-results.md": {
+      "mode": "preserved",
+      "sha256": "ea554ee596b1135e6bc084b41ab0d2b2f2e0004ba7842f4481b85be7ee275819",
+      "purpose": "保全《实例隔离与并发Graph交付结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/docker-sandbox-plan.md": {
+      "mode": "preserved",
+      "sha256": "d8ef06b97c1de9c03b0abb1139f00e641cc0616c17567a71ba13a8a59624a4b1",
+      "purpose": "保全《Docker容器沙箱与跨平台Spring Graph执行计划》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/docker-sandbox-results.md": {
+      "mode": "preserved",
+      "sha256": "ecb3e38f452409f3b27cb9964a070282fe6c7c385a0ab63997e8598938b98538",
+      "purpose": "保全《Docker沙箱交付与验证结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/finding-ledger.md": {
+      "mode": "preserved",
+      "sha256": "9707e2bd765b8393fd4c10fdea902f1dddba786ad5df53f1ea1a0154e7656992",
+      "purpose": "保全《发现账本与证据失效》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/graph-delivery-plan.md": {
+      "mode": "preserved",
+      "sha256": "e2f891d82646fa6db0d3455523c1fd5e962c40eb269415a2e733b28a2be18f43",
+      "purpose": "保全《通用目标 Graph 小步交付计划》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/graph-status.md": {
+      "mode": "preserved",
+      "sha256": "43d98bbb9b10ca50fc40fe00962a98fcc73ba6ab8ec49ace714c1ec8c98b81c9",
+      "purpose": "保全《Graph 交付范围与后续事项》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/java-spring-workflow-plan.md": {
+      "mode": "preserved",
+      "sha256": "20f8a62ddac93e819fa33126ab45959263d3d3333061875ea46ec7692ab074c1",
+      "purpose": "保全《Java/Spring完整研发Workflow执行文档》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/java-spring-workflow-results.md": {
+      "mode": "preserved",
+      "sha256": "7a63cf0623d4a89a3bdb7e163f2892b6a1e2dac2e645c8a039f46f5f3011bbab",
+      "purpose": "保全《Java/Spring完整Workflow交付结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/loop-delivery-plan.md": {
+      "mode": "preserved",
+      "sha256": "0ed38afca63fab2b40c1bfb8c29e73cbc3cb491323847194fc3086723553ee2f",
+      "purpose": "保全《Loop 小步交付计划》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/loop-status.md": {
+      "mode": "preserved",
+      "sha256": "7e650426503067885d92f4a86b60306f470e8aa1df0349ec5cf588926b157625",
+      "purpose": "保全《Loop 交付状态与待办》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/loops-extraction-plan.md": {
+      "mode": "preserved",
+      "sha256": "043a094468242af3382325a0664daec02350371c054b32f49ab3c3946b4d1af1",
+      "purpose": "保全《Loops 公开抽象执行文档》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/native-agent-adapter.md": {
+      "mode": "preserved",
+      "sha256": "e0c20de5d1db5842e2d5bccf2a5369c86e1cd40940299781fc0d8d40e90ed120",
+      "purpose": "保全《原生派工适配器》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/native-agent-workflow-plan.md": {
+      "mode": "preserved",
+      "sha256": "5222c8db6351e8beb6e1ebc58ed8ef288ecd65eca7b6789200e20d50ffe501dc",
+      "purpose": "保全《原生Agent研发链执行计划》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/native-agent-workflow-results.md": {
+      "mode": "preserved",
+      "sha256": "c4d7610fd4cd9c66bcffef058e5c7e7be780581a8c804042572093d90126a9cf",
+      "purpose": "保全《原生Agent研发链交付与验证结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/native-baseline/README.md": {
+      "mode": "current"
+    },
+    "docs/native-recovery.md": {
+      "mode": "preserved",
+      "sha256": "52ecb82917099b37be8c107bdd6892c5dca2aca1a2e13682b774d3904d975b33",
+      "purpose": "保全《原生链路的有界整改、续跑与 CI》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/public-baseline/README.md": {
+      "mode": "current"
+    },
+    "docs/spring-build-sandbox-plan.md": {
+      "mode": "preserved",
+      "sha256": "9cfc5ac92feab27a6b2865fcf26808d23c442e13b3200010192481ec1a05cefd",
+      "purpose": "保全《Maven/Gradle真实构建与Spring Boot并发Graph执行计划》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/spring-build-sandbox-results.md": {
+      "mode": "preserved",
+      "sha256": "029e2476981132925295571016a34ac4474265f5fae4ff1d284ff40b06f43eb4",
+      "purpose": "保全《Spring Boot可信构建Graph交付结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "docs/validation-guide.md": {
+      "mode": "current"
+    },
+    "examples/README.md": {
+      "mode": "preserved",
+      "sha256": "cadfdbf963f30a03adec82e68868f85860350c200ede033d78b740ea48f2cda1",
+      "purpose": "保全《案例目录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/bookmark-title/README.md": {
+      "mode": "preserved",
+      "sha256": "7ff9fdfcef9bce2c8af5433abff30d0ebc345c50ec715ecec97364364352c7f9",
+      "purpose": "保全《完整链路：实现者处理书签标题规范化》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/bookmark-title/result.md": {
+      "mode": "preserved",
+      "sha256": "c0dda4b3ce5e45772a4eb181100e990718e85c5ca16d7824400803a05c694a44",
+      "purpose": "保全《验证与交接记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/bookmark-title/trace.md": {
+      "mode": "preserved",
+      "sha256": "8aa1ba9b36c5736c6b5d2a8705b1ebcb0d5a3fa3777059ca7d13fcd08e765b89",
+      "purpose": "保全《已填写的 Agent → Skill → Standards 消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/clarify-bookmark-tags/README.md": {
+      "mode": "preserved",
+      "sha256": "9762b2a5edca60c9d356423991698f5068dc0aab32a8e376ba23ffc82c6dc26a",
+      "purpose": "保全《需求负责人完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/clarify-bookmark-tags/decisions.md": {
+      "mode": "preserved",
+      "sha256": "0307eeff94b1c57a525df9928d367345e79ff52cf52c7a1b6ff5d2b8e5763ce1",
+      "purpose": "保全《模拟确认记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/clarify-bookmark-tags/input.md": {
+      "mode": "preserved",
+      "sha256": "c5da248ac8505f9296b2a4fbec450f29cc6a040807cd8909e9eac1c05187a4ba",
+      "purpose": "保全《输入：独立虚构请求》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/clarify-bookmark-tags/requirements.md": {
+      "mode": "preserved",
+      "sha256": "2caf1741c5644d827690a0582d96e033c2513be910ef43cafe9ad544825bc7bc",
+      "purpose": "保全《澄清输出与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/clarify-bookmark-tags/result.md": {
+      "mode": "preserved",
+      "sha256": "4b919a2eaf469d6d335bdd1ba1573be581d2418bff9e6605c5afcceadd105932",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/clarify-bookmark-tags/trace.md": {
+      "mode": "preserved",
+      "sha256": "d0fbef947883de55622e601e59b9c73621cd55e9542c47dabd4abcc99bd218e0",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/compare-title-semantics/README.md": {
+      "mode": "preserved",
+      "sha256": "326b061513869e49a1405cd8cd319040f6b89124493a461415115c20d52c78e6",
+      "purpose": "保全《语义审查者完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/compare-title-semantics/contract.md": {
+      "mode": "preserved",
+      "sha256": "49eeb7156ee56ce68c1d80016c1c9e9e4cbd0703ed62ae81c06d9a4ead6f8a88",
+      "purpose": "保全《确认契约（独立虚构）》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/compare-title-semantics/result.md": {
+      "mode": "preserved",
+      "sha256": "4ff6adc8ff1f1e9b7e65d0ec215e132602acd433957bc9bde88e527f7e5aeec0",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/compare-title-semantics/semantic-report.md": {
+      "mode": "preserved",
+      "sha256": "76888c7784bd1d976a5b2dc031fce0c20306c1b5243974694a8878f325cb381d",
+      "purpose": "保全《三方向语义核验》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/compare-title-semantics/trace.md": {
+      "mode": "preserved",
+      "sha256": "197fdb6a4327b703bcdf5231cb3db5e38d1cea855c0bf3f21b51fdf4c217f381",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/concurrent-java-graph/README.md": {
+      "mode": "preserved",
+      "sha256": "c89e26c31061d7fccd65ab7ed49d087bf235b7994ab68434c6228d7c13bdedb6",
+      "purpose": "保全《完整案例：Graph并发调度Java Workflow》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/concurrent-java-graph/result.md": {
+      "mode": "preserved",
+      "sha256": "de0222f51aa577280f8a188cca52e2784b966f9d03eb444e4fbaab6a383d7725",
+      "purpose": "保全《实跑结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/concurrent-java-graph/trace.md": {
+      "mode": "preserved",
+      "sha256": "539a4d8b016a321816edadf6d7ee4f3bd3c2bac6dacb23534c39dff4ed903917",
+      "purpose": "保全《从需求到并发集成的实际过程》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/diagnose-version-conflict/README.md": {
+      "mode": "preserved",
+      "sha256": "7f247c0b255a199f0ca9414e0a4afb6399b8dd89be5cdb3740b641402d4618c3",
+      "purpose": "保全《诊断者完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/diagnose-version-conflict/diagnosis.md": {
+      "mode": "preserved",
+      "sha256": "448cc3b21953b0b4d2dad4a4abf90b51ef50970c4727862759e6ed581f8b14f3",
+      "purpose": "保全《假设与区分证据》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/diagnose-version-conflict/recovery.md": {
+      "mode": "preserved",
+      "sha256": "db4ae543143212f2374a581694e39ca6779e0c9459a0cfcc7285e19dfb1a98f3",
+      "purpose": "保全《下一步与停止》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/diagnose-version-conflict/result.md": {
+      "mode": "preserved",
+      "sha256": "0b81b99ae2a9ef9dfef718d8a60967aebeef95783b79e47363e15f5732001891",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/diagnose-version-conflict/trace.md": {
+      "mode": "preserved",
+      "sha256": "ffbdb3844f130ce0c241bdebe697eaea6e4e727a44ee0396f4f0c3f0706ad47d",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/docker-spring-graph/README.md": {
+      "mode": "preserved",
+      "sha256": "4e9f469e404341361b2d709a965b7294f226825d8a2b59875461cea8e98ac31d",
+      "purpose": "保全《Docker跨平台Spring Boot Graph》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/docker-spring-graph/result.md": {
+      "mode": "preserved",
+      "sha256": "59dd2da2b87ffabfc2278bd6bf439a9eaea26bd8f3d6093adee57619c328d74e",
+      "purpose": "保全《Docker Spring Graph真实结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/README.md": {
+      "mode": "preserved",
+      "sha256": "3125ef1f1214d37443cf4c367f3886ddcda780d8561f9d1d8b2dba5a2293f8df",
+      "purpose": "保全《原生Agent完整Spring研发案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/final/code-review.md": {
+      "mode": "preserved",
+      "sha256": "44db706412c016370131b82fdc33e1b16de3aee42d1d7ab77ad6f606f019c5ce",
+      "purpose": "保全《公开代码、语义与文档审查摘要》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/final/delivery.md": {
+      "mode": "preserved",
+      "sha256": "8014b5943a2e9ff9eacecc29bf139a6d0b6d5481ad4da5ac88fd6f8f5a7eba64",
+      "purpose": "保全《标签规范化交付报告》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/final/implementation.md": {
+      "mode": "preserved",
+      "sha256": "77da07a52af72291656b529fac6793d66d27137c44656871ad9f1891df057db6",
+      "purpose": "保全《公开实现说明》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/final/principle-review.md": {
+      "mode": "preserved",
+      "sha256": "256d027a03db466d1c31232c6d5a6db9d0d229f24a968f0d04a765c2904491a4",
+      "purpose": "保全《标签规范化原则审查》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/final/requirements.md": {
+      "mode": "preserved",
+      "sha256": "3791e759a8b4513a07a609088dec133bad4414ce0129257b4819579c564f0616",
+      "purpose": "保全《标签规范化需求与实现交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/final/task.md": {
+      "mode": "preserved",
+      "sha256": "5bd4303d6fc5056691226a5c58eaa7bd88706ff7a9b67720c58b5aea28f23762",
+      "purpose": "保全《虚构需求：标签规范化》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/final/verification.md": {
+      "mode": "preserved",
+      "sha256": "1d919ede43baa93c0c0ca3f56505c4c0bc8b9b0feafeb3d2ed1f94794bb98650",
+      "purpose": "保全《标签规范化独立验证》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/result.md": {
+      "mode": "preserved",
+      "sha256": "0f1dff97e6ef9e64a71f0bc2a558c6843fed1ee8823b39ee1654f2fde93b4515",
+      "purpose": "保全《原生Spring全链真实结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/seed/task.md": {
+      "mode": "preserved",
+      "sha256": "5bd4303d6fc5056691226a5c58eaa7bd88706ff7a9b67720c58b5aea28f23762",
+      "purpose": "保全《虚构需求：标签规范化》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/native-spring-workflow/trace.md": {
+      "mode": "preserved",
+      "sha256": "8fd17c4ff89866a8b2c793ecdac8f215c51c388daf07009b6331fc5ee42d6e5b",
+      "purpose": "保全《原生执行追踪》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/plan-evidence-gated-delivery/README.md": {
+      "mode": "preserved",
+      "sha256": "173297f6b55ebb5d99244efb96939e668da304615dc052797b49e348bb97359a",
+      "purpose": "保全《交付规划者完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/plan-evidence-gated-delivery/plan.md": {
+      "mode": "preserved",
+      "sha256": "66022dd824a745e2fa1eb8649c0f67d7c4702341ed2cc3bbec5847a7da4d8db9",
+      "purpose": "保全《接续计划》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/plan-evidence-gated-delivery/result.md": {
+      "mode": "preserved",
+      "sha256": "cec1e8abd87995e4baa8e253164c9614cd71a3145412afc5d2b4525c4e089d91",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/plan-evidence-gated-delivery/status.md": {
+      "mode": "preserved",
+      "sha256": "7a8e6b81e5b9ac6b5c7f178b98113ec477e5b39e146073650d8d8ed0a1b753bc",
+      "purpose": "保全《候选状态判断》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/plan-evidence-gated-delivery/trace.md": {
+      "mode": "preserved",
+      "sha256": "9c36f319853e8a355f0dec0349ffab5dc2ec03dbf886b7b519d16c80443e4212",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-bookmark-rename/README.md": {
+      "mode": "preserved",
+      "sha256": "50dbc97cb54e249c7abb0d84c69dad15f2edc3f77b6c431289393721ef9eaa6b",
+      "purpose": "保全《代码审查者完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-bookmark-rename/author-handoff.md": {
+      "mode": "preserved",
+      "sha256": "ed9124d7f7e1c94575ab8d6461692dd4a37da98b890f0898e813c6344ab27186",
+      "purpose": "保全《整改交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-bookmark-rename/contract.md": {
+      "mode": "preserved",
+      "sha256": "659752365f2091931e7739988bd08c2b94f3b48f817e0b04323991e1b79c3800",
+      "purpose": "保全《冻结契约》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-bookmark-rename/findings.md": {
+      "mode": "preserved",
+      "sha256": "7496eb4ebc049bcb708b4bc1fba2815a6bef02a63237a25a1f32447199551819",
+      "purpose": "保全《审查发现》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-bookmark-rename/result.md": {
+      "mode": "preserved",
+      "sha256": "c5054f38503b973fdb1845336d10eb2ec8cdd28f675a9647354ffc30520595fb",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-bookmark-rename/trace.md": {
+      "mode": "preserved",
+      "sha256": "86417677e00f690a3e4f85dfef9895874e38b2b797baea0a7f2d6166a7c81228",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-cursor-pagination/README.md": {
+      "mode": "preserved",
+      "sha256": "febc5fe313417df6eaff82daec1ef32f47485e493e581c8b8215ae47750b6347",
+      "purpose": "保全《查询审查者完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-cursor-pagination/contract.md": {
+      "mode": "preserved",
+      "sha256": "a031305562ff2be4ddf01910dd7a5fb98990821d3543392f69eae51ef646282b",
+      "purpose": "保全《查询契约与虚构数据》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-cursor-pagination/query-report.md": {
+      "mode": "preserved",
+      "sha256": "a22063df07a82e5e3930a53471e5361bb878ef311952fc34d68908db469aad63",
+      "purpose": "保全《查询审查结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-cursor-pagination/result.md": {
+      "mode": "preserved",
+      "sha256": "bbdc2420ad221fd54d03a298ac03f84975bad98abcc6cff761a6bb1648404edf",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-cursor-pagination/trace.md": {
+      "mode": "preserved",
+      "sha256": "5102142f6920191c1183679d419409b7d8d745184392fa875ad50a45e1a90690",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-draft-runbook/README.md": {
+      "mode": "preserved",
+      "sha256": "5fc9021b6b1cc5f1081837a0c0ac6409e8a100273d4d17fc0de2d182eab76b93",
+      "purpose": "保全《文档审查者完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-draft-runbook/corrected.md": {
+      "mode": "preserved",
+      "sha256": "d055d4f54d55cf8439e8ae8151f03695a59407f894328962f3bf051680fd8526",
+      "purpose": "保全《书签导出提案（尚未实现）》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-draft-runbook/draft.md": {
+      "mode": "preserved",
+      "sha256": "4bab0bb0e8ce9ccf3669650df80ad585fa8175406ad03f9da41c4b1db4d8e309",
+      "purpose": "保全《书签导出说明（故意不完整的练习稿）》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-draft-runbook/findings.md": {
+      "mode": "preserved",
+      "sha256": "5ba7b684c3c80cac2514fbaed8e5fdb6b8deb0218d8b27f781a382b63e6ae0e3",
+      "purpose": "保全《文档审验发现》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-draft-runbook/follow-up.md": {
+      "mode": "preserved",
+      "sha256": "2efc88001b76fdc05b47ff128c09400c1032e9b88515d6a3860fdb3eb27899ff",
+      "purpose": "保全《修订后定向复核》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-draft-runbook/input.md": {
+      "mode": "preserved",
+      "sha256": "69cb4be4a44bb740d99cde2130e7b2a3b94f64e9cb661ad1717a9800ba6fc399",
+      "purpose": "保全《审验要求》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-draft-runbook/result.md": {
+      "mode": "preserved",
+      "sha256": "5db077f8c86b93d9e48eb57e1f5852f7a85129ca4a21dea4ff02c0bb5d8f7212",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-draft-runbook/trace.md": {
+      "mode": "preserved",
+      "sha256": "0e07524024e27d72fce4c63df00057654539c4a76bc40c7a6eb9cfed4efd5566",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-scope-and-evidence/README.md": {
+      "mode": "preserved",
+      "sha256": "854f10e68e290d1d2113dca23670180f3177184cb32a7e4200210daf91d52915",
+      "purpose": "保全《原则审查者完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-scope-and-evidence/follow-up.md": {
+      "mode": "preserved",
+      "sha256": "a5edc69db7c7b65af22eb3079108a594b2a03a6d1af48b1d7473297a94b0d852",
+      "purpose": "保全《对修订提议的定向复核》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-scope-and-evidence/principle-report.md": {
+      "mode": "preserved",
+      "sha256": "5be5c5e0162e13bd1f46b0ef21a137f4fb281477d987a094668eab1980d22948",
+      "purpose": "保全《原则判定》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-scope-and-evidence/result.md": {
+      "mode": "preserved",
+      "sha256": "343b5d5a400ca5043b5c6f3445fbe68ba57e21b825ad820cdadb033688841ac9",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/review-scope-and-evidence/trace.md": {
+      "mode": "preserved",
+      "sha256": "71e81c724b92f8cd061f17021bfa1b8a979147f93dae037fe5db6499ec827c03",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/spring-build-graph/README.md": {
+      "mode": "preserved",
+      "sha256": "734d18c1b3c05a97a53841b218ad98cd1dc89c9e53096fbe52554e2e5c09bb8c",
+      "purpose": "保全《Spring Boot并发构建Graph》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/spring-build-graph/result.md": {
+      "mode": "preserved",
+      "sha256": "4eaee24f9a9c5a05b154791700290ecd823549fe6f5b97ec916daa50ddb11ae6",
+      "purpose": "保全《Spring Graph实际结果》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/spring-build-graph/trace.md": {
+      "mode": "preserved",
+      "sha256": "70bb08fea86bf5fe1a393bba7b0261cfe26337aad5b57403701a1fffa868aa31",
+      "purpose": "保全《需求到集成构建的链路》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/verify-bookmark-title/README.md": {
+      "mode": "preserved",
+      "sha256": "f510a51bd2c7fe3ea39993a1a61661b430ca5533c20188da3475d5bc9227e1ae",
+      "purpose": "保全《验证者完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/verify-bookmark-title/coverage.md": {
+      "mode": "preserved",
+      "sha256": "26902ff6dd10d9e08ac6d2c3e401c74add8887b64a8e2fdbd430ff9dc3df6c9b",
+      "purpose": "保全《验收到断言的检查》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/verify-bookmark-title/input.md": {
+      "mode": "preserved",
+      "sha256": "673ef95cd8e37f1da90c844b466bd3ea65916ea0b251c3d08c84642c8d5f07fb",
+      "purpose": "保全《输入与固定对象》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/verify-bookmark-title/result.md": {
+      "mode": "preserved",
+      "sha256": "b7f98a2562dc57d712157d85307b429a8bb65b14186cfcc5f0ede8da4522d267",
+      "purpose": "保全《本案例结果与交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/verify-bookmark-title/trace.md": {
+      "mode": "preserved",
+      "sha256": "e1b12737949e284fa304320eea33c0b59e5d1bb728f3eb6d8cddd7a1fee097c7",
+      "purpose": "保全《已填写的职责与方法消费记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/verify-bookmark-title/verification-report.md": {
+      "mode": "preserved",
+      "sha256": "f3bd657791366e4301c3d2e0955ca40f0105dd96412a41269be53aff483e0c06",
+      "purpose": "保全《当前验证结论》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/README.md": {
+      "mode": "preserved",
+      "sha256": "a4c0960042cc40c7c23b6fbdd0a719b69c3b456c00fe41ae5607ee6917cae1d4",
+      "purpose": "保全《完整Workflow案例：书签标签替换》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/behavior-mapping.md": {
+      "mode": "preserved",
+      "sha256": "c45efa9e1eb0a7770623debfbd639ca1b6f4dfb4e467905b85169f2b29547f5a",
+      "purpose": "保全《从v1到v2的保持与变更》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/delivery.md": {
+      "mode": "preserved",
+      "sha256": "60cfedc99ad6c87875ad92312a711761aede1d9374e7cdeb5607680455efbaed",
+      "purpose": "保全《W60交付判定》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/design.md": {
+      "mode": "preserved",
+      "sha256": "1d05592146b94e8cfe89f4e079aa041d27aac489254c02fda4141b25fb446e4f",
+      "purpose": "保全《实现者设计与范围》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/diagnosis.md": {
+      "mode": "preserved",
+      "sha256": "bc3f8855c8a93620124dd1dc4db8d62fd42bd21ffe9b35c0eeef4c0c80379c8a",
+      "purpose": "保全《W35：从真实红灯到限定诊断》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/request.md": {
+      "mode": "preserved",
+      "sha256": "ed0636b6fcdf1e783aff37c797c6c7b008a9b1978c55ddbb20756aa434bb2a7f",
+      "purpose": "保全《虚构请求与边界》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/requirements.md": {
+      "mode": "preserved",
+      "sha256": "46ffdcc5bb3ff7b8367241b199a795b0531b25f02fff6339115775bae2a97dba",
+      "purpose": "保全《需求负责人输出：已决范围与验收》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/result.md": {
+      "mode": "preserved",
+      "sha256": "a715fb3ff28672a6a8ac84f099d30d3b89be7c60a925a055c2a6d5e90ff82bf9",
+      "purpose": "保全《当前结果与真实交接》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/reviews/code.md": {
+      "mode": "preserved",
+      "sha256": "2990bd7b5eb341339fbbd0ab0375a9ea1f50ba2bcfba86891a1391671781aadd",
+      "purpose": "保全《W41代码审查：作者走查记录》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/reviews/document.md": {
+      "mode": "preserved",
+      "sha256": "88d6c3b41ddbfcb78bcc5824b3b3ff455878f157b344a0dc86ec0cfeccf74bdf",
+      "purpose": "保全《W50文档可消费性检查》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/reviews/independent.md": {
+      "mode": "preserved",
+      "sha256": "8dcff1895fdd42906fd54fc9cb125f3d515b53cb2546164e8fc2f5a6cf9a8394",
+      "purpose": "保全《实际分离上下文复核》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/reviews/principles.md": {
+      "mode": "preserved",
+      "sha256": "f70ff6371b551eed5c6ebe76ac5dec19a22e47dc373b639b202e57063713b15b",
+      "purpose": "保全《W43原则核验：作者自查》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/reviews/semantic.md": {
+      "mode": "preserved",
+      "sha256": "fe5be09b44fcbd470a1148d0d2840fc31635d084778b7f12b43d88308ffb9c16",
+      "purpose": "保全《W42语义核验：作者映射》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "examples/workflow-bookmark-tags/trace.md": {
+      "mode": "preserved",
+      "sha256": "e0ecc56e7e859b38d83e937ccc25e99df9e6b50d67f5b481a1e47f4f46742d94",
+      "purpose": "保全《同一需求与候选的真实接续》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "graphs/README.md": {
+      "mode": "current"
+    },
+    "graphs/concurrent-java.md": {
+      "mode": "current"
+    },
+    "graphs/docker-spring.md": {
+      "mode": "current"
+    },
+    "graphs/examples/README.md": {
+      "mode": "preserved",
+      "sha256": "3cc58042f78f39a3987dca1d6f029e011583a2e85161e7c8123ea06a643854c0",
+      "purpose": "保全《目标 Graph 控制案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "graphs/examples/execution-plan.md": {
+      "mode": "preserved",
+      "sha256": "a9dc0d808a36ebf7f3cac56e771dd7b98ca8c262c9f7bf5d44e03e86b20153ce",
+      "purpose": "保全《巡检与缺陷双目标：Graph 执行文件》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "graphs/examples/goal-loops/README.md": {
+      "mode": "preserved",
+      "sha256": "a5ec27610d706cfbcdccc812ebca392652b9d58e6a1654e24cb58e01ac832bc8",
+      "purpose": "保全《巡检与缺陷的双目标 Graph》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "graphs/goal-graph.md": {
+      "mode": "current"
+    },
+    "graphs/native-java-spring.md": {
+      "mode": "current"
+    },
+    "graphs/spring-build.md": {
+      "mode": "current"
+    },
+    "graphs/templates/README.md": {
+      "mode": "current"
+    },
+    "graphs/templates/execution-plan.md": {
+      "mode": "current"
+    },
+    "loops/README.md": {
+      "mode": "current"
+    },
+    "loops/defect-convergence.md": {
+      "mode": "current"
+    },
+    "loops/examples/README.md": {
+      "mode": "preserved",
+      "sha256": "d3094e8e01285fe5355d897f57902c16e251f6a3d1e3a0a282037ad81b17d013",
+      "purpose": "保全《Loop 执行文件与案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "loops/examples/defect/README.md": {
+      "mode": "preserved",
+      "sha256": "dc542830e3de66f6c3ed77e0820cffab89e7746ac33785a7e3747e3c302cece7",
+      "purpose": "保全《虚构缺陷的整体交付》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "loops/examples/execution-plan.md": {
+      "mode": "preserved",
+      "sha256": "09e858b4ea647e0fdbc59e6e261e9f89c1c74b8ac89a3137251ef3fe737e1133",
+      "purpose": "保全《标签缺陷：Loop 执行文件》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "loops/examples/inspection/README.md": {
+      "mode": "preserved",
+      "sha256": "7ed34eb13d292c9ff4330da1e62757ef76f6723c4b9ffd690b14ac5989c22032",
+      "purpose": "保全《虚构巡检的补证与部分退出》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "loops/examples/review-convergence.md": {
+      "mode": "preserved",
+      "sha256": "3c23316a986463740d7c42add9bf721b0d47879865c3c2de26d229de0454edd4",
+      "purpose": "保全《完整虚构案例：书签显示名的整改收敛》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "loops/inspection-convergence.md": {
+      "mode": "current"
+    },
+    "loops/review-convergence.md": {
+      "mode": "current"
+    },
+    "loops/technical-retry.md": {
+      "mode": "current"
+    },
+    "loops/templates/README.md": {
+      "mode": "current"
+    },
+    "loops/templates/execution-plan.md": {
+      "mode": "current"
+    },
+    "loops/templates/review-convergence.md": {
+      "mode": "current"
+    },
+    "loops/templates/technical-retry.md": {
+      "mode": "current"
+    },
+    "skills/README.md": {
+      "mode": "current"
+    },
+    "skills/code-implementation/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/code-implementation/example.md": {
+      "mode": "preserved",
+      "sha256": "870686b77c9e907eb6671625e559cb81701f0c0d08aa84e2aad91ffc2d96409e",
+      "purpose": "保全《实现者的一条完整链路》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/code-review/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/code-review/example.md": {
+      "mode": "preserved",
+      "sha256": "33b520ef66b7fb5622d0b2b93cd7ddfcfa4485f7a07af7555fa8403c1f3021ac",
+      "purpose": "保全《代码审查者的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/delivery-planning/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/delivery-planning/example.md": {
+      "mode": "preserved",
+      "sha256": "c045f7cf857bf62d4baaae4d09d7eb37160544aac2e38ad3864cbb9913fda633",
+      "purpose": "保全《交付规划者的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/docker-build-isolation/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/document-maintenance/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/document-review/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/document-review/example.md": {
+      "mode": "preserved",
+      "sha256": "7aefc4429177f9a142d44bd901f2b60c9cca0392f557b493b948d9fa87b32786",
+      "purpose": "保全《文档审查者的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/evidence-diagnosis/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/evidence-diagnosis/example.md": {
+      "mode": "preserved",
+      "sha256": "ed14f08a27c79ad6f0d98c920a77720f46969d011e0d3b313773451705522955",
+      "purpose": "保全《诊断者的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/java-build-isolation/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/java-spring-check/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/principle-review/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/principle-review/example.md": {
+      "mode": "preserved",
+      "sha256": "2f65ece7b9f4bfe9e12f971534b2191dc1366216b8d7cbfb7e4c4939098db780",
+      "purpose": "保全《原则审查者的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/requirement-clarification/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/requirement-clarification/example.md": {
+      "mode": "preserved",
+      "sha256": "cc8ea113b87c28bc51002b64c62603f39c6628ab7a8d4cd038957442bf74f98f",
+      "purpose": "保全《需求负责人的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/resources/behavior.md": {
+      "mode": "current"
+    },
+    "skills/resources/review.md": {
+      "mode": "current"
+    },
+    "skills/resources/task.md": {
+      "mode": "current"
+    },
+    "skills/semantic-review/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/semantic-review/example.md": {
+      "mode": "preserved",
+      "sha256": "67c3e42efc67d1b3c632cf5492519cff1531217b3b6faae189d10f8d8afd0bf2",
+      "purpose": "保全《语义审查者的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/sql-review/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/sql-review/example.md": {
+      "mode": "preserved",
+      "sha256": "05386345617d98788efae2295cdb1b7456c0c47194b134bbee636c1b1919ab6f",
+      "purpose": "保全《查询审查者的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/task-execution/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/verification/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/verification/example.md": {
+      "mode": "preserved",
+      "sha256": "5f873805f9583a4b3a36469c04313c59a93bb9a20f3170ca8cfd5ddbd5133edb",
+      "purpose": "保全《验证者的完整案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "skills/workspace-isolation/SKILL.md": {
+      "mode": "current"
+    },
+    "standards/README.md": {
+      "mode": "current"
+    },
+    "standards/atom-properties.md": {
+      "mode": "current"
+    },
+    "standards/behavior-preservation.md": {
+      "mode": "current"
+    },
+    "standards/code-review.md": {
+      "mode": "current"
+    },
+    "standards/concurrent-execution.md": {
+      "mode": "current"
+    },
+    "standards/context-budget.md": {
+      "mode": "current"
+    },
+    "standards/delivery-planning.md": {
+      "mode": "current"
+    },
+    "standards/diagnosis.md": {
+      "mode": "current"
+    },
+    "standards/docker-sandbox.md": {
+      "mode": "current"
+    },
+    "standards/document-purpose.md": {
+      "mode": "current"
+    },
+    "standards/document-retention.md": {
+      "mode": "current"
+    },
+    "standards/document-review.md": {
+      "mode": "current"
+    },
+    "standards/execution-records.md": {
+      "mode": "current"
+    },
+    "standards/implementation-baseline.md": {
+      "mode": "current"
+    },
+    "standards/java-build-sandbox.md": {
+      "mode": "current"
+    },
+    "standards/java-spring.md": {
+      "mode": "current"
+    },
+    "standards/layering.md": {
+      "mode": "current"
+    },
+    "standards/principles.md": {
+      "mode": "current"
+    },
+    "standards/progressive-loading.md": {
+      "mode": "current"
+    },
+    "standards/recovery.md": {
+      "mode": "current"
+    },
+    "standards/requirements.md": {
+      "mode": "current"
+    },
+    "standards/semantic-review.md": {
+      "mode": "current"
+    },
+    "standards/shared-rules.md": {
+      "mode": "current"
+    },
+    "standards/sql-review.md": {
+      "mode": "current"
+    },
+    "standards/verification.md": {
+      "mode": "current"
+    },
+    "standards/workspace-isolation.md": {
+      "mode": "current"
+    },
+    "tools/README.md": {
+      "mode": "current"
+    },
+    "tools/execution/Docker.md": {
+      "mode": "current"
+    },
+    "tools/execution/README.md": {
+      "mode": "current"
+    },
+    "workflows/README.md": {
+      "mode": "current"
+    },
+    "workflows/concurrent-execution.md": {
+      "mode": "current"
+    },
+    "workflows/defect-completion.md": {
+      "mode": "current"
+    },
+    "workflows/docker-spring.md": {
+      "mode": "current"
+    },
+    "workflows/document-maintenance.md": {
+      "mode": "current"
+    },
+    "workflows/examples/README.md": {
+      "mode": "preserved",
+      "sha256": "48a01a70932639a0500b64d9d23bd6d8f5d0f5bb62af3560de90ee4bc0e35bb3",
+      "purpose": "保全《Workflow 执行文件与案例》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "workflows/examples/bookmark-tags.md": {
+      "mode": "preserved",
+      "sha256": "b3d6125326d0af57e4d817a6dd006795bb559c458d292f87b796f3b252154327",
+      "purpose": "保全《书签标签：Workflow 执行文件》的已发布原文，供定位来源、复核原结论与当时证据。",
+      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
+      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "workflows/java-spring-development.md": {
+      "mode": "current"
+    },
+    "workflows/native-java-spring.md": {
+      "mode": "current"
+    },
+    "workflows/service-inspection.md": {
+      "mode": "current"
+    },
+    "workflows/spring-build.md": {
+      "mode": "current"
+    },
+    "workflows/templates/README.md": {
+      "mode": "current"
+    },
+    "workflows/templates/execution-plan.md": {
+      "mode": "current"
+    }
+  }
+}

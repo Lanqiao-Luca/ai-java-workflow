@@ -1,6 +1,17 @@
+**目的**：按任务导航原子规则和验收方法，保留正式入口与能力边界。
+
+**适用于**：采用本仓库原子规则和验收方法的助手与维护者；实际调用须经责任 Agent 并核具体前提。
+
 # Standards
 
 独立维护方法和验收判据，与 [Tools](../tools/README.md) 平级，由 Skill 组合采用。按当前问题选择，不要求每轮全量加载。
+
+- [文档目的与适用对象 PUR01/PUR02](document-purpose.md)
+- [原子性质、范围与维护身份](atom-properties.md)
+- [按需加载与导航](progressive-loading.md)
+- [执行记录与跨窗口接续](execution-records.md)
+- [上下文预算与执行单元](context-budget.md)
+- [文档保留与原件保护](document-retention.md)
 
 - [三层职责与方法合同](layering.md)
 - [原则与证据边界](principles.md)

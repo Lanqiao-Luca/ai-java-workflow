@@ -1,3 +1,7 @@
+**目的**：接受任务并选择所需 Workflow、Loop 或 Graph，持有总体进度并组织阶段交接。
+
+**适用于**：需要本角色结果且当前候选、来源和允许范围明确的任务；角色文档不等于原生进程已启动，具体准入沿正文。
+
 # 任务协调者 Agent
 
 ## 目的与适用
@@ -19,6 +23,8 @@
 3. [Workflow 模板](../workflows/templates/README.md)、[Loop 模板](../loops/templates/README.md)、[Graph 模板](../graphs/templates/README.md)是空白资源；examples 中是公开执行文件与案例，不是当前工程的现成验收。
 4. 通过 Skill 选择支持当前任务的工具或按合同手动组织执行。Graph 组织 Loop/Workflow，Loop 组织多轮 Workflow，Workflow 将阶段交给执行 Agent；这些内部组合不回 Brain 逐层调用。
 5. 当前协调 Agent 负责总体状态，阶段 Agent 仅返回局部产物；阶段 Agent 不反向启动同一总体任务，防止递归。候选改变只复验相交部分，结果未知先核状态。
+
+文档创建和维护阶段交[文档维护者](document-maintainer.md)，需要审验时交文档审查者；不由协调者跳过 Skill 直接消费文档原子。
 
 ## 输出与验收
 

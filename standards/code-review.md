@@ -1,6 +1,15 @@
-# 冻结输入、发现与定向复核
+---
+atom_nature: acceptance
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：冻结当前代码审查输入，形成可定位发现，并在修订后定向复核。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；形成可审代码差异后。
+
+# 冻结输入、发现与定向复核
 
 ## 适用条件
 

@@ -1,9 +1,15 @@
+**目的**：导航平级于 Standards 的执行工具与接口，并说明其能力和权限边界。
+
+**适用于**：经 Skill 选择执行实现的责任 Agent 与维护者；不作为 Brain 直接调用入口。
+
 # Tools：执行工具与共享代码
 
 Tools 与 Standards 平级，共同作为 Skill 的基础资源。Standards 定义方法、规则与验收；Tools 提供可调用程序、执行适配器和控制器。Agent 经 Skill 适配工具，Brain 不直接调用 Tools。
 
 | 用途 | 工具入口 | 当前边界 |
 | --- | --- | --- |
+| 文档声明与档案字节检查 | [文档合同检查](document_contracts.py) | 只检查声明位置、覆盖清单与历史字节，不判定目的语义或授权 |
+| 历史公开来源定位 | [历史来源工具](public_history.py) | 仅供旧回执核原公开版本；当前运行仍读取当前定义 |
 | 工作区、沙箱、命令型并发与构建 | [执行工具](execution/README.md) | 按平台、工具与隔离模式分别准入，不支持任意工程 |
 | Loop 决策与发现账本 | [判定](loop_policy.py)、[发现账本](finding_ledger.py) | 纯判定不自动执行模型或外部操作 |
 | 巡检补证与缺陷收口 | [巡检控制](inspection_loop.py)、[缺陷控制](defect_loop.py) | 具体采集与业务行为依赖显式适配器 |

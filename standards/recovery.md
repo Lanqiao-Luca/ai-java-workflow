@@ -1,6 +1,15 @@
-# 异常恢复与有界尝试
+---
+atom_nature: operation
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：识别执行首个断点，在安全重放和累计预算内恢复，避免重复未知副作用。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；执行失败、依赖缺失或动作结果未知时。
+
+# 异常恢复与有界尝试
 
 ## 适用条件
 

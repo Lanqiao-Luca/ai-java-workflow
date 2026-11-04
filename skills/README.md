@@ -1,3 +1,7 @@
+**目的**：按任务导航规则与工具的任务适配能力，保留正式入口与能力边界。
+
+**适用于**：采用本仓库规则与工具的任务适配能力的助手与维护者；实际调用须经责任 Agent 并核具体前提。
+
 # Skills
 
 本目录为方法指南，未注册为任何平台原生能力。角色负责选择，Skill 组合平级的 Standards 与 [Tools](../tools/README.md)，实际适配输入并交回结果。Brain 不直接调用 Skill 或基础资源。
@@ -15,6 +19,7 @@
 - [证据诊断](evidence-diagnosis/SKILL.md)
 - [查询审查](sql-review/SKILL.md)
 - [状态与交付规划](delivery-planning/SKILL.md)
+- [文档维护](document-maintenance/SKILL.md)：创建和更新前核目的、对象、差异、属性与原件保护。
 - [文档审验](document-review/SKILL.md)
 
 配套空表：[任务与验收](resources/task.md)、[行为保留](resources/behavior.md)、[审查记录](resources/review.md)。独立虚构演练：[书签标题修改](code-implementation/example.md)。完整角色案例见[十条案例目录](../examples/README.md)。

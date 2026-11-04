@@ -1,6 +1,15 @@
-# 需求到实现的语义核验
+---
+atom_nature: acceptance
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：将确认契约与实际实现双向对照，识别漏实现、额外行为及边界反例。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；存在可核需求或契约，需要判断代码是否兑现时。
+
+# 需求到实现的语义核验
 
 ## 适用条件
 

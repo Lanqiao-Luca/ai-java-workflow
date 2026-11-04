@@ -1,6 +1,16 @@
-# SQL 与索引检查
+---
+atom_nature: acceptance
+atom_secondary_natures: []
+atom_applicability: domain
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+atom_domain: SQL 查询与索引审查
+---
+**目的**：依据实际查询条件、排序和访问模式核查询语义与索引风险，区分建议和实证。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；改动涉及查询语义或性能时。
+
+# SQL 与索引检查
 
 ## 适用条件
 

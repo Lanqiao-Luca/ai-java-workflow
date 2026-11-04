@@ -2,12 +2,17 @@
 name: task-execution
 description: 为责任 Agent 适配执行计划、已有运行器与证据返回；用于已选择的 Workflow、Loop 或 Graph，不负责 Brain 路由或自动安装。
 ---
+**目的**：把责任 Agent 已选的合同与实例计划适配到现有执行工具，返回真实结果和恢复点。
+
+**适用于**：已经选定 Workflow、Loop 或 Graph 且授权、环境和输入明确的执行适配。
 
 # 执行计划与工具适配
 
 ## 输入与规则来源
 
 接收责任 Agent 已选择的合同、模板、当前工程/候选、写集、验收及预算。按[分层合同](../../standards/layering.md)、[接续规划](../../standards/delivery-planning.md)和[异常恢复](../../standards/recovery.md)核前提。Standards 与 [Tools](../../tools/README.md)平级：前者提供规则与验收方法，后者提供代码和执行接口，由本 Skill 组合适配。
+
+执行文件创建和更新时消费[执行记录](../../standards/execution-records.md)；必要上下文过大时消费[执行单元拆解](../../standards/context-budget.md)。文档落盘交相应文档职责，不在这里复制写入规则。
 
 ## 适配步骤
 

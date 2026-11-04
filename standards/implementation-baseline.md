@@ -1,6 +1,15 @@
-# 实现基线与最小写集
+---
+atom_nature: operation
+atom_secondary_natures: []
+atom_applicability: general
+atom_scope_detail: 仅适用于本文声明的任务、消费者和必要前提
+maintenance_role: canonical
+---
+**目的**：在改码或续作前固定当前候选、允许写集和已有改动，避免误覆盖。
 
-目的：将研发经验表达为可复用、可验证的方法。
+**适用于**：供当前方法的责任 Agent、作者与审查者使用；首次改代码或恢复已有任务前。
+
+# 实现基线与最小写集
 
 ## 适用条件
 

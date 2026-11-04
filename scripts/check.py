@@ -6,10 +6,14 @@ import hashlib
 import difflib
 import os
 import re
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from tools.document_contracts import check as check_document_contracts
 
 def main():
+    document_counts = check_document_contracts(ROOT)
     paths = []
     for directory, subdirs, names in os.walk(ROOT, followlinks=False):
         # Git metadata is never part of the public content manifest.
@@ -47,7 +51,7 @@ def main():
             links += 1
         rel = p.relative_to(ROOT)
         if rel.parts[0] == "standards" and p.name != "README.md":
-            for field in ["目的：", "## 适用条件", "## 输入", "## 操作步骤",
+            for field in ["**目的**：", "## 适用条件", "## 输入", "## 操作步骤",
                           "## 输出", "## 角色职责", "## 验收方法", "## 异常与停止"]:
                 if field not in text:
                     raise ValueError("incomplete method contract")
@@ -85,7 +89,7 @@ def main():
                          fromfile="before/BookmarkService.java", tofile="after/BookmarkService.java"))
     if (case / "change.diff").read_text() != difference:
         raise ValueError("case diff drift")
-    print(f"PASS: {len(actual)} files, {links} local links, method fields, layer dependencies, case identities and diff")
+    print(f"PASS: document structure {document_counts}; {len(actual)} files, {links} local links, method fields, layer dependencies, case identities and diff")
 
 if __name__ == "__main__":
     main()

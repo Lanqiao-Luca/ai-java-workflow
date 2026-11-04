@@ -1,3 +1,7 @@
+**目的**：按依赖组织六个真实原生职责与并行冻结审查，并核整体交付。
+
+**适用于**：已满足原生适配、模型访问和本次许可的公开 Spring 案例；不泛化其他图。
+
 # 原生Java/Spring Graph
 
 [Graph定义](native-java-spring.json)读取六份[原生Workflow](../workflows/native-java-spring.md)。需求、实现和验证依次执行；两项审查从同一冻结基线并行，全部成功后交付。并发额度为2个Workflow作业，不等于总模型请求数或操作系统进程数。

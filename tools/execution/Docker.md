@@ -1,3 +1,7 @@
+**目的**：说明 Docker 后端的资源、输入输出、容器策略与停止回收机制。
+
+**适用于**：采用显式本地 Engine 与受审镜像的可信构建；不代表任意平台或恶意多租户隔离。
+
 # Docker执行机制
 
 [容器后端](docker_runtime.py)复用现有Graph的Git broker、依赖与候选提升；独立构造portable资源入口，不初始化Seatbelt。[有界IO](docker_io.py)仅连接明确本地Unix socket，使用全新空CLI配置，不继承个人Docker上下文/认证。

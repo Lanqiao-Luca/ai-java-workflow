@@ -2,6 +2,9 @@
 name: docker-build-isolation
 description: 显式选择Docker构建后端，核白名单输入、容器限制、候选身份与资源停止，不继承私人Docker状态。
 ---
+**目的**：将可信构建任务适配到显式本地 Docker 后端，返回实际隔离、构建与资源结果。
+
+**适用于**：已授权且有本地 Engine、受审镜像和预算的 Java/Spring 容器构建；支持条件见合同。
 
 # Docker构建隔离
 

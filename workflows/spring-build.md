@@ -1,3 +1,7 @@
+**目的**：组织可信 Java 构建任务的功能写集、工具输入和集成验证交接。
+
+**适用于**：当前 macOS 可信构建后端的独立虚构工程；不沿用严格无 fork 模式的保证。
+
 # Spring构建Workflow执行合同
 
 Workflow消费[Java构建执行者职责](../agents/java-build-executor.md)，由该职责经构建隔离Skill取得规范；具体步骤由[Graph](../graphs/spring-build.md)组织。旧严格Workflow及其历史证据保持独立。

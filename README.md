@@ -4,19 +4,21 @@
 
 让 AI 从理解需求开始，沿着实现、验证、审查与交付推进；每一步都有输入、产物和可核对的验收依据。
 
-通过 [Brain 任务入口](brain/README.md)，先判断当前请求应继续哪项工作、采用哪条流程、由谁负责，再由责任角色选择具体方法。你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 并发调度多个 Workflow。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
+通过 [Brain 任务入口](brain/README.md)，先判断当前请求应继续哪项工作、采用哪条流程、由谁负责，再由责任角色选择具体方法。你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 组织多个 Loop 与 Workflow 的依赖和并发。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
 
 ## 框架架构
 
-Brain 负责逐轮路由与接续，依据任务选择已有组织入口；它不新增执行层或权限来源。框架从可复用的原子方法向上组装：**原子规则（Standards）→ Skill → Agent → Workflow → Graph**。下面的箭头表示上层组织或消费下层；实际执行由使用者或运行宿主落实。
+Brain 负责逐轮路由与接续，依据任务选择已有组织入口；它不新增执行层或权限来源。框架从可复用的原子方法向上组装：**原子规则（Standards）→ Skill → Agent → Workflow → Loop → Graph**。下面的箭头表示上层组织或消费下层；实际执行由使用者或运行宿主落实。
 
 ```mermaid
 flowchart TD
     B["Brain：任务变化、路由与结果核收"] -.->|按需选择组织入口| G
+    B -.->|需要有界重复| L
     B -.->|单轮任务| W
     B -.->|专项任务| A
-    G["Graph：目标、依赖与并发"] -->|组织多个 Workflow| W["Workflow：阶段、输入输出与交接"]
-    L["Loops：预算、进展与停止"] -.->|按需控制重复| W
+    G["Graph：目标、依赖与并发"] -->|组织目标与循环依赖| L["Loop：多轮执行、预算与停止"]
+    L -->|组织同一目标的多轮执行| W["Workflow：单轮阶段、输入输出与交接"]
+    G -.->|无需重复的节点| W
     W -->|安排阶段职责| A["Agent：责任、决策与交付"]
     A -->|选择并采用能力| S["Skill：任务适配与能力组合"]
     S -->|复用方法合同| P["原子规则 Standards：方法与约束的单一来源"]
@@ -29,10 +31,10 @@ flowchart TD
 | **Skill** | 当前任务需要哪些原子方法，怎样把输入适配为具体产物 | [代码实现 Skill](skills/code-implementation/SKILL.md) |
 | **Agent** | 谁承担任务、选择能力，对结果和交接负责 | [实现者 Agent](agents/implementer.md) |
 | **Workflow** | 一个任务分哪些阶段，各角色如何交接与处理失败 | [Java/Spring 研发 Workflow](workflows/java-spring-development.md) |
-| **Graph** | 多个 Workflow 怎样依赖、并行、汇合，失败时阻断哪些后续节点 | [原生研发 Graph](graphs/native-java-spring.md) |
-| **Loops** | 同一目标是否需要再做一轮，预算是否允许，何时收敛或停止 | [审查整改收敛](loops/review-convergence.md) |
+| **Loop** | 怎样组织同一目标的多轮 Workflow，预算是否允许，何时收敛或停止 | [审查整改收敛](loops/review-convergence.md) |
+| **Graph** | 多个 Loop 与 Workflow 怎样依赖、并行、汇合，失败时阻断哪些后续节点 | [目标 Graph](graphs/goal-graph.md) |
 
-一个 Skill 可以组合多项原子方法，一个 Agent 可以按任务采用多个 Skill，一个 Workflow 可以组织多个 Agent，Graph 再组织多个 Workflow。原子方法保持单源，角色和流程引用它，不重复复制正文；原子规则本身不启动 Agent 或上层流程。
+一个 Skill 可以组合多项原子方法，一个 Agent 可以按任务采用多个 Skill，一个 Workflow 可以组织多个 Agent，Loop 组织同一目标的多轮 Workflow，Graph 再组织多个 Loop 与 Workflow 的依赖和并发。完整层级不要求每次全部启用：无需重复时可直接采用 Workflow，无多目标依赖时无需 Graph。原子方法保持单源，角色和流程引用它，不重复复制正文；原子规则本身不启动 Agent 或上层流程。
 
 例如，在[书签标签替换案例](examples/workflow-bookmark-tags/README.md)中，Workflow 把实现阶段交给实现者，Agent 采用代码实现 Skill，Skill 复用行为保留、最小改动和验证方法，形成候选与证据，再交验证、审查和交付阶段。需要多个 Workflow 并发时才使用 Graph；有具体发现且需要重复时才采用 Loop。
 

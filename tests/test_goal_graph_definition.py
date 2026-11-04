@@ -91,6 +91,13 @@ class DefinitionTests(unittest.TestCase):
         for field in ('kind', 'contract', 'goal_id', 'handler'):
             self.rejected(lambda d: d['nodes'][0].update({field: {}}))
 
+    def test_side_effect_scope_must_be_declared_on_a_defect_goal(self):
+        self.rejected(lambda d: d['goals'][0].update(operations=['demo-effect']))
+        value = definition()
+        value['goals'][0]['operations'] = ['demo-effect']
+        value['nodes'][0]['contract'] = 'defect'
+        validate_definition(value)
+
 
 if __name__ == '__main__':
     unittest.main()

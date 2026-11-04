@@ -51,7 +51,7 @@ def inspect(plan, collect, *, clock=time.time):
     state = {'status': 'PARTIAL', 'scope_complete': False, 'scope_id': plan['scope_id'],
              'context': plan['context'], 'required': ids, 'covered': [], 'missing': list(ids),
              'observations': [], 'findings': [], 'reasons': {}, 'rounds_used': 0,
-             'deadline': deadline, 'elapsed': 0}
+             'started_at': started, 'deadline': deadline, 'elapsed': 0}
     queue = {ident: 'initial' for ident in ids}
     steps = {ident: set() for ident in ids}
     hashes = {ident: set() for ident in ids}

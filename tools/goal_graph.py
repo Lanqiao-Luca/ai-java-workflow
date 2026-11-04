@@ -42,8 +42,10 @@ def validate_definition(definition):
     demand(isinstance(definition['goals'], list) and 1 <= len(definition['goals']) <= 32, 'bounded original goals required')
     goals = {}
     for goal in definition['goals']:
-        demand(isinstance(goal, dict) and set(goal) == {'id', 'required'}, 'exact goal contract required')
+        demand(isinstance(goal, dict) and set(goal) in ({'id', 'required'}, {'id', 'required', 'operations'}), 'exact goal contract required')
         token(goal['id']); strings(goal['required'])
+        strings(goal.get('operations', []))
+        demand(len(goal.get('operations', [])) <= 64, 'bounded required operations required')
         demand(bool(goal['required']) and len(goal['required']) <= 64 and goal['id'] not in goals, 'unique complete goal scope required')
         goals[goal['id']] = goal
     demand(isinstance(definition['nodes'], list) and 1 <= len(definition['nodes']) <= 64, 'bounded node set required')
@@ -65,6 +67,7 @@ def validate_definition(definition):
             token(node['handler'])
             demand(isinstance(node['contract'], str) and node['contract'] in {'task', 'inspection', 'defect'}
                    and bool(node['writes']), 'declared Loop result contract/products required')
+            demand(node['contract'] == 'task' or node['goal_id'] is not None, 'typed Loop requires an explicit original goal')
             if node['goal_id'] is not None:
                 demand(isinstance(node['goal_id'], str) and node['goal_id'] in goals
                        and node['goal_id'] not in owners and node['required'], 'goal must have one required Loop owner')
@@ -79,6 +82,8 @@ def validate_definition(definition):
             closures.append(node['id'])
         nodes[node['id']] = node
     demand(set(owners) == set(goals) and len(closures) == 1, 'every original goal and exactly one closure required')
+    for ident, goal in goals.items():
+        demand(not goal.get('operations') or nodes[owners[ident]]['contract'] == 'defect', 'read-only/task goals cannot imply business operations')
     for node in nodes.values():
         demand(set(node['depends_on']) <= set(nodes), 'unknown dependency')
     done = set()

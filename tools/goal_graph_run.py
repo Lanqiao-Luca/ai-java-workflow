@@ -10,10 +10,12 @@ import math
 import os
 import stat
 import time
+import uuid
 
 from tools.finding_ledger import context as validate_context, identity
 from tools.goal_graph import GoalGraphRejected, demand, validate_definition
 from tools.native_flow import FlowRejected, digest, relative
+from tools.goal_graph_evidence import closure_metadata, review_metadata, validate_loop
 
 
 @dataclass(frozen=True)
@@ -70,7 +72,8 @@ class GoalGraphRun:
         self.policy = {'budget_seconds': budget_seconds, 'deadline': deadline,
                        'handlers': {name: handler.identity for name, handler in handlers.items()}}
         self.controller_id = digest({name: hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest()
-                                     for name in ('goal_graph.py', 'goal_graph_run.py')})
+                                     for name in ('goal_graph.py', 'goal_graph_run.py', 'goal_graph_evidence.py',
+                                                  'finding_ledger.py', 'defect_loop.py', 'inspection_loop.py', 'native_flow.py')})
         if resume:
             self._read()  # Admission before creating a lock in an unrelated directory.
         else:
@@ -94,6 +97,7 @@ class GoalGraphRun:
         return value
 
     def _save(self):
+        self._refresh_goals()
         path = self.root / 'state.json.tmp'
         descriptor = os.open(path, os.O_CREAT | os.O_WRONLY | os.O_TRUNC | os.O_NOFOLLOW, 0o600)
         with os.fdopen(descriptor, 'w') as output:
@@ -121,11 +125,15 @@ class GoalGraphRun:
             if record['status'] == 'SUCCEEDED':
                 actual = products(self._workspace(record), self.nodes[ident]['writes'])
                 demand(actual == record['products'], 'accepted product drift')
+                if self.nodes[ident]['kind'] == 'loop':
+                    demand(json.loads((self._workspace(record) / record['payload_path']).read_text()) == record['result'], 'accepted payload drift')
+                self._semantics(self.nodes[ident], record)
 
     def _initialize(self):
         if self.resume:
             saved = self._read()
             demand(saved.get('definition_id') == digest(self.definition) and saved.get('context') == self.context
+                   and saved.get('definition') == self.definition
                    and saved.get('controller_id') == self.controller_id and saved.get('policy') == self.policy,
                    'checkpoint definition, context, code or policy drift')
             demand(saved['status'] in {'READY', 'PAUSED', 'SUCCEEDED'}, 'in-flight, unknown or terminal failure cannot replay')
@@ -136,8 +144,8 @@ class GoalGraphRun:
         now = self.clock()
         demand(type(now) in (int, float) and math.isfinite(now) and now >= 0, 'finite clock required')
         (self.root / 'products').mkdir()
-        self.state = {'kind': 'goal_graph_run', 'version': 1, 'graph_id': self.definition['graph_id'],
-            'definition_id': digest(self.definition), 'controller_id': self.controller_id,
+        self.state = {'kind': 'goal_graph_run', 'version': 1, 'run_id': uuid.uuid4().hex, 'graph_id': self.definition['graph_id'],
+            'definition_id': digest(self.definition), 'definition': deepcopy(self.definition), 'controller_id': self.controller_id,
             'policy': self.policy, 'context': self.context, 'status': 'READY', 'started_at': now,
             'last_at': now, 'deadline': min(now + self.policy['budget_seconds'], self.policy['deadline'] or float('inf')),
             'attempts': 0, 'events': [], 'nodes': {key: {'status': 'PENDING'} for key in self.nodes}}
@@ -145,12 +153,33 @@ class GoalGraphRun:
         self._save()
 
     def _request(self, node, record):
-        return {'node': deepcopy(node), 'context': deepcopy(self.context),
+        request = {'node': deepcopy(node), 'context': deepcopy(self.context), 'run_id': self.state['run_id'],
                 'execution_id': record['execution_id'], 'workspace': str(self._workspace(record)),
                 'deadline': self.state['deadline'], 'remaining_seconds': max(0, self.state['deadline'] - self.clock()),
-                'inputs': {dep: {'record': deepcopy(self.state['nodes'][dep]),
+                'inputs': {dep: {'record': deepcopy(self.state['nodes'][dep]), 'node': deepcopy(self.nodes[dep]),
+                                 'goal': deepcopy(self._goal(self.nodes[dep])),
                                  'workspace': str(self._workspace(self.state['nodes'][dep]))}
                            for dep in node['depends_on']}}
+        if node['kind'] == 'gate':
+            request['review_metadata'] = review_metadata(node, request['inputs'], self.context,
+                self.state['run_id'], self.handlers[node['handler']].identity, record['execution_id'])
+        return request
+
+    def _goal(self, node):
+        return next((g for g in self.definition['goals'] if g['id'] == node['goal_id']), None)
+
+    def _semantics(self, node, record):
+        if node['kind'] == 'loop':
+            try:
+                validate_loop(node, record, self._goal(node), self.context, self.state['deadline'])
+            except (TypeError, ValueError, KeyError) as exc:
+                raise GoalGraphRejected('invalid typed Loop evidence') from exc
+        elif node['kind'] == 'gate':
+            expected = self._request(node, record)['review_metadata']
+            demand(record['result'] == {'verdict': 'PASS', **expected}, 'gate lacks current reviewer/snapshot/evidence')
+        else:
+            demand(record['result'] == closure_metadata(self.definition, self.state['nodes'], self.context, self.state['run_id']),
+                   'closure omits original goals or accepted evidence')
 
     def _invoke(self, node, record):
         started = self.clock()
@@ -163,7 +192,7 @@ class GoalGraphRun:
             demand(all(self.state['nodes'][ident]['status'] == 'SUCCEEDED'
                        for ident, spec in self.nodes.items() if spec['required'] and ident != node['id']), 'required branch incomplete')
             result = {'status': 'SUCCEEDED', 'context': self.context, 'payload_path': None,
-                      'result': {'closed_goals': [g['id'] for g in self.definition['goals']]}}
+                      'result': closure_metadata(self.definition, self.state['nodes'], self.context, self.state['run_id'])}
         else:
             result = self.handlers[node['handler']].run(request)
         demand(isinstance(result, dict) and set(result) == {'status', 'context', 'result', 'payload_path'}, 'exact callback envelope required')
@@ -183,7 +212,10 @@ class GoalGraphRun:
             demand(payload == result['result'], 'Loop payload/envelope mismatch')
         else:
             demand(result['payload_path'] is None, 'unexpected payload for read-only/unknown result')
-        return {**deepcopy(result), 'products': actual, 'started_at': started, 'ended_at': self.clock()}
+        record = {**record, **deepcopy(result), 'products': actual, 'started_at': started, 'ended_at': self.clock()}
+        if result['status'] == 'SUCCEEDED':
+            self._semantics(node, record)
+        return record
 
     def _block_descendants(self):
         changed = True
@@ -212,12 +244,20 @@ class GoalGraphRun:
         else:
             status = 'PARTIAL'
         self.state['status'] = status
-        self.state['goals'] = {g['id']: {'required': list(g['required']), 'owner': next(
+        self._event('FINISHED', status=status)
+        self._save()
+
+    def _refresh_goals(self):
+        self.state['goals'] = {g['id']: {'required': list(g['required']), 'required_operations': list(g.get('operations', [])), 'owner': next(
             n['id'] for n in self.nodes.values() if n['goal_id'] == g['id']), 'status': next(
             self.state['nodes'][n['id']]['status'] for n in self.nodes.values() if n['goal_id'] == g['id'])}
             for g in self.definition['goals']}
-        self._event('FINISHED', status=status)
-        self._save()
+        for goal in self.state['goals'].values():
+            goal['owner_status'] = goal['status']
+            goal['gates'] = [ident for ident, n in self.nodes.items() if n['kind'] == 'gate' and goal['owner'] in n['depends_on']]
+            for ident in goal['gates']:
+                if self.state['nodes'][ident]['status'] != 'SUCCEEDED':
+                    goal['status'] = self.state['nodes'][ident]['status']
 
     def run(self):
         if not self.resume:

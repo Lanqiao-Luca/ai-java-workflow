@@ -14,7 +14,7 @@ kind 分 loop、gate、closure。Loop 声明 task、inspection 或 defect 返回
 
 Graph 选择[巡检 Loop](../loops/inspection-convergence.md)及[缺陷 Loop](../loops/defect-convergence.md)，具体取证与阶段职责继续由[来源观察 Workflow](../workflows/service-inspection.md)、[整体验收 Workflow](../workflows/defect-completion.md)承载，不把 Loop 的不同终态不经核对统一洗成成功。
 
-[前台执行器](../tools/goal_graph_run.py)现支持声明依赖的有限并发、明确失败的后代阻断、独立分支继续、私有检查点和安全前缀接续。基础 closure 节点核所有必需节点的执行返回及实际产品身份。候选绑定的语义 Gate 与具体 Loop 接线仍按[小步计划](../docs/graph-delivery-plan.md)后续步骤验收；当前基础回执不能替代业务验收。旧 Java/构建/原生 Graph 各自保持原运行边界。
+[前台执行器](../tools/goal_graph_run.py)支持声明依赖的有限并发、明确失败的后代阻断、独立分支继续、私有检查点和安全前缀接续。[证据校验器](../tools/goal_graph_evidence.py)核当前 Loop 完整结果、Gate 快照及显式 closure。具体 Loop 执行适配器仍按[小步计划](../docs/graph-delivery-plan.md) G4 接线；当前程序校验不能替代真实业务验收。旧 Java/构建/原生 Graph 各自保持原运行边界。
 
 ## 运行身份与恢复
 
@@ -27,5 +27,13 @@ Graph 选择[巡检 Loop](../loops/inspection-convergence.md)及[缺陷 Loop](..
 每个运行持有单写者锁，状态保留完整原目标和逐节点结果。UNKNOWN 不判停止成功，不复用原运行根；未知回调可能仍在执行。Python 回调不是可强杀进程，必须自行落实传入的内层超时与执行隔离；图不会因等待超时声称底层进程已终止。此执行器不提供系统沙箱或后台调度，跨运行的业务写权与资源分配仍归实际宿主。
 
 已明确失败或 PARTIAL 的节点只阻断后代；无关合法分支继续。必需依赖不能以 SKIPPED 代替；closure 晚于截止的结果保留但不作为成功。回调异常或等待超时保 UNKNOWN，停止后续派工并保存原尝试及恢复条件。
+
+## Gate 与整体收口
+
+每次运行有唯一 run_id。Gate 回执绑定本次 gate_id/execution_id、依赖的实际执行 ID、产品 SHA/模式、结果 JSON 身份、当前 context 和注册校验程序的 handler/源码配置身份。空 PASS、错 reviewer、旧快照、漏支路、其他运行或其他 Gate 的回执均拒绝。内置 `review_inputs` 真正重读依赖文件并核 typed 合同；它是确定性程序审验，不是独立模型 Agent 或外部审核。
+
+task 合同须 complete=true、同 goal_id 及全部 required/completed；inspection 须原范围全部覆盖，并有逐项当前 OBSERVED 实证，异常可以保留；defect 须原测试/业务行为/交接的全部回执、独立发现关闭及必要操作结果。目标可显式给 operations，省略仅表示无必要副作用；只读目标不能借此授权业务操作。缺陷 Loop 返回 required_operations，不能用空 missing 数组隐去原义务。Loop 的 started_at、elapsed、deadline、rounds_used 必须是有限且未超出共享预算的证据。
+
+closure 重新核全部必需节点、当前字节、Loop 合同及 Gate 快照，保存原 goals 与全部必需执行/产品/结果引用的快照。状态始终保存完整定义和逐目标进展，Owner 执行完成与 Gate 是否通过分别列出。检查点同时绑定执行器与证据原语代码；代码或合同变化不自动接续旧运行。回执可信性仍依真实注册适配器，原始模型 JSON 不能自行成为可信程序回执。
 
 [Graphs](README.md) · [准入回归](../tests/test_goal_graph_definition.py)

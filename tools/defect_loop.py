@@ -103,9 +103,10 @@ def run_defect(plan, workflow, *, clock=time.time):
     demand(finite(started), 'finite clock required')
     deadline = min(started + plan['budget_seconds'], plan['deadline'])
     state = {'goal_id': plan['goal_id'], 'status': 'PARTIAL', 'goal_met': False, 'required': ids,
+             'required_operations': list(plan['operation_ids']),
              'missing_criteria': list(ids), 'missing_operations': list(plan['operation_ids']),
              'unresolved_findings': [], 'checks': {}, 'operations': {}, 'finding_ledger': None,
-             'context': None, 'history': [], 'rounds_used': 0, 'deadline': deadline, 'elapsed': 0,
+             'context': None, 'history': [], 'rounds_used': 0, 'started_at': started, 'deadline': deadline, 'elapsed': 0,
              'reason': 'NOT_STARTED', 'next_phase': 'reproduce'}
     seen = set()
 

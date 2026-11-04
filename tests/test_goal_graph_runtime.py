@@ -17,7 +17,7 @@ from tools.goal_graph_run import GoalGraphRun, Handler
 CONTEXT = {'candidate_id': 'a' * 64, 'requirements_id': 'b' * 64, 'rules_id': 'c' * 64}
 
 
-class RuntimeTests(unittest.TestCase):
+class GraphFixture:
     def setUp(self):
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
@@ -42,7 +42,7 @@ class RuntimeTests(unittest.TestCase):
             return {'status': mode, 'context': CONTEXT, 'payload_path': None, 'result': {}}
         path = Path(request['workspace']) / node['writes'][0]
         path.parent.mkdir(parents=True, exist_ok=True)
-        result = {'complete': True, 'required': next((g['required'] for g in self.graph['goals'] if g['id'] == node['goal_id']), []),
+        result = {'complete': True, 'goal_id': node['goal_id'], 'required': next((g['required'] for g in self.graph['goals'] if g['id'] == node['goal_id']), []),
                   'completed': next((g['required'] for g in self.graph['goals'] if g['id'] == node['goal_id']), [])}
         path.write_text(json.dumps(result))
         return {'status': mode, 'context': CONTEXT, 'payload_path': node['writes'][0], 'result': result}
@@ -52,6 +52,7 @@ class RuntimeTests(unittest.TestCase):
         return GoalGraphRun(self.graph, registry, CONTEXT, self.root / 'run', budget_seconds=20,
                             resume=resume, pause_after=pause_after, **changes).run()
 
+class RuntimeTests(GraphFixture, unittest.TestCase):
     def test_concurrent_callbacks_and_explicit_closure(self):
         self.barrier = threading.Barrier(2)
         result = self.run_graph()

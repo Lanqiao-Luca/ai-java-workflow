@@ -22,6 +22,7 @@ HEX = re.compile(r'[0-9a-f]{64}')
 HISTORICAL_SOURCES = {name: 'docs/native-baseline/' + name.split('/')[-1] + '.txt'
                       for name in ('tools/native_agents.py', 'tools/native_flow.py')}
 
+HISTORICAL_CATALOG_SHA256 = '698c774e74f99e40e68a33bca08e58a01e8d0597f3bc60a05d497178097bb682'
 
 def demand(condition, message):
     if not condition:
@@ -119,8 +120,15 @@ def check_native_case(folder):
     demand(isinstance(sources, dict), 'source identities absent')
     expected_sources = {'tools/native_agents.py', 'tools/native_flow.py', 'tools/native_build.py',
                         case['graph'], 'examples/' + case['case_id'] + '/run.py'}
-    for directory in ['agents', 'skills', 'standards']:
-        expected_sources.update(p.relative_to(ROOT).as_posix() for p in (ROOT / directory).rglob('*') if p.is_file())
+    # Bind this published receipt to its original catalog, not future directory additions.
+    catalog_path = local(ROOT, 'docs/native-baseline/catalog-sources.json')
+    demand(sha(catalog_path) == HISTORICAL_CATALOG_SHA256, 'historical catalog index drift')
+    catalog = json.loads(catalog_path.read_text())['sources']
+    actual_catalog = {n: v for n, v in sources.items()
+                      if n.split('/')[0] in {'agents', 'skills', 'standards'}}
+    demand(actual_catalog == {n: row['sha256'] for n, row in catalog.items()},
+           'historical catalog coverage or identity drift')
+    expected_sources.update(catalog)
     graph = json_file(ROOT, case['graph'])
     demand(graph.get('kind') == 'native_graph' and graph.get('graph_id') == 'native-java-spring'
            and graph.get('max_parallel') == 2, 'graph identity')
@@ -135,7 +143,8 @@ def check_native_case(folder):
     expected_sources.update(n['workflow'] for n in nodes)
     demand(expected_sources <= set(sources), 'consumed source map incomplete')
     for name, value in sources.items():
-        demand(identity(value) == sha(local(ROOT, HISTORICAL_SOURCES.get(name, name))), 'consumed historical source drift')
+        source_path = catalog[name]['path'] if name in catalog else HISTORICAL_SOURCES.get(name, name)
+        demand(identity(value) == sha(local(ROOT, source_path)), 'consumed historical source drift')
     demand(sources['examples/' + case['case_id'] + '/run.py'] == sha(local(folder, 'run.py')), 'case runner differs from consumed source')
     stages = runtime.get('stages')
     demand(isinstance(stages, dict) and set(stages) == NODES, 'stage set')

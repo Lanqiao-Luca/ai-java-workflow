@@ -91,6 +91,10 @@ class PublishedNativeCaseTests(unittest.TestCase):
         del self.runtime['source_sha256'][name]
         self.rejected()
 
+    def test_historical_method_identity_cannot_be_replaced(self):
+        self.runtime['source_sha256']['standards/layering.md'] = '0' * 64
+        self.rejected()
+
     def test_public_abstract_cannot_exempt_java_source(self):
         path = self.case / 'case.json'
         declaration = json.loads(path.read_text())

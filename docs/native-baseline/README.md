@@ -1,5 +1,9 @@
-# 原生实跑的历史执行源码
+# 原生实跑的历史来源
 
-两份 `.txt` 原件逐字保存提交 `99168c15cad7bd40cb6819c6f4b638f4416abb1e` 中的原生适配器与引擎，用于继续核对[历史六阶段实跑回执](../../examples/native-spring-workflow/evidence/runtime.json)中的源码 SHA。它们不是当前可执行入口。
+本目录保留公开原生实跑回执所消费的旧版本，用于核对历史身份，不是当前执行入口。
 
-[历史案例检查器](../../scripts/check_native_cases.py)对这两个逻辑源码路径使用本目录原件，其余身份检查保持原有约束。原始回执、候选、25 项 Spring 测试和案例运行脚本没有改写；历史通过不覆盖[新恢复控制器](../native-recovery.md)。当前代码通过自己的回归测试和 CI 验证。
+- 两份控制器 `.txt` 保存原提交 `99168c15cad7bd40cb6819c6f4b638f4416abb1e` 的适配器与引擎。
+- [历史目录清单](catalog-sources.json)固定当时 61 项角色、Skill 与规则来源的路径及 SHA；发生当前文档修改的四份原件保存在 catalog 子目录，未变化文件继续核原路径。
+- [检查器](../../scripts/check_native_cases.py)同时校验清单固定摘要、完整来源集合与每份历史字节，拒绝漏项、篡改和将新增角色冒认为旧实跑参与者。
+
+[原回执](../../examples/native-spring-workflow/evidence/runtime.json)、候选、25 项 Spring 测试及案例运行脚本保持原字节。新 Agent、模板和调用约定按当前检查核对，不由旧回执证明运行通过；当前恢复实现见[恢复控制器](../native-recovery.md)。

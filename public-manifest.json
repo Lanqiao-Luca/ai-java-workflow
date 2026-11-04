@@ -212,6 +212,31 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/native-baseline/catalog-sources.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-baseline/catalog/agents/README.md.txt",
+      "origin": "existing_public_baseline",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-baseline/catalog/skills/README.md.txt",
+      "origin": "existing_public_baseline",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-baseline/catalog/standards/README.md.txt",
+      "origin": "existing_public_baseline",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-baseline/catalog/standards/layering.md.txt",
+      "origin": "existing_public_baseline",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/native-baseline/native_agents.py.txt",
       "origin": "newly_written",
       "status": "reviewed_candidate"

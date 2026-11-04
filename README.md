@@ -116,6 +116,8 @@ flowchart LR
 
 ## 运行支持与当前边界
 
+[通用目标 Graph](graphs/goal-graph.md)现可组织巡检与缺陷 Loop，提供依赖、分支隔离、安全检查点、证据 Gate 和显式收口。[双目标虚构案例](graphs/examples/goal-loops/README.md)可直接运行；[Loop 状态](docs/loop-status.md)与[Graph 状态](docs/graph-status.md)分别保留未迁入和未验事项。
+
 方法、空表可以人工采用；运行后端各有环境要求：
 
 | 后端 | 已验证范围 | 使用前注意 |

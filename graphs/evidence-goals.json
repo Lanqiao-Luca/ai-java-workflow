@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "graph_id": "synthetic-evidence-goals",
+  "goals": [
+    {"id": "inspection", "required": ["log-window", "api-response", "build-report"]},
+    {"id": "defect", "required": ["tests", "behavior", "handoff"], "operations": []}
+  ],
+  "max_parallel": 2,
+  "nodes": [
+    {"id": "inspection", "kind": "loop", "depends_on": [], "handler": "fixture-inspection", "contract": "inspection", "writes": ["inspection-result.json"], "goal_id": "inspection", "required": true},
+    {"id": "defect", "kind": "loop", "depends_on": [], "handler": "fixture-defect", "contract": "defect", "writes": ["defect-result.json"], "goal_id": "defect", "required": true},
+    {"id": "review-inspection", "kind": "gate", "depends_on": ["inspection"], "handler": "review-loop-evidence", "contract": "review", "writes": [], "goal_id": null, "required": true},
+    {"id": "review-defect", "kind": "gate", "depends_on": ["defect"], "handler": "review-loop-evidence", "contract": "review", "writes": [], "goal_id": null, "required": true},
+    {"id": "close", "kind": "closure", "depends_on": ["review-inspection", "review-defect"], "handler": null, "contract": "closure", "writes": [], "goal_id": null, "required": true}
+  ]
+}

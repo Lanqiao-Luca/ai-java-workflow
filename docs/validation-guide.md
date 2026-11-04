@@ -35,6 +35,15 @@ python3 -B scripts/check_loop_cases.py
 
 ## 按模式运行与核证
 
+目标 Graph 的三条虚构路径及跨进程暂停/恢复由便携 CI 实际验证：
+
+```sh
+python3 -B graphs/examples/goal-loops/run.py
+python3 -B scripts/run_goal_graph.py --run-root <仓库外全新私有目录>
+```
+
+第一条核三个预期控制结果，负例保留 PARTIAL/UNKNOWN；第二条仅 SUCCEEDED 才退出 0。暂停、接续、预算及读取权限见[案例说明](../graphs/examples/goal-loops/README.md)。程序使用真实墙钟和实际文件/Loop/Gate；业务、测试数字和审核上下文均为虚构，未运行新模型链或生产连接器。
+
 新增两条虚构控制案例可直接运行，亦由便携 CI 实际调用：
 
 ```sh

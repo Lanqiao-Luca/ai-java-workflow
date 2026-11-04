@@ -1,0 +1,37 @@
+{
+  "synthetic": true,
+  "cases": {
+    "complete": {
+      "authorized_sources": [
+        "logs",
+        "api",
+        "build"
+      ],
+      "build_future": false,
+      "initial_log_complete": false,
+      "unknown_effect": false,
+      "expected_status": "SUCCEEDED"
+    },
+    "partial": {
+      "authorized_sources": [
+        "logs",
+        "build"
+      ],
+      "build_future": true,
+      "initial_log_complete": true,
+      "unknown_effect": false,
+      "expected_status": "PARTIAL"
+    },
+    "unknown-effect": {
+      "authorized_sources": [
+        "logs",
+        "api",
+        "build"
+      ],
+      "build_future": false,
+      "initial_log_complete": false,
+      "unknown_effect": true,
+      "expected_status": "UNKNOWN"
+    }
+  }
+}

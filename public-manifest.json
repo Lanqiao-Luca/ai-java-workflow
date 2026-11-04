@@ -132,6 +132,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/graph-status.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/java-spring-workflow-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1232,6 +1237,66 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "graphs/evidence-goals.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/api-response.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/before-candidate.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/build-report.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/candidate.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/defect-evidence.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/scenarios.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/service-head.log",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/examples/goal-loops/service-tail.log",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "graphs/goal-graph.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1438,6 +1503,11 @@
     },
     {
       "path": "scripts/run_docker_graph.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "scripts/run_goal_graph.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1727,6 +1797,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_goal_graph_loops.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_goal_graph_runtime.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1853,6 +1928,11 @@
     },
     {
       "path": "tools/goal_graph_evidence.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/goal_graph_loops.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

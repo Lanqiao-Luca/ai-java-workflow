@@ -14,7 +14,7 @@ kind 分 loop、gate、closure。Loop 声明 task、inspection 或 defect 返回
 
 Graph 选择[巡检 Loop](../loops/inspection-convergence.md)及[缺陷 Loop](../loops/defect-convergence.md)，具体取证与阶段职责继续由[来源观察 Workflow](../workflows/service-inspection.md)、[整体验收 Workflow](../workflows/defect-completion.md)承载，不把 Loop 的不同终态不经核对统一洗成成功。
 
-[前台执行器](../tools/goal_graph_run.py)支持声明依赖的有限并发、明确失败的后代阻断、独立分支继续、私有检查点和安全前缀接续。[证据校验器](../tools/goal_graph_evidence.py)核当前 Loop 完整结果、Gate 快照及显式 closure。具体 Loop 执行适配器仍按[小步计划](../docs/graph-delivery-plan.md) G4 接线；当前程序校验不能替代真实业务验收。旧 Java/构建/原生 Graph 各自保持原运行边界。
+[前台执行器](../tools/goal_graph_run.py)支持声明依赖的有限并发、明确失败的后代阻断、独立分支继续、私有检查点和安全前缀接续。[证据校验器](../tools/goal_graph_evidence.py)核当前 Loop 完整结果、Gate 快照及显式 closure。[虚构适配器](../tools/goal_graph_loops.py)已实际接入巡检与缺陷 Loop，见[双目标案例](examples/goal-loops/README.md)；程序校验及虚构输入不能替代真实业务验收。旧 Java/构建/原生 Graph 各自保持原运行边界，完整范围见[状态与待办](../docs/graph-status.md)。
 
 ## 运行身份与恢复
 

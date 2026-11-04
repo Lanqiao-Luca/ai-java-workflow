@@ -1,0 +1,29 @@
+{
+  "synthetic": true,
+  "candidate_id": "fcad2fc78ad2c3274d9669dbb112b3d0d8a46d7684969b59070adb5f23e536f5",
+  "before_candidate_id": "09f066334e3cff860b9ada16fa15e7a834435f93d36d7e0a05692fac25c7da16",
+  "finding": {
+    "finding_id": null,
+    "key": "reject-null",
+    "summary": "Null input accepted before fix",
+    "location": "DemoLabels.normalize",
+    "criterion": "Reject null input"
+  },
+  "tests": {
+    "process_exit": 0,
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "behavior": {
+    "normalized": [
+      "alpha"
+    ],
+    "invalid_input_status": 400
+  },
+  "handoff": {
+    "recipient": "demo-recipient",
+    "remaining_obligations": []
+  }
+}

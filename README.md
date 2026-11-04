@@ -8,11 +8,11 @@
 
 让 AI 从理解需求开始，沿着实现、验证、审查与交付推进；每一步都有输入、产物和可核对的验收依据。
 
-通过 [Brain 任务入口](brain/README.md)，先恢复当前任务并交给责任 Agent，再由 Agent 选择流程与具体方法。你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 组织多个 Loop 与 Workflow 的依赖和并发。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
+通过 [Brain 任务入口](brain/README.md)，先恢复当前任务并选择 Graph、Loop、Workflow 或 Agent 入口，再沿选中组织层交接到具体职责与方法。你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 组织多个 Loop 与 Workflow 的依赖和并发。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
 
 ## 框架架构
 
-Brain 负责逐轮路由与接续，**只把任务交给 Agent**。框架的组装关系是：
+Brain 负责逐轮路由与接续，**可调取 Agent 及其上的 Workflow、Loop、Graph**。框架的组装关系是：
 
 **原子规则（Standards）与执行工具（Tools）平级 → Skill → Agent → Workflow → Loop → Graph**
 
@@ -28,29 +28,28 @@ flowchart LR
     L --> G[Graph]
 ```
 
-任务调用时，Brain 只进入 Agent。组织任务交[任务协调者](agents/task-coordinator.md)，专项任务交对应 Agent；由接受任务的 Agent 调取所需层级：
+任务调用时，Brain 从 Graph → Loop → Workflow → Agent 判断哪层适合当前任务，并直接进入选中的合同、模板或已有实例。完整能力架构也在 [Brain 入口](brain/README.md)显示：
 
 ```mermaid
 flowchart TD
-    B[Brain] --> C["入口 Agent：协调者或专项责任人"]
-    C -->|多目标依赖| G[Graph]
-    C -->|同目标重复| L[Loop]
-    C -->|单轮协作| W[Workflow]
-    G -->|组织目标与循环依赖| L
-    G -.->|无需重复的节点| W
-    L -->|组织多轮执行| W
-    W --> E[阶段 Agent]
-    C -->|直接采用专项能力| S[Skill]
-    E --> S
-    S --> P["Standards：规则与验收方法"]
-    S --> T["Tools：执行工具与接口"]
+    B[Brain] -->|多目标依赖| G[Graph]
+    B -->|同目标有界重复| L[Loop]
+    B -->|单轮阶段协作| W[Workflow]
+    B -->|专项任务| A[Agent]
+    G --> L
+    G -.->|不需重复的节点| W
+    L --> W
+    W --> A
+    A --> S[Skill]
+    S --> P[Standards]
+    S --> T[Tools]
 ```
 
-**Brain 不直接调用 Workflow、Loop、Graph、Skill、Standards 或 Tools。** Agent 可以选择任一适用组织层执行；流程内部继续按 Graph → Loop → Workflow → 阶段 Agent 组合，不必每次启用所有层。入口协调 Agent 与阶段执行 Agent 分工明确，阶段 Agent 不反向重启同一总体任务。此处是助手与使用者遵循的调用约定，现有 CLI 不具备调用者身份拦截。
+**Brain 可以选择 Graph、Loop、Workflow、Agent；Skill、Standards、Tools 由 Agent 使用。** 高层组织下层，不要求每个任务启用所有层。任务协调者协助所选组织实例运行，不是进入组织层的强制前置；阶段 Agent 不反向重启同一总体任务。以上为方法与调用约定，现有 CLI 没有自动读取 Brain 路由或拦截调用者身份。
 
 | 组成 | 解决什么问题 | 仓库中的例子 |
 | --- | --- | --- |
-| **Brain** | 恢复任务与变化，交给责任 Agent，核收返回 | [任务路由与接续](brain/README.md) |
+| **Brain** | 恢复任务与变化，选择组织层或专项 Agent，核收返回 | [任务路由与接续](brain/README.md) |
 | **原子规则 / Standards** | 一项方法在什么条件下适用，如何操作、验收，何时停止 | [复用与旧行为保留](standards/behavior-preservation.md) |
 | **Tools（与 Standards 平级）** | 哪个实际接口或程序完成执行、控制与证据处理 | [工具目录](tools/README.md) |
 | **Skill** | 怎样组合 Standards 与 Tools，把输入适配为具体产物 | [代码实现 Skill](skills/code-implementation/SKILL.md) |
@@ -75,13 +74,13 @@ Tools 的执行支撑包括[工具与隔离机制](tools/execution/README.md)和
 | Loop | [预算与收敛模板](loops/templates/README.md) | [多轮执行文件](loops/examples/README.md) | 重复同一目标的 Workflow，控制累计预算和停止 |
 | Graph | [目标与依赖模板](graphs/templates/README.md) | [目标图执行文件](graphs/examples/README.md) | 组织 Loop/Workflow 的依赖、并发、门禁与整体收口 |
 
-Agent 接受任务 → 选择所需层与模板 → 绑定当前输入、候选、授权、责任和预算，保存执行文件 → 执行、记录结果并向 Brain 返回。续作使用原实例与有效证据，不重建或清零预算。模板不填进度；执行文件记录具体任务与实际状态。真实工程实例写到使用者授权位置，公开 examples 保留独立虚构案例及明确运行状态。
+Brain 选择适用组织入口与模板 → 当前协调者/宿主和阶段职责接受任务 → 绑定当前输入、候选、授权、责任和预算，保存执行文件 → 执行、记录结果并向 Brain 返回。续作使用原实例与有效证据，不重建或清零预算。模板不填进度；执行文件记录具体任务与实际状态。真实工程实例写到使用者授权位置，公开 examples 保留独立虚构案例及明确运行状态。
 
 每层均可由 Agent 按合同手动组织执行；已有程序只支持各自定义的格式和环境。examples 包含可运行控制案例和标记 NOT_RUN 的计划，Markdown 模板不会自动变为可运行配置，填表也不表示执行完成。已有真实代码、回执与运行器保持原位置，层内执行文件引用这些证据，避免复制。
 
 ## 按完整能力线采用
 
-新增方法按 **Agent → Skill → Standards / Tools** 接入，每条线保留责任、方法、产物和验证，Brain 只选择责任 Agent：
+新增方法按 **Agent → Skill → Standards / Tools** 接入，每条线保留责任、方法、产物和验证；Brain 可选择这些专项 Agent，也可先进入组织它们的 Workflow、Loop 或 Graph：
 
 | 当前阶段 | Agent | Skill | 原子与工具 |
 | --- | --- | --- | --- |
@@ -91,7 +90,7 @@ Agent 接受任务 → 选择所需层与模板 → 绑定当前输入、候选�
 
 [技术方案 Workflow](workflows/technical-design.md)和[模块规划 Workflow](workflows/design-to-modules.md)组织阶段交接；[贯通虚构案例](workflows/examples/design-to-modules/README.md)展示发现、修订与模块包。设计/复核部分是作者构造的文档推演，模块工具实际运行正例及拒绝场景；没有新模型、独立审验、Java实现或部署通过声明。
 
-需要专项职责时从相应 Agent 开始；复合任务先交任务协调者。准备规划、结构有效、专业接受和实施许可分别核对，`STRUCTURE_VALID` 不能当作“可以实施”。
+专项任务可选相应 Agent；多阶段任务可先选 Workflow，同目标重复选 Loop，多目标依赖选 Graph。准备规划、结构有效、专业接受和实施许可分别核对，`STRUCTURE_VALID` 不能当作“可以实施”。
 
 ## 文档维护与原子覆盖
 
@@ -116,8 +115,8 @@ Agent 接受任务 → 选择所需层与模板 → 绑定当前输入、候选�
 
 ```text
 请先读 brain/README.md，再按 brain/routing.md 处理我的需求：……
-恢复已有目标、阶段、候选和授权，先交给任务协调者或专项 Agent；
-由 Agent 选择 Workflow、Loop、Graph 的模板和执行文件，经 Skill 采用规则与工具，复用有效证据，只补影响下一步的缺项。
+恢复已有目标、阶段、候选和授权，按需要选择 Graph、Loop、Workflow 或 Agent；
+沿选中组织层交接，Agent 经 Skill 采用规则与工具，复用有效证据，只补影响下一步的缺项。
 实际写入前确认工程、允许写集与验收；交付时列实际验证、未决和恢复点。
 ```
 

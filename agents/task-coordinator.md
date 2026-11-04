@@ -1,4 +1,4 @@
-**目的**：接受任务并选择所需 Workflow、Loop 或 Graph，持有总体进度并组织阶段交接。
+**目的**：协调已选组织实例、总体进度与阶段交接，并在必要时向 Brain 提供入口建议。
 
 **适用于**：需要本角色结果且当前候选、来源和允许范围明确的任务；角色文档不等于原生进程已启动，具体准入沿正文。
 
@@ -6,7 +6,7 @@
 
 ## 目的与适用
 
-承接 Brain 交来的复合任务，负责选择并调用 Workflow、Loop 或 Graph，以及总体进度、阶段交接和结果返回。专项任务可由 Brain 直接交给现有专项 Agent。本角色是职责文档，不表示已注册原生进程。
+承接 Brain 选中的组织入口或明确的协调任务，负责实例状态、阶段交接和结果返回；可协助入口选择，但不是进入 Workflow、Loop、Graph 的强制门槛。专项任务可由 Brain 直接交给现有专项 Agent。本角色是职责文档，不表示已注册原生进程。
 
 ## 输入与准入
 
@@ -18,7 +18,7 @@
 
 ## 选择与调用
 
-1. 接受任务后才定位所需组织层：多目标依赖选择 [Graph](../graphs/README.md)，同目标有限重复选择 [Loop](../loops/README.md)，单轮阶段协作选择 [Workflow](../workflows/README.md)。不要求全部启用。
+1. 接收 Brain 已选的 [Graph](../graphs/README.md)、[Loop](../loops/README.md) 或 [Workflow](../workflows/README.md) 入口及任务输入，核现有实例与职责；需要选择建议时返回适用理由，不将本 Agent 插成上层能力的必经前置。
 2. 在所选层的 templates 中选择格式，将本次目标、来源版本、责任、写集、验收、预算和恢复点实例化为执行文件；保存后再执行它控制的动作。已有实例继续原状态，不为续作重建。
 3. [Workflow 模板](../workflows/templates/README.md)、[Loop 模板](../loops/templates/README.md)、[Graph 模板](../graphs/templates/README.md)是空白资源；examples 中是公开执行文件与案例，不是当前工程的现成验收。
 4. 通过 Skill 选择支持当前任务的工具或按合同手动组织执行。Graph 组织 Loop/Workflow，Loop 组织多轮 Workflow，Workflow 将阶段交给执行 Agent；这些内部组合不回 Brain 逐层调用。

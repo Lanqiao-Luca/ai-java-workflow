@@ -9,7 +9,7 @@
 - [templates：复用模板](templates/README.md)，由责任 Agent 填写为本次计划，不保存真实进度。
 - [examples：执行文件与案例](examples/README.md)，包含已填计划及其实际运行或 NOT_RUN 状态。
 
-Graph 可以由[任务协调者 Agent](../agents/task-coordinator.md)选用并执行，Brain 只向 Agent 交任务，不直接调用本层。每层都可单独采用，无需强制启用更高层。方法合同由 Agent 手动组织，已有程序仅执行其支持的定义格式；填好 Markdown 模板不等于自动运行。
+Brain 可以直接选择并调取 Graph 作为任务入口，由本层合同组织下层职责，实际协调者、宿主和阶段 Agent 按真实执行方式承接。每层都可单独采用，无需强制启用更高层。方法合同由 Agent 手动组织，已有程序仅执行其支持的定义格式；填好 Markdown 模板不等于自动运行。
 
 真实工程计划与进度存放于使用者授权的位置；examples 只放适合公开的执行文件和独立虚构案例。沿当前实例接续，不复制既有证据或用空目录冒充完成。具体合同见 [Graph 合同](goal-graph.md)。
 

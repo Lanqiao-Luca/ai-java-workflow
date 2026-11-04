@@ -4,7 +4,7 @@
 
 # Agents
 
-角色定义结果责任，经 Skill 组合平级的 Standards 与 Tools。Brain 只交任务给 Agent，由 Agent 调取所需层级。
+角色定义结果责任，经 Skill 组合平级的 Standards 与 Tools。Brain 可直接选择 Agent 或其上的 Workflow、Loop、Graph；组织层分配阶段职责，Agent 经 Skill 使用底层规则与工具。
 
 新增技术设计到实施准备能力线：
 
@@ -16,7 +16,7 @@
 
 [文档维护者](document-maintainer.md)负责本地文档创建、更新与原件保全，经文档维护 Skill 消费目的原子，再交文档审查者核内容。
 
-[任务协调者](task-coordinator.md)负责选择并执行 Workflow、Loop、Graph，保存实例、组织阶段职责并交回总体状态；下表角色负责具体阶段。下面是角色与案例的导航，不代表平台安装或自动调度；十条案例均独立虚构。
+[任务协调者](task-coordinator.md)协助 Brain 已选组织入口的运行，保存实例、组织阶段职责并交回总体状态；下表角色负责具体阶段。下面是角色与案例的导航，不代表平台安装或自动调度；十条案例均独立虚构。
 
 | 角色 | 完整案例 |
 | --- | --- |

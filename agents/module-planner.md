@@ -12,7 +12,7 @@
 
 ## 组织与交接
 
-由 Brain 直接交付专项任务，或由[任务协调者](task-coordinator.md)分配阶段；需要流程时采用[对应 Workflow](../workflows/design-to-modules.md)。进入流程后保原协调者和总体状态，不递归重启同一任务。
+Brain 可直接选择本 Agent 处理专项任务，也可先选择[对应 Workflow](../workflows/design-to-modules.md)，由流程与[当前协调者](task-coordinator.md)分配阶段。进入流程后保原实例和总体状态，不由阶段 Agent 反向重启上层。
 
 方法确定后，涉及文档落盘交[文档维护者](document-maintainer.md)；它维护声明和字节，不代本角色决定技术事实。专业结论、文档验收、代码实现与运行结果分别交接。
 

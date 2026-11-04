@@ -21,7 +21,7 @@ maintenance_role: canonical
 
 ## 操作步骤
 
-先区分方法定义、任务适配和结果责任。Standards 与 Tools 平级：前者保存方法与判据，后者提供执行接口和程序；Skills 组合两者并适配输入输出；Agents 判断上下文、权限和交接。Brain 只交任务给 Agent，由责任 Agent 选择和调用 Workflow、Loop、Graph，或经 Skill 采用基础资源。角色通过 Skill 消费方法，Skill 引用标准，标准不反向启动角色。简单任务只选择必要组件，不为凑层数创建空壳。Workflow、Loop、Graph 各以 templates 保存复用格式、examples 保存公开执行文件与案例。由责任 Agent 将模板实例化为当前执行计划，再执行受其控制的动作；续作保留原实例、累计预算和有效前缀。模板与例子是资源，不代表执行已发生。
+先区分方法定义、任务适配和结果责任。Standards 与 Tools 平级：前者保存方法与判据，后者提供执行接口和程序；Skills 组合两者并适配输入输出；Agents 判断上下文、权限和交接。完整组装关系是 Standards / Tools→Skill→Agent→Workflow→Loop→Graph。Brain 可按任务选择 Agent、Workflow、Loop、Graph，组织层沿层级交接到 Agent；Skill 和基础资源由 Agent 使用，Brain 不直接执行。角色通过 Skill 消费方法，Skill 引用标准，标准不反向启动角色。简单任务只选择必要组件，不为凑层数创建空壳。Workflow、Loop、Graph 各以 templates 保存复用格式、examples 保存公开执行文件与案例。由责任 Agent 将模板实例化为当前执行计划，再执行受其控制的动作；续作保留原实例、累计预算和有效前缀。模板与例子是资源，不代表执行已发生。
 
 ## 输出
 

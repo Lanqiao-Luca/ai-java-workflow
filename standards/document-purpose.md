@@ -43,7 +43,7 @@ maintenance_role: canonical
 
 ## 角色职责
 
-作者经文档维护 Skill 完成声明和语义核对；文档审查者只读检查同候选。Brain 只交任务给 Agent，不直接执行本原子。
+作者经文档维护 Skill 完成声明和语义核对；文档审查者只读检查同候选。Brain 可以选择 Agent 或其上组织层，本原子仍由文档职责经 Skill 消费，Brain 不直接执行。
 
 ## 验收方法
 

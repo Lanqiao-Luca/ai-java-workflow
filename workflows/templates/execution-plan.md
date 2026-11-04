@@ -25,6 +25,6 @@
 
 执行后另记当前阶段、实际命令与结果、证据位置、未决、在途未知、累计预算和恢复点；定义与进度分开，已有父层仅接收本轮局部结果。
 
-由[任务协调者](../../agents/task-coordinator.md)选择 [Workflow 合同](../java-spring-development.md)，再交相应阶段 Agent 执行。纯专项任务可缩短阶段，不能删去实际必要验收。
+Brain 选择 [Workflow 合同](../java-spring-development.md) 后，由[当前协调者](../../agents/task-coordinator.md)或宿主实例化计划，沿流程交相应阶段 Agent 执行。纯专项任务可缩短阶段，不能删去实际必要验收。
 
 返回：[模板目录](README.md)。

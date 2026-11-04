@@ -4,7 +4,7 @@
 
 # Loop 模板
 
-由[任务协调者](../../agents/task-coordinator.md)选择并实例化；Loop 组织同一目标的多轮 Workflow，模板本身不启动循环。
+Brain 可以选择 Loop 入口与模板，由当前[协调者](../../agents/task-coordinator.md)或宿主按合同实例化和推进；Loop 组织同一目标的多轮 Workflow，模板本身不启动循环。
 
 - [执行计划模板](execution-plan.md)：目标、单轮合同、预算、停止和恢复。
 - [技术重试记录](technical-retry.md)：尝试次数与受理未知。

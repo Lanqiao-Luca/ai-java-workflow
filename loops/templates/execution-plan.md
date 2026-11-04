@@ -19,6 +19,6 @@
 | 当前轮、已耗预算、发现与证据 | 执行后按实际记录 |
 | 在途动作、最后可信阶段与恢复条件 | 执行后按实际记录 |
 
-无具体重复理由不启动；新候选不继承相交旧证据，恢复不清零累计预算。通过[任务协调者](../../agents/task-coordinator.md)采用[整改合同](../review-convergence.md)，或选择适配的其他 Loop；具体阶段仍由 Workflow 与阶段 Agent 完成。
+无具体重复理由不启动；新候选不继承相交旧证据，恢复不清零累计预算。Brain 选择[整改合同](../review-convergence.md)或其他适配 Loop 后，由[当前协调者](../../agents/task-coordinator.md)或宿主绑定实例并推进；具体阶段仍由 Workflow 与阶段 Agent 完成。
 
 返回：[模板目录](README.md)。

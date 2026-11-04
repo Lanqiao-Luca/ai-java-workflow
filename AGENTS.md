@@ -6,7 +6,7 @@
 
 先核目标、实际目录、基线和允许写集；保护已有改动。按任务从 Agents 选职责，经 Skills 取得 Standards 方法，简单任务不要求所有角色参与。文档是方法与职责，不等于平台注册或已启动进程。
 
-处理新请求或续作时，先按 [Brain](brain/README.md) 核本轮变化，经 [职责路由](brain/routing.md) 只将任务交给 Agent；组织任务由任务协调者 Agent 选择并执行 Workflow、Loop 或 Graph，Brain 不直接调用这些层或 Skill、Standards、Tools。同任务复用有效状态，只刷新变化部分；Brain 是文档入口，不代表自动派工或新增授权。
+处理新请求或续作时，先按 [Brain](brain/README.md) 核本轮变化，经 [职责路由](brain/routing.md) 从 Graph、Loop、Workflow、Agent 中选择适用入口；高层组织下层并交到阶段 Agent，具体 Skill、Standards、Tools 由 Agent 经 Skill 使用，Brain 不直接执行这些底层能力。同任务复用有效状态，只刷新变化部分；Brain 是文档入口，不代表自动派工或新增授权。
 
 规范保持单源。Standards 与 Tools 平级，分别提供规则方法与执行工具；Skill 组合适配两者，Agent 对选择、结果和交接负责。Workflow、Loop、Graph 各保留 templates 与 examples，执行前由责任 Agent 实例化计划，续作保留原状态；规范和工具不反向启动角色。来源证据、导航与运行依赖分别说明，不能用空壳链接冒充真实消费。
 

@@ -16,7 +16,7 @@
 
 先核每份文件的目的、适用对象、归属和本次差异，再创建或更新。文档写入不能替作者决定业务事实；来源有缺口保留未知。修改后交候选、逐项声明依据、实际检查和原件保全情况。
 
-单轮阶段计划采用[文档维护 Workflow](../workflows/document-maintenance.md)，需要更多目标或重复时由任务协调者选择组织层。审查仍交[文档审查者](document-reviewer.md)，自查与真实分离审查分别报告。
+Brain 可先选择[文档维护 Workflow](../workflows/document-maintenance.md)组织单轮任务，有多目标或重复需求时再选择适用 Graph/Loop；本角色在原组织实例内承接文档阶段。审查仍交[文档审查者](document-reviewer.md)，自查与真实分离审查分别报告。
 
 ## 停止与恢复
 

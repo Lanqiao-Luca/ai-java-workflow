@@ -27,7 +27,7 @@
 
 | 方法族 | 公开对应与当前结论 | 仍未完整纳入的部分 |
 | --- | --- | --- |
-| 分层组装 | [分层合同](../standards/layering.md)已有责任、单源与资源区分 | 私人来源中的全部治理与登记协议未逐项迁入；当前用户确认的 Brain→Agent、Tools 平级模型优先 |
+| 分层组装 | [分层合同](../standards/layering.md)已有责任、单源与资源区分 | 私人来源中的全部治理与登记协议未逐项迁入；当前用户确认的 Brain 可选择 Graph/Loop/Workflow/Agent、Tools 与 Standards 平级模型优先 |
 | 需求准入与验收 | [需求方法](../standards/requirements.md)已有基本澄清 | [技术方案编制/专业复核](../workflows/technical-design.md)已形成独立公开能力线；决策卡与多种产品输出模式仍未迁入 |
 | 最小实现、旧行为与共享规则 | [实现基线](../standards/implementation-baseline.md)、[行为保留](../standards/behavior-preservation.md)、[共享规则](../standards/shared-rules.md)已有覆盖 | [设计到模块](../workflows/design-to-modules.md)现覆盖有效项主责、单仓写集、共享写者、不可拆边界与依赖；结构工具不支持多写者串行补丁协议，真实工程合流与完整历史治理仍未迁入 |
 | 代码审查与定向复核 | [审查合同](../standards/code-review.md)已有冻结、发现与复核 | 未将所有来源中的报告模板和专业审查变体逐项迁入 |

@@ -899,11 +899,7 @@
       "mode": "current"
     },
     "loops/examples/README.md": {
-      "mode": "preserved",
-      "sha256": "d3094e8e01285fe5355d897f57902c16e251f6a3d1e3a0a282037ad81b17d013",
-      "purpose": "保全《Loop 执行文件与案例》的已发布原文，供定位来源、复核原结论与当时证据。",
-      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
-      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+      "mode": "current"
     },
     "loops/examples/defect/README.md": {
       "mode": "preserved",

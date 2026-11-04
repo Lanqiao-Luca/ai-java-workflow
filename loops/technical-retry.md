@@ -22,7 +22,7 @@
 
 本方法要求调用方记录 DONE、ATTEMPT、QUERY、HOLD 或 STOP，以及对应理由；这些控制含义不覆盖宿主原状态。离线参考函数仅返回状态字符串，理由及真实账本由调用方保存。调用方执行决定，Workflow 交给相应 Agent 处理一次操作和回执；Loop 不直调工具，也不授予提交、部署或其他写入权限。
 
-接入[研发 Workflow](../workflows/java-spring-development.md)的失败归因与复验交接；[原生 Workflow](../workflows/native-java-spring.md)目前失败仍停止。本方法没有为其安装重试钩子。
+接入[研发 Workflow](../workflows/java-spring-development.md)的失败归因与复验交接；[原生 Workflow](../workflows/native-java-spring.md)的未知技术结果仍停止。已确认的测试或审查失败另走[恢复控制器](../docs/native-recovery.md)的整改路径，不把业务整改计作瞬时技术重试。本方法本身不安装自动技术重试钩子。
 
 ## 验收方法
 

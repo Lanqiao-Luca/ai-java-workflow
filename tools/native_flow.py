@@ -75,7 +75,7 @@ def stage_gate(before, after, writes, result, preserve_candidate=False):
         raise FlowRejected('frozen candidate changed')
 
 
-def candidate_evidence_gate(workspace, writes, validation=None, require_documents=True):
+def candidate_evidence_gate(workspace, writes, validation=None, require_documents=True, expected_status='PASSED'):
     """Bind the declared document conclusion and its evidence to exact current source bytes."""
     current = candidate(workspace)
     ident = digest(current)
@@ -87,7 +87,7 @@ def candidate_evidence_gate(workspace, writes, validation=None, require_document
             validation = json.loads(path.read_text())
         except (ValueError, UnicodeError) as exc:
             raise FlowRejected('unreadable host validation evidence') from exc
-    if (not isinstance(validation, dict) or validation.get('status') != 'PASSED'
+    if (not isinstance(validation, dict) or validation.get('status') != expected_status
             or validation.get('source_sha256') != current or validation.get('candidate_id') != ident):
         raise FlowRejected('host validation does not describe current candidate')
     if require_documents:
@@ -104,7 +104,7 @@ def _catalog(root):
     data = json.loads(manifest.read_text())
     files = {}
     for row in data['files']:
-        name = relative(row['path'])
+        name = row['path'] if row['path'] == '.github/workflows/ci.yml' else relative(row['path'])
         path = root / name
         if (row.get('status') != 'reviewed_candidate' or name in files or path.is_symlink()
                 or not path.resolve(strict=True).is_relative_to(root) or not path.is_file()):
@@ -183,11 +183,13 @@ def load_definition(path, root):
 
 class NativeFlow:
     def __init__(self, seed_files, catalog_root, definition_path, run_root, codex='codex',
-                 timeout=600, prepare=None, validate=None):
+                 timeout=600, prepare=None, validate=None, *, resume=False):
         self.catalog_root = Path(catalog_root).resolve(strict=True)
         self.graph, self.workflows, self.catalog = load_definition(definition_path, self.catalog_root)
         self.root = Path(run_root).resolve()
-        if self.root.exists() or self.root.is_relative_to(self.catalog_root):
+        self.resume = resume
+        if ((self.root.exists() and not resume) or (resume and not self.root.is_dir())
+                or self.root.is_relative_to(self.catalog_root)):
             raise FlowRejected('new private run root outside catalog required')
         if not isinstance(seed_files, dict) or not seed_files or len(seed_files) > 512:
             raise FlowRejected('explicit bounded synthetic seed required')
@@ -223,15 +225,15 @@ class NativeFlow:
             raise FlowRejected('private fixture Git operation failed')
         return p.stdout.strip()
 
-    def _instance(self, node, base):
+    def _instance(self, node, base, *, execution_id=None, workflow=None):
         ident = node['id']
-        workspace = self.root / 'instances' / ident
+        workspace = self.root / 'instances' / (execution_id or ident)
         self._git(self.source, 'worktree', 'add', '--detach', str(workspace), base)
         for name, content in self.catalog.items():
             path = workspace / 'catalog' / name
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(content)
-        workflow = self.workflows[ident]
+        workflow = workflow or self.workflows[ident]
         agents = workspace / '.codex/agents'
         agents.mkdir(parents=True)
         instructions = ('You are the native stage role for this public synthetic task. Read these actual '
@@ -249,8 +251,9 @@ class NativeFlow:
             self.prepare(workspace, node, workflow)
         return workspace
 
-    def _execute(self, node, workspace):
-        ident, workflow = node['id'], self.workflows[node['id']]
+    def _execute(self, node, workspace, *, execution_id=None, workflow=None, allow_failure=False, timeout=None):
+        ident = node['id']
+        workflow = workflow or self.workflows[ident]
         before, code_before = snapshot(workspace), candidate(workspace)
         started = time.time()
         if workflow['preserve_candidate'] and not workflow['validate']:
@@ -267,27 +270,42 @@ class NativeFlow:
                 'from host validation.json and must verify it describes current app/POM+src bytes. '
                 'Do not invent, reuse or merely label a candidate identity. '
                 'Return only JSON status, summary, outputs; outputs must equal the declared list.')
-        native = dispatch(workspace, workflow['role'], task, self.root / 'private' / ident,
-                          codex=self.codex, timeout=self.timeout)
+        options = {'accept_failed': True} if allow_failure else {}
+        native = dispatch(workspace, workflow['role'], task, self.root / 'private' / (execution_id or ident),
+                          codex=self.codex, timeout=timeout or self.timeout, **options)
         after = snapshot(workspace)
-        stage_gate(before, after, workflow['writes'], native['result'], workflow['preserve_candidate'])
+        # Confirmed failed children still need the exact same write-set and output gates.
+        result = native['result']
+        if allow_failure and result.get('status') == 'failed':
+            result = {**result, 'status': 'passed'}
+        stage_gate(before, after, workflow['writes'], result, workflow['preserve_candidate'])
         validation = None
+        failed = native['result']['status'] == 'failed'
         if workflow['validate']:
             if not self.validate:
                 raise FlowRejected('real host validation callback required')
             validation = self.validate(workspace, node, workflow)
             current = candidate(workspace)
-            if (snapshot(workspace) != after or validation.get('status') != 'PASSED'
+            if (snapshot(workspace) != after or validation.get('status') not in {'PASSED', 'FAILED'}
                     or validation.get('source_sha256') != current or validation.get('candidate_id') != digest(current)):
                 raise FlowRejected('host validation failed or source drifted')
+            if validation['status'] == 'FAILED':
+                if (not allow_failure or type(validation.get('process_exit')) is not int
+                        or validation['process_exit'] <= 0
+                        or validation.get('category') != 'junit_or_source_mismatch'):
+                    raise FlowRejected('validation failure is not a confirmed build/test result')
+                failed = True
         if workflow['preserve_candidate'] or workflow['validate']:
-            candidate_evidence_gate(workspace, workflow['writes'], validation=validation)
-        return {'status': 'SUCCEEDED', 'started': started, 'ended': time.time(),
+            candidate_evidence_gate(workspace, workflow['writes'], validation=validation,
+                                    expected_status=validation['status'] if validation else 'PASSED')
+        return {'status': 'FAILED' if failed else 'SUCCEEDED', 'started': started, 'ended': time.time(),
                 'input_candidate_id': digest(code_before), 'candidate_id': digest(candidate(workspace)),
                 'native': native, 'snapshot_id': digest(after), 'outputs_sha256': {n: after[n]['sha256'] for n in workflow['writes']},
                 'validation': validation}
 
     def run(self):
+        if self.resume:
+            raise FlowRejected('resume requires the checkpoint recovery controller')
         self.root.mkdir(parents=True, mode=0o700)
         self.source.mkdir()
         (self.root / 'instances').mkdir()

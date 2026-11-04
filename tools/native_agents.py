@@ -34,7 +34,7 @@ def rows(path, limit=16 * 1024 * 1024):
         raise NativeRejected("unreadable protocol log") from exc
 
 
-def native_completion(transcript, role):
+def native_completion(transcript, role, *, accept_failed=False):
     """Accept actual tool-call/output pairs, never a parent's success assertion."""
     calls, spawns, listings, seen = {}, [], [], set()
     permitted = {"spawn_agent", "wait_agent", "list_agents"}
@@ -88,7 +88,7 @@ def native_completion(transcript, role):
             or not isinstance(result["outputs"], list)
             or any(not isinstance(x, str) for x in result["outputs"])):
         raise NativeRejected("invalid child result contract")
-    if result["status"] != "passed":
+    if result["status"] != "passed" and not accept_failed:
         raise NativeRejected("native child reported failure")
     return {"role": role, "child_id_sha256": hashlib.sha256(task.encode()).hexdigest(),
             "spawn_calls": 1, "native_completed": True, "result": result}
@@ -113,7 +113,7 @@ def own_rollout(session_root, thread_id):
     return matches[0]
 
 
-def dispatch(cwd, role, task, run_dir, codex="codex", session_root=None, timeout=600):
+def dispatch(cwd, role, task, run_dir, codex="codex", session_root=None, timeout=600, *, accept_failed=False):
     """Run one native child in an already-authorized public/synthetic workspace."""
     if not re.fullmatch(r"[a-z][a-z0-9_]{0,63}", role):
         raise NativeRejected("invalid native role")
@@ -162,9 +162,9 @@ def dispatch(cwd, role, task, run_dir, codex="codex", session_root=None, timeout
         if len(ids) != 1 or not any(x.get("type") == "turn.completed" for x in events):
             raise NativeRejected("native parent completion unconfirmed")
         sessions = session_root or Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex"))) / "sessions"
-        receipt = native_completion(rows(own_rollout(sessions, ids[0])), role)
+        receipt = native_completion(rows(own_rollout(sessions, ids[0])), role, accept_failed=accept_failed)
         state.update(receipt)
-        state["status"] = "SUCCEEDED"
+        state["status"] = "SUCCEEDED" if receipt["result"]["status"] == "passed" else "FAILED"
         state["parent_id_sha256"] = hashlib.sha256(ids[0].encode()).hexdigest()
         return state
     finally:

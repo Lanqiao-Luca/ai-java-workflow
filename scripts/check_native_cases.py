@@ -17,6 +17,10 @@ KIND = 'native_spring_workflow_case'
 OLD_KINDS = {'role_case', 'workflow_case', 'graph_case', 'spring_build_graph_case', 'docker_spring_graph_case'}
 NODES = {'requirements', 'implementation', 'verification', 'code_review', 'principle_review', 'delivery'}
 HEX = re.compile(r'[0-9a-f]{64}')
+# The published six-agent receipt describes these immutable pre-recovery sources.
+# Never relabel its hashes as proof that the current controller ran native models.
+HISTORICAL_SOURCES = {name: 'docs/native-baseline/' + name.split('/')[-1] + '.txt'
+                      for name in ('tools/native_agents.py', 'tools/native_flow.py')}
 
 
 def demand(condition, message):
@@ -131,7 +135,7 @@ def check_native_case(folder):
     expected_sources.update(n['workflow'] for n in nodes)
     demand(expected_sources <= set(sources), 'consumed source map incomplete')
     for name, value in sources.items():
-        demand(identity(value) == sha(local(ROOT, name)), 'consumed source drift')
+        demand(identity(value) == sha(local(ROOT, HISTORICAL_SOURCES.get(name, name))), 'consumed historical source drift')
     demand(sources['examples/' + case['case_id'] + '/run.py'] == sha(local(folder, 'run.py')), 'case runner differs from consumed source')
     stages = runtime.get('stages')
     demand(isinstance(stages, dict) and set(stages) == NODES, 'stage set')

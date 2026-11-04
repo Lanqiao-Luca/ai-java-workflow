@@ -26,7 +26,7 @@ def main():
         raise ValueError("manifest mismatch")
     if any(r["status"] != "reviewed_candidate" for r in rows):
         raise ValueError("unreviewed candidate entry")
-    if any(part.startswith(".") for n in actual for part in Path(n).parts):
+    if any(part.startswith(".") for n in actual if n != '.github/workflows/ci.yml' for part in Path(n).parts):
         raise ValueError("unexpected hidden file")
     links = 0
     for p in paths:

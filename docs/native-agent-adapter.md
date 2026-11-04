@@ -4,7 +4,7 @@
 
 ## 一次调用
 
-调用`dispatch(cwd, role, task, run_dir, codex="codex", session_root=None, timeout=600)`。`cwd`必须是已获授权且确认可以发送给模型的公开/独立虚构工程；`role`必须已在原生Agent目录注册。`run_dir`为工程外全新私有目录，不能复用旧运行结果。
+调用`dispatch(cwd, role, task, run_dir, codex="codex", session_root=None, timeout=600)`。恢复控制器可显式传 `accept_failed=True`，保留真实子任务明确失败的完成回执供上层核输出、候选和构建证据；默认仍拒绝失败。协议缺证或超时继续 UNKNOWN，不能用此参数变成可重放失败。`cwd`必须是已获授权且确认可以发送给模型的公开/独立虚构工程；`role`必须已在原生Agent目录注册。`run_dir`为工程外全新私有目录，不能复用旧运行结果。
 
 父会话只允许真实spawn、等待和读取原生Agent状态。子Agent使用全新上下文并消费自己的职责与方法，最终只返回`status`、`summary`、`outputs`的JSON；业务文件仍须由上层检查最终字节和必要功能验证，不能仅凭结构化回复报业务通过。
 
@@ -23,5 +23,7 @@
 超时/日志越界终止本次CLI进程组、保留私有状态为UNKNOWN，不自动重试。原生远端子Agent与它启动的外部进程是否停止仍需宿主查明，不能因CLI退出释放未知占用或重复有副作用的动作。已开始的提交/推送更不能自动重放。
 
 原始日志有界保存在`run_dir`和Codex自己的会话目录；公开项目仅纳入经审查的简化运行结果，不复制原始会话。此适配器本身不执行Git提交或推送；提交仍按使用者当前项目路由委派。
+
+新能力与历史实跑分别核证，见[恢复与 CI](native-recovery.md)；历史适配器与引擎原件见[基线说明](native-baseline/README.md)。
 
 返回：[项目入口](../README.md)。

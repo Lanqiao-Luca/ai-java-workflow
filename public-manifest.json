@@ -2,6 +2,11 @@
   "status": "public-release",
   "files": [
     {
+      "path": ".github/workflows/ci.yml",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "AGENTS.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -149,6 +154,26 @@
     {
       "path": "docs/native-agent-workflow-results.md",
       "origin": "newly_written_verified_results",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-baseline/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-baseline/native_agents.py.txt",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-baseline/native_flow.py.txt",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/native-recovery.md",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -1262,6 +1287,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/check_ci.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "scripts/check_docker_cases.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1283,6 +1313,11 @@
     },
     {
       "path": "scripts/check_spring_build_cases.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "scripts/check_spring_smoke.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1309,6 +1344,11 @@
     {
       "path": "scripts/run_graph.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "scripts/run_native_workflow.py",
+      "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
@@ -1597,6 +1637,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_native_recovery.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tools/docker/Dockerfile",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1678,6 +1723,11 @@
     },
     {
       "path": "tools/native_flow.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/native_recovery.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

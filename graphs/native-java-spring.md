@@ -10,6 +10,8 @@
 
 [原生Graph引擎](../tools/native_flow.py)直接消费这组定义，使用[门禁测试](../tests/test_native_flow.py)核依赖、白名单提升、候选冻结与失败阻断。引擎测试中的角色明确为mock，虽然实际创建了虚构Git worktree，也不能算模型或Spring执行。[完整真实案例](../examples/native-spring-workflow/README.md)另有六个原生上下文、双审查调用重叠和25项离线Spring测试证据；不把两类结果混算。
 
+可选择[恢复入口](../docs/native-recovery.md)，在失败证据确定且预算允许时交实现者整改，再重新验证与双审查；未知状态不重放。历史案例保持单轮实跑原义。
+
 [接入计划](../docs/native-agent-workflow-plan.md) · [最小原生适配器](../docs/native-agent-adapter.md) · [Graph目录](README.md)
 
 宿主许可前提：实测Codex 0.166会自动保存新执行目录的项目信任登记，必须获得明确平台写入授权。实例内角色配置不等于宿主零配置副作用；任务要求全局零写入时，当前原生后端应停止，不以其他身份或放宽沙箱替代。

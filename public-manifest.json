@@ -1722,6 +1722,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_goal_graph_runtime.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_loop_defects.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1838,6 +1843,11 @@
     },
     {
       "path": "tools/goal_graph.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/goal_graph_run.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

@@ -73,7 +73,10 @@ def observe(ledger, evidence_id, findings):
                    for k in ('key', 'summary', 'location', 'criterion')), 'bounded concrete finding fields required')
         key = json.dumps([evidence['kind'], item['key']], separators=(',', ':'))
         ident = 'F-' + hashlib.sha256(key.encode()).hexdigest()[:16]
-        demand(item['finding_id'] in (None, ident), 'finding identity changed')
+        if item['finding_id'] is not None:
+            demand(isinstance(item['finding_id'], str) and item['finding_id'] in result['findings'], 'unknown finding identity')
+            ident = item['finding_id']
+            demand(result['findings'][ident]['key'] == item['key'], 'finding semantic key changed')
         demand(ident not in observed, 'duplicate finding in report')
         observed.add(ident)
         if ident not in result['findings']:

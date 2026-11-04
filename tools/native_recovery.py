@@ -14,6 +14,7 @@ import time
 from tools.native_agents import NativeRejected
 from tools.native_flow import FlowRejected, candidate, candidate_evidence_gate, digest, snapshot
 from tools.loop_policy import Budget, convergence
+from tools import finding_ledger as findings
 
 
 DEPENDENCIES = {
@@ -36,6 +37,9 @@ class RecoveryRunner:
             raise FlowRejected('recovery supports only the declared six-stage Graph')
         if not flow.validate:
             raise FlowRejected('host validation required for recovery')
+        if ('findings-ledger.json' in flow.seed
+                or any('findings-ledger.json' in w['writes'] for w in flow.workflows.values())):
+            raise FlowRejected('finding ledger is controller-owned')
         self.flow = flow
         self.policy = {'max_rounds': max_rounds, 'budget_seconds': budget_seconds, 'context_id': context_id}
         self.pause_after = pause_after
@@ -53,6 +57,12 @@ class RecoveryRunner:
         return max(0, self.state['deadline'] - self._now())
 
     def _checkpoint(self, status='READY'):
+        if 'finding_ledger' in self.state:
+            path = self.flow.source / 'findings-ledger.json'
+            content = json.dumps(self.state['finding_ledger'], ensure_ascii=False, indent=2) + '\n'
+            if not path.exists() or path.read_text() != content:
+                path.write_text(content)
+                self._commit('Record candidate-bound finding lifecycle')
         self.state['status'] = status
         self.state['checkpoint'] = {'head': self.flow._git(self.flow.source, 'rev-parse', 'HEAD'),
                                     'snapshot': snapshot(self.flow.source)}
@@ -69,7 +79,7 @@ class RecoveryRunner:
             for key in ('catalog_id', 'seed_id', 'graph_id'):
                 if saved.get(key) != self.state[key]:
                     raise FlowRejected('resume catalog, seed or Graph drift')
-            if saved.get('recovery_version') != 1 or saved.get('policy') != self.policy:
+            if saved.get('recovery_version') != 2 or saved.get('policy') != self.policy:
                 raise FlowRejected('resume policy or execution context changed')
             if saved.get('status') not in {'READY', 'PAUSED', 'SUCCEEDED'}:
                 raise FlowRejected('only quiescent checkpoints can resume; in-flight or unknown work cannot replay')
@@ -88,10 +98,17 @@ class RecoveryRunner:
         f._git(f.source, 'init')
         self._commit('Initialize independent synthetic recovery seed')
         now = time.time()
-        self.state.update(recovery_version=1, policy=self.policy, started_at=now,
+        self.state.update(recovery_version=2, policy=self.policy, started_at=now,
                           deadline=now + self.policy['budget_seconds'], last_at=now,
                           round=1, attempts=0, history=[], seen_candidates=[], repair_pending=False)
+        self.state['finding_ledger'] = findings.create(self._context(f.source))
         self._checkpoint()
+
+    def _context(self, workspace):
+        source = snapshot(workspace)
+        required = {n: source[n]['sha256'] for n in ('task.md', 'requirements.md') if n in source}
+        return {'candidate_id': digest(candidate(workspace)), 'requirements_id': digest(required),
+                'rules_id': self.state['catalog_id']}
 
     def _commit(self, message):
         # The source is an independently initialized private fixture, never the user's repo.
@@ -110,6 +127,12 @@ class RecoveryRunner:
                 'Fix the concrete failures in production source only. Preserve POM, every existing test and '
                 'acceptance criteria. Write implementation.md explaining each fix and remaining limits. '
                 'Do not claim closure: independent verification and both reviews follow.')
+            workflow['writes'] = workflow['writes'] + ['repair-actions.json']
+            workflow['task'] += (
+                ' Read findings-ledger.json. Also write repair-actions.json with exactly candidate_id '
+                '(the SHA256 of the current sorted app/pom.xml+app/src path-to-SHA256 JSON map) and '
+                'repaired_findings (IDs you actually addressed). Preserve original finding keys and criteria. '
+                'These are author claims only. Do not edit the ledger.')
         elif ident == 'verification' and self.state['round'] > 1:
             workflow['writes'] = [n for n in workflow['writes'] if not n.startswith('app/src/')]
             workflow['task'] = (
@@ -117,7 +140,86 @@ class RecoveryRunner:
                 'fixed, author and verifier tests; every test is frozen. Run python3 -B verify.py --offline '
                 'and inspect the fresh .build/validation.json. Write verification.md with actual failures, '
                 'coverage, candidate_id and limits. Return failed if any issue remains; do not weaken tests.')
+        if ident in findings.CHECKS:
+            name = ident.replace('_', '-') + '-findings.json'
+            workflow['writes'] = workflow['writes'] + [name]
+            workflow['task'] += (
+                ' Read findings-ledger.json and independently recheck EVERY unresolved finding. Also write '
+                + name + ' with exactly candidate_id, checked_findings (all unresolved IDs you rechecked), '
+                'and findings (concrete remaining/new issues). Each finding has exactly finding_id '
+                '(existing ID or null for new), key (stable semantic key), summary, location, criterion. '
+                'Preserve existing keys/locations/criteria. Return failed and nonempty findings for any '
+                'remaining issue; passed requires empty findings. The candidate_id must match the current '
+                'app/POM+src digest. Do not edit the ledger. Stage success alone does not close findings.')
         return workflow
+
+    def _report(self, workspace, name):
+        path = workspace / name
+        if path.is_symlink() or not path.is_file() or path.stat().st_size > 128 * 1024:
+            raise FlowRejected('missing or oversized finding report')
+        value = json.loads(path.read_text())
+        if not isinstance(value, dict):
+            raise FlowRejected('finding report must be an object')
+        return value
+
+    def _record_checks(self, ready, workspaces, results):
+        ledger = self.state['finding_ledger']
+        for node in ready:
+            ident = node['id']
+            if ident not in findings.CHECKS:
+                continue
+            workspace, result = workspaces[ident], results[ident]
+            ledger = findings.invalidate(ledger, self._context(workspace))
+            report = self._report(workspace, ident.replace('_', '-') + '-findings.json')
+            if (set(report) != {'candidate_id', 'checked_findings', 'findings'}
+                    or report['candidate_id'] != result['candidate_id']
+                    or not isinstance(report['findings'], list)):
+                raise FlowRejected('finding report identity or contract mismatch')
+            findings.names(report['checked_findings'])
+            # Siblings consume the same input ledger, not the findings a sibling just produced.
+            input_ledger = json.loads((workspace / 'findings-ledger.json').read_text())
+            expected = findings.unresolved(input_ledger)
+            if set(report['checked_findings']) != set(expected):
+                raise FlowRejected('unresolved findings were not explicitly rechecked')
+            failed = result['status'] == 'FAILED'
+            if failed != bool(report['findings']):
+                raise FlowRejected('finding report and actual stage result disagree')
+            ledger = findings.add_evidence(ledger, {
+                'id': result['execution_id'], 'kind': ident, 'actor': result['execution_id'],
+                'context': self._context(workspace), 'artifact_sha256': digest({
+                    'outputs': result['outputs_sha256'], 'validation': result['validation']}),
+                'status': 'FAILED' if failed else 'PASSED', 'depends_on': sorted(findings.BINDINGS),
+                'checked_findings': report['checked_findings']})
+            if failed:
+                ledger = findings.observe(ledger, result['execution_id'], report['findings'])
+        self.state['finding_ledger'] = ledger
+
+    def _record_repair(self, workspace, result):
+        ledger = findings.invalidate(self.state['finding_ledger'], self._context(workspace))
+        report = self._report(workspace, 'repair-actions.json')
+        if (set(report) != {'candidate_id', 'repaired_findings'}
+                or report['candidate_id'] != result['candidate_id']):
+            raise FlowRejected('repair report identity or contract mismatch')
+        ledger = findings.add_evidence(ledger, {
+            'id': result['execution_id'], 'kind': 'repair', 'actor': result['execution_id'],
+            'context': self._context(workspace), 'artifact_sha256': digest(result['outputs_sha256']),
+            'status': 'PASSED', 'depends_on': sorted(findings.BINDINGS),
+            'checked_findings': report['repaired_findings']})
+        self.state['finding_ledger'] = findings.mark_repaired(ledger, report['repaired_findings'], result['execution_id'])
+
+    def _close_rechecked(self):
+        ledger = self.state['finding_ledger']
+        for ident in findings.unresolved(ledger):
+            if ledger['findings'][ident]['status'] != 'REPAIRED':
+                continue
+            receipts = {}
+            for key, receipt in ledger['evidence'].items():
+                if (receipt['kind'] in findings.CHECKS and receipt['status'] == 'PASSED'
+                        and findings.current(ledger, receipt) and ident in receipt['checked_findings']):
+                    receipts[receipt['kind']] = key
+            if set(receipts) == findings.CHECKS:
+                ledger = findings.close(ledger, ident, list(receipts.values()))
+        self.state['finding_ledger'] = ledger
 
     def _promote(self, workspace, workflow, result, *, failed_tests_only=False):
         actual = snapshot(workspace)
@@ -257,6 +359,9 @@ class RecoveryRunner:
                         break
                     done = {ident for ident, result in self.state['stages'].items() if result['status'] == 'SUCCEEDED'}
                     ready = [n for n in f.graph['nodes'] if n['id'] not in done and set(n['depends_on']) <= done]
+                    if (not ready or any(n['id'] == 'delivery' for n in ready)) and findings.unresolved(self.state['finding_ledger']):
+                        self._checkpoint('FINDINGS_OPEN')
+                        break
                     if not ready:
                         candidate_evidence_gate(f.source, [])
                         self.state['candidate_id'] = digest(candidate(f.source))
@@ -272,6 +377,11 @@ class RecoveryRunner:
                     if self._remaining() <= 0:
                         self._checkpoint('BUDGET_EXHAUSTED')
                         break
+                    try:
+                        self._record_checks(ready, workspaces, results)
+                    except (FlowRejected, ValueError, KeyError, TypeError):
+                        self._checkpoint('FAILED')
+                        break
                     if 'FAILED' in statuses:
                         if not self._recover(ready, workspaces, attempts, results):
                             break
@@ -286,7 +396,14 @@ class RecoveryRunner:
                             self._checkpoint('NO_PROGRESS')
                             break
                         self.state['seen_candidates'].append(current)
+                        try:
+                            self._record_repair(workspaces['implementation'], results['implementation'])
+                        except (FlowRejected, ValueError, KeyError, TypeError):
+                            self._checkpoint('FAILED')
+                            break
                         self.state['repair_pending'] = False
+                    self.state['finding_ledger'] = findings.invalidate(self.state['finding_ledger'], self._context(f.source))
+                    self._close_rechecked()
                     self._commit('Accept synthetic stages ' + ', '.join(n['id'] for n in ready))
                     self._checkpoint()
                     if self.pause_after in {n['id'] for n in ready}:

@@ -106,6 +106,13 @@ class FindingTests(unittest.TestCase):
         self.assertEqual(list(self.ledger['findings']), [ident])
         self.assertEqual(self.ledger['findings'][ident]['observations'], ['failed', 'failed-again'])
 
+    def test_other_reviewer_can_confirm_same_original_finding(self):
+        ident = self.open_issue()
+        self.ledger = add_evidence(self.ledger, self.receipt('verification-failed', 'verification', status='FAILED'))
+        self.ledger = observe(self.ledger, 'verification-failed', [{**self.item, 'finding_id': ident}])
+        self.assertEqual(list(self.ledger['findings']), [ident])
+        self.assertEqual(self.ledger['findings'][ident]['origin_stage'], 'code_review')
+
     def test_finding_identity_cannot_be_reused_for_different_issue(self):
         self.open_issue()
         before = deepcopy(self.ledger)

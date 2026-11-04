@@ -73,7 +73,28 @@ class RecoveryTests(unittest.TestCase):
             (workspace / 'code-review.md').write_text('candidate_id: stale\nFinding.')
         bad_code = (workspace / 'app/src/main/Code.java').exists() and (workspace / 'app/src/main/Code.java').read_text() == 'bad'
         failed = ((ident == 'verification' and self.mode in {'verification', 'no_progress', 'always_fail', 'mutate_test'} and bad_code)
-                  or ident == 'code_review' and self.mode in {'review', 'stale_review'} and bad_code)
+                  or ident == 'code_review' and self.mode in {'review', 'stale_review', 'missing_recheck', 'omit_repair_id', 'stale_report', 'multiple'} and bad_code)
+        if ident == 'verification' and self.validate(workspace, None, None)['status'] == 'FAILED':
+            failed = True
+        ledger = json.loads((workspace / 'findings-ledger.json').read_text())
+        from tools.finding_ledger import unresolved
+        ids = unresolved(ledger)
+        if repair:
+            (workspace / 'repair-actions.json').write_text(json.dumps({
+                'candidate_id': digest(candidate(workspace)),
+                'repaired_findings': [] if self.mode == 'omit_repair_id' else ids}))
+        if ident in {'verification', 'code_review', 'principle_review'}:
+            existing = next((f for f in ledger['findings'].values() if f['origin_stage'] == ident), None)
+            item = {'finding_id': existing['id'] if existing else None, 'key': 'normalize-contract',
+                    'summary': 'Concrete synthetic failure', 'location': 'Code.normalize', 'criterion': 'Normalize accepted input'}
+            items = [item] if failed else []
+            if self.mode == 'multiple' and failed:
+                items.append({**item, 'finding_id': None, 'key': 'reject-null', 'location': 'Code.rejectNull', 'criterion': 'Reject null input'})
+            (workspace / (ident.replace('_', '-') + '-findings.json')).write_text(json.dumps({
+                'candidate_id': 'stale' if self.mode == 'stale_report' else digest(candidate(workspace)),
+                'checked_findings': [] if self.mode == 'missing_recheck' else ids, 'findings': items}))
+        if self.mode == 'mutate_ledger' and ident == 'code_review':
+            (workspace / 'findings-ledger.json').write_text('{}')
         return {'status': 'FAILED' if failed else 'SUCCEEDED', 'native_completed': True,
                 'result': {'status': 'failed' if failed else 'passed', 'summary': 'Concrete synthetic failure' if failed else 'Controlled success',
                            'outputs': writes}}
@@ -104,6 +125,47 @@ class RecoveryTests(unittest.TestCase):
         self.assertTrue((flow.root / 'instances/attempt-3-verification/verification.md').exists())
         for ident in ['code_review', 'principle_review', 'delivery']:
             self.assertEqual(result['stages'][ident]['candidate_id'], result['candidate_id'])
+        ledger = result['finding_ledger']
+        self.assertEqual(len(ledger['findings']), 1)
+        issue = next(iter(ledger['findings'].values()))
+        self.assertEqual(issue['status'], 'CLOSED')
+        self.assertEqual(len(issue['closure_evidence']), 3)
+        self.assertEqual(ledger['evidence'][issue['observations'][0]]['previous_status'], 'FAILED')
+        self.assertEqual(json.loads((flow.source / 'findings-ledger.json').read_text()), ledger)
+
+    def test_missing_explicit_recheck_blocks_delivery(self):
+        self.mode = 'missing_recheck'
+        result = self.run_flow()
+        self.assertEqual(result['status'], 'FAILED')
+        self.assertNotIn(('delivery', False), self.calls)
+        self.assertTrue(any(f['status'] != 'CLOSED' for f in result['finding_ledger']['findings'].values()))
+
+    def test_author_omitting_repaired_ids_blocks_delivery(self):
+        self.mode = 'omit_repair_id'
+        result = self.run_flow()
+        self.assertEqual(result['status'], 'FAILED')
+        self.assertNotIn(('delivery', False), self.calls)
+
+    def test_stale_structured_finding_report_cannot_trigger_repair(self):
+        self.mode = 'stale_report'
+        result = self.run_flow()
+        self.assertEqual(result['status'], 'FAILED')
+        self.assertNotIn(('implementation', True), self.calls)
+
+    def test_model_cannot_rewrite_controller_owned_ledger(self):
+        self.mode = 'mutate_ledger'
+        result = self.run_flow()
+        self.assertEqual(result['status'], 'FAILED')
+        self.assertNotIn(('delivery', False), self.calls)
+
+    def test_multiple_findings_each_require_three_closure_receipts(self):
+        self.mode = 'multiple'
+        result = self.run_flow()
+        self.assertEqual(result['status'], 'SUCCEEDED')
+        self.assertEqual(len(result['finding_ledger']['findings']), 2)
+        for finding in result['finding_ledger']['findings'].values():
+            self.assertEqual(finding['status'], 'CLOSED')
+            self.assertEqual(len(finding['closure_evidence']), 3)
 
     def test_review_finding_invalidates_both_reviews_and_validation(self):
         self.mode = 'review'
@@ -191,10 +253,12 @@ class RecoveryTests(unittest.TestCase):
         first = self.run_flow(pause_after='verification')
         self.assertEqual(first['status'], 'PAUSED')
         self.assertEqual(first['round'], 2)
+        self.assertEqual(next(iter(first['finding_ledger']['findings'].values()))['status'], 'REPAIRED')
         second = self.run_flow(self.flow(resume=True))
         self.assertEqual(second['status'], 'SUCCEEDED')
         self.assertEqual(second['round'], 2)
         self.assertEqual(self.calls.count(('requirements', False)), 1)
+        self.assertEqual(next(iter(second['finding_ledger']['findings'].values()))['status'], 'CLOSED')
 
     def test_checkpoint_source_drift_is_rejected(self):
         self.run_flow(pause_after='implementation')

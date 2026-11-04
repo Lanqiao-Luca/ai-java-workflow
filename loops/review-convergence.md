@@ -22,7 +22,7 @@
 
 本方法要求调用方记录 DONE、NEXT_ROUND、HOLD 或 STOP，以及对应理由、残余和接收方。离线参考函数仅返回状态字符串，理由及真实交接记录由调用方保存。Graph 仍负责整体目标与跨 Workflow 依赖；Loop 不直接启动 Agent、Skill 或工具，不另造问题池。调用方保存真实计时和计数；每个 Workflow/Agent 对其返回证据负责。
 
-[原生 Workflow](../workflows/native-java-spring.md)当前失败仍停止，采用本方法需由当前调用方显式接续，本批次没有新增自动整改、恢复入口或后台调度。
+[原生 Workflow](../workflows/native-java-spring.md)可通过[恢复控制器](../docs/native-recovery.md)对确认的失败有界整改；[发现账本](../docs/finding-ledger.md)保留原 ID、修复回执、独立复核与关闭证据。旧离线案例仍按其原验证范围解释，未知动作不重放。
 
 ## 验收方法
 

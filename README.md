@@ -4,7 +4,7 @@
 
 # ai-java-workflow
 
-**面向 Java / Spring 业务开发的 AI 研发工作流。**
+**面向 Java / Spring Boot 业务开发的 AI 研发工作流（AI for Java / AI for Spring）。** 提供从需求、实现、测试到审查与交付的方法、工具和虚构可运行案例；本项目不是 Spring AI 框架实现或教程。
 
 让 AI 从理解需求开始，沿着实现、验证、审查与交付推进；每一步都有输入、产物和可核对的验收依据。
 

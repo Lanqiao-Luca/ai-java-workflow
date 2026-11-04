@@ -1,5 +1,7 @@
 # Graphs
 
+[通用目标 Graph 小步计划](../docs/graph-delivery-plan.md)按声明、调度、证据门禁及 Loop 接线逐项验证交付；未实现项不据本计划宣称可运行。[Loop 状态](../docs/loop-status.md)保留相关未迁/未验事项。
+
 - [原生Java/Spring Graph](native-java-spring.md)：六阶段原生上下文、依赖门禁和双审查并发；[完整Spring案例](../examples/native-spring-workflow/README.md)与[结果](../docs/native-agent-workflow-results.md)另列真实调用和测试。
 
 Graph组织多个已声明Workflow实例的依赖、并发额度和汇合。下方三条命令型Graph执行已声明argv；只有上方显式原生支路调用模型角色，不能从目录或JSON存在推定其他定义也支持原生调度。

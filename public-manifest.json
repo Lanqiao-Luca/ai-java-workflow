@@ -127,6 +127,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/graph-delivery-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/java-spring-workflow-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -138,6 +143,11 @@
     },
     {
       "path": "docs/loop-delivery-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/loop-status.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

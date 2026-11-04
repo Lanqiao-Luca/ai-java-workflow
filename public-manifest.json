@@ -47,6 +47,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "agents/design-author.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "agents/design-reviewer.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "agents/diagnostician.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -68,6 +78,11 @@
     },
     {
       "path": "agents/java-build-executor.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "agents/module-planner.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -313,6 +328,11 @@
     },
     {
       "path": "docs/public-baseline/3974f064d3c882c6b3f443f7d8b1015149c121d8f99ecca6d119a29e27db2908.txt",
+      "origin": "existing_public_baseline",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "docs/public-baseline/48a01a70932639a0500b64d9d23bd6d8f5d0f5bb62af3560de90ee4bc0e35bb3.txt",
       "origin": "existing_public_baseline",
       "status": "reviewed_candidate"
     },
@@ -1947,6 +1967,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "skills/module-planning/SKILL.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/module-planning/templates/plan.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "skills/principle-review/SKILL.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2007,6 +2037,26 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "skills/technical-design-review/SKILL.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/technical-design-review/templates/review.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/technical-design/SKILL.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "skills/technical-design/templates/design.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "skills/verification/SKILL.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2053,6 +2103,16 @@
     },
     {
       "path": "standards/delivery-planning.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "standards/design-inputs.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "standards/design-review.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2107,6 +2167,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/module-planning.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/principles.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2138,6 +2203,11 @@
     },
     {
       "path": "standards/sql-review.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "standards/technical-design.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2213,6 +2283,11 @@
     },
     {
       "path": "tests/test_loop_inspection.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_module_plan.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2362,6 +2437,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tools/module_plan.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tools/native_agents.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2417,6 +2497,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "workflows/design-to-modules.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "workflows/docker-spring-integration.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2448,6 +2533,51 @@
     },
     {
       "path": "workflows/examples/bookmark-tags.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/contract.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/design-v1.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/design-v2.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/plan.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/requirements.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/result.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/review.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/design-to-modules/run.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2517,12 +2647,27 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "workflows/technical-design.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "workflows/templates/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
       "path": "workflows/templates/execution-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/templates/module-planning.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/templates/technical-design.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     }

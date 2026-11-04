@@ -1,0 +1,24 @@
+{
+  "design_id": "REPLACE_DESIGN_ID",
+  "design_revision": 1,
+  "design_sha256": "REPLACE_WITH_ACTUAL_SHA256",
+  "modules": [
+    {
+      "id": "module-one",
+      "repo": "REPLACE_REPOSITORY_ID",
+      "baseline_sha256": "REPLACE_WITH_ACTUAL_BASELINE_SHA256",
+      "purpose": "填写本模块结果责任",
+      "requirements": [
+        "REPLACE_REQUIREMENT_ID"
+      ],
+      "writes": [
+        "src/Replace.java"
+      ],
+      "depends_on": [],
+      "acceptance": [
+        "填写可观察验收"
+      ]
+    }
+  ],
+  "shared_files": []
+}

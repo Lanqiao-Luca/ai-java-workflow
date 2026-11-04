@@ -22,6 +22,12 @@
     "agents/delivery-planner.md": {
       "mode": "current"
     },
+    "agents/design-author.md": {
+      "mode": "current"
+    },
+    "agents/design-reviewer.md": {
+      "mode": "current"
+    },
     "agents/diagnostician.md": {
       "mode": "current"
     },
@@ -35,6 +41,9 @@
       "mode": "current"
     },
     "agents/java-build-executor.md": {
+      "mode": "current"
+    },
+    "agents/module-planner.md": {
       "mode": "current"
     },
     "agents/principle-reviewer.md": {
@@ -1010,6 +1019,9 @@
     "skills/java-spring-check/SKILL.md": {
       "mode": "current"
     },
+    "skills/module-planning/SKILL.md": {
+      "mode": "current"
+    },
     "skills/principle-review/SKILL.md": {
       "mode": "current"
     },
@@ -1062,6 +1074,18 @@
     "skills/task-execution/SKILL.md": {
       "mode": "current"
     },
+    "skills/technical-design-review/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/technical-design-review/templates/review.md": {
+      "mode": "current"
+    },
+    "skills/technical-design/SKILL.md": {
+      "mode": "current"
+    },
+    "skills/technical-design/templates/design.md": {
+      "mode": "current"
+    },
     "skills/verification/SKILL.md": {
       "mode": "current"
     },
@@ -1096,6 +1120,12 @@
     "standards/delivery-planning.md": {
       "mode": "current"
     },
+    "standards/design-inputs.md": {
+      "mode": "current"
+    },
+    "standards/design-review.md": {
+      "mode": "current"
+    },
     "standards/diagnosis.md": {
       "mode": "current"
     },
@@ -1126,6 +1156,9 @@
     "standards/layering.md": {
       "mode": "current"
     },
+    "standards/module-planning.md": {
+      "mode": "current"
+    },
     "standards/principles.md": {
       "mode": "current"
     },
@@ -1145,6 +1178,9 @@
       "mode": "current"
     },
     "standards/sql-review.md": {
+      "mode": "current"
+    },
+    "standards/technical-design.md": {
       "mode": "current"
     },
     "standards/verification.md": {
@@ -1171,6 +1207,9 @@
     "workflows/defect-completion.md": {
       "mode": "current"
     },
+    "workflows/design-to-modules.md": {
+      "mode": "current"
+    },
     "workflows/docker-spring.md": {
       "mode": "current"
     },
@@ -1178,11 +1217,7 @@
       "mode": "current"
     },
     "workflows/examples/README.md": {
-      "mode": "preserved",
-      "sha256": "48a01a70932639a0500b64d9d23bd6d8f5d0f5bb62af3560de90ee4bc0e35bb3",
-      "purpose": "保全《Workflow 执行文件与案例》的已发布原文，供定位来源、复核原结论与当时证据。",
-      "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
-      "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+      "mode": "current"
     },
     "workflows/examples/bookmark-tags.md": {
       "mode": "preserved",
@@ -1190,6 +1225,21 @@
       "purpose": "保全《书签标签：Workflow 执行文件》的已发布原文，供定位来源、复核原结论与当时证据。",
       "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
       "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "workflows/examples/design-to-modules/README.md": {
+      "mode": "current"
+    },
+    "workflows/examples/design-to-modules/design-v1.md": {
+      "mode": "current"
+    },
+    "workflows/examples/design-to-modules/design-v2.md": {
+      "mode": "current"
+    },
+    "workflows/examples/design-to-modules/requirements.md": {
+      "mode": "current"
+    },
+    "workflows/examples/design-to-modules/result.md": {
+      "mode": "current"
     },
     "workflows/java-spring-development.md": {
       "mode": "current"
@@ -1203,10 +1253,19 @@
     "workflows/spring-build.md": {
       "mode": "current"
     },
+    "workflows/technical-design.md": {
+      "mode": "current"
+    },
     "workflows/templates/README.md": {
       "mode": "current"
     },
     "workflows/templates/execution-plan.md": {
+      "mode": "current"
+    },
+    "workflows/templates/module-planning.md": {
+      "mode": "current"
+    },
+    "workflows/templates/technical-design.md": {
       "mode": "current"
     }
   }

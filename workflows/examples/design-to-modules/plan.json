@@ -1,0 +1,90 @@
+{
+  "design_id": "demo-bookmark-design",
+  "design_revision": 2,
+  "design_sha256": "3a0f66e6042dd6135022d4e37ad5456acac8858b5e3ed1caba825b1ef98e6131",
+  "modules": [
+    {
+      "id": "value-contract",
+      "repo": "demo-bookmarks",
+      "baseline_sha256": "9d4fb2923ca56c9edc3fa9f51dc2cf276d0cc69826168d0343a8ffad87cdc7d9",
+      "purpose": "维护共享值对象与稳定字段。",
+      "requirements": [
+        "R1"
+      ],
+      "writes": [
+        "src/demo/BookmarkValue.java"
+      ],
+      "depends_on": [],
+      "acceptance": [
+        "ID、标题和标签语义保持不变。"
+      ]
+    },
+    {
+      "id": "rename",
+      "repo": "demo-bookmarks",
+      "baseline_sha256": "9d4fb2923ca56c9edc3fa9f51dc2cf276d0cc69826168d0343a8ffad87cdc7d9",
+      "purpose": "实现仅标题变更。",
+      "requirements": [
+        "R2"
+      ],
+      "writes": [
+        "src/demo/RenameService.java"
+      ],
+      "depends_on": [
+        "value-contract"
+      ],
+      "acceptance": [
+        "改标题后标签和ID保持，未找到返回NOT_FOUND。"
+      ]
+    },
+    {
+      "id": "tags",
+      "repo": "demo-bookmarks",
+      "baseline_sha256": "9d4fb2923ca56c9edc3fa9f51dc2cf276d0cc69826168d0343a8ffad87cdc7d9",
+      "purpose": "在同一一致性边界校验并提交标签。",
+      "requirements": [
+        "R3",
+        "R4"
+      ],
+      "writes": [
+        "src/demo/TagService.java"
+      ],
+      "depends_on": [
+        "value-contract"
+      ],
+      "acceptance": [
+        "空白项整次拒绝且原状态不变；成功只改标签。"
+      ]
+    },
+    {
+      "id": "integration",
+      "repo": "demo-bookmarks",
+      "baseline_sha256": "9d4fb2923ca56c9edc3fa9f51dc2cf276d0cc69826168d0343a8ffad87cdc7d9",
+      "purpose": "验证两路径的成功、拒绝和保持项。",
+      "requirements": [
+        "R5"
+      ],
+      "writes": [
+        "tests/demo/BookmarkContractTest.java"
+      ],
+      "depends_on": [
+        "rename",
+        "tags"
+      ],
+      "acceptance": [
+        "覆盖R1-R4的成功、拒绝及旧字段保持。"
+      ]
+    }
+  ],
+  "shared_files": [
+    {
+      "repo": "demo-bookmarks",
+      "path": "src/demo/BookmarkValue.java",
+      "owner": "value-contract",
+      "consumers": [
+        "rename",
+        "tags"
+      ]
+    }
+  ]
+}

@@ -19,6 +19,9 @@
 - [证据诊断](evidence-diagnosis/SKILL.md)
 - [查询审查](sql-review/SKILL.md)
 - [状态与交付规划](delivery-planning/SKILL.md)
+- [技术方案编制](technical-design/SKILL.md)：从准入输入生成实质设计和保持/验收映射。
+- [设计专业复核](technical-design-review/SKILL.md)：冻结候选、真实覆盖、反例与定向复核。
+- [模块实施规划](module-planning/SKILL.md)：单一设计身份、唯一主责与写者、无环依赖；结构工具不签实施就绪。
 - [文档维护](document-maintenance/SKILL.md)：创建和更新前核目的、对象、差异、属性与原件保护。
 - [文档审验](document-review/SKILL.md)
 

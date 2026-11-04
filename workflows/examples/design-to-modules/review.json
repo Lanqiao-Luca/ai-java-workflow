@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "execution_mode": "author_constructed_walkthrough",
+  "independent_context": false,
+  "reviewed_sha256": "9a0517e7feda726f9044bad9a3ff9d7b5cebc15d3518ebafd4d4d7afca95c045",
+  "finding": {
+    "id": "DESIGN-001",
+    "requirement": "R3",
+    "blocking": true,
+    "counterexample": "先写入有效标签再遇空白项会留下部分状态。",
+    "closure_check": "写前完成完整校验，拒绝后状态未变；实际代码断言仍须运行。"
+  },
+  "revision_sha256": "3a0f66e6042dd6135022d4e37ad5456acac8858b5e3ed1caba825b1ef98e6131",
+  "state": "addressed_in_design_only",
+  "independent_acceptance": "NOT_RUN",
+  "implementation": "NOT_RUN"
+}

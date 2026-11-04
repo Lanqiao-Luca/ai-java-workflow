@@ -16,6 +16,9 @@ Brain 只恢复目标、项目、授权和本轮变化，再将任务交给责�
 | 未知失败原因 | [诊断者](../agents/diagnostician.md) | 核合法证据与反证，缺事实不补猜测 |
 | 行为验证、代码、语义或查询风险审查 | [验证者](../agents/verifier.md)、[代码审查者](../agents/code-reviewer.md)、[语义审查者](../agents/semantic-reviewer.md)、[查询审查者](../agents/query-reviewer.md) | 按问题选择专项责任，给定 SQL 审查不等于执行 SQL 或 DDL 获权 |
 | 范围、目的、保留和完成声明 | [原则审查者](../agents/principle-reviewer.md) | 核同候选证据，不替代功能或业务验收 |
+| 编制或修订技术方案 | [方案作者](../agents/design-author.md) | 经设计 Skill 核输入、当前能力、保持项与实质方案；需要多阶段组织时沿协调者进入 Workflow |
+| 对冻结设计作专业复核 | [设计复核者](../agents/design-reviewer.md) | 经复核 Skill 核覆盖、反例与真实上下文，返回候选绑定发现 |
+| 从当前设计形成模块包 | [模块规划者](../agents/module-planner.md) | 经规划 Skill 分配需求/写者与依赖，工具只核结构，实施准入另核 |
 | 创建、更新本地文档或维护模板 | [文档维护者](../agents/document-maintainer.md) | 经文档维护 Skill 核目的、适用、原件和实际写入；多阶段任务沿原协调者组织 |
 | 说明与实际能力一致 | [文档审查者](../agents/document-reviewer.md) | 核使用说明、来源和真实状态 |
 | 只需交付顺序、残余与恢复计划 | [交付规划者](../agents/delivery-planner.md) | 规划，不代发布或部署；需要实际组织执行则交任务协调者 |

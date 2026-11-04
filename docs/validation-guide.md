@@ -39,6 +39,10 @@ python3 -B scripts/check_loop_cases.py
 
 `python3 -B scripts/check_ci.py` 执行便携回归，包括受控原生协议、候选门禁与恢复/续跑。它与八项离线检查均进入 GitHub CI；另有 JDK 17 的实际公开 Spring 候选构建任务。具体入口、许可、检查点和未验边界见[恢复与 CI](native-recovery.md)。
 
+## 技术设计到模块准备
+
+责任 Agent 可在当前授权范围运行 `python3 -B workflows/examples/design-to-modules/run.py`，读取独立虚构设计/合同并实际核版本绑定、一个有效计划和四类拒绝。`python3 -B tools/module_plan.py --contract <独立设计合同.json> --plan <当前模块计划.json>` 只校验声明，成功返回 STRUCTURE_VALID，不代设计语义、真实仓库基线或实施许可。具体格式与未验范围见[案例](../workflows/examples/design-to-modules/README.md)。模块回归已进入便携 CI，不调用模型、Java 或外部服务。
+
 ## 按模式运行与核证
 
 目标 Graph 的三条虚构路径及跨进程暂停/恢复由便携 CI 实际验证：

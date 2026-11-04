@@ -24,6 +24,8 @@
 4. 通过 Skill 选择支持当前任务的工具或按合同手动组织执行。Graph 组织 Loop/Workflow，Loop 组织多轮 Workflow，Workflow 将阶段交给执行 Agent；这些内部组合不回 Brain 逐层调用。
 5. 当前协调 Agent 负责总体状态，阶段 Agent 仅返回局部产物；阶段 Agent 不反向启动同一总体任务，防止递归。候选改变只复验相交部分，结果未知先核状态。
 
+设计编制、专业复核和模块准备分别交[方案作者](design-author.md)、[设计复核者](design-reviewer.md)和[模块规划者](module-planner.md)；实际输入缺失时保留准备/阻塞状态，不凭结构检查提前派实现。
+
 文档创建和维护阶段交[文档维护者](document-maintainer.md)，需要审验时交文档审查者；不由协调者跳过 Skill 直接消费文档原子。
 
 ## 输出与验收

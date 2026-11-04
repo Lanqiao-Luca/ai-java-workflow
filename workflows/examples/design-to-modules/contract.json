@@ -1,0 +1,27 @@
+{
+  "design_id": "demo-bookmark-design",
+  "revision": 2,
+  "sha256": "3a0f66e6042dd6135022d4e37ad5456acac8858b5e3ed1caba825b1ef98e6131",
+  "active_requirements": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+  ],
+  "repositories": [
+    {
+      "id": "demo-bookmarks",
+      "baseline_sha256": "9d4fb2923ca56c9edc3fa9f51dc2cf276d0cc69826168d0343a8ffad87cdc7d9"
+    }
+  ],
+  "cohesion_groups": [
+    {
+      "id": "atomic-tag-update",
+      "requirements": [
+        "R3",
+        "R4"
+      ]
+    }
+  ]
+}

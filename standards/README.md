@@ -6,6 +6,11 @@
 
 独立维护方法和验收判据，与 [Tools](../tools/README.md) 平级，由 Skill 组合采用。按当前问题选择，不要求每轮全量加载。
 
+- [设计输入与来源准入](design-inputs.md)
+- [技术方案构造](technical-design.md)
+- [设计专业复核](design-review.md)
+- [设计到模块规划](module-planning.md)
+
 - [文档目的与适用对象 PUR01/PUR02](document-purpose.md)
 - [原子性质、范围与维护身份](atom-properties.md)
 - [按需加载与导航](progressive-loading.md)

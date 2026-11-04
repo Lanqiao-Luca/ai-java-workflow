@@ -28,8 +28,8 @@
 | 方法族 | 公开对应与当前结论 | 仍未完整纳入的部分 |
 | --- | --- | --- |
 | 分层组装 | [分层合同](../standards/layering.md)已有责任、单源与资源区分 | 私人来源中的全部治理与登记协议未逐项迁入；当前用户确认的 Brain→Agent、Tools 平级模型优先 |
-| 需求准入与验收 | [需求方法](../standards/requirements.md)已有基本澄清 | 决策卡、多种产品输出模式与完整技术方案 author/review 合同尚缺独立公开适配 |
-| 最小实现、旧行为与共享规则 | [实现基线](../standards/implementation-baseline.md)、[行为保留](../standards/behavior-preservation.md)、[共享规则](../standards/shared-rules.md)已有覆盖 | 权威技术方案到模块拆分、来源跟踪与受限合流的专项合同仍仅部分覆盖 |
+| 需求准入与验收 | [需求方法](../standards/requirements.md)已有基本澄清 | [技术方案编制/专业复核](../workflows/technical-design.md)已形成独立公开能力线；决策卡与多种产品输出模式仍未迁入 |
+| 最小实现、旧行为与共享规则 | [实现基线](../standards/implementation-baseline.md)、[行为保留](../standards/behavior-preservation.md)、[共享规则](../standards/shared-rules.md)已有覆盖 | [设计到模块](../workflows/design-to-modules.md)现覆盖有效项主责、单仓写集、共享写者、不可拆边界与依赖；结构工具不支持多写者串行补丁协议，真实工程合流与完整历史治理仍未迁入 |
 | 代码审查与定向复核 | [审查合同](../standards/code-review.md)已有冻结、发现与复核 | 未将所有来源中的报告模板和专业审查变体逐项迁入 |
 | 语义与原则 | [语义核验](../standards/semantic-review.md)、[原则](../standards/principles.md)有基本覆盖 | 完整重要结论挑战矩阵、敏感性分析和显式 Grill 方法尚未形成公开能力；不可宣称全部证伪原子已迁入 |
 | 诊断与实际取证 | [诊断](../standards/diagnosis.md)有竞争解释和区分证据 | 完整采集预检、检索零命中覆盖、sample/complete、分页与批量取证适配仍缺；公司连接器明确排除 |
@@ -42,7 +42,9 @@
 | 方法教练与效果观察 | 当前没有该专用执行链 | 场景选择、计时/覆盖和可比效果口径未迁入；原接口含本机状态，不复制或自动启动 Hook |
 | 资产治理、记忆与跨域登记 | 当前仅有任务交接及原件保护的局部规则 | 完整记忆回收、资产处置和跨域注册超出本批适配；不读取或发布个人资料 |
 
-后续优先考虑技术方案与模块拆解、证据覆盖与重要结论反证；先明确使用场景和可公开来源，再沿 Agent→Skill→Standards/Tools 接入。本表没有授权外部访问、自动安装、删除或后台执行。
+本轮已按方案作者→技术设计Skill→设计输入/构造原子、复核者→复核Skill→专业审验原子、模块规划者→规划Skill→模块原子/结构工具三条相接能力线补入。新增[贯通虚构案例](../workflows/examples/design-to-modules/README.md)核实际结构控制；文档推演不等于真实专业审验或工程实施。
+
+后续优先考虑证据覆盖与重要结论反证；先明确使用场景和可公开来源，再沿 Agent→Skill→Standards/Tools 接入。本表没有授权外部访问、自动安装、删除或后台执行。
 
 ## 核验边界
 

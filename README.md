@@ -79,6 +79,20 @@ Agent 接受任务 → 选择所需层与模板 → 绑定当前输入、候选�
 
 每层均可由 Agent 按合同手动组织执行；已有程序只支持各自定义的格式和环境。examples 包含可运行控制案例和标记 NOT_RUN 的计划，Markdown 模板不会自动变为可运行配置，填表也不表示执行完成。已有真实代码、回执与运行器保持原位置，层内执行文件引用这些证据，避免复制。
 
+## 按完整能力线采用
+
+新增方法按 **Agent → Skill → Standards / Tools** 接入，每条线保留责任、方法、产物和验证，Brain 只选择责任 Agent：
+
+| 当前阶段 | Agent | Skill | 原子与工具 |
+| --- | --- | --- | --- |
+| 从准入需求编制设计 | [方案作者](agents/design-author.md) | [技术方案](skills/technical-design/SKILL.md) | 输入/来源、实质设计、旧行为保持 |
+| 冻结设计专业复核 | [设计复核者](agents/design-reviewer.md) | [专业复核](skills/technical-design-review/SKILL.md) | 候选绑定、风险反例、发现与定向复核 |
+| 从设计生成模块包 | [模块规划者](agents/module-planner.md) | [实施规划](skills/module-planning/SKILL.md) | 有效需求归属、唯一写者、边界和依赖；离线结构检查 |
+
+[技术方案 Workflow](workflows/technical-design.md)和[模块规划 Workflow](workflows/design-to-modules.md)组织阶段交接；[贯通虚构案例](workflows/examples/design-to-modules/README.md)展示发现、修订与模块包。设计/复核部分是作者构造的文档推演，模块工具实际运行正例及拒绝场景；没有新模型、独立审验、Java实现或部署通过声明。
+
+需要专项职责时从相应 Agent 开始；复合任务先交任务协调者。准备规划、结构有效、专业接受和实施许可分别核对，`STRUCTURE_VALID` 不能当作“可以实施”。
+
 ## 文档维护与原子覆盖
 
 每份新建或维护文档都须说明具体目的与适用对象。原子规则在 [PUR01/PUR02](standards/document-purpose.md) 单源维护，由[文档维护 Skill](skills/document-maintenance/SKILL.md)消费；[文档维护者](agents/document-maintainer.md)负责写入与依据，[文档审查者](agents/document-reviewer.md)核同候选内容。

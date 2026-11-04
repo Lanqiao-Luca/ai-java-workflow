@@ -1,6 +1,8 @@
 # Agents
 
-角色定义结果责任，经Skill消费Standards。下面是角色与案例的导航，不代表平台安装或自动调度；十条案例均独立虚构。
+角色定义结果责任，经 Skill 组合平级的 Standards 与 Tools。Brain 只交任务给 Agent，由 Agent 调取所需层级。
+
+[任务协调者](task-coordinator.md)负责选择并执行 Workflow、Loop、Graph，保存实例、组织阶段职责并交回总体状态；下表角色负责具体阶段。下面是角色与案例的导航，不代表平台安装或自动调度；十条案例均独立虚构。
 
 | 角色 | 完整案例 |
 | --- | --- |

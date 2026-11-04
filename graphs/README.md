@@ -1,5 +1,14 @@
 # Graphs
 
+## 模板与执行文件
+
+- [templates：复用模板](templates/README.md)，由责任 Agent 填写为本次计划，不保存真实进度。
+- [examples：执行文件与案例](examples/README.md)，包含已填计划及其实际运行或 NOT_RUN 状态。
+
+Graph 可以由[任务协调者 Agent](../agents/task-coordinator.md)选用并执行，Brain 只向 Agent 交任务，不直接调用本层。每层都可单独采用，无需强制启用更高层。方法合同由 Agent 手动组织，已有程序仅执行其支持的定义格式；填好 Markdown 模板不等于自动运行。
+
+真实工程计划与进度存放于使用者授权的位置；examples 只放适合公开的执行文件和独立虚构案例。沿当前实例接续，不复制既有证据或用空目录冒充完成。具体合同见 [Graph 合同](goal-graph.md)。
+
 [通用目标 Graph 小步计划](../docs/graph-delivery-plan.md)按声明、调度、证据门禁及 Loop 接线逐项验证交付；未实现项不据本计划宣称可运行。[Loop 状态](../docs/loop-status.md)保留相关未迁/未验事项。
 
 - [通用目标图声明合同](goal-graph.md)：完整目标、依赖/写集及显式 closure 的准入；实际运行能力按当前交付阶段核验。

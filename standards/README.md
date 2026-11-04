@@ -1,6 +1,6 @@
 # Standards
 
-独立维护方法和验收判据。按当前问题选择，不要求每轮全量加载。
+独立维护方法和验收判据，与 [Tools](../tools/README.md) 平级，由 Skill 组合采用。按当前问题选择，不要求每轮全量加载。
 
 - [三层职责与方法合同](layering.md)
 - [原则与证据边界](principles.md)

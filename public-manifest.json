@@ -87,6 +87,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "agents/task-coordinator.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "agents/verifier.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1297,6 +1302,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "graphs/examples/execution-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "graphs/examples/goal-loops/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1372,12 +1382,27 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "graphs/templates/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "graphs/templates/execution-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "loops/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
     {
       "path": "loops/defect-convergence.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1403,6 +1428,11 @@
     },
     {
       "path": "loops/examples/defect/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/examples/execution-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1468,6 +1498,16 @@
     },
     {
       "path": "loops/technical-retry.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/templates/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "loops/templates/execution-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -1697,6 +1737,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "skills/task-execution/SKILL.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "skills/verification/SKILL.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1897,6 +1942,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tools/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tools/defect_loop.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2072,6 +2122,16 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "workflows/examples/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/bookmark-tags.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "workflows/java-spring-development.md",
       "origin": "newly_written_synthetic_workflow",
       "status": "reviewed_candidate"
@@ -2133,6 +2193,16 @@
     },
     {
       "path": "workflows/spring-build.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/templates/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/templates/execution-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     }

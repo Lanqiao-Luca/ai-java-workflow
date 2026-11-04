@@ -95,6 +95,11 @@ class PublishedNativeCaseTests(unittest.TestCase):
         self.runtime['source_sha256']['standards/layering.md'] = '0' * 64
         self.rejected()
 
+    def test_new_coordinator_cannot_be_claimed_in_historical_run(self):
+        name = 'agents/task-coordinator.md'
+        self.runtime['source_sha256'][name] = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
+        self.rejected()
+
     def test_public_abstract_cannot_exempt_java_source(self):
         path = self.case / 'case.json'
         declaration = json.loads(path.read_text())

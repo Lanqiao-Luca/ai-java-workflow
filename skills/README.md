@@ -1,6 +1,8 @@
 # Skills
 
-本目录为方法指南，未注册为任何平台原生能力。角色负责选择，Skill 实际适配输入并交回结果。
+本目录为方法指南，未注册为任何平台原生能力。角色负责选择，Skill 组合平级的 Standards 与 [Tools](../tools/README.md)，实际适配输入并交回结果。Brain 不直接调用 Skill 或基础资源。
+
+- [执行计划与工具适配](task-execution/SKILL.md)：为已选 Workflow、Loop、Graph 绑定计划与实际执行接口。
 
 - [需求澄清](requirement-clarification/SKILL.md)
 - [代码实现](code-implementation/SKILL.md)

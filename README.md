@@ -4,41 +4,76 @@
 
 让 AI 从理解需求开始，沿着实现、验证、审查与交付推进；每一步都有输入、产物和可核对的验收依据。
 
-通过 [Brain 任务入口](brain/README.md)，先判断当前请求应继续哪项工作、采用哪条流程、由谁负责，再由责任角色选择具体方法。你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 组织多个 Loop 与 Workflow 的依赖和并发。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
+通过 [Brain 任务入口](brain/README.md)，先恢复当前任务并交给责任 Agent，再由 Agent 选择流程与具体方法。你可以只采用一个 Agent 的方法，也可以运行完整的原生 Agent 链路，或让 Graph 组织多个 Loop 与 Workflow 的依赖和并发。仓库提供通用方法、空白模板、执行参考和独立虚构案例，便于按自己的工程条件组合使用。
 
 ## 框架架构
 
-Brain 负责逐轮路由与接续，依据任务选择已有组织入口；它不新增执行层或权限来源。框架从可复用的原子方法向上组装：**原子规则（Standards）→ Skill → Agent → Workflow → Loop → Graph**。下面的箭头表示上层组织或消费下层；实际执行由使用者或运行宿主落实。
+Brain 负责逐轮路由与接续，**只把任务交给 Agent**。框架的组装关系是：
+
+**原子规则（Standards）与执行工具（Tools）平级 → Skill → Agent → Workflow → Loop → Graph**
+
+Standards 提供规则、方法与验收判据，Tools 提供程序、控制器与执行接口；Skill 组合适配两者，Agent 承担决策、执行与结果责任。组装层级与任务调用入口分别表示：
+
+```mermaid
+flowchart LR
+    P["Standards：规则与验收方法"] --> S[Skill]
+    T["Tools：执行工具与接口"] --> S
+    S --> A[Agent]
+    A --> W[Workflow]
+    W --> L[Loop]
+    L --> G[Graph]
+```
+
+任务调用时，Brain 只进入 Agent。组织任务交[任务协调者](agents/task-coordinator.md)，专项任务交对应 Agent；由接受任务的 Agent 调取所需层级：
 
 ```mermaid
 flowchart TD
-    B["Brain：任务变化、路由与结果核收"] -.->|按需选择组织入口| G
-    B -.->|需要有界重复| L
-    B -.->|单轮任务| W
-    B -.->|专项任务| A
-    G["Graph：目标、依赖与并发"] -->|组织目标与循环依赖| L["Loop：多轮执行、预算与停止"]
-    L -->|组织同一目标的多轮执行| W["Workflow：单轮阶段、输入输出与交接"]
+    B[Brain] --> C["入口 Agent：协调者或专项责任人"]
+    C -->|多目标依赖| G[Graph]
+    C -->|同目标重复| L[Loop]
+    C -->|单轮协作| W[Workflow]
+    G -->|组织目标与循环依赖| L
     G -.->|无需重复的节点| W
-    W -->|安排阶段职责| A["Agent：责任、决策与交付"]
-    A -->|选择并采用能力| S["Skill：任务适配与能力组合"]
-    S -->|复用方法合同| P["原子规则 Standards：方法与约束的单一来源"]
+    L -->|组织多轮执行| W
+    W --> E[阶段 Agent]
+    C -->|直接采用专项能力| S[Skill]
+    E --> S
+    S --> P["Standards：规则与验收方法"]
+    S --> T["Tools：执行工具与接口"]
 ```
+
+**Brain 不直接调用 Workflow、Loop、Graph、Skill、Standards 或 Tools。** Agent 可以选择任一适用组织层执行；流程内部继续按 Graph → Loop → Workflow → 阶段 Agent 组合，不必每次启用所有层。入口协调 Agent 与阶段执行 Agent 分工明确，阶段 Agent 不反向重启同一总体任务。此处是助手与使用者遵循的调用约定，现有 CLI 不具备调用者身份拦截。
 
 | 组成 | 解决什么问题 | 仓库中的例子 |
 | --- | --- | --- |
-| **Brain** | 这一轮该继续什么、选哪条流程、交给谁，哪些证据仍有效 | [任务路由与接续](brain/README.md) |
+| **Brain** | 恢复任务与变化，交给责任 Agent，核收返回 | [任务路由与接续](brain/README.md) |
 | **原子规则 / Standards** | 一项方法在什么条件下适用，如何操作、验收，何时停止 | [复用与旧行为保留](standards/behavior-preservation.md) |
-| **Skill** | 当前任务需要哪些原子方法，怎样把输入适配为具体产物 | [代码实现 Skill](skills/code-implementation/SKILL.md) |
+| **Tools（与 Standards 平级）** | 哪个实际接口或程序完成执行、控制与证据处理 | [工具目录](tools/README.md) |
+| **Skill** | 怎样组合 Standards 与 Tools，把输入适配为具体产物 | [代码实现 Skill](skills/code-implementation/SKILL.md) |
 | **Agent** | 谁承担任务、选择能力，对结果和交接负责 | [实现者 Agent](agents/implementer.md) |
 | **Workflow** | 一个任务分哪些阶段，各角色如何交接与处理失败 | [Java/Spring 研发 Workflow](workflows/java-spring-development.md) |
 | **Loop** | 怎样组织同一目标的多轮 Workflow，预算是否允许，何时收敛或停止 | [审查整改收敛](loops/review-convergence.md) |
 | **Graph** | 多个 Loop 与 Workflow 怎样依赖、并行、汇合，失败时阻断哪些后续节点 | [目标 Graph](graphs/goal-graph.md) |
 
-一个 Skill 可以组合多项原子方法，一个 Agent 可以按任务采用多个 Skill，一个 Workflow 可以组织多个 Agent，Loop 组织同一目标的多轮 Workflow，Graph 再组织多个 Loop 与 Workflow 的依赖和并发。完整层级不要求每次全部启用：无需重复时可直接采用 Workflow，无多目标依赖时无需 Graph。原子方法保持单源，角色和流程引用它，不重复复制正文；原子规则本身不启动 Agent 或上层流程。
+一个 Skill 可以组合多项原子方法与执行工具，一个 Agent 可以按任务采用多个 Skill，一个 Workflow 可以组织多个 Agent，Loop 组织同一目标的多轮 Workflow，Graph 再组织多个 Loop 与 Workflow 的依赖和并发。完整层级不要求每次全部启用：无需重复时可直接采用 Workflow，无多目标依赖时无需 Graph。原子方法保持单源，角色和流程引用它，不重复复制正文；原子规则本身不启动 Agent 或上层流程。
 
 例如，在[书签标签替换案例](examples/workflow-bookmark-tags/README.md)中，Workflow 把实现阶段交给实现者，Agent 采用代码实现 Skill，Skill 复用行为保留、最小改动和验证方法，形成候选与证据，再交验证、审查和交付阶段。需要多个 Workflow 并发时才使用 Graph；有具体发现且需要重复时才采用 Loop。
 
-执行支撑由[工具与隔离机制](tools/execution/README.md)、[原生派工适配器](docs/native-agent-adapter.md)提供：**worktree 隔离代码工作区，sandbox 约束执行环境**。Docker 是 sandbox 的一种可选后端，具体支持范围见下方运行说明。方法文档、原生角色注册与后端执行能力分别说明，不能据目录或角色文件存在认定已经自动运行。
+Tools 的执行支撑包括[工具与隔离机制](tools/execution/README.md)和[原生派工适配器](docs/native-agent-adapter.md)：**worktree 隔离代码工作区，sandbox 约束执行环境**。Docker 是 sandbox 的一种可选后端，具体支持范围见下方运行说明。方法文档、原生角色注册与后端执行能力分别说明，不能据目录或角色文件存在认定已经自动运行。
+
+## Workflow、Loop、Graph 的模板与执行文件
+
+三层统一保留两类文件夹，都是可由 Agent 选用并执行的组织能力：
+
+| 层级 | templates：复用格式 | examples：已填执行文件与案例 | 执行职责 |
+| --- | --- | --- | --- |
+| Workflow | [阶段与交接模板](workflows/templates/README.md) | [单轮执行文件](workflows/examples/README.md) | 组织一轮需求、实现、验证、审查与交付 |
+| Loop | [预算与收敛模板](loops/templates/README.md) | [多轮执行文件](loops/examples/README.md) | 重复同一目标的 Workflow，控制累计预算和停止 |
+| Graph | [目标与依赖模板](graphs/templates/README.md) | [目标图执行文件](graphs/examples/README.md) | 组织 Loop/Workflow 的依赖、并发、门禁与整体收口 |
+
+Agent 接受任务 → 选择所需层与模板 → 绑定当前输入、候选、授权、责任和预算，保存执行文件 → 执行、记录结果并向 Brain 返回。续作使用原实例与有效证据，不重建或清零预算。模板不填进度；执行文件记录具体任务与实际状态。真实工程实例写到使用者授权位置，公开 examples 保留独立虚构案例及明确运行状态。
+
+每层均可由 Agent 按合同手动组织执行；已有程序只支持各自定义的格式和环境。examples 包含可运行控制案例和标记 NOT_RUN 的计划，Markdown 模板不会自动变为可运行配置，填表也不表示执行完成。已有真实代码、回执与运行器保持原位置，层内执行文件引用这些证据，避免复制。
 
 ## 可以用它做什么
 
@@ -55,8 +90,8 @@ flowchart TD
 
 ```text
 请先读 brain/README.md，再按 brain/routing.md 处理我的需求：……
-恢复已有目标、阶段、候选和授权，选择适用流程与责任角色；
-由角色选择具体方法，复用有效证据，只补影响下一步的缺项。
+恢复已有目标、阶段、候选和授权，先交给任务协调者或专项 Agent；
+由 Agent 选择 Workflow、Loop、Graph 的模板和执行文件，经 Skill 采用规则与工具，复用有效证据，只补影响下一步的缺项。
 实际写入前确认工程、允许写集与验收；交付时列实际验证、未决和恢复点。
 ```
 
@@ -83,8 +118,9 @@ python3 -B scripts/check_all.py
 在能读取本地文件的编程助手中打开仓库，输入：
 
 ```text
-请先读 workflows/java-spring-development.md，
-再读 examples/workflow-bookmark-tags/README.md。
+请先将本任务交给文档审查者 Agent，
+由它读取 workflows/java-spring-development.md
+与 examples/workflow-bookmark-tags/README.md。
 沿需求、实现、验证、审查和交付说明这条案例如何闭环，
 区分实际运行的证据与尚未验证的范围。
 本次只审阅案例，不修改全局配置、不连接服务、不提交或发布。
@@ -95,8 +131,9 @@ python3 -B scripts/check_all.py
 ### 3. 用于自己的需求
 
 ```text
-按本仓库的 Java/Spring 研发 Workflow 处理我的需求：……
-先核对实际工程、验收口径、允许写集和已有改动，按需要选择 Agent 与 Skill。
+请由任务协调者 Agent 接受我的需求：……
+由它核对实际工程、验收口径、允许写集和已有改动，
+选择本仓库适用的 Java/Spring 研发 Workflow 及阶段 Agent；各 Agent 经 Skill 使用规则和工具。
 保留未要求改变的行为，完成实现、必要验证和同候选审查。
 交付时列明实际测试、未验证项及接续条件；外部写入按我当前授权处理。
 ```
@@ -130,7 +167,8 @@ flowchart LR
 | 目录 | 内容 |
 | --- | --- |
 | [brain](brain/README.md) | 任务路由、能力地图与接续交接 |
-| [standards](standards/README.md) / [skills](skills/README.md) | 原子方法与任务适配 |
+| [standards](standards/README.md) / [tools](tools/README.md) | 平级的规则方法与执行工具 |
+| [skills](skills/README.md) | 组合规则和工具，适配任务输入输出 |
 | [agents](agents/README.md) / [workflows](workflows/README.md) | 角色职责与阶段交接 |
 | [graphs](graphs/README.md) / [loops](loops/README.md) | 依赖并发与有限重复控制 |
 | [examples](examples/README.md) | 独立虚构案例及其证据 |

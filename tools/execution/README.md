@@ -1,6 +1,6 @@
 # 本地执行机制
 
-这里是新编写的共享执行代码，不是另一层方法或私有企业Tools副本。
+本目录属于 [Tools](../README.md)，与 Standards 平级，为 Skill 提供工作区与沙箱执行接口。代码为独立编写的共享执行支撑，不增加框架层级。
 
 - [runtime.py](runtime.py)：快照/worktree、实际Seatbelt、持久额度/状态、DAG调度与回收。
 - [catalog.py](catalog.py)：将Graph引用解析为具名Workflow合同，拒绝未知字段、路径越界及缺来源。

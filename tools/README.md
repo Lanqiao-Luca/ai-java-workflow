@@ -1,0 +1,15 @@
+# Tools：执行工具与共享代码
+
+Tools 与 Standards 平级，共同作为 Skill 的基础资源。Standards 定义方法、规则与验收；Tools 提供可调用程序、执行适配器和控制器。Agent 经 Skill 适配工具，Brain 不直接调用 Tools。
+
+| 用途 | 工具入口 | 当前边界 |
+| --- | --- | --- |
+| 工作区、沙箱、命令型并发与构建 | [执行工具](execution/README.md) | 按平台、工具与隔离模式分别准入，不支持任意工程 |
+| Loop 决策与发现账本 | [判定](loop_policy.py)、[发现账本](finding_ledger.py) | 纯判定不自动执行模型或外部操作 |
+| 巡检补证与缺陷收口 | [巡检控制](inspection_loop.py)、[缺陷控制](defect_loop.py) | 具体采集与业务行为依赖显式适配器 |
+| 目标 Graph 的校验、运行与证据门禁 | [定义](goal_graph.py)、[运行器](goal_graph_run.py)、[证据核验](goal_graph_evidence.py) | 节点类型与 handler 必须满足合同，不执行任意输入代码 |
+| 原生派工、研发链与恢复 | [原生适配](native_agents.py)、[执行链](native_flow.py)、[恢复](native_recovery.py) | 需要正常宿主能力和授权，不自动注册全局角色 |
+
+[执行计划与工具适配 Skill](../skills/task-execution/SKILL.md)供责任 Agent 选择现有接口。工具内部组合其他工具是实现依赖，不新增框架层级；scripts 中的命令行入口是 Tools 的启动适配，也不另成一层。文档调用规则由助手/使用者遵循，现有 CLI 不验证调用者是不是 Brain 或 Agent。
+
+返回：[项目入口](../README.md)。

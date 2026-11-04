@@ -1,5 +1,14 @@
 # Workflows
 
+## 模板与执行文件
+
+- [templates：复用模板](templates/README.md)，由责任 Agent 填写为本次计划，不保存真实进度。
+- [examples：执行文件与案例](examples/README.md)，包含已填计划及其实际运行或 NOT_RUN 状态。
+
+Workflow 可以由[任务协调者 Agent](../agents/task-coordinator.md)选用并执行，Brain 只向 Agent 交任务，不直接调用本层。每层都可单独采用，无需强制启用更高层。方法合同由 Agent 手动组织，已有程序仅执行其支持的定义格式；填好 Markdown 模板不等于自动运行。
+
+真实工程计划与进度存放于使用者授权的位置；examples 只放适合公开的执行文件和独立虚构案例。沿当前实例接续，不复制既有证据或用空目录冒充完成。具体合同见 [Workflow 合同](java-spring-development.md)。
+
 - [原生Agent研发链](native-java-spring.md)：六阶段真实原生派工、独立worktree、冻结审查与失败阻断；[完整Spring案例](../examples/native-spring-workflow/README.md)及[实跑结果](../docs/native-agent-workflow-results.md)区分模型、构建和被动检查。
 
 Workflow负责阶段顺序、输入输出交接和失败返回；各Agent自行选择Skill并消费Standards。方法合同可手动采用，命令型JSON由原执行器运行；`native-*.json`通过显式原生执行器在新实例注册并派工，不改全局Agent/Skill注册，也不把全部方法文档自动安装成平台能力；Codex宿主项目信任登记需另外获得平台写入许可。

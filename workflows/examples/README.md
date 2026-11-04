@@ -6,6 +6,7 @@
 
 本目录收录已填执行文件；[模板](../templates/README.md)保持空白。每个实例说明是实际执行、历史证据还是文档推演，不把填表当完成。
 
+- [页观察覆盖控制案例](evidence-coverage/README.md)：八类真实离线判定，明确零命中、局部与未知，不做来源请求。
 - [设计到模块贯通案例](design-to-modules/README.md)：设计发现/修订为文档推演，模块正例与四类拒绝为实际离线程序执行。
 - [书签任务执行文件](bookmark-tags.md)：完整填写的虚构单轮计划，状态 NOT_RUN，供[任务协调者](../../agents/task-coordinator.md)按 [研发 Workflow](../java-spring-development.md)采用。
 - [已有真实 Spring 执行案例](../../examples/workflow-bookmark-tags/README.md)：代码、测试、阶段 trace 与回执仍在原处，避免复制一份证据。

@@ -32,7 +32,7 @@
 | 最小实现、旧行为与共享规则 | [实现基线](../standards/implementation-baseline.md)、[行为保留](../standards/behavior-preservation.md)、[共享规则](../standards/shared-rules.md)已有覆盖 | [设计到模块](../workflows/design-to-modules.md)现覆盖有效项主责、单仓写集、共享写者、不可拆边界与依赖；结构工具不支持多写者串行补丁协议，真实工程合流与完整历史治理仍未迁入 |
 | 代码审查与定向复核 | [审查合同](../standards/code-review.md)已有冻结、发现与复核 | 未将所有来源中的报告模板和专业审查变体逐项迁入 |
 | 语义与原则 | [语义核验](../standards/semantic-review.md)、[原则](../standards/principles.md)有基本覆盖 | 完整重要结论挑战矩阵、敏感性分析和显式 Grill 方法尚未形成公开能力；不可宣称全部证伪原子已迁入 |
-| 诊断与实际取证 | [诊断](../standards/diagnosis.md)有竞争解释和区分证据 | 完整采集预检、检索零命中覆盖、sample/complete、分页与批量取证适配仍缺；公司连接器明确排除 |
+| 诊断与实际取证 | [诊断](../standards/diagnosis.md)有竞争解释和区分证据 | [采集能力线](../workflows/evidence-collection.md)现覆盖前检、事实保真、零命中与sample/complete方法，并有显式页观察判定；真实分页/批量执行、持久执行账与重入门尚未迁入，公司连接器明确排除 |
 | 风险驱动验证 | [验证](../standards/verification.md)有当前验收和未运行边界 | 专项环境准入、历史问题复用记录及完整后端访问合同未迁入 |
 | SQL 与索引 | [查询审查](../standards/sql-review.md)有基本语义/访问模式检查 | 系统反模式集、建议模板与专项运行门禁未完整纳入 |
 | 有界恢复与收敛 | [恢复](../standards/recovery.md)、[Loops](../loops/README.md)及目标图已有公开实现 | 仍以各合同和[现有状态](loop-status.md)为准，不因本盘点补关原来未验项目 |
@@ -44,7 +44,9 @@
 
 本轮已按方案作者→技术设计Skill→设计输入/构造原子、复核者→复核Skill→专业审验原子、模块规划者→规划Skill→模块原子/结构工具三条相接能力线补入。新增[贯通虚构案例](../workflows/examples/design-to-modules/README.md)核实际结构控制；文档推演不等于真实专业审验或工程实施。
 
-后续优先考虑证据覆盖与重要结论反证；先明确使用场景和可公开来源，再沿 Agent→Skill→Standards/Tools 接入。本表没有授权外部访问、自动安装、删除或后台执行。
+本轮按[采集者](../agents/evidence-collector.md)→采集Skill→EC01–EC04/覆盖工具补入一项，离线案例不证明真实来源接通。
+
+后续优先考虑重要结论反证及真实来源适配的公开安全合同；先明确使用场景和可公开来源，再沿 Agent→Skill→Standards/Tools 接入。本表没有授权外部访问、自动安装、删除或后台执行。
 
 ## 核验边界
 

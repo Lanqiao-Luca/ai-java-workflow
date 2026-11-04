@@ -72,6 +72,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "agents/evidence-collector.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "agents/implementer.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -1952,6 +1957,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "skills/evidence-collection/SKILL.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "skills/evidence-diagnosis/SKILL.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2147,6 +2157,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/evidence-collection.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/execution-records.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2252,6 +2267,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_evidence_coverage.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_execution.py",
       "origin": "newly_written_execution_mechanism_and_synthetic_case",
       "status": "reviewed_candidate"
@@ -2353,6 +2373,11 @@
     },
     {
       "path": "tools/document_contracts.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/evidence_coverage.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2532,6 +2557,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "workflows/evidence-collection.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "workflows/examples/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2583,6 +2613,21 @@
     },
     {
       "path": "workflows/examples/design-to-modules/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/evidence-coverage/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/evidence-coverage/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/evidence-coverage/scenarios.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

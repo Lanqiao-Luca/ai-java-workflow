@@ -92,6 +92,12 @@ Brain 选择适用组织入口与模板 → 当前协调者/宿主和阶段职�
 
 专项任务可选相应 Agent；多阶段任务可先选 Workflow，同目标重复选 Loop，多目标依赖选 Graph。准备规划、结构有效、专业接受和实施许可分别核对，`STRUCTURE_VALID` 不能当作“可以实施”。
 
+## 证据采集与覆盖
+
+新增[证据采集者 Agent](agents/evidence-collector.md) → [采集 Skill](skills/evidence-collection/SKILL.md) → [EC01–EC04 原子](standards/evidence-collection.md)及覆盖 Tools：固定来源与版本，保真记录，区分 sample/complete，核零命中的实际覆盖。多阶段可由 Brain 选择[取证 Workflow](workflows/evidence-collection.md)。
+
+[八场景离线案例](workflows/examples/evidence-coverage/README.md)实际判断显式页观察。采样命中不宣称完整，无正控制的零命中保未解决；预算或截断保 PARTIAL，拒权与未知不当作零条。工具不发请求、不认证真实来源，不提供生产连接器或自动补证客户端。
+
 ## 文档维护与原子覆盖
 
 每份新建或维护文档都须说明具体目的与适用对象。原子规则在 [PUR01/PUR02](standards/document-purpose.md) 单源维护，由[文档维护 Skill](skills/document-maintenance/SKILL.md)消费；[文档维护者](agents/document-maintainer.md)负责写入与依据，[文档审查者](agents/document-reviewer.md)核同候选内容。

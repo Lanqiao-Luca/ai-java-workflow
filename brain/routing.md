@@ -22,6 +22,7 @@
 | 选中组织入口的运行协调与接续 | [任务协调者](../agents/task-coordinator.md) | 协助维护已选实例、责任交接与总体状态；不作为进入上层组织能力的强制门槛 |
 | 澄清目标、保持项与验收 | [需求负责人](../agents/requirement-analyst.md) | 确认契约和关键未知；不将建议当用户决定 |
 | 已有流程分配的实现任务，或范围明确的单项改动 | [实现者](../agents/implementer.md) | 接受候选与写集，经 Skill 取得规则和工具 |
+| 新增事实或核采集覆盖 | [证据采集者](../agents/evidence-collector.md) | 经 Skill 核来源、正控制和质量模式；多阶段任务可先选取证 Workflow，事实解释另交诊断 |
 | 未知失败原因 | [诊断者](../agents/diagnostician.md) | 核合法证据与反证，缺事实不补猜测 |
 | 行为验证、代码、语义或查询风险审查 | [验证者](../agents/verifier.md)、[代码审查者](../agents/code-reviewer.md)、[语义审查者](../agents/semantic-reviewer.md)、[查询审查者](../agents/query-reviewer.md) | 按问题选择专项责任，给定 SQL 审查不等于执行 SQL 或 DDL 获权 |
 | 范围、目的、保留和完成声明 | [原则审查者](../agents/principle-reviewer.md) | 核同候选证据，不替代功能或业务验收 |

@@ -14,6 +14,7 @@ description: 证据诊断的方法入口；需在使用者自己的环境手动�
 
 ## 方法来源
 
+- [证据采集与覆盖](../../standards/evidence-collection.md)：新增事实时保来源、模式和缺口；本 Skill 不凭诊断身份扩读或自造样本。
 - [证据驱动诊断](../../standards/diagnosis.md)
 - [异常恢复与有界尝试](../../standards/recovery.md)
 

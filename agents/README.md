@@ -6,6 +6,8 @@
 
 角色定义结果责任，经 Skill 组合平级的 Standards 与 Tools。Brain 可直接选择 Agent 或其上的 Workflow、Loop、Graph；组织层分配阶段职责，Agent 经 Skill 使用底层规则与工具。
 
+[证据采集者](evidence-collector.md)经证据采集 Skill 与 EC01–EC04 原子核来源、事实和覆盖，再交诊断者解释；[虚构案例](../workflows/examples/evidence-coverage/README.md)仅执行显式页观察判定。
+
 新增技术设计到实施准备能力线：
 
 - [方案作者](design-author.md) → 技术设计 Skill → 输入与方案原子。

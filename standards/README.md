@@ -6,6 +6,7 @@
 
 独立维护方法和验收判据，与 [Tools](../tools/README.md) 平级，由 Skill 组合采用。按当前问题选择，不要求每轮全量加载。
 
+- [证据采集与覆盖 EC01–EC04](evidence-collection.md)
 - [设计输入与来源准入](design-inputs.md)
 - [技术方案构造](technical-design.md)
 - [设计专业复核](design-review.md)

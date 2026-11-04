@@ -1,0 +1,250 @@
+{
+  "synthetic": true,
+  "cases": [
+    {
+      "name": "complete_match",
+      "scope": {
+        "source_id": "synthetic-pages",
+        "snapshot": "demo-v1",
+        "needle": "ALPHA",
+        "mode": "complete",
+        "max_pages": 2,
+        "probe_id": "known-visible"
+      },
+      "pages": [
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": null,
+          "cursor_out": null,
+          "finished": true,
+          "status": "OK",
+          "truncated": false,
+          "rows": [
+            {
+              "id": "known-visible",
+              "text": "CONTROL"
+            },
+            {
+              "id": "match-one",
+              "text": "ALPHA target"
+            }
+          ]
+        }
+      ],
+      "expected": "COMPLETE_MATCH"
+    },
+    {
+      "name": "bounded_empty",
+      "scope": {
+        "source_id": "synthetic-pages",
+        "snapshot": "demo-v1",
+        "needle": "ALPHA",
+        "mode": "complete",
+        "max_pages": 2,
+        "probe_id": "known-visible"
+      },
+      "pages": [
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": null,
+          "cursor_out": "second",
+          "finished": false,
+          "status": "OK",
+          "truncated": false,
+          "rows": [
+            {
+              "id": "known-visible",
+              "text": "CONTROL"
+            }
+          ]
+        },
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": "second",
+          "cursor_out": null,
+          "finished": true,
+          "status": "OK",
+          "truncated": false,
+          "rows": [
+            {
+              "id": "unrelated",
+              "text": "BETA"
+            }
+          ]
+        }
+      ],
+      "expected": "COMPLETE_EMPTY"
+    },
+    {
+      "name": "zero_without_control",
+      "scope": {
+        "source_id": "synthetic-pages",
+        "snapshot": "demo-v1",
+        "needle": "ALPHA",
+        "mode": "complete",
+        "max_pages": 2,
+        "probe_id": "known-visible"
+      },
+      "pages": [
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": null,
+          "cursor_out": null,
+          "finished": true,
+          "status": "OK",
+          "truncated": false,
+          "rows": []
+        }
+      ],
+      "expected": "UNRESOLVED_EMPTY"
+    },
+    {
+      "name": "sample_match",
+      "scope": {
+        "source_id": "synthetic-pages",
+        "snapshot": "demo-v1",
+        "needle": "ALPHA",
+        "mode": "sample",
+        "max_pages": 2,
+        "probe_id": "known-visible"
+      },
+      "pages": [
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": null,
+          "cursor_out": "next",
+          "finished": false,
+          "status": "OK",
+          "truncated": false,
+          "rows": [
+            {
+              "id": "match-one",
+              "text": "ALPHA target"
+            }
+          ]
+        }
+      ],
+      "expected": "SAMPLE_FOUND"
+    },
+    {
+      "name": "budget_partial",
+      "scope": {
+        "source_id": "synthetic-pages",
+        "snapshot": "demo-v1",
+        "needle": "ALPHA",
+        "mode": "complete",
+        "max_pages": 1,
+        "probe_id": "known-visible"
+      },
+      "pages": [
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": null,
+          "cursor_out": "second",
+          "finished": false,
+          "status": "OK",
+          "truncated": false,
+          "rows": [
+            {
+              "id": "known-visible",
+              "text": "CONTROL"
+            }
+          ]
+        }
+      ],
+      "expected": "PARTIAL"
+    },
+    {
+      "name": "truncated",
+      "scope": {
+        "source_id": "synthetic-pages",
+        "snapshot": "demo-v1",
+        "needle": "ALPHA",
+        "mode": "complete",
+        "max_pages": 2,
+        "probe_id": "known-visible"
+      },
+      "pages": [
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": null,
+          "cursor_out": null,
+          "finished": true,
+          "status": "OK",
+          "truncated": true,
+          "rows": [
+            {
+              "id": "known-visible",
+              "text": "CONTROL"
+            }
+          ]
+        }
+      ],
+      "expected": "PARTIAL"
+    },
+    {
+      "name": "unknown",
+      "scope": {
+        "source_id": "synthetic-pages",
+        "snapshot": "demo-v1",
+        "needle": "ALPHA",
+        "mode": "complete",
+        "max_pages": 2,
+        "probe_id": "known-visible"
+      },
+      "pages": [
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": null,
+          "cursor_out": null,
+          "finished": false,
+          "status": "UNKNOWN",
+          "truncated": false,
+          "rows": []
+        }
+      ],
+      "expected": "UNKNOWN"
+    },
+    {
+      "name": "denied",
+      "scope": {
+        "source_id": "synthetic-pages",
+        "snapshot": "demo-v1",
+        "needle": "ALPHA",
+        "mode": "complete",
+        "max_pages": 2,
+        "probe_id": "known-visible"
+      },
+      "pages": [
+        {
+          "source_id": "synthetic-pages",
+          "snapshot": "demo-v1",
+          "needle": "ALPHA",
+          "cursor_in": null,
+          "cursor_out": null,
+          "finished": false,
+          "status": "DENIED",
+          "truncated": false,
+          "rows": []
+        }
+      ],
+      "expected": "DENIED"
+    }
+  ]
+}

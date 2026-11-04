@@ -37,6 +37,9 @@
     "agents/document-reviewer.md": {
       "mode": "current"
     },
+    "agents/evidence-collector.md": {
+      "mode": "current"
+    },
     "agents/implementer.md": {
       "mode": "current"
     },
@@ -999,6 +1002,9 @@
       "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
       "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
     },
+    "skills/evidence-collection/SKILL.md": {
+      "mode": "current"
+    },
     "skills/evidence-diagnosis/SKILL.md": {
       "mode": "current"
     },
@@ -1137,6 +1143,9 @@
     "standards/document-review.md": {
       "mode": "current"
     },
+    "standards/evidence-collection.md": {
+      "mode": "current"
+    },
     "standards/execution-records.md": {
       "mode": "current"
     },
@@ -1212,6 +1221,9 @@
     "workflows/document-maintenance.md": {
       "mode": "current"
     },
+    "workflows/evidence-collection.md": {
+      "mode": "current"
+    },
     "workflows/examples/README.md": {
       "mode": "current"
     },
@@ -1235,6 +1247,9 @@
       "mode": "current"
     },
     "workflows/examples/design-to-modules/result.md": {
+      "mode": "current"
+    },
+    "workflows/examples/evidence-coverage/README.md": {
       "mode": "current"
     },
     "workflows/java-spring-development.md": {

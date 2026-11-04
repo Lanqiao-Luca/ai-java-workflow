@@ -4,6 +4,8 @@
 
 # Workflows
 
+[证据采集](evidence-collection.md)组织命题定界、事实取得、覆盖核查和解释交接；[离线八场景](examples/evidence-coverage/README.md)不连接实际来源。
+
 [技术方案编制与专业复核](technical-design.md) → [设计到模块](design-to-modules.md)，提供从输入到准备包的完整责任链；[贯通案例](examples/design-to-modules/README.md)含实际离线结构控制，未运行工程实现。
 
 [文档维护与审验](document-maintenance.md)组织文档定界、维护、检查与同候选审验。

@@ -16,6 +16,9 @@
     "agents/code-reviewer.md": {
       "mode": "current"
     },
+    "agents/conclusion-reviewer.md": {
+      "mode": "current"
+    },
     "agents/container-build-executor.md": {
       "mode": "current"
     },
@@ -976,6 +979,9 @@
       "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
       "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
     },
+    "skills/conclusion-challenge/SKILL.md": {
+      "mode": "current"
+    },
     "skills/delivery-planning/SKILL.md": {
       "mode": "current"
     },
@@ -1113,6 +1119,9 @@
     "standards/code-review.md": {
       "mode": "current"
     },
+    "standards/conclusion-challenge.md": {
+      "mode": "current"
+    },
     "standards/concurrent-execution.md": {
       "mode": "current"
     },
@@ -1206,6 +1215,9 @@
     "workflows/README.md": {
       "mode": "current"
     },
+    "workflows/conclusion-challenge.md": {
+      "mode": "current"
+    },
     "workflows/concurrent-execution.md": {
       "mode": "current"
     },
@@ -1233,6 +1245,12 @@
       "purpose": "保全《书签标签：Workflow 执行文件》的已发布原文，供定位来源、复核原结论与当时证据。",
       "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
       "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
+    },
+    "workflows/examples/conclusion-challenge/README.md": {
+      "mode": "current"
+    },
+    "workflows/examples/conclusion-challenge/requirements.md": {
+      "mode": "current"
     },
     "workflows/examples/design-to-modules/README.md": {
       "mode": "current"
@@ -1268,6 +1286,9 @@
       "mode": "current"
     },
     "workflows/templates/README.md": {
+      "mode": "current"
+    },
+    "workflows/templates/conclusion-challenge.md": {
       "mode": "current"
     },
     "workflows/templates/execution-plan.md": {

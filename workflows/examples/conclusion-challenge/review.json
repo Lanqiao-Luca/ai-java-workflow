@@ -1,0 +1,127 @@
+{
+  "candidate_sha256": "a12eb6621d28669d298f78c47a80d6a5ee19ac982bdd239c01a0dcf4672870fa",
+  "scope": "Fictional single-process single-instance sequential note read/write; no persistence or distributed claims.",
+  "claim": "Reading an old value after write means the backing store lost the update.",
+  "preferred": "H-store",
+  "hypotheses": [
+    {
+      "id": "H-store",
+      "explanation": "The backing store did not retain the new value."
+    },
+    {
+      "id": "H-cache",
+      "explanation": "The store retained the write but the cache still serves an earlier value."
+    },
+    {
+      "id": "H-intent",
+      "explanation": "Returning the earlier value is allowed by the intended contract."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-contract",
+      "source_group": "contract",
+      "locator": "requirements.md at current composite candidate",
+      "observation": "Sequential same-instance read after write must return the new value.",
+      "limits": "Only this fictional example contract; no production requirements.",
+      "critical": true
+    },
+    {
+      "id": "E-source",
+      "source_group": "source",
+      "locator": "cache_demo.py Notes.write and Notes.read at current composite candidate",
+      "observation": "write assigns store; read may return an existing cache entry; write has no cache invalidation.",
+      "limits": "Static path alone does not show that it actually occurred.",
+      "critical": false
+    },
+    {
+      "id": "E-runtime",
+      "source_group": "single-local-run",
+      "locator": "cache_demo.py observe() executed locally by run.py",
+      "observation": "{\"after_clear\": \"version-two\", \"before\": \"version-one\", \"cached_after_write\": \"version-one\", \"stored_after_write\": \"version-two\"}",
+      "limits": "One sequential in-memory fixture; the multiple reads are correlated, not independent runs.",
+      "critical": true
+    }
+  ],
+  "matrix": [
+    {
+      "evidence": "E-contract",
+      "hypothesis": "H-store",
+      "effect": "neutral",
+      "rationale": "The requirement does not locate the failing component."
+    },
+    {
+      "evidence": "E-contract",
+      "hypothesis": "H-cache",
+      "effect": "neutral",
+      "rationale": "The requirement defines freshness but does not establish a cache failure."
+    },
+    {
+      "evidence": "E-contract",
+      "hypothesis": "H-intent",
+      "effect": "strong_oppose",
+      "rationale": "The explicit same-instance freshness requirement excludes intentionally stale reads for this scope."
+    },
+    {
+      "evidence": "E-source",
+      "hypothesis": "H-store",
+      "effect": "oppose",
+      "rationale": "The declared write updates store, though static inspection cannot rule out other execution paths."
+    },
+    {
+      "evidence": "E-source",
+      "hypothesis": "H-cache",
+      "effect": "support",
+      "rationale": "The visible path retains previously cached values after a write."
+    },
+    {
+      "evidence": "E-source",
+      "hypothesis": "H-intent",
+      "effect": "neutral",
+      "rationale": "Implementation cannot establish intended semantics."
+    },
+    {
+      "evidence": "E-runtime",
+      "hypothesis": "H-store",
+      "effect": "strong_oppose",
+      "rationale": "Direct observation shows the backing store contains version-two after the write."
+    },
+    {
+      "evidence": "E-runtime",
+      "hypothesis": "H-cache",
+      "effect": "support",
+      "rationale": "Cached read is old and clearing cache exposes the retained new value in this run."
+    },
+    {
+      "evidence": "E-runtime",
+      "hypothesis": "H-intent",
+      "effect": "neutral",
+      "rationale": "Observed behavior alone cannot establish intended behavior."
+    }
+  ],
+  "probes": [
+    {
+      "id": "P-store",
+      "hypothesis": "H-store",
+      "counterexample": "If the initial claim is false, store may contain the new value while read returns the old one; clearing the cache may expose the stored value.",
+      "state": "DONE",
+      "evidence": [
+        "E-runtime"
+      ],
+      "result": "Actual store is version-two while cached read is version-one; after clearing cache read is version-two. The lost-store-update explanation fails for this run."
+    }
+  ],
+  "sensitivity": [
+    {
+      "without": "E-contract",
+      "effect": "changed",
+      "rationale": "Cache staleness remains observed but whether it violates intended behavior becomes unknown."
+    },
+    {
+      "without": "E-runtime",
+      "effect": "changed",
+      "rationale": "Static implementation suggests a stale-cache path but actual occurrence and the store-loss counterexample would be unverified."
+    }
+  ],
+  "conclusion": "In this local sequential run the store retained the update and the cached read was stale, contrary to the explicit example contract. This falsifies the initial store-loss claim for this run. Source analysis explains a missing invalidation path; it does not establish production root cause, concurrency behavior, or permission to apply a fix."
+}

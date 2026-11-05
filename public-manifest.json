@@ -172,6 +172,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/cli.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/concurrent-execution-plan.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2012,6 +2017,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/workflow.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "skills/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2502,6 +2512,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_workflow_entry.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tools/README.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2667,6 +2682,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tools/workflow_entry.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "workflows/README.md",
       "origin": "newly_written_synthetic_workflow",
       "status": "reviewed_candidate"
@@ -2762,7 +2782,47 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "workflows/examples/capability-benchmark/review.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "workflows/examples/capability-benchmark/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/cli/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/cli/benchmark.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/cli/challenge.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/cli/local.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/cli/modules.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/cli/result.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/cli/review.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

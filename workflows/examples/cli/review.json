@@ -1,0 +1,64 @@
+{
+  "review_type": "independent_targeted_cli_recheck",
+  "candidate_sha256": {
+    "tools/workflow_entry.py": "d3186ef50b61bf8fefe1fa529da60639b40a7faba3772f4becbf5bac0e7cb616",
+    "scripts/workflow.py": "6950d5a7f1902674ea7636da23d38b00a494d47ca12cd5661dcd4ac89ff1369f",
+    "docs/cli.md": "e450b7ad2cb52f588a508ffa464dfbb690b397ed4a7252d979692a6054f415f6",
+    "skills/task-execution/SKILL.md": "4820eebd8bd470caab05865fd9a823573cd5ec0fd49a5e82869e40268380d74f",
+    "tests/test_workflow_entry.py": "6bc7e85215876e60397afe3df07271762137288ff39dd3439fecb29c4a2359ed",
+    "tools/capability_benchmark.py": "73fac5243f31200e6b4b8d0ab9def8f65604675c212e9ab7dee077392781d16b",
+    "agents/capability-evaluator.md": "5caf6596340c0e29ae3d3e36a8253fb9ff5f5a444b399ab0399aa5fa23646fc2",
+    "skills/capability-evaluation/SKILL.md": "4fc79f9a8c58a842f7822026e7f299634002e37ee3069cbe5392f3f8292fcd26",
+    "standards/capability-evaluation.md": "c54ce978298a8c243ddfba92cb1c4720566051b9fc8dd05eda0f98a550e1d750",
+    "workflows/examples/capability-benchmark/cases.json": "e812919ba13a26b4ff1046d3c2d49b175f57aadf423a12fe35453bd3ebdecfd7",
+    "workflows/examples/capability-benchmark/README.md": "915a83f5a461fe1bfcf07692d1e6753ef5144595321d08a30d81f04d81cd76dd",
+    "workflows/examples/capability-benchmark/run.py": "fa242b3d1200c4b376dd1358ecdb127bfd0432a62df7691de2434337bc4008bc",
+    "workflows/examples/capability-benchmark/result.json": "0880cb0aad1c68972f4859ae02281b9de9c6029612fb1bca662be7974fa2e230"
+  },
+  "source_unchanged": true,
+  "finding_status": [
+    {
+      "id": "CLI-R1",
+      "status": "CLOSED",
+      "basis": "普通Exception落UNKNOWN后直接返回状态；真实跨进程ValueError/OSError分别在marker动作后发生，首次UNKNOWN/1且failure_category准确，再次resume仍UNKNOWN/1、run_id不变、marker仅一条；输入选项拒绝仍REJECTED/2。",
+      "actual_results": [
+        {
+          "fault": "ValueError",
+          "first_exit": 1,
+          "first_status": "UNKNOWN",
+          "repeat_exit": 1,
+          "repeat_status": "UNKNOWN",
+          "side_effect_count": 1
+        },
+        {
+          "fault": "OSError",
+          "first_exit": 1,
+          "first_status": "UNKNOWN",
+          "repeat_exit": 1,
+          "repeat_status": "UNKNOWN",
+          "side_effect_count": 1
+        }
+      ]
+    }
+  ],
+  "new_benchmark_entry": "ACCEPTED_WITHIN_SCOPE",
+  "new_entry_evidence": "benchmark显式goal映射固定capability-benchmark；options必须为空；新目录run暂停READY后另一CLI进程resume得到SUCCEEDED并保run_id；重复resume仅读回原结果；下层COMPLETED与NOT_MEASURED保原字段。依赖指纹包含benchmark工具与所用反证案例输入。",
+  "new_findings": [],
+  "verdict": "ACCEPTED_WITHIN_TARGETED_SCOPE",
+  "limits": [
+    "只对CLI-R1及新增固定benchmark接口作定向闭环；原审查已覆盖的锁、输入漂移等保持历史有效结论，本轮未重跑全部入口回归。",
+    "未重跑真实Spring、未调用模型或联网。",
+    "BaseException中断分支本轮静态检查，ValueError/OSError为真实子进程执行。"
+  ],
+  "actual_cli_processes": 11,
+  "execution": "Actual separate model context, read-only review and isolated public-source fault experiments; no private raw logs exported.",
+  "candidate_test_extension": {
+    "file": "tests/test_workflow_entry.py",
+    "prior_trial_sha256": "efc4b3416e3d7d20a80c0b0765b4627db8025e640d462ed496108d4020a4f94c",
+    "updated_sha256": "6bc7e85215876e60397afe3df07271762137288ff39dd3439fecb29c4a2359ed",
+    "addition": "test_actual_cli_receipt_binds_current_entry_and_preserves_child_statuses (lines 162–174)",
+    "review": "只扩展公开CLI回执绑定与五个固定案例子状态检查；新增测试的断言与当前回执字段一致。去掉该新增方法可精确恢复此前审阅测试文件SHA，其他candidate_sha256及necessary_input_sha256逐项核无变化。",
+    "scope": "工具、Skill、设计、业务实现和固定benchmark行为未修改；原CLI-R1闭环与独立实验事实保持。",
+    "actual_validation": "本轮只读审查新增测试并读回核公开回执的入口哈希、五handler键、PARTIAL/NOT_RUN/NOT_ASSESSED字段；未重跑全部旧试验或全部测试，不声称独立执行15项回归。"
+  }
+}

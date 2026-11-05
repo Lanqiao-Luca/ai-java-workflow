@@ -1,0 +1,117 @@
+{
+  "review_type": "independent_forward_capability_evaluation",
+  "method": [
+    "agents/capability-evaluator.md",
+    "skills/capability-evaluation/SKILL.md",
+    "standards/capability-evaluation.md (CE01–CE05)",
+    "standards/verification.md"
+  ],
+  "candidate_sha256": {
+    "tools/workflow_entry.py": "d3186ef50b61bf8fefe1fa529da60639b40a7faba3772f4becbf5bac0e7cb616",
+    "scripts/workflow.py": "6950d5a7f1902674ea7636da23d38b00a494d47ca12cd5661dcd4ac89ff1369f",
+    "docs/cli.md": "e450b7ad2cb52f588a508ffa464dfbb690b397ed4a7252d979692a6054f415f6",
+    "skills/task-execution/SKILL.md": "4820eebd8bd470caab05865fd9a823573cd5ec0fd49a5e82869e40268380d74f",
+    "tests/test_workflow_entry.py": "6bc7e85215876e60397afe3df07271762137288ff39dd3439fecb29c4a2359ed",
+    "tools/capability_benchmark.py": "73fac5243f31200e6b4b8d0ab9def8f65604675c212e9ab7dee077392781d16b",
+    "agents/capability-evaluator.md": "5caf6596340c0e29ae3d3e36a8253fb9ff5f5a444b399ab0399aa5fa23646fc2",
+    "skills/capability-evaluation/SKILL.md": "4fc79f9a8c58a842f7822026e7f299634002e37ee3069cbe5392f3f8292fcd26",
+    "standards/capability-evaluation.md": "c54ce978298a8c243ddfba92cb1c4720566051b9fc8dd05eda0f98a550e1d750",
+    "workflows/examples/capability-benchmark/cases.json": "e812919ba13a26b4ff1046d3c2d49b175f57aadf423a12fe35453bd3ebdecfd7",
+    "workflows/examples/capability-benchmark/README.md": "915a83f5a461fe1bfcf07692d1e6753ef5144595321d08a30d81f04d81cd76dd",
+    "workflows/examples/capability-benchmark/run.py": "fa242b3d1200c4b376dd1358ecdb127bfd0432a62df7691de2434337bc4008bc",
+    "workflows/examples/capability-benchmark/result.json": "0880cb0aad1c68972f4859ae02281b9de9c6029612fb1bca662be7974fa2e230"
+  },
+  "necessary_input_sha256": {
+    "tools/capability_benchmark.py": "73fac5243f31200e6b4b8d0ab9def8f65604675c212e9ab7dee077392781d16b",
+    "tools/conclusion_challenge.py": "f6667781dc80d1b626e8518228515f1b5fd9f42ec6e5fbeca6a5393ce0eb0080",
+    "workflows/examples/capability-benchmark/cases.json": "e812919ba13a26b4ff1046d3c2d49b175f57aadf423a12fe35453bd3ebdecfd7",
+    "workflows/examples/capability-benchmark/run.py": "fa242b3d1200c4b376dd1358ecdb127bfd0432a62df7691de2434337bc4008bc",
+    "workflows/examples/conclusion-challenge/cache_demo.py": "8b97cbd4f639e328ed34b755b94d6abb41be8dd936ab4c3fd0101e312127ab97",
+    "workflows/examples/conclusion-challenge/requirements.md": "be17f82b193448bae94d694d505dcf89b73a3b2327cdca17eda5503bac508b90",
+    "workflows/examples/conclusion-challenge/review.json": "5bedd2064c6662e0efbe044c91f92ba910358d48d3d8f3675075c701597dbc7a",
+    "workflows/examples/conclusion-challenge/run.py": "68e426eb07cad2175ac881f6493e295a58222514635175f064324dbcdac970b1"
+  },
+  "source_unchanged": true,
+  "coverage": [
+    {
+      "area": "输入/标签",
+      "assessment": "八个公开固定报告变体，3有效/5无效；逐项核标签依据与check合同一致。same-source与pending只表示结构有效，不表示独立证据或结论接受。标签清楚标作者定义。"
+    },
+    {
+      "area": "可比性",
+      "assessment": "自定义两个记录策略实际保存并比较所有输入序列，双方13次调用逐字相同（8次初始+5次预设完整报告还原）；标签和纠正定义不交给策略，变体由独立deepcopy产生。"
+    },
+    {
+      "area": "基线",
+      "assessment": "minimal_fields公开声明为故意简化字段检查；没有伪装成模型/外部产品/用户旧实践。"
+    },
+    {
+      "area": "错误方向/分母",
+      "assessment": "自主accept-all/reject-all负例验证5漏检/3误报方向、precision/recall分母及零分母null；初始全异常得到8 UNKNOWN、0正确、accuracy null、0还原。"
+    },
+    {
+      "area": "修复边界",
+      "assessment": "真实执行每个无效标签一次预设还原；reject-all造成5个restore_failures；还原调用抛OSError造成5个restore_unknowns；额外过程内受控策略注入确认run_benchmark对还原失败及初始UNKNOWN均输出PARTIAL。"
+    },
+    {
+      "area": "计时/原始记录",
+      "assessment": "perf_counter_ns围住单次策略调用，构造输入/导入排除；保存逐项初始与还原计时，未宣传提速。独立运行产生新回执；公开result.json输入SHA匹配且每组汇总由原始行精确复算。"
+    },
+    {
+      "area": "缺口保留",
+      "assessment": "人工返工、模型成本、工程效果均NOT_MEASURED；没有把8个作者结构任务结果宣传为模型/工程收益。"
+    }
+  ],
+  "findings": [],
+  "verdict": "ACCEPTED_FOR_FIXED_OFFLINE_STRUCTURAL_BENCHMARK",
+  "limits": [
+    "独立审查核对作者标签与公开结构合同；未建立第三方语义真值。",
+    "自选八任务及故意弱基线只说明限定结构检查效果，不能推断统计显著性、AI收益、人工返工减少或整体工程价值。",
+    "运行默认固定策略并自选受控异常/还原/拒绝策略；未运行真实模型、生产资料或付费服务。",
+    "单次微型函数计时不作性能比较结论；此回执接受评估设计与记录边界，不作业务采用或发布许可。"
+  ],
+  "execution": "Actual separate context with same-input recording, fresh benchmark run and selected exception/repair controls; no model or business-effect measurement.",
+  "independent_metrics": {
+    "minimal_fields": {
+      "tasks": 8,
+      "evaluated": 8,
+      "unknown": 0,
+      "correct": 3,
+      "misses": 5,
+      "false_alarms": 0,
+      "detected_defects": 0,
+      "accuracy": 0.375,
+      "precision": null,
+      "recall": 0.0,
+      "scripted_restores": 5,
+      "restore_failures": 0,
+      "restore_unknowns": 0,
+      "initial_nanoseconds": 7124
+    },
+    "contract_checker": {
+      "tasks": 8,
+      "evaluated": 8,
+      "unknown": 0,
+      "correct": 8,
+      "misses": 0,
+      "false_alarms": 0,
+      "detected_defects": 5,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "scripted_restores": 5,
+      "restore_failures": 0,
+      "restore_unknowns": 0,
+      "initial_nanoseconds": 292457
+    }
+  },
+  "candidate_test_extension": {
+    "file": "tests/test_workflow_entry.py",
+    "prior_trial_sha256": "efc4b3416e3d7d20a80c0b0765b4627db8025e640d462ed496108d4020a4f94c",
+    "updated_sha256": "6bc7e85215876e60397afe3df07271762137288ff39dd3439fecb29c4a2359ed",
+    "addition": "test_actual_cli_receipt_binds_current_entry_and_preserves_child_statuses (lines 162–174)",
+    "review": "只扩展公开CLI回执绑定与五个固定案例子状态检查；新增测试的断言与当前回执字段一致。去掉该新增方法可精确恢复此前审阅测试文件SHA，其他candidate_sha256及necessary_input_sha256逐项核无变化。",
+    "scope": "工具、Skill、设计、业务实现和固定benchmark行为未修改；原CLI-R1闭环与独立实验事实保持。",
+    "actual_validation": "本轮只读审查新增测试并读回核公开回执的入口哈希、五handler键、PARTIAL/NOT_RUN/NOT_ASSESSED字段；未重跑全部旧试验或全部测试，不声称独立执行15项回归。"
+  }
+}

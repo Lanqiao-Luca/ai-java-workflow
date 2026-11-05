@@ -105,6 +105,9 @@
     "docs/atomic-method-coverage.md": {
       "mode": "current"
     },
+    "docs/cli.md": {
+      "mode": "current"
+    },
     "docs/concurrent-execution-plan.md": {
       "mode": "preserved",
       "sha256": "7512db11aa5473c41534389b391339b432bbca3571bc257ff5ee5dee20bd09fb",
@@ -1268,6 +1271,9 @@
       "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
     },
     "workflows/examples/capability-benchmark/README.md": {
+      "mode": "current"
+    },
+    "workflows/examples/cli/README.md": {
       "mode": "current"
     },
     "workflows/examples/conclusion-challenge/README.md": {

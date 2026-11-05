@@ -18,7 +18,7 @@ description: 为责任 Agent 适配执行计划、已有运行器与证据返回
 
 1. 核所选执行文件的真实来源、格式与运行器支持范围。Markdown 计划由 Agent 按合同执行，不因填好模板就变成可直接运行的 JSON。
 2. 将当前候选、授权、工具环境、剩余预算和输出位置交给明确支持的后端；输入/前提未满足不发起动作。
-3. 按需定位[工作区与沙箱工具](../../tools/execution/README.md)、[Loop 判定](../../tools/loop_policy.py)、[巡检控制](../../tools/inspection_loop.py)、[缺陷控制](../../tools/defect_loop.py)或[目标图执行器](../../tools/goal_graph_run.py)。只使用合同支持的接口，不自行替换其候选、门禁或停止策略。
+3. 按需定位[工作区与沙箱工具](../../tools/execution/README.md)、[Loop 判定](../../tools/loop_policy.py)、[巡检控制](../../tools/inspection_loop.py)、[缺陷控制](../../tools/defect_loop.py)或[目标图执行器](../../tools/goal_graph_run.py)。也可按[统一命令合同](../../docs/cli.md)使用[受限入口工具](../../tools/workflow_entry.py)运行五个固定案例，核请求/实现身份和安全检查点；不支持任意工作流定义。只使用合同支持的接口，不自行替换其候选、门禁或停止策略。
 4. 交回实际命令/接口、退出状态、产物身份和未决。UNKNOWN 先核受理状态；不清零预算或用新运行身份重放未知动作。
 
 ## 输出与停止

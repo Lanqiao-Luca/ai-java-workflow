@@ -1,0 +1,120 @@
+{
+  "status": "PASSED",
+  "scope": "Actual curated case CLI invocations; no private request paths exported",
+  "entry_sha256": {
+    "scripts/workflow.py": "6950d5a7f1902674ea7636da23d38b00a494d47ca12cd5661dcd4ac89ff1369f",
+    "tools/workflow_entry.py": "d3186ef50b61bf8fefe1fa529da60639b40a7faba3772f4becbf5bac0e7cb616"
+  },
+  "handlers": {
+    "challenge": {
+      "status": "SUCCEEDED",
+      "run_id_preserved": true,
+      "completed_resume_did_not_rewrite_state": true,
+      "steps": [
+        "preflight",
+        "execute"
+      ],
+      "semantic_acceptance": "NOT_ASSESSED",
+      "independent_review": "NOT_RUN"
+    },
+    "local": {
+      "status": "SUCCEEDED",
+      "run_id_preserved": true,
+      "completed_resume_did_not_rewrite_state": true,
+      "steps": [
+        "preflight",
+        "execute"
+      ],
+      "coverage_statuses": {
+        "complete": "COMPLETE_MATCH",
+        "sample": "SAMPLE_FOUND",
+        "bounded_empty": "COMPLETE_EMPTY",
+        "page_budget": "PARTIAL"
+      }
+    },
+    "modules": {
+      "status": "SUCCEEDED",
+      "run_id_preserved": true,
+      "completed_resume_did_not_rewrite_state": true,
+      "steps": [
+        "preflight",
+        "execute"
+      ],
+      "structure": "STRUCTURE_VALID",
+      "implementation": "NOT_RUN"
+    },
+    "benchmark": {
+      "status": "SUCCEEDED",
+      "run_id_preserved": true,
+      "completed_resume_did_not_rewrite_state": true,
+      "steps": [
+        "preflight",
+        "execute"
+      ],
+      "metrics": {
+        "minimal_fields": {
+          "tasks": 8,
+          "evaluated": 8,
+          "unknown": 0,
+          "correct": 3,
+          "misses": 5,
+          "false_alarms": 0,
+          "detected_defects": 0,
+          "accuracy": 0.375,
+          "precision": null,
+          "recall": 0.0,
+          "scripted_restores": 5,
+          "restore_failures": 0,
+          "restore_unknowns": 0,
+          "initial_nanoseconds": 4542
+        },
+        "contract_checker": {
+          "tasks": 8,
+          "evaluated": 8,
+          "unknown": 0,
+          "correct": 8,
+          "misses": 0,
+          "false_alarms": 0,
+          "detected_defects": 5,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "scripted_restores": 5,
+          "restore_failures": 0,
+          "restore_unknowns": 0,
+          "initial_nanoseconds": 212375
+        }
+      }
+    },
+    "spring": {
+      "status": "SUCCEEDED",
+      "run_id_preserved": true,
+      "completed_resume_did_not_rewrite_state": true,
+      "steps": [
+        "preflight",
+        "execute"
+      ],
+      "candidate_id": "f7599bcd03e9eeb0927c24f5af4967f09aa724bcf52a65a60a08d04dc0426cac",
+      "variants": [
+        {
+          "variant": "red",
+          "tests": 14,
+          "failures": [
+            "invalidTailDoesNotPartiallyArchive",
+            "rejectedWebBatchLeavesEntireSnapshotUnchanged",
+            "unknownTailDoesNotPartiallyArchive"
+          ],
+          "process_exit": 1,
+          "accepted": true
+        },
+        {
+          "variant": "green",
+          "tests": 14,
+          "failures": [],
+          "process_exit": 0,
+          "accepted": true
+        }
+      ]
+    }
+  }
+}

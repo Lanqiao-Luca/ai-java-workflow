@@ -5,6 +5,7 @@ import json
 import math
 import os
 import re
+import runpy
 import stat
 import sys
 
@@ -268,10 +269,12 @@ def main():
             continue
         case = json_file(folder, 'case.json')
         kind = case.get('kind', 'role_case' if 'agent' in case and 'skill' in case else None)
-        demand(kind in OLD_KINDS | {KIND}, 'unknown example kind')
+        demand(kind in OLD_KINDS | {KIND, 'design_spring_case'}, 'unknown example kind')
         if kind == KIND:
             check_native_case(folder)
             count += 1
+        elif kind == 'design_spring_case':
+            runpy.run_path(str(ROOT / 'scripts/check_design_spring_case.py'))['check_design_spring_case'](folder)
     print(f'PASS: {count} native Spring cases; static source/record/identity consistency only; no models or builds executed')
 
 

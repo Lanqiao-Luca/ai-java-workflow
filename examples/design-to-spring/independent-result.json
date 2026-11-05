@@ -1,0 +1,95 @@
+{
+  "candidate_id": "f7599bcd03e9eeb0927c24f5af4967f09aa724bcf52a65a60a08d04dc0426cac",
+  "source_sha256": {
+    "app/pom.xml": "17c3e6d88482f0f33d11b665f935da02e3f871c4877b0547393fafafa6311738",
+    "app/src/main/java/example/reading/ReadingApplication.java": "40726b78ecdbd90f92c9a443740efbe0813896d39456aee568d5fdbb5c3bdc00",
+    "app/src/main/java/example/reading/ReadingListController.java": "48fb1be7e9e6459b60b148817551aae67bebd21648418e1b66ef979d31a6d1be",
+    "app/src/main/java/example/reading/ReadingListService.java": "6e454ba92e1c612b1586bc504c581031f6ffbebf1bd41d64c720d834cb64c0ed",
+    "app/src/test/java/example/reading/ReadingListServiceTest.java": "8fb81a474b4b5c6d881e2d4aec36aacd1b7d37ce46ba318c258f9cb0e87a47ad",
+    "app/src/test/java/example/reading/ReadingListWebTest.java": "0e8f607abfd194242a581859a28ca7c4c5b53579dbc0ddc1e816046134a9bbd8",
+    "contract.json": "990b082ea6c726d7028e9e86d3fed4064e1f1e3d9fe739f3c1cda86a0ca398ef",
+    "design.md": "3af7f6241b87a4a95564a45b0f1f6d0a9ec85d88ef6a99a5419a5b7857cfd442",
+    "plan.json": "9351605ce0229164c2234923f633ec428ab8c03745cdd30c42379d7819f21ad7",
+    "requirements.md": "3c587de68cab502d2830b5f253f81e9bdce14394755cc26f53c002d87331bfad"
+  },
+  "runner_sha256": "70fa4de6561df28c4b2889f199c61a8d4f2a59d8aa35b5bacebad102f915fa0c",
+  "scope": "Fictional single-JVM memory service; real Spring context, MockMvc and two-thread service checks",
+  "production_auth": "NOT_RUN",
+  "distributed_behavior": "NOT_RUN",
+  "variants": [
+    {
+      "variant": "red",
+      "compiled_source_sha256": {
+        "pom.xml": "17c3e6d88482f0f33d11b665f935da02e3f871c4877b0547393fafafa6311738",
+        "src/main/java/example/reading/ReadingApplication.java": "40726b78ecdbd90f92c9a443740efbe0813896d39456aee568d5fdbb5c3bdc00",
+        "src/main/java/example/reading/ReadingListController.java": "48fb1be7e9e6459b60b148817551aae67bebd21648418e1b66ef979d31a6d1be",
+        "src/main/java/example/reading/ReadingListService.java": "182fdacd927ca3a311c4d6fbb1e40c87d1b9635d1173bf055bcac56d62832456",
+        "src/test/java/example/reading/ReadingListServiceTest.java": "8fb81a474b4b5c6d881e2d4aec36aacd1b7d37ce46ba318c258f9cb0e87a47ad",
+        "src/test/java/example/reading/ReadingListWebTest.java": "0e8f607abfd194242a581859a28ca7c4c5b53579dbc0ddc1e816046134a9bbd8"
+      },
+      "process_exit": 1,
+      "tests": 14,
+      "test_names": [
+        "concurrentOldVersionWritersCannotBothCommit",
+        "currentVersionNoopPreservesSnapshot",
+        "duplicatesDoNotChangeCallerOrIncrementTwice",
+        "forbiddenAndStaleStatusesAreMapped",
+        "invalidTailDoesNotPartiallyArchive",
+        "nullVersionNullIdsEmptyAndBlankRejectWithoutChange",
+        "ownerCheckedBeforeBusinessPayloadOrVersion",
+        "postArchivesThroughRealControllerAndService",
+        "realContextGetSerializesVersionAndOrderedItems",
+        "rejectedWebBatchLeavesEntireSnapshotUnchanged",
+        "snapshotsAreImmutable",
+        "staleNoopRejectsAndPreservesSnapshot",
+        "unknownTailDoesNotPartiallyArchive",
+        "validBatchChangesExactlyOneVersionAndKeepsTitlesOrder"
+      ],
+      "failures": [
+        "invalidTailDoesNotPartiallyArchive",
+        "rejectedWebBatchLeavesEntireSnapshotUnchanged",
+        "unknownTailDoesNotPartiallyArchive"
+      ],
+      "errors": [],
+      "skipped": [],
+      "accepted": true,
+      "seconds": 3.29
+    },
+    {
+      "variant": "green",
+      "compiled_source_sha256": {
+        "pom.xml": "17c3e6d88482f0f33d11b665f935da02e3f871c4877b0547393fafafa6311738",
+        "src/main/java/example/reading/ReadingApplication.java": "40726b78ecdbd90f92c9a443740efbe0813896d39456aee568d5fdbb5c3bdc00",
+        "src/main/java/example/reading/ReadingListController.java": "48fb1be7e9e6459b60b148817551aae67bebd21648418e1b66ef979d31a6d1be",
+        "src/main/java/example/reading/ReadingListService.java": "6e454ba92e1c612b1586bc504c581031f6ffbebf1bd41d64c720d834cb64c0ed",
+        "src/test/java/example/reading/ReadingListServiceTest.java": "8fb81a474b4b5c6d881e2d4aec36aacd1b7d37ce46ba318c258f9cb0e87a47ad",
+        "src/test/java/example/reading/ReadingListWebTest.java": "0e8f607abfd194242a581859a28ca7c4c5b53579dbc0ddc1e816046134a9bbd8"
+      },
+      "process_exit": 0,
+      "tests": 14,
+      "test_names": [
+        "concurrentOldVersionWritersCannotBothCommit",
+        "currentVersionNoopPreservesSnapshot",
+        "duplicatesDoNotChangeCallerOrIncrementTwice",
+        "forbiddenAndStaleStatusesAreMapped",
+        "invalidTailDoesNotPartiallyArchive",
+        "nullVersionNullIdsEmptyAndBlankRejectWithoutChange",
+        "ownerCheckedBeforeBusinessPayloadOrVersion",
+        "postArchivesThroughRealControllerAndService",
+        "realContextGetSerializesVersionAndOrderedItems",
+        "rejectedWebBatchLeavesEntireSnapshotUnchanged",
+        "snapshotsAreImmutable",
+        "staleNoopRejectsAndPreservesSnapshot",
+        "unknownTailDoesNotPartiallyArchive",
+        "validBatchChangesExactlyOneVersionAndKeepsTitlesOrder"
+      ],
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "accepted": true,
+      "seconds": 2.656
+    }
+  ],
+  "java": "openjdk version \"17.0.21\" 2026-10-20",
+  "status": "PASSED"
+}

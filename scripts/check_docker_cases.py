@@ -203,6 +203,7 @@ def main():
                "spring_build_graph_case": ("check_spring_build_cases.py", "check_spring_build_case")}
     checks = {k: runpy.run_path(str(ROOT / "scripts" / f))[fn] for k, (f, fn) in modules.items()}
     checks["native_spring_workflow_case"] = runpy.run_path(str(ROOT / "scripts/check_native_cases.py"))["check_native_case"]
+    checks["design_spring_case"] = runpy.run_path(str(ROOT / "scripts/check_design_spring_case.py"))["check_design_spring_case"]
     checks["docker_spring_graph_case"] = check_docker_case; count = 0
     for folder in sorted((ROOT / "examples").iterdir()):
         if not folder.is_dir(): continue

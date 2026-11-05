@@ -1,0 +1,135 @@
+{
+  "review_type": "independent_implementation_and_acceptance_review",
+  "candidate_id": "f7599bcd03e9eeb0927c24f5af4967f09aa724bcf52a65a60a08d04dc0426cac",
+  "source_sha256": {
+    "app/pom.xml": "17c3e6d88482f0f33d11b665f935da02e3f871c4877b0547393fafafa6311738",
+    "app/src/main/java/example/reading/ReadingApplication.java": "40726b78ecdbd90f92c9a443740efbe0813896d39456aee568d5fdbb5c3bdc00",
+    "app/src/main/java/example/reading/ReadingListController.java": "48fb1be7e9e6459b60b148817551aae67bebd21648418e1b66ef979d31a6d1be",
+    "app/src/main/java/example/reading/ReadingListService.java": "6e454ba92e1c612b1586bc504c581031f6ffbebf1bd41d64c720d834cb64c0ed",
+    "app/src/test/java/example/reading/ReadingListServiceTest.java": "8fb81a474b4b5c6d881e2d4aec36aacd1b7d37ce46ba318c258f9cb0e87a47ad",
+    "app/src/test/java/example/reading/ReadingListWebTest.java": "0e8f607abfd194242a581859a28ca7c4c5b53579dbc0ddc1e816046134a9bbd8",
+    "contract.json": "990b082ea6c726d7028e9e86d3fed4064e1f1e3d9fe739f3c1cda86a0ca398ef",
+    "design.md": "3af7f6241b87a4a95564a45b0f1f6d0a9ec85d88ef6a99a5419a5b7857cfd442",
+    "plan.json": "9351605ce0229164c2234923f633ec428ab8c03745cdd30c42379d7819f21ad7",
+    "requirements.md": "3c587de68cab502d2830b5f253f81e9bdce14394755cc26f53c002d87331bfad"
+  },
+  "runner_sha256": "70fa4de6561df28c4b2889f199c61a8d4f2a59d8aa35b5bacebad102f915fa0c",
+  "supporting_sha256": {
+    "examples/design-to-spring/fixtures/ReadingListService-red.java.txt": "182fdacd927ca3a311c4d6fbb1e40c87d1b9635d1173bf055bcac56d62832456",
+    "tools/module_plan.py": "a7d13600a39a036f23e41cc179e40a9990246831c644c6a33c4e1aa136ca8149"
+  },
+  "identity": "独立重算原始源字节/候选摘要及运行器哈希；匹配主控冻结候选和作者回执；运行后重新核对无漂移",
+  "runner_exit": 0,
+  "actual_results": [
+    {
+      "variant": "red",
+      "process_exit": 1,
+      "tests": 14,
+      "failures": [
+        "invalidTailDoesNotPartiallyArchive",
+        "rejectedWebBatchLeavesEntireSnapshotUnchanged",
+        "unknownTailDoesNotPartiallyArchive"
+      ],
+      "errors": [],
+      "skipped": [],
+      "accepted": true
+    },
+    {
+      "variant": "green",
+      "process_exit": 0,
+      "tests": 14,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "accepted": true
+    }
+  ],
+  "acceptance_coverage": [
+    {
+      "requirements": [
+        "R1"
+      ],
+      "evidence": [
+        "ReadingListService.java:18-24,63-65",
+        "realContextGetSerializesVersionAndOrderedItems",
+        "validBatchChangesExactlyOneVersionAndKeepsTitlesOrder",
+        "snapshotsAreImmutable"
+      ],
+      "assessment": "静态核初始ID/标题/状态；真实Spring响应及服务断言核初始版本、有序标题、归档状态和不可变快照。"
+    },
+    {
+      "requirements": [
+        "R2"
+      ],
+      "evidence": [
+        "ReadingListController.java",
+        "ReadingListService.java:27-29,41-45",
+        "ownerCheckedBeforeBusinessPayloadOrVersion",
+        "postArchivesThroughRealControllerAndService",
+        "forbiddenAndStaleStatusesAreMapped"
+      ],
+      "assessment": "真实Spring依赖注入与MockMvc走控制器和真实服务；清单/所有者在业务校验之前；Header仅模拟身份。"
+    },
+    {
+      "requirements": [
+        "R3"
+      ],
+      "evidence": [
+        "ReadingListService.java:43-59",
+        "invalidTailDoesNotPartiallyArchive",
+        "unknownTailDoesNotPartiallyArchive",
+        "rejectedWebBatchLeavesEntireSnapshotUnchanged",
+        "duplicatesDoNotChangeCallerOrIncrementTwice"
+      ],
+      "assessment": "全量校验后写入，去重不改输入；服务失败后完整Snapshot相等；红色控制实际使两项完整状态断言与一项Web保留断言失败。"
+    },
+    {
+      "requirements": [
+        "R4"
+      ],
+      "evidence": [
+        "ReadingListService.java:43-59",
+        "nullVersionNullIdsEmptyAndBlankRejectWithoutChange",
+        "currentVersionNoopPreservesSnapshot",
+        "staleNoopRejectsAndPreservesSnapshot",
+        "validBatchChangesExactlyOneVersionAndKeepsTitlesOrder",
+        "forbiddenAndStaleStatusesAreMapped"
+      ],
+      "assessment": "空值/空白/空列表400，未知项目404、非所有者403、旧版本409；当前版本no-op不变，stale no-op仍冲突；有效改变版本恰加一。"
+    },
+    {
+      "requirements": [
+        "R5"
+      ],
+      "evidence": [
+        "ReadingListService.java:36-65",
+        "concurrentOldVersionWritersCannotBothCommit",
+        "invalidTailDoesNotPartiallyArchive",
+        "unknownTailDoesNotPartiallyArchive"
+      ],
+      "assessment": "读写同一对象监视器；两个真实线程由屏障放行，结果200/409、版本2且仅一个目标改变；失败路径全状态保留由记录相等断言覆盖。"
+    }
+  ],
+  "module_review": {
+    "result": "ACCEPTED_WITHIN_SCOPE",
+    "evidence": "plan/contract绑定冻结design；R1–R5唯一归属，R3–R5同属service；app六个实际文件均有唯一写者；web和acceptance正确依赖service；acceptance依赖web；运行器实际调用validate_plan并核精确app写集。",
+    "boundary": "baseline_sha256在本虚构案例中是声明绑定，不声称验证外部真实仓库历史。"
+  },
+  "findings": [],
+  "verdict": "IMPLEMENTATION_ACCEPTED_WITHIN_SCOPE",
+  "rationale": "独立源码审查及同候选真实红绿运行符合虚构单JVM内存案例；未发现需整改缺陷，不将故意红色负控制当当前app缺陷。",
+  "limitations": [
+    "仅单次两线程屏障测试及静态锁分析；未作穷举调度、负载或长稳测试。",
+    "HTTP测试未逐个重放服务全部拒绝组合；未知清单、缺Header、坏JSON等框架分支本轮主要静态检查，未另加动态用例。",
+    "MockMvc真实Spring装配；未启动对外HTTP端口或进行部署/打包验收。",
+    "不覆盖真实认证、生产服务、数据库、分布式锁、进程崩溃恢复；未联网读取资料。",
+    "未以本复核授权发布、提交或用户业务接受。"
+  ],
+  "execution": "Actual separate model context, read-only review and independent offline JDK/Maven re-run; not author self-check.",
+  "command": "python3 -B examples/design-to-spring/run.py --java-home <approved-jdk> --maven-home <approved-maven> --repository <external-public-cache> --offline --output <external-receipt>",
+  "independent_run": {
+    "status": "PASSED",
+    "green_tests": 14,
+    "candidate_id": "f7599bcd03e9eeb0927c24f5af4967f09aa724bcf52a65a60a08d04dc0426cac"
+  }
+}

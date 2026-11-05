@@ -762,6 +762,101 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "examples/design-to-spring/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/app/pom.xml",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/app/src/main/java/example/reading/ReadingApplication.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/app/src/main/java/example/reading/ReadingListController.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/app/src/main/java/example/reading/ReadingListService.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/app/src/test/java/example/reading/ReadingListServiceTest.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/app/src/test/java/example/reading/ReadingListWebTest.java",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/artifact-manifest.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/case.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/contract.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/design-review.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/design.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/fixtures/ReadingListService-red.java.txt",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/implementation-review.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/independent-result.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/plan.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/requirements.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/result.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "examples/design-to-spring/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "examples/diagnose-version-conflict/README.md",
       "origin": "newly_written_synthetic_case",
       "status": "reviewed_candidate"
@@ -1842,6 +1937,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "scripts/check_design_spring_case.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "scripts/check_docker_cases.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2273,6 +2373,11 @@
     },
     {
       "path": "tests/test_conclusion_challenge.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_design_spring.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

@@ -224,6 +224,7 @@ def main():
         elif kind == "role_case": role["check_case"](folder)
         elif kind == "docker_spring_graph_case": docker["check_docker_case"](folder)
         elif kind == "native_spring_workflow_case": runpy.run_path(str(ROOT / "scripts/check_native_cases.py"))["check_native_case"](folder)
+        elif kind == "design_spring_case": runpy.run_path(str(ROOT / "scripts/check_design_spring_case.py"))["check_design_spring_case"](folder)
         else: raise ValueError("unknown example kind")
     print(f"PASS: {count} Spring build Graph cases; source/catalog, declared results, failure controls and identities only; no builds executed")
 

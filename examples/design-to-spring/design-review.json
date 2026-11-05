@@ -1,0 +1,46 @@
+{
+  "candidate": {
+    "requirements_sha256": "3c587de68cab502d2830b5f253f81e9bdce14394755cc26f53c002d87331bfad",
+    "design_sha256": "3af7f6241b87a4a95564a45b0f1f6d0a9ec85d88ef6a99a5419a5b7857cfd442",
+    "identity_rechecked_after_review": true,
+    "author_source": "主控提交的新案例设计候选；作者来源为任务交接声明，未独立认证自然人身份"
+  },
+  "coverage": [
+    {
+      "requirement": "R1",
+      "evidence": "requirements.md:7、design.md:7、9、15",
+      "assessment": "需求固定初始状态；设计保持有序记录、不可变快照及同步 GET，验收包含顺序与快照保持。"
+    },
+    {
+      "requirement": "R2",
+      "evidence": "requirements.md:8、design.md:7、9、11、13",
+      "assessment": "控制器/服务边界清楚；清单和所有者先于业务校验；JSON 框架处理先行的边界明确。"
+    },
+    {
+      "requirement": "R3",
+      "evidence": "requirements.md:9、design.md:9、15",
+      "assessment": "去重及全量校验在首次修改之前；非法尾项、去重和调用方集合保留进入验收。"
+    },
+    {
+      "requirement": "R4",
+      "evidence": "requirements.md:10、design.md:9、11、15",
+      "assessment": "版本检查先于 no-op 判断；单次有效改变版本加一、no-op 不变；错误 HTTP 状态有映射约定。"
+    },
+    {
+      "requirement": "R5",
+      "evidence": "requirements.md:11、design.md:9、13、15",
+      "assessment": "校验与提交同一 synchronized 方法，GET 同一监视器；状态写者不拆分；要求真正并发两写者及失败状态保留验收。"
+    }
+  ],
+  "counterexamples_considered": [
+    "前一合法 ID 后接非法 ID：设计要求全量校验后提交，避免部分归档。",
+    "旧版本且目标已归档：版本先核，再判断 no-op，仍返回 409。",
+    "两个同旧版本的有改变请求竞争：同一监视器串行核版本及提交，后者冲突。",
+    "GET 与批量更新竞争：同一监视器内产生快照，避免读到中间状态。",
+    "重复 ID 或返回对象被调用方修改：LinkedHashSet 去重、响应不暴露可变 Map、不可变记录快照提供设计约束。"
+  ],
+  "findings": [],
+  "verdict": "DESIGN_ACCEPTED_WITHIN_SCOPE",
+  "rationale": "当前冻结需求与设计之间未发现可定位的设计缺陷或阻断项，足以进入实现与测试；该结论不是实现通过或用户接受。",
+  "execution": "Actual separated model context; static review of this public fictional design. Implementation and run acceptance recorded separately."
+}

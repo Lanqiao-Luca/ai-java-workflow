@@ -1,0 +1,75 @@
+{
+  "design_id": "ReadingArchive",
+  "design_revision": 1,
+  "design_sha256": "3af7f6241b87a4a95564a45b0f1f6d0a9ec85d88ef6a99a5419a5b7857cfd442",
+  "modules": [
+    {
+      "id": "service",
+      "repo": "demo",
+      "baseline_sha256": "852a1a2b6a662c60f089da2199229e6e7ccdadfcd124a3aba218514bc582834f",
+      "purpose": "Own atomic state, invariants and immutable snapshot",
+      "requirements": [
+        "R1",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "writes": [
+        "app/src/main/java/example/reading/ReadingListService.java"
+      ],
+      "depends_on": [],
+      "acceptance": [
+        "All validation precedes mutation; stale no-op conflicts; concurrent old writers cannot both commit"
+      ]
+    },
+    {
+      "id": "web",
+      "repo": "demo",
+      "baseline_sha256": "852a1a2b6a662c60f089da2199229e6e7ccdadfcd124a3aba218514bc582834f",
+      "purpose": "Wire Spring HTTP mapping to the single service writer",
+      "requirements": [
+        "R2"
+      ],
+      "writes": [
+        "app/src/main/java/example/reading/ReadingListController.java",
+        "app/src/main/java/example/reading/ReadingApplication.java"
+      ],
+      "depends_on": [
+        "service"
+      ],
+      "acceptance": [
+        "MockMvc verifies wiring and HTTP status mapping"
+      ]
+    },
+    {
+      "id": "acceptance",
+      "repo": "demo",
+      "baseline_sha256": "852a1a2b6a662c60f089da2199229e6e7ccdadfcd124a3aba218514bc582834f",
+      "purpose": "Build public candidate and verify observable contracts",
+      "requirements": [],
+      "writes": [
+        "app/pom.xml",
+        "app/src/test/java/example/reading/ReadingListServiceTest.java",
+        "app/src/test/java/example/reading/ReadingListWebTest.java"
+      ],
+      "depends_on": [
+        "service",
+        "web"
+      ],
+      "acceptance": [
+        "Actual JDK17/Maven red and green tests with exact test names, source hashes and no skipped tests"
+      ]
+    }
+  ],
+  "shared_files": [
+    {
+      "repo": "demo",
+      "path": "app/src/main/java/example/reading/ReadingListService.java",
+      "owner": "service",
+      "consumers": [
+        "web",
+        "acceptance"
+      ]
+    }
+  ]
+}

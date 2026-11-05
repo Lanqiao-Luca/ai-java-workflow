@@ -1,0 +1,76 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "b026147e954df82df02f9eb1c9b2da915e0117aa479284757eaea1dfdbc3fc24"
+    },
+    {
+      "path": "app/pom.xml",
+      "sha256": "17c3e6d88482f0f33d11b665f935da02e3f871c4877b0547393fafafa6311738"
+    },
+    {
+      "path": "app/src/main/java/example/reading/ReadingApplication.java",
+      "sha256": "40726b78ecdbd90f92c9a443740efbe0813896d39456aee568d5fdbb5c3bdc00"
+    },
+    {
+      "path": "app/src/main/java/example/reading/ReadingListController.java",
+      "sha256": "48fb1be7e9e6459b60b148817551aae67bebd21648418e1b66ef979d31a6d1be"
+    },
+    {
+      "path": "app/src/main/java/example/reading/ReadingListService.java",
+      "sha256": "6e454ba92e1c612b1586bc504c581031f6ffbebf1bd41d64c720d834cb64c0ed"
+    },
+    {
+      "path": "app/src/test/java/example/reading/ReadingListServiceTest.java",
+      "sha256": "8fb81a474b4b5c6d881e2d4aec36aacd1b7d37ce46ba318c258f9cb0e87a47ad"
+    },
+    {
+      "path": "app/src/test/java/example/reading/ReadingListWebTest.java",
+      "sha256": "0e8f607abfd194242a581859a28ca7c4c5b53579dbc0ddc1e816046134a9bbd8"
+    },
+    {
+      "path": "case.json",
+      "sha256": "aa370b4ed086137e5ad7388c47ccfeb6f81c57e1ec26bf28db94b87b66616805"
+    },
+    {
+      "path": "contract.json",
+      "sha256": "990b082ea6c726d7028e9e86d3fed4064e1f1e3d9fe739f3c1cda86a0ca398ef"
+    },
+    {
+      "path": "design-review.json",
+      "sha256": "e331bef1576202deabfb09e1c87e6aa0fd09193695bd3f212c2503e87ae85573"
+    },
+    {
+      "path": "design.md",
+      "sha256": "3af7f6241b87a4a95564a45b0f1f6d0a9ec85d88ef6a99a5419a5b7857cfd442"
+    },
+    {
+      "path": "fixtures/ReadingListService-red.java.txt",
+      "sha256": "182fdacd927ca3a311c4d6fbb1e40c87d1b9635d1173bf055bcac56d62832456"
+    },
+    {
+      "path": "implementation-review.json",
+      "sha256": "ec92cfda45dc771b232b5a33793d1dcda4a2bf5086805a491eed37a998107aa9"
+    },
+    {
+      "path": "independent-result.json",
+      "sha256": "66b446ad611d506409e3d090049f488c31b080b1a250dd35a70fd245841d8849"
+    },
+    {
+      "path": "plan.json",
+      "sha256": "9351605ce0229164c2234923f633ec428ab8c03745cdd30c42379d7819f21ad7"
+    },
+    {
+      "path": "requirements.md",
+      "sha256": "3c587de68cab502d2830b5f253f81e9bdce14394755cc26f53c002d87331bfad"
+    },
+    {
+      "path": "result.json",
+      "sha256": "fd9398b215db329918273d5d834d71f3d63c9d8502983ccf16b4b30f7a1ecf07"
+    },
+    {
+      "path": "run.py",
+      "sha256": "70fa4de6561df28c4b2889f199c61a8d4f2a59d8aa35b5bacebad102f915fa0c"
+    }
+  ]
+}

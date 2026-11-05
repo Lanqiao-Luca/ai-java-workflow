@@ -1,0 +1,66 @@
+package example.reading;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+@Service
+public class ReadingListService {
+    public record ArchiveRequest(List<String> ids, Long version) { }
+    public record Item(String id, String title, boolean archived) { }
+    public record Snapshot(long version, List<Item> items) { }
+
+    private long version = 1;
+    private final Map<String, Item> items = new LinkedHashMap<>();
+
+    public ReadingListService() {
+        items.put("a", new Item("a", "Alpha", false));
+        items.put("b", new Item("b", "Beta", false));
+        items.put("c", new Item("c", "Gamma", true));
+    }
+
+    private void authorize(String listId, String actor) {
+        if (!"reading".equals(listId)) throw error(HttpStatus.NOT_FOUND);
+        if (!"demo-owner".equals(actor)) throw error(HttpStatus.FORBIDDEN);
+    }
+
+    private static ResponseStatusException error(HttpStatus status) {
+        return new ResponseStatusException(status);
+    }
+
+    public synchronized Snapshot read(String listId, String actor) {
+        authorize(listId, actor);
+        return snapshot();
+    }
+
+    public synchronized Snapshot archive(String listId, String actor, ArchiveRequest request) {
+        authorize(listId, actor);
+        if (request == null || request.version() == null || request.ids() == null || request.ids().isEmpty())
+            throw error(HttpStatus.BAD_REQUEST);
+        if (request.version() != version) throw error(HttpStatus.CONFLICT);
+        LinkedHashSet<String> ids = new LinkedHashSet<>();
+        for (String id : request.ids()) {
+            if (id == null || id.isBlank()) throw error(HttpStatus.BAD_REQUEST);
+            if (!items.containsKey(id)) throw error(HttpStatus.NOT_FOUND);
+            ids.add(id);
+        }
+        boolean changed = ids.stream().anyMatch(id -> !items.get(id).archived());
+        if (changed) {
+            for (String id : ids) {
+                Item old = items.get(id);
+                items.put(id, new Item(id, old.title(), true));
+            }
+            version++;
+        }
+        return snapshot();
+    }
+
+    private Snapshot snapshot() {
+        return new Snapshot(version, List.copyOf(new ArrayList<>(items.values())));
+    }
+}

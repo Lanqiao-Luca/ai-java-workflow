@@ -223,6 +223,9 @@
       "applies_to": "需要追溯原文或核对既有案例身份的读者；不作为当前候选的执行回执或现行权限。",
       "reason": "既有已发布案例/来源绑定材料，或按原时间与版本保留的计划、报告；原字节保持不改，声明置于档案旁证。"
     },
+    "docs/next-capabilities-plan.md": {
+      "mode": "current"
+    },
     "docs/public-baseline/README.md": {
       "mode": "current"
     },

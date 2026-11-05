@@ -19,6 +19,8 @@
 - [证据诊断](evidence-diagnosis/SKILL.md)
 - [查询审查](sql-review/SKILL.md)
 - [状态与交付规划](delivery-planning/SKILL.md)
+- [能力对照评估](capability-evaluation/SKILL.md)：同任务、初始判定与脚本还原分开，未知与未测保留。
+- [重要结论反证](conclusion-challenge/SKILL.md)：共同证据矩阵、主动反证和决定性证据移除；不自动确认根因。
 - [证据采集](evidence-collection/SKILL.md)：来源前检、事实保真、sample/complete与零命中覆盖；不提供真实连接器。
 - [技术方案编制](technical-design/SKILL.md)：从准入输入生成实质设计和保持/验收映射。
 - [设计专业复核](technical-design-review/SKILL.md)：冻结候选、真实覆盖、反例与定向复核。

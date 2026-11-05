@@ -29,24 +29,24 @@
 | --- | --- | --- |
 | 分层组装 | [分层合同](../standards/layering.md)已有责任、单源与资源区分 | 私人来源中的全部治理与登记协议未逐项迁入；当前用户确认的 Brain 可选择 Graph/Loop/Workflow/Agent、Tools 与 Standards 平级模型优先 |
 | 需求准入与验收 | [需求方法](../standards/requirements.md)已有基本澄清 | [技术方案编制/专业复核](../workflows/technical-design.md)已形成独立公开能力线；决策卡与多种产品输出模式仍未迁入 |
-| 最小实现、旧行为与共享规则 | [实现基线](../standards/implementation-baseline.md)、[行为保留](../standards/behavior-preservation.md)、[共享规则](../standards/shared-rules.md)已有覆盖 | [设计到模块](../workflows/design-to-modules.md)现覆盖有效项主责、单仓写集、共享写者、不可拆边界与依赖；结构工具不支持多写者串行补丁协议，真实工程合流与完整历史治理仍未迁入 |
+| 最小实现、旧行为与共享规则 | [实现基线](../standards/implementation-baseline.md)、[行为保留](../standards/behavior-preservation.md)、[共享规则](../standards/shared-rules.md)已有覆盖 | [设计到模块](../workflows/design-to-modules.md)现覆盖有效项主责、单仓写集、共享写者、不可拆边界与依赖；结构工具不支持多写者串行补丁协议，新[Spring归档案例](../examples/design-to-spring/README.md)已实际贯通并经分离审查/独立重跑；任意真实工程合流与完整历史治理仍未迁入 |
 | 代码审查与定向复核 | [审查合同](../standards/code-review.md)已有冻结、发现与复核 | 未将所有来源中的报告模板和专业审查变体逐项迁入 |
-| 语义与原则 | [语义核验](../standards/semantic-review.md)、[原则](../standards/principles.md)有基本覆盖 | 完整重要结论挑战矩阵、敏感性分析和显式 Grill 方法尚未形成公开能力；不可宣称全部证伪原子已迁入 |
-| 诊断与实际取证 | [诊断](../standards/diagnosis.md)有竞争解释和区分证据 | [采集能力线](../workflows/evidence-collection.md)现覆盖前检、事实保真、零命中与sample/complete方法，并有显式页观察判定；真实分页/批量执行、持久执行账与重入门尚未迁入，公司连接器明确排除 |
+| 语义与原则 | [语义核验](../standards/semantic-review.md)、[原则](../standards/principles.md)有基本覆盖 | [重要结论反证线](../workflows/conclusion-challenge.md)现有共同矩阵、主动反证和敏感性方法及本地真实反例；没有自动追问器、真实模型专业接受或全部私有证伪变体迁入声明 |
+| 诊断与实际取证 | [诊断](../standards/diagnosis.md)有竞争解释和区分证据 | [采集能力线](../workflows/evidence-collection.md)现覆盖前检、事实保真、零命中与sample/complete方法，并有显式页观察判定；本地文件适配现能实际读取明确批准文件集合并核 SHA/路径/字节预算/覆盖；网络分页/批量执行、持久执行账与重入门仍未迁入，公司连接器明确排除 |
 | 风险驱动验证 | [验证](../standards/verification.md)有当前验收和未运行边界 | 专项环境准入、历史问题复用记录及完整后端访问合同未迁入 |
 | SQL 与索引 | [查询审查](../standards/sql-review.md)有基本语义/访问模式检查 | 系统反模式集、建议模板与专项运行门禁未完整纳入 |
 | 有界恢复与收敛 | [恢复](../standards/recovery.md)、[Loops](../loops/README.md)及目标图已有公开实现 | 仍以各合同和[现有状态](loop-status.md)为准，不因本盘点补关原来未验项目 |
 | 交付与验收 | [交付规划](../standards/delivery-planning.md)有依赖、残余和许可边界 | Git 上游同步/交付合并、完整制品-实例-业务部署核验未作为通用公开 Skill；本机提交专员不等于本仓库可移植能力 |
 | 图表达与多受众渲染 | 目前主要是 README 中的 Mermaid 表达 | 统一图事实、双视图模型、术语映射和渲染质量门禁未迁入；元信息盘点不代全文验证 |
 | 研究写作、会议纪要与逐问题答案 | 当前没有专项公开 Skill | 方法有潜在复用价值，尚需独立来源审查和任务适配，不把它们硬套 Java 开发任务 |
-| 方法教练与效果观察 | 当前没有该专用执行链 | 场景选择、计时/覆盖和可比效果口径未迁入；原接口含本机状态，不复制或自动启动 Hook |
+| 方法教练与效果观察 | [能力评估线](../agents/capability-evaluator.md)现有同任务、指标分母、原始观察及结构基准；不是完整教练 | 真实模型/人工返工/工程收益未测，场景教练和原接口仍未迁入；不复制本机状态或启动Hook |
 | 资产治理、记忆与跨域登记 | 当前仅有任务交接及原件保护的局部规则 | 完整记忆回收、资产处置和跨域注册超出本批适配；不读取或发布个人资料 |
 
 本轮已按方案作者→技术设计Skill→设计输入/构造原子、复核者→复核Skill→专业审验原子、模块规划者→规划Skill→模块原子/结构工具三条相接能力线补入。新增[贯通虚构案例](../workflows/examples/design-to-modules/README.md)核实际结构控制；文档推演不等于真实专业审验或工程实施。
 
 本轮按[采集者](../agents/evidence-collector.md)→采集Skill→EC01–EC04/覆盖工具补入一项，离线案例不证明真实来源接通。
 
-后续优先考虑重要结论反证及真实来源适配的公开安全合同；先明确使用场景和可公开来源，再沿 Agent→Skill→Standards/Tools 接入。本表没有授权外部访问、自动安装、删除或后台执行。
+重要结论反证已形成一条限定公开能力线，见[分步执行记录](next-capabilities-plan.md)。后续优先考虑真实来源适配的公开安全合同；先明确使用场景和可公开来源，再沿 Agent→Skill→Standards/Tools 接入。本表没有授权外部访问、自动安装、删除或后台执行。
 
 ## 核验边界
 

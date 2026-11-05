@@ -39,6 +39,18 @@ python3 -B scripts/check_loop_cases.py
 
 `python3 -B scripts/check_ci.py` 执行便携回归，包括受控原生协议、候选门禁与恢复/续跑。它与八项离线检查均进入 GitHub CI；另有 JDK 17 的实际公开 Spring 候选构建任务。具体入口、许可、检查点和未验边界见[恢复与 CI](native-recovery.md)。
 
+## 新案例与统一入口
+
+[本地文件取证](../workflows/examples/local-evidence/README.md)可运行 `python3 -B workflows/examples/local-evidence/run.py`；[结构基准](../workflows/examples/capability-benchmark/README.md)可运行 `python3 -B workflows/examples/capability-benchmark/run.py`。两者实际处理固定公开虚构输入，前者只读明确文件集合，后者不测真实模型或人工返工。
+
+[新设计到Spring案例](../examples/design-to-spring/README.md)另需显式JDK/Maven和仓库外依赖缓存；作者与分离审查上下文均实际完成红14/指定3失败、绿14全过。便携检查仅核新候选回执，真实构建请按案例命令运行。
+
+[统一入口](cli.md)包含 doctor/choose/run/status/resume，固定五个案例，支持前检安全点跨进程接续；其他已有Graph/Loop运行器仍沿原合同，不自动转换任意计划。
+
+## 重要结论反证
+
+运行 `python3 -B workflows/examples/conclusion-challenge/run.py` 实际取得本地虚构程序的反例，核记录观察与当前候选。`python3 -B -m unittest discover -s tests -p test_conclusion_challenge.py -v` 验证候选漂移、矩阵/敏感性缺项、执行状态与来源分组等边界；已纳入便携 CI。[案例](../workflows/examples/conclusion-challenge/README.md)区分真实本地观察、作者分析与未运行的独立审验。STRUCTURE_VALID 不判事实、来源独立性或结论正确。
+
 ## 技术设计到模块准备
 
 责任 Agent 可在当前授权范围运行 `python3 -B workflows/examples/design-to-modules/run.py`，读取独立虚构设计/合同并实际核版本绑定、一个有效计划和四类拒绝。`python3 -B tools/module_plan.py --contract <独立设计合同.json> --plan <当前模块计划.json>` 只校验声明，成功返回 STRUCTURE_VALID，不代设计语义、真实仓库基线或实施许可。具体格式与未验范围见[案例](../workflows/examples/design-to-modules/README.md)。模块回归已进入便携 CI，不调用模型、Java 或外部服务。

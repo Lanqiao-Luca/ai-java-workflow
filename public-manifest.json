@@ -307,6 +307,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "docs/next-capabilities-plan.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "docs/public-baseline/09c87f070c7ecde7cf75b8db63601bb0d680dfd4948403de4c98c4ce16e780de.txt",
       "origin": "existing_public_baseline",
       "status": "reviewed_candidate"

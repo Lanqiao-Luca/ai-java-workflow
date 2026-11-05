@@ -6,6 +6,10 @@
 
 角色定义结果责任，经 Skill 组合平级的 Standards 与 Tools。Brain 可直接选择 Agent 或其上的 Workflow、Loop、Graph；组织层分配阶段职责，Agent 经 Skill 使用底层规则与工具。
 
+[能力评估者](capability-evaluator.md)经能力评估 Skill 核固定对照任务、指标分母、原始观测与未测边界。
+
+[结论复核者](conclusion-reviewer.md)经结论反证 Skill 复核重要判断；[实际本地反例](../workflows/examples/conclusion-challenge/README.md)推翻初始解释，结构工具不代专业接受。
+
 [证据采集者](evidence-collector.md)经证据采集 Skill 与 EC01–EC04 原子核来源、事实和覆盖，再交诊断者解释；[虚构案例](../workflows/examples/evidence-coverage/README.md)仅执行显式页观察判定。
 
 新增技术设计到实施准备能力线：

@@ -6,6 +6,10 @@
 
 本目录收录已填执行文件；[模板](../templates/README.md)保持空白。每个实例说明是实际执行、历史证据还是文档推演，不把填表当完成。
 
+- [统一命令请求](cli/README.md)：五个固定案例的显式请求，安全检查点与跨进程接续。
+- [结构对照基准](capability-benchmark/README.md)：真实8任务、逐项判定和可复算指标，不作模型/工程收益声明。
+- [本地文件取证](local-evidence/README.md)：实际四路径、明确集合覆盖，不查外部来源。
+- [重要结论反证案例](conclusion-challenge/README.md)：真实运行本地虚构缓存反例，矩阵与敏感性为作者分析，没有独立专业审验。
 - [页观察覆盖控制案例](evidence-coverage/README.md)：八类真实离线判定，明确零命中、局部与未知，不做来源请求。
 - [设计到模块贯通案例](design-to-modules/README.md)：设计发现/修订为文档推演，模块正例与四类拒绝为实际离线程序执行。
 - [书签任务执行文件](bookmark-tags.md)：完整填写的虚构单轮计划，状态 NOT_RUN，供[任务协调者](../../agents/task-coordinator.md)按 [研发 Workflow](../java-spring-development.md)采用。

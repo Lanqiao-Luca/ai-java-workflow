@@ -92,11 +92,32 @@ Brain 选择适用组织入口与模板 → 当前协调者/宿主和阶段职�
 
 专项任务可选相应 Agent；多阶段任务可先选 Workflow，同目标重复选 Loop，多目标依赖选 Graph。准备规划、结构有效、专业接受和实施许可分别核对，`STRUCTURE_VALID` 不能当作“可以实施”。
 
+新[阅读清单归档案例](examples/design-to-spring/README.md)实际贯通新需求、设计分离复核、3模块准备、Spring实现及独立重跑：每版本14测试，红色负控制指定3失败、当前绿色14全过。旧设计案例原来的 NOT_RUN 保留，不倒填历史。
+
 ## 证据采集与覆盖
 
 新增[证据采集者 Agent](agents/evidence-collector.md) → [采集 Skill](skills/evidence-collection/SKILL.md) → [EC01–EC04 原子](standards/evidence-collection.md)及覆盖 Tools：固定来源与版本，保真记录，区分 sample/complete，核零命中的实际覆盖。多阶段可由 Brain 选择[取证 Workflow](workflows/evidence-collection.md)。
 
-[八场景离线案例](workflows/examples/evidence-coverage/README.md)实际判断显式页观察。采样命中不宣称完整，无正控制的零命中保未解决；预算或截断保 PARTIAL，拒权与未知不当作零条。工具不发请求、不认证真实来源，不提供生产连接器或自动补证客户端。
+[八场景离线案例](workflows/examples/evidence-coverage/README.md)实际判断显式页观察。采样命中不宣称完整，无正控制的零命中保未解决；预算或截断保 PARTIAL，拒权与未知不当作零条。工具不发请求、不认证真实来源，不提供生产连接器或自动补证客户端。[本地文件适配案例](workflows/examples/local-evidence/README.md)现可实际读取明确批准的公开文件集合，核原字节身份、路径/预算和覆盖；仍不扫描私人目录或接通生产服务。
+
+## 重要结论的反证审查
+
+[结论复核者 Agent](agents/conclusion-reviewer.md) → [结论反证 Skill](skills/conclusion-challenge/SKILL.md) → [CH01–CH04 原子](standards/conclusion-challenge.md)及结构 Tools，组织合理竞争解释、共同证据矩阵、主动反证和决定性证据移除分析。多阶段可选[反证 Workflow](workflows/conclusion-challenge.md)，报告空表放在其 templates。
+
+[实际离线案例](workflows/examples/conclusion-challenge/README.md)运行虚构缓存程序：底层保留写入而缓存仍返回旧值，推翻“读旧值就说明写入丢失”的初始判断。工具只检查报告结构与候选，不能判定根因、事实真实性或实施许可；案例推理由作者编写，未运行独立模型审查或生产诊断。
+
+[能力补齐执行文档](docs/next-capabilities-plan.md)记录五项队列、每步验收、实际结果和接续点；逐项验证、核收并保存真实恢复点。
+
+## 统一运行与有限效果评估
+
+[统一命令](docs/cli.md)提供 doctor、显式目标 choose、run、status、resume，复用五个白名单案例；跨进程保原输入/实现身份，成功不重跑，未知不自动重放。运行目录在仓库外，实际 Spring 入口已执行；这不是任意工程调度器，也不提供 Brain 调用身份认证。
+
+```sh
+python3 -B scripts/workflow.py doctor
+python3 -B scripts/workflow.py choose --goal challenge
+```
+
+[能力评估者](agents/capability-evaluator.md)经评估 Skill 采用可比性原子及[实际结构基准](workflows/examples/capability-benchmark/README.md)。8个作者固定标注任务中，完整合同检查8个正确，明确简化的字段基线3个正确、5个漏检；原始观察、计时和脚本还原可重算。该微型对照不测真实模型效果、人工返工或工程收益，不能推广为总体提升幅度。
 
 ## 文档维护与原子覆盖
 

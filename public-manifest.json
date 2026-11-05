@@ -32,6 +32,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "agents/capability-evaluator.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "agents/code-reviewer.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2012,6 +2017,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "skills/capability-evaluation/SKILL.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "skills/code-implementation/SKILL.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2212,6 +2222,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/capability-evaluation.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/code-review.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2367,6 +2382,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "tests/test_capability_benchmark.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "tests/test_check_all.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2483,6 +2503,11 @@
     },
     {
       "path": "tools/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/capability_benchmark.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2718,6 +2743,26 @@
     },
     {
       "path": "workflows/examples/bookmark-tags.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/capability-benchmark/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/capability-benchmark/cases.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/capability-benchmark/result.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/capability-benchmark/run.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

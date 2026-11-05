@@ -1,0 +1,14 @@
+{
+  "oracle_version": 1,
+  "oracle_origin": "Author-defined structural labels with explicit contract basis; not independent business or model truth.",
+  "cases": [
+    {"id": "valid", "edit": "none", "expected_valid": true, "basis": "Complete candidate-bound matrix and actual probe."},
+    {"id": "missing-cell", "edit": "missing_cell", "expected_valid": false, "basis": "An evidence/hypothesis pair is absent."},
+    {"id": "drift", "edit": "candidate_drift", "expected_valid": false, "basis": "Report differs from the independently computed current candidate."},
+    {"id": "blank-result", "edit": "blank_probe_result", "expected_valid": false, "basis": "A completed probe has no stated result."},
+    {"id": "no-observation", "edit": "done_without_evidence", "expected_valid": false, "basis": "DONE probe has no evidence reference."},
+    {"id": "missing-sensitivity", "edit": "missing_sensitivity", "expected_valid": false, "basis": "Critical evidence has no removal analysis."},
+    {"id": "same-source", "edit": "correlated", "expected_valid": true, "basis": "Same-source grouping is explicitly allowed; structure does not certify independence."},
+    {"id": "pending", "edit": "pending", "expected_valid": true, "basis": "Explicit NOT_RUN without evidence is structurally valid but remains pending; it is not an accepted conclusion."}
+  ]
+}

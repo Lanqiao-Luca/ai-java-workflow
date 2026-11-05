@@ -2202,6 +2202,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/local-evidence.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/module-planning.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2313,6 +2318,11 @@
     },
     {
       "path": "tests/test_goal_graph_runtime.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_local_evidence.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2483,6 +2493,11 @@
     },
     {
       "path": "tools/inspection_loop.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tools/local_evidence.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2683,6 +2698,31 @@
     },
     {
       "path": "workflows/examples/evidence-coverage/scenarios.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/local-evidence/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/local-evidence/fixtures/source.txt",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/local-evidence/fixtures/tail.txt",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/local-evidence/run.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/local-evidence/scope.json",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

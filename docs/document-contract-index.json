@@ -1170,6 +1170,9 @@
     "standards/layering.md": {
       "mode": "current"
     },
+    "standards/local-evidence.md": {
+      "mode": "current"
+    },
     "standards/module-planning.md": {
       "mode": "current"
     },
@@ -1268,6 +1271,9 @@
       "mode": "current"
     },
     "workflows/examples/evidence-coverage/README.md": {
+      "mode": "current"
+    },
+    "workflows/examples/local-evidence/README.md": {
       "mode": "current"
     },
     "workflows/java-spring-development.md": {

@@ -1,0 +1,19 @@
+{
+  "source_id": "public-local-fixture",
+  "needle": "ALPHA",
+  "mode": "complete",
+  "probe_id": "source.txt:1",
+  "max_pages": 2,
+  "max_bytes": 1024,
+  "max_total_bytes": 2048,
+  "files": [
+    {
+      "path": "source.txt",
+      "sha256": "6b395bff3e79f3aa7968fd6eb03c98080fc6014011b831f6b11b2ba5f214ffaa"
+    },
+    {
+      "path": "tail.txt",
+      "sha256": "42c8c0fc97efdebc881db35a9687517f0d25cc3ad64ce6a6be27ddec5b57e344"
+    }
+  ]
+}

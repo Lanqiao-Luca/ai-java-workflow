@@ -1,0 +1,2 @@
+CONTROL public-fixture
+ALPHA record-one

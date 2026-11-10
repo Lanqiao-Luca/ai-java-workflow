@@ -111,6 +111,10 @@ Brain 选择适用组织入口与模板 → 当前协调者/宿主和阶段职�
 
 [八场景离线案例](workflows/examples/evidence-coverage/README.md)实际判断显式页观察。采样命中不宣称完整，无正控制的零命中保未解决；预算或截断保 PARTIAL，拒权与未知不当作零条。工具不发请求、不认证真实来源，不提供生产连接器或自动补证客户端。[本地文件适配案例](workflows/examples/local-evidence/README.md)现可实际读取明确批准的公开文件集合，核原字节身份、路径/预算和覆盖；仍不扫描私人目录或接通生产服务。
 
+## SQL 查询审查
+
+[查询审查者](agents/query-reviewer.md)现可沿 SQL Skill 采用八类访问模式方法，分别核连接、批量读取、索引、分页、排序、约束及分片。[四条 SQL 内存实验](workflows/examples/sql-query-patterns/README.md)实际核查询次数与结果语义，覆盖零子项、JOIN后分页、UTC日期边界及拟议/已安装唯一约束。MySQL计划与性能按目标环境另行验证。
+
 ## 重要结论的反证审查
 
 [结论复核者 Agent](agents/conclusion-reviewer.md) → [结论反证 Skill](skills/conclusion-challenge/SKILL.md) → [CH01–CH04 原子](standards/conclusion-challenge.md)及结构 Tools，组织合理竞争解释、共同证据矩阵、主动反证和决定性证据移除分析。多阶段可选[反证 Workflow](workflows/conclusion-challenge.md)，报告空表放在其 templates。

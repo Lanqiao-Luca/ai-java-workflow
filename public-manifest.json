@@ -2372,6 +2372,11 @@
       "status": "reviewed_candidate"
     },
     {
+      "path": "standards/sql-query-patterns.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
       "path": "standards/sql-review.md",
       "origin": "newly_written",
       "status": "reviewed_candidate"
@@ -2513,6 +2518,11 @@
     },
     {
       "path": "tests/test_public_history.py",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "tests/test_sql_query_patterns.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },
@@ -2938,6 +2948,16 @@
     },
     {
       "path": "workflows/examples/local-evidence/scope.json",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/sql-query-patterns/README.md",
+      "origin": "newly_written",
+      "status": "reviewed_candidate"
+    },
+    {
+      "path": "workflows/examples/sql-query-patterns/run.py",
       "origin": "newly_written",
       "status": "reviewed_candidate"
     },

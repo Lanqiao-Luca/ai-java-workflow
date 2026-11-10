@@ -34,6 +34,7 @@
 - [需求到实现的语义核验](semantic-review.md)
 - [证据驱动诊断](diagnosis.md)
 - [SQL 与索引检查](sql-review.md)
+- [查询访问模式的八类审查方法](sql-query-patterns.md)
 - [异常恢复与有界尝试](recovery.md)
 - [交付状态与接续规划](delivery-planning.md)
 - [文档内容与引用验收](document-review.md)

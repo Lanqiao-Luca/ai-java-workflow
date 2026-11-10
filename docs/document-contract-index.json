@@ -1218,6 +1218,9 @@
     "standards/shared-rules.md": {
       "mode": "current"
     },
+    "standards/sql-query-patterns.md": {
+      "mode": "current"
+    },
     "standards/sql-review.md": {
       "mode": "current"
     },
@@ -1304,6 +1307,9 @@
       "mode": "current"
     },
     "workflows/examples/local-evidence/README.md": {
+      "mode": "current"
+    },
+    "workflows/examples/sql-query-patterns/README.md": {
       "mode": "current"
     },
     "workflows/java-spring-development.md": {

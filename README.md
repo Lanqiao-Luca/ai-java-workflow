@@ -6,6 +6,8 @@
 
 **面向 Java / Spring Boot 业务开发的 AI 研发工作流（AI for Java / AI for Spring）。** 提供从需求、实现、测试到审查与交付的方法、工具和虚构可运行案例；本项目不是 Spring AI 框架实现或教程。
 
+**先跑一个案例：**[运行 Spring Boot 批量归档示例](examples/design-to-spring/README.md)（需 JDK 17+ 和 Maven 3）。案例记录中，正确实现通过全部 14 项测试，故意保留缺陷的对照版本触发 3 项预期失败，展示了如何验证非法条目不会造成部分写入。
+
 ## 20 个 Agent 角色怎么用
 
 仓库提供 **20 份可按需采用的 Agent 职责说明**。每个角色都写明接收什么、交付什么，以及怎样核对结果。单项任务可直接选角色，涉及多阶段交接时可从 Brain 选工作流。[查看完整 Agent 目录](agents/README.md) · [开始自己的任务](brain/README.md)

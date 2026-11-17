@@ -24,6 +24,7 @@
 
 - [三层职责与方法合同](layering.md)
 - [原则与证据边界](principles.md)
+- [项目地图与风险分档](project-understanding.md)
 - [需求澄清与可观察验收](requirements.md)
 - [实现基线与最小写集](implementation-baseline.md)
 - [复用与旧行为保留](behavior-preservation.md)

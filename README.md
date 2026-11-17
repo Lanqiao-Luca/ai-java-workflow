@@ -23,6 +23,8 @@
 - **Spring 批量归档**。从需求、设计复核和模块规划走到实现，核对非法条目会不会造成部分写入。正确候选通过全部 14 项测试，包含真实 Spring / MockMvc 场景，并由分离上下文独立重跑验证。[阅读清单归档案例](examples/design-to-spring/README.md)
 - **原生 Agent 协作**。在 macOS 的 Codex CLI 中，6 个原生子 Agent 完成需求澄清、实现、独立验证、并行审查和交付报告，最终 25 项离线 Spring 测试通过。[原生 Spring 研发案例](examples/native-spring-workflow/README.md)
 
+接手陌生项目时，可由需求负责人使用[项目地图与风险分档方法](standards/project-understanding.md)，记录事实、推断和待确认项，并按影响选择验证深度。
+
 ## 框架架构
 
 Brain 负责逐轮路由与接续，**可调取 Agent 及其上的 Workflow、Loop、Graph**。框架的组装关系是：
